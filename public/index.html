@@ -1,49 +1,919 @@
-Supabase
-Leselab
-Free
-Leselab
-main
-Production
-Feedback
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leselab – Lesetrening for barn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Nunito', sans-serif; background: #fff; color: #1e1b4b; overflow-x: hidden; }
 
-    Project Overview
-    Table Editor
-    SQL Editor
-    Database
-    Authentication
-    Storage
-    Edge Functions
-    Realtime
-    Advisors
-    Observability
-    Logs
-    Integrations
-    Project Settings
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px; background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100;
+    }
+    .logo { font-size: 24px; font-weight: 900; color: #4f46e5; letter-spacing: -0.5px; cursor: pointer; }
+    .logo span { color: #f59e0b; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { text-decoration: none; color: #4b5563; font-weight: 600; font-size: 15px; cursor: pointer; }
+    .nav-links a:hover { color: #4f46e5; }
+    .btn-nav { background: #4f46e5; color: #fff !important; padding: 10px 22px; border-radius: 50px; }
+    .btn-nav:hover { background: #4338ca !important; }
 
-Authentication
+    /* SECTIONS */
+    .page { display: none; }
+    .page.active { display: block; }
 
-    Manage
-    Users
-    OAuth Apps
-    Notifications
-    Email
-    Configuration
-    Policies
-    Sign In / Providers
-    OAuth Server
-    Beta
-    Sessions
-    Rate Limits
-    Multi-Factor
-    URL Configuration
-    Attack Protection
-    Auth Hooks
-    Beta
-    Audit Logs
-    Performance
+    /* HERO */
+    .hero {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 80px 40px 60px; max-width: 1100px; margin: 0 auto; gap: 40px;
+    }
+    .hero-text { flex: 1; }
+    .hero-badge { display: inline-block; background: #fef3c7; color: #d97706; padding: 6px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 20px; }
+    .hero h1 { font-size: 52px; font-weight: 900; line-height: 1.15; color: #1e1b4b; margin-bottom: 20px; }
+    .hero h1 span { color: #4f46e5; }
+    .hero p { font-size: 18px; color: #6b7280; line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
+    .btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: #4f46e5; color: #fff; padding: 16px 32px; border-radius: 50px; font-size: 17px; font-weight: 800; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(79,70,229,0.35); transition: transform 0.2s; display: inline-block; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { background: #fff; color: #4f46e5; padding: 16px 32px; border-radius: 50px; font-size: 17px; font-weight: 800; text-decoration: none; border: 2px solid #e0e7ff; cursor: pointer; display: inline-block; }
+    .hero-visual { flex: 1; display: flex; justify-content: center; }
+    .hero-card { background: linear-gradient(135deg, #eef2ff 0%, #fef3c7 100%); border-radius: 28px; padding: 32px; max-width: 380px; width: 100%; box-shadow: 0 12px 40px rgba(79,70,229,0.12); }
+    .hero-card-title { font-size: 13px; font-weight: 700; color: #6b7280; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .reading-demo { font-size: 20px; line-height: 2.4; }
+    .w { display: inline-block; padding: 3px 8px; border-radius: 8px; margin: 2px; font-weight: 600; }
+    .w-ok { background: #d1fae5; color: #065f46; }
+    .w-err { background: #fee2e2; color: #991b1b; }
+    .w-cur { background: #e0e7ff; color: #3730a3; border: 2px solid #4f46e5; }
+    .w-plain { color: #9ca3af; }
+    .demo-stats { display: flex; gap: 12px; margin-top: 20px; }
+    .demo-stat { flex: 1; background: #fff; border-radius: 14px; padding: 12px; text-align: center; }
+    .demo-stat .num { font-size: 26px; font-weight: 900; }
+    .demo-stat .lbl { font-size: 11px; color: #9ca3af; font-weight: 600; margin-top: 2px; }
 
-Users
-All columns
-Total: 10 users (estimated)
+    /* HOW */
+    .how { background: #f8f7ff; padding: 80px 40px; }
+    .section-label { text-align: center; font-size: 13px; font-weight: 700; color: #4f46e5; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+    .section-title { text-align: center; font-size: 36px; font-weight: 900; color: #1e1b4b; margin-bottom: 48px; }
+    .steps { display: flex; gap: 24px; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+    .step { background: #fff; border-radius: 24px; padding: 32px 28px; flex: 1; min-width: 220px; max-width: 280px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); text-align: center; transition: transform 0.2s; }
+    .step:hover { transform: translateY(-4px); }
+    .step-icon { font-size: 44px; margin-bottom: 16px; }
+    .step h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+    .step p { font-size: 14px; color: #6b7280; line-height: 1.6; }
+    .step-num { display: inline-block; background: #eef2ff; color: #4f46e5; width: 28px; height: 28px; border-radius: 50%; font-size: 13px; font-weight: 900; line-height: 28px; margin-bottom: 12px; }
 
-Users | Authentication | Leselab | Supabase
+    /* WHY */
+    .why { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+    .why-card { border-radius: 20px; padding: 28px; display: flex; gap: 18px; align-items: flex-start; background: #f9fafb; border: 1.5px solid #f3f4f6; transition: border-color 0.2s; }
+    .why-card:hover { border-color: #c7d2fe; }
+    .why-icon { font-size: 32px; flex-shrink: 0; }
+    .why-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
+    .why-card p { font-size: 14px; color: #6b7280; line-height: 1.6; }
+
+    /* QUOTE */
+    .quote-section { background: linear-gradient(135deg, #4f46e5, #7c3aed); padding: 80px 40px; text-align: center; }
+    .quote-text { font-size: 26px; font-weight: 700; color: #fff; max-width: 700px; margin: 0 auto 20px; line-height: 1.5; }
+    .quote-author { color: #c7d2fe; font-size: 15px; font-weight: 600; }
+
+    /* PRICING */
+    .pricing { padding: 80px 40px; background: #f8f7ff; }
+    .pricing-cards { display: flex; gap: 24px; max-width: 800px; margin: 48px auto 0; flex-wrap: wrap; justify-content: center; }
+    .pricing-card { background: #fff; border-radius: 24px; padding: 36px 32px; flex: 1; min-width: 260px; max-width: 340px; border: 2px solid #f3f4f6; text-align: center; transition: transform 0.2s; }
+    .pricing-card.featured { border-color: #4f46e5; box-shadow: 0 8px 32px rgba(79,70,229,0.15); }
+    .featured-badge { background: #4f46e5; color: #fff; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 50px; display: inline-block; margin-bottom: 16px; }
+    .price { font-size: 42px; font-weight: 900; color: #1e1b4b; margin: 12px 0; }
+    .price span { font-size: 16px; font-weight: 600; color: #9ca3af; }
+    .pricing-card h3 { font-size: 20px; font-weight: 800; }
+    .pricing-features { list-style: none; margin: 20px 0 28px; text-align: left; }
+    .pricing-features li { padding: 7px 0; font-size: 14px; color: #4b5563; display: flex; gap: 10px; align-items: center; }
+    .pricing-features li::before { content: "✓"; color: #4f46e5; font-weight: 900; }
+    .pricing-features li.no::before { content: "✗"; color: #d1d5db; }
+    .pricing-features li.no { color: #9ca3af; }
+
+    /* FAQ */
+    .faq { padding: 80px 40px; max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1.5px solid #f3f4f6; padding: 20px 0; cursor: pointer; }
+    .faq-q { font-size: 17px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+    .faq-a { font-size: 15px; color: #6b7280; line-height: 1.7; margin-top: 12px; display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-arrow { transition: transform 0.2s; font-size: 18px; color: #4f46e5; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+    /* CTA */
+    .cta { padding: 100px 40px; text-align: center; }
+    .cta h2 { font-size: 42px; font-weight: 900; margin-bottom: 16px; }
+    .cta p { font-size: 18px; color: #6b7280; margin-bottom: 36px; }
+
+    /* FOOTER */
+    footer { background: #1e1b4b; color: #a5b4fc; padding: 40px; text-align: center; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+    .footer-links a { color: #a5b4fc; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .footer-copy { font-size: 13px; color: #6b7280; }
+
+    /* AUTH */
+    .auth-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8f7ff, #eef2ff); padding: 40px; }
+    .auth-card { background: #fff; border-radius: 28px; padding: 48px 40px; max-width: 440px; width: 100%; box-shadow: 0 12px 40px rgba(79,70,229,0.12); }
+    .auth-card h2 { font-size: 28px; font-weight: 900; margin-bottom: 8px; color: #1e1b4b; }
+    .auth-card p { color: #6b7280; margin-bottom: 32px; font-size: 15px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; }
+    .form-group input { width: 100%; padding: 14px 16px; border-radius: 12px; border: 2px solid #e5e7eb; font-size: 15px; font-family: inherit; transition: border-color 0.2s; }
+    .form-group input:focus { outline: none; border-color: #4f46e5; }
+    .auth-btn { width: 100%; padding: 16px; background: #4f46e5; color: #fff; border: none; border-radius: 50px; font-size: 17px; font-weight: 800; cursor: pointer; font-family: inherit; margin-top: 8px; }
+    .auth-switch { text-align: center; margin-top: 20px; font-size: 14px; color: #6b7280; }
+    .auth-switch a { color: #4f46e5; font-weight: 700; cursor: pointer; text-decoration: none; }
+    .auth-error { background: #fee2e2; color: #991b1b; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
+    .auth-success { background: #d1fae5; color: #065f46; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
+
+    /* APP */
+    .app-container { max-width: 760px; margin: 0 auto; padding: 32px 24px; }
+    .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .app-header h2 { font-size: 22px; font-weight: 900; }
+    .app-tabs { display: flex; gap: 8px; background: #f3f4f6; border-radius: 14px; padding: 6px; margin-bottom: 28px; }
+    .app-tab { flex: 1; padding: 10px; border-radius: 10px; border: none; background: transparent; font-family: inherit; font-weight: 700; font-size: 14px; cursor: pointer; color: #6b7280; }
+    .app-tab.active { background: #fff; color: #4f46e5; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* PROFILES */
+    .profiles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .profile-card { background: #f8f7ff; border-radius: 20px; padding: 24px 16px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; }
+    .profile-card:hover { border-color: #4f46e5; background: #eef2ff; }
+    .profile-card.selected { border-color: #4f46e5; background: #eef2ff; }
+    .profile-avatar { font-size: 40px; margin-bottom: 8px; }
+    .profile-name { font-weight: 800; font-size: 15px; }
+    .profile-level { font-size: 12px; color: #6b7280; margin-top: 4px; }
+    .add-profile { background: #f9fafb; border: 2px dashed #d1d5db; border-radius: 20px; padding: 24px 16px; text-align: center; cursor: pointer; }
+    .add-profile:hover { border-color: #4f46e5; }
+
+    /* READING APP */
+    .card { background: #fff; border-radius: 16px; padding: 20px; margin-bottom: 16px; border: 1px solid #e5e7eb; }
+    .exercise-options { display: flex; gap: 12px; margin-bottom: 20px; }
+    .exercise-btn { flex: 1; padding: 14px; border-radius: 12px; border: 2px solid #e5e7eb; background: #fff; cursor: pointer; text-align: left; font-family: inherit; }
+    .exercise-btn.active { border-color: #4f46e5; background: #eef2ff; }
+    .exercise-btn .etitle { font-weight: 700; font-size: 15px; }
+    .exercise-btn .edesc { font-size: 13px; color: #6b7280; margin-top: 4px; }
+    .form-label { font-weight: 700; display: block; margin-bottom: 8px; font-size: 14px; }
+    textarea { width: 100%; height: 140px; padding: 12px; border-radius: 10px; border: 2px solid #e5e7eb; font-size: 15px; resize: vertical; font-family: inherit; }
+    textarea:focus { outline: none; border-color: #4f46e5; }
+    .upload-box { padding: 16px; background: #f9fafb; border-radius: 12px; border: 2px dashed #d1d5db; margin-bottom: 20px; }
+    .btn { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; font-size: 15px; font-family: inherit; }
+    .btn-indigo { background: #4f46e5; color: #fff; }
+    .btn-green { background: #059669; color: #fff; }
+    .btn-gray { background: #6b7280; color: #fff; }
+    .btn-large { width: 100%; padding: 16px; font-size: 18px; border-radius: 12px; margin-top: 8px; }
+    .btn:disabled { background: #d1d5db; cursor: default; }
+    .btn-row { display: flex; gap: 12px; }
+    .range-labels { display: flex; justify-content: space-between; font-size: 12px; color: #9ca3af; margin-top: 4px; }
+    input[type=range] { width: 100%; }
+    .checkbox-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .info-box { padding: 10px 14px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; background: #fef3c7; color: #92400e; }
+    .text-display { line-height: 2.6; font-size: 22px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb; min-height: 200px; }
+    .word-wrap { display: inline-block; margin: 2px 3px; }
+    .word { display: inline-block; padding: 2px 7px; border-radius: 6px; border: 2px solid transparent; transition: background 0.15s; }
+    .word.current { background: #e0e7ff; border-color: #4f46e5; font-weight: 700; }
+    .word.correct { background: #d1fae5; color: #065f46; }
+    .word.wrong { background: #fee2e2; color: #991b1b; }
+    .word.clickable { cursor: pointer; }
+    .word-btns { display: inline-block; margin-left: 4px; }
+    .word-btn { padding: 2px 8px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin-right: 2px; }
+    .word-btn.ok { background: #059669; color: #fff; }
+    .word-btn.fail { background: #dc2626; color: #fff; }
+    .stats-row { margin-top: 16px; display: flex; gap: 20px; font-size: 15px; flex-wrap: wrap; }
+    .timer { font-size: 28px; font-weight: 800; color: #4f46e5; }
+    .timer.urgent { color: #ef4444; }
+    .header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .result-card { padding: 20px; border-radius: 12px; text-align: center; }
+    .result-card .val { font-size: 42px; font-weight: 900; }
+    .result-card .lbl { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .progress-bar { height: 24px; background: #e5e7eb; border-radius: 12px; overflow: hidden; position: relative; }
+    .progress-fill { height: 100%; border-radius: 12px; }
+    .progress-marker { position: absolute; top: 2px; left: 66%; width: 2px; height: 20px; background: #4f46e5; }
+    .review-text { line-height: 2.2; font-size: 18px; background: #fff; padding: 16px; border-radius: 10px; border: 1px solid #e5e7eb; }
+    .stars-earned { font-size: 48px; text-align: center; margin: 16px 0; }
+
+    /* PROGRESS */
+    .progress-list { display: flex; flex-direction: column; gap: 12px; }
+    .session-item { background: #f9fafb; border-radius: 14px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .session-date { font-size: 13px; color: #9ca3af; }
+    .session-stats { display: flex; gap: 16px; }
+    .session-stat { text-align: center; }
+    .session-stat .n { font-size: 20px; font-weight: 900; color: #4f46e5; }
+    .session-stat .l { font-size: 11px; color: #9ca3af; }
+
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; padding: 40px 20px; }
+      .hero h1 { font-size: 36px; }
+      nav { padding: 16px 20px; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="logo" onclick="showPage('home')">Lese<span>lab</span></div>
+  <div class="nav-links" id="nav-links">
+    <a onclick="showPage('home')">Hjem</a>
+    <a onclick="document.getElementById('pricing-section').scrollIntoView({behavior:'smooth'})">Priser</a>
+    <a id="nav-login-btn" onclick="showPage('login')" class="btn-nav">Logg inn</a>
+    <a id="nav-app-btn" onclick="showPage('app')" class="btn-nav" style="display:none">Min side</a>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+  <section style="background:linear-gradient(160deg,#f8f7ff 0%,#fff 100%)">
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-badge">🌟 Gratis å prøve – ingen kredittkort</div>
+        <h1>Hjelp barnet ditt å bli en <span>bedre leser</span></h1>
+        <p>Leselab gjør lesetrening morsomt og enkelt hjemme. Lim inn tekst fra barnets bok, og følg fremgangen i sanntid.</p>
+        <div class="btn-group">
+          <button class="btn-primary" onclick="showPage('register')">Start gratis nå 🚀</button>
+          <button class="btn-secondary" onclick="document.getElementById('how-section').scrollIntoView({behavior:'smooth'})">Se hvordan det fungerer</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-title">📖 Leseøkt pågår...</div>
+          <div class="reading-demo">
+            <span class="w w-ok">Ole</span><span class="w w-ok">og</span>
+            <span class="w w-ok">Karoline</span><span class="w w-err">sprange</span>
+            <span class="w w-ok">mot</span><span class="w w-ok">skogen</span>
+            <span class="w w-ok">mens</span><span class="w w-cur">solen</span>
+            <span class="w w-plain">gikk</span><span class="w w-plain">ned.</span>
+          </div>
+          <div class="demo-stats">
+            <div class="demo-stat"><div class="num" style="color:#059669">7</div><div class="lbl">✅ Riktige</div></div>
+            <div class="demo-stat"><div class="num" style="color:#dc2626">1</div><div class="lbl">❌ Feil</div></div>
+            <div class="demo-stat"><div class="num" style="color:#4f46e5">58</div><div class="lbl">⏱ Sekunder</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how-section">
+    <div class="section-label">Slik fungerer det</div>
+    <div class="section-title">Tre enkle steg</div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-icon">📚</div><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av siden.</p></div>
+      <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser høyt</h3><p>Appen lytter og markerer hvert ord grønt eller rødt i sanntid.</p></div>
+      <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg lesehastighet og nøyaktighet over tid. Barnet tjener stjerner!</p></div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="section-label">Hvorfor Leselab</div>
+    <div class="section-title">Laget av foreldre, for foreldre</div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">📖</div><div><h3>Bruk barnets egne bøker</h3><p>Ikke generiske øvingstekster – bruk tekster barnet allerede er motivert for å lese.</p></div></div>
+      <div class="why-card"><div class="why-icon">⚡</div><div><h3>Umiddelbar tilbakemelding</h3><p>Hvert ord farges grønt eller rødt i sanntid. Barnet ser selv hva de mestrer.</p></div></div>
+      <div class="why-card"><div class="why-icon">📊</div><div><h3>Følg utviklingen</h3><p>Se lesehastighet i ord per minutt og sammenlign med gjennomsnittet.</p></div></div>
+      <div class="why-card"><div class="why-icon">🌟</div><div><h3>Motiverende belønninger</h3><p>Barnet samler stjerner og klatrer i nivåer etter hvert som de leser.</p></div></div>
+      <div class="why-card"><div class="why-icon">📱</div><div><h3>Fungerer på alle enheter</h3><p>Telefon, nettbrett eller PC – uten nedlasting.</p></div></div>
+      <div class="why-card"><div class="why-icon">🔒</div><div><h3>Trygt og GDPR-sikret</h3><p>Barnets data lagres trygt og deles aldri med tredjeparter.</p></div></div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="quote-text">"Datteren min leste 50 ord i minuttet. Etter 3 uker med Leselab leser hun 78 ord – og vil gjerne øve mer!"</div>
+    <div class="quote-author">— Forelder fra Kristiansand</div>
+  </section>
+
+  <section class="pricing" id="pricing-section">
+    <div class="section-label">Priser</div>
+    <div class="section-title">Enkel og rettferdig prising</div>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Gratis</h3>
+        <div class="price">0 <span>kr/mnd</span></div>
+        <ul class="pricing-features">
+          <li>5 leseøkter per måned</li>
+          <li>Ord-for-ord og tidsbasert modus</li>
+          <li>Grunnleggende statistikk</li>
+          <li class="no">Fremgangsoversikt</li>
+          <li class="no">Belønninger og nivåer</li>
+          <li class="no">Flere barneprofiler</li>
+        </ul>
+        <button class="btn-secondary" style="width:100%;padding:14px;border-radius:50px;font-weight:800;font-size:15px;cursor:pointer" onclick="showPage('register')">Kom i gang gratis</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="featured-badge">Mest populær</div>
+        <h3>Familie</h3>
+        <div class="price">99 <span>kr/mnd</span></div>
+        <ul class="pricing-features">
+          <li>Ubegrenset antall øvelser</li>
+          <li>Ord-for-ord og tidsbasert modus</li>
+          <li>Full statistikk og fremgang</li>
+          <li>Belønninger og nivåer</li>
+          <li>Opptil 3 barneprofiler</li>
+          <li>Prioritert støtte</li>
+        </ul>
+        <button class="btn-primary" style="width:100%;padding:14px;border-radius:50px;font-weight:800;font-size:15px;cursor:pointer" onclick="showPage('register')">Prøv gratis i 30 dager</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="section-label">Spørsmål og svar</div>
+    <div class="section-title">Vanlige spørsmål</div>
+    <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">Trenger vi mikrofon eller spesielt utstyr?<span class="faq-arrow">▼</span></div><div class="faq-a">Nei! Alle moderne telefoner, nettbrett og laptoper har innebygd mikrofon som fungerer fint.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvilke nettlesere fungerer best?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer best i Chrome og Edge. Safari på iPhone og iPad fungerer også. Firefox støtter ikke talegjenkjenning, men manuell modus fungerer alltid.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Fungerer Leselab for barn med dysleksi?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja! Vi anbefaler manuell modus for barn med dysleksi, slik at forelder kan vurdere hvert ord direkte.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg avbestille når som helst?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja, du kan avbestille abonnementet når som helst uten bindingstid.</div></div>
+  </section>
+
+  <section class="cta">
+    <h2>Klar til å se fremgangen? 🚀</h2>
+    <p>Bli med foreldre som bruker Leselab for å hjelpe barna sine å lese bedre.</p>
+    <button class="btn-primary" onclick="showPage('register')">Start gratis – ingen kredittkort</button>
+  </section>
+
+  <footer>
+    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
+    <div class="footer-links">
+      <a href="#">Om oss</a>
+      <a href="#">Personvernerklæring</a>
+      <a href="#">Vilkår for bruk</a>
+      <a href="#">Kontakt</a>
+    </div>
+    <div class="footer-copy">© 2026 Leselab · Kristiansand, Norge</div>
+  </footer>
+</div>
+
+<!-- LOGIN PAGE -->
+<div id="page-login" class="page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+      <h2>Logg inn</h2>
+      <p>Velkommen tilbake!</p>
+      <div class="auth-error" id="login-error"></div>
+      <div class="auth-success" id="login-success"></div>
+      <div class="form-group"><label>E-post</label><input type="email" id="login-email" placeholder="din@epost.no"></div>
+      <div class="form-group"><label>Passord</label><input type="password" id="login-password" placeholder="••••••••"></div>
+      <button class="auth-btn" onclick="handleLogin()">Logg inn</button>
+      <div class="auth-switch">Har du ikke konto? <a onclick="showPage('register')">Registrer deg gratis</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER PAGE -->
+<div id="page-register" class="page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+      <h2>Opprett konto</h2>
+      <p>Gratis – ingen kredittkort nødvendig</p>
+      <div class="auth-error" id="register-error"></div>
+      <div class="auth-success" id="register-success"></div>
+      <div class="form-group"><label>E-post</label><input type="email" id="register-email" placeholder="din@epost.no"></div>
+      <div class="form-group"><label>Passord</label><input type="password" id="register-password" placeholder="Minst 6 tegn"></div>
+      <button class="auth-btn" onclick="handleRegister()">Opprett konto gratis</button>
+      <div class="auth-switch">Har du allerede konto? <a onclick="showPage('login')">Logg inn</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- APP PAGE -->
+<div id="page-app" class="page">
+  <div class="app-container">
+    <div class="app-header">
+      <h2>👋 Hei! Velkommen til Leselab</h2>
+      <button class="btn btn-gray" onclick="handleLogout()">Logg ut</button>
+    </div>
+    <div class="app-tabs">
+      <button class="app-tab active" onclick="showTab('tab-profiles')">👶 Profiler</button>
+      <button class="app-tab" onclick="showTab('tab-reading')">📖 Les nå</button>
+      <button class="app-tab" onclick="showTab('tab-progress')">📊 Fremgang</button>
+    </div>
+
+    <!-- PROFILES TAB -->
+    <div id="tab-profiles" class="tab-content active">
+      <div id="profiles-grid" class="profiles-grid"></div>
+      <div id="add-profile-form" style="display:none;background:#f9fafb;border-radius:16px;padding:24px;margin-top:16px">
+        <h3 style="margin-bottom:16px;font-size:18px">Legg til barneprofil</h3>
+        <div class="form-group"><label>Barnets navn</label><input type="text" id="child-name" placeholder="F.eks. Emma"></div>
+        <div class="form-group"><label>Alder</label><input type="number" id="child-age" placeholder="F.eks. 9" min="4" max="18"></div>
+        <div class="form-group">
+          <label>Velg avatar</label>
+          <div id="avatar-picker" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🦁</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🐼</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🦊</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🐸</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🦋</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🐬</span>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-indigo" onclick="saveProfile()">Lagre profil</button>
+          <button class="btn btn-gray" onclick="document.getElementById('add-profile-form').style.display='none'">Avbryt</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- READING TAB -->
+    <div id="tab-reading" class="tab-content">
+      <div id="reading-setup">
+        <div id="selected-profile-banner" style="display:none;background:#eef2ff;border-radius:14px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px">
+          <span id="banner-avatar" style="font-size:28px"></span>
+          <div><div style="font-weight:800" id="banner-name"></div><div style="font-size:13px;color:#6b7280" id="banner-level"></div></div>
+        </div>
+        <div class="exercise-options">
+          <button class="exercise-btn active" onclick="setExercise('word',this)"><div class="etitle">📝 Ord for ord</div><div class="edesc">Merk riktig/feil underveis</div></button>
+          <button class="exercise-btn" onclick="setExercise('timed',this)"><div class="etitle">⏱ Tidsbasert</div><div class="edesc">Les mest mulig på tid</div></button>
+        </div>
+        <div id="time-setting" style="display:none;margin-bottom:20px">
+          <label class="form-label">Tid: <span id="timelabel">60</span> sekunder</label>
+          <input type="range" min="15" max="120" step="15" value="60" oninput="setTime(this.value)">
+          <div class="range-labels"><span>15s</span><span>120s</span></div>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="listenCheck" onchange="appState.listenMode=this.checked">
+          <label for="listenCheck" style="display:inline;font-weight:600">🎤 Automatisk gjenkjenning (barnet leser høyt)</label>
+        </div>
+        <div class="card">
+          <label class="form-label">Lim inn tekst</label>
+          <textarea id="textInput" placeholder="Lim inn tekst fra boken her..."></textarea>
+        </div>
+        <div class="upload-box">
+          <div style="font-weight:700;margin-bottom:8px">📷 Eller skann en side fra boken</div>
+          <div class="btn-row">
+            <button class="btn btn-indigo" onclick="document.getElementById('imgInput').click()">Velg bilde / Ta foto</button>
+            <button class="btn btn-green" id="ocrBtn" style="display:none" onclick="runOCR()">Trekk ut tekst</button>
+          </div>
+          <input type="file" id="imgInput" accept="image/*" capture="environment" style="display:none" onchange="handleImage(this)">
+          <img id="img-preview" style="max-height:150px;border-radius:8px;margin-top:12px;display:none">
+        </div>
+        <button class="btn btn-indigo btn-large" onclick="startSession()" id="start-btn" disabled>Start øvelse 🚀</button>
+      </div>
+
+      <div id="reading-active" style="display:none">
+        <div class="header-row">
+          <h2 style="font-size:20px;font-weight:900">Les teksten</h2>
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="timer" id="timer-display" style="display:none"></div>
+            <button class="btn btn-gray" onclick="endSession()">Avslutt</button>
+          </div>
+        </div>
+        <div class="info-box" id="reading-info"></div>
+        <div class="text-display" id="text-display"></div>
+        <div class="stats-row">
+          <span style="color:#059669;font-weight:700" id="stat-correct">✅ Riktig: 0</span>
+          <span style="color:#dc2626;font-weight:700" id="stat-wrong">❌ Feil: 0</span>
+          <span style="color:#6b7280" id="stat-left">Ord igjen: 0</span>
+        </div>
+      </div>
+
+      <div id="reading-result" style="display:none">
+        <h2 style="font-size:28px;font-weight:900;margin-bottom:24px">🎉 Ferdig!</h2>
+        <div class="stars-earned" id="stars-earned"></div>
+        <div class="results-grid" id="results-grid"></div>
+        <div id="wpm-section" style="display:none" class="card">
+          <label class="form-label">Lesehastighet sammenlignet med snitt</label>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div><div class="progress-marker"></div></div>
+          <div class="range-labels"><span>0</span><span style="color:#4f46e5">Snitt (100 ord/min)</span><span>150+</span></div>
+          <p id="wpm-feedback" style="margin-top:12px;font-weight:600"></p>
+        </div>
+        <div class="card">
+          <label class="form-label">Gjennomgang av teksten</label>
+          <div class="review-text" id="review-text"></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-indigo btn-large" onclick="resetSession()">🔄 Ny øvelse</button>
+          <button class="btn btn-green btn-large" onclick="tryAgain()">🔁 Prøv igjen</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRESS TAB -->
+    <div id="tab-progress" class="tab-content">
+      <div id="progress-content">
+        <p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil og gjennomfør leseøkter for å se fremgang her.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// SUPABASE
+const { createClient } = supabase;
+const sb = createClient(
+  'https://qvphwkdkgmiucecckeyl.supabase.co',
+  'sb_publishable_z458n4cnZ9Et2kJluixHGw_kGUHL0yE'
+);
+
+// APP STATE
+const appState = {
+  exercise: 'word',
+  words: [],
+  wordStates: [],
+  currentIdx: 0,
+  timeLimit: 60,
+  timeLeft: 60,
+  running: false,
+  listenMode: false,
+  timerInterval: null,
+  recognition: null,
+  imageFile: null,
+  selectedProfile: null,
+  selectedAvatar: '🦁',
+  profiles: [],
+  sessions: []
+};
+
+// PAGE ROUTING
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// AUTH
+async function handleLogin() {
+  const email = document.getElementById('login-email').value;
+  const pw = document.getElementById('login-password').value;
+  const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+  if (error) {
+    showAuthMsg('login-error', 'Feil e-post eller passord. Prøv igjen.');
+  } else {
+    await loadApp();
+    showPage('app');
+  }
+}
+
+async function handleRegister() {
+  const email = document.getElementById('register-email').value;
+  const pw = document.getElementById('register-password').value;
+  if (pw.length < 6) { showAuthMsg('register-error', 'Passordet må være minst 6 tegn.'); return; }
+  const { error } = await sb.auth.signUp({ email, password: pw });
+  if (error) {
+    showAuthMsg('register-error', error.message);
+  } else {
+    showAuthMsg('register-success', '✅ Konto opprettet! Sjekk e-posten din for bekreftelse, eller logg inn nå.');
+  }
+}
+
+async function handleLogout() {
+  await sb.auth.signOut();
+  updateNav(false);
+  showPage('home');
+}
+
+function showAuthMsg(id, msg) {
+  const el = document.getElementById(id);
+  el.textContent = msg;
+  el.style.display = 'block';
+  setTimeout(() => el.style.display = 'none', 5000);
+}
+
+function updateNav(loggedIn) {
+  document.getElementById('nav-login-btn').style.display = loggedIn ? 'none' : 'inline-block';
+  document.getElementById('nav-app-btn').style.display = loggedIn ? 'inline-block' : 'none';
+}
+
+// LOAD APP
+async function loadApp() {
+  const { data: { user } } = await sb.auth.getUser();
+  if (!user) return;
+  updateNav(true);
+  await loadProfiles(user.id);
+}
+
+// PROFILES
+async function loadProfiles(userId) {
+  const { data } = await sb.from('profiles').select('*').eq('user_id', userId).order('created_at');
+  appState.profiles = data || [];
+  renderProfiles();
+}
+
+function renderProfiles() {
+  const grid = document.getElementById('profiles-grid');
+  let html = appState.profiles.map(p => `
+    <div class="profile-card ${appState.selectedProfile?.id === p.id ? 'selected' : ''}" onclick="selectProfile('${p.id}')">
+      <div class="profile-avatar">${p.avatar}</div>
+      <div class="profile-name">${p.child_name}</div>
+      <div class="profile-level">Nivå ${p.level} · ${p.stars} ⭐</div>
+    </div>
+  `).join('');
+  html += `<div class="add-profile" onclick="document.getElementById('add-profile-form').style.display='block'"><div style="font-size:32px">➕</div><div style="font-weight:700;margin-top:8px">Legg til barn</div></div>`;
+  grid.innerHTML = html;
+}
+
+function selectProfile(id) {
+  appState.selectedProfile = appState.profiles.find(p => p.id === id);
+  renderProfiles();
+  updateProfileBanner();
+  showTab('tab-reading');
+}
+
+function updateProfileBanner() {
+  const p = appState.selectedProfile;
+  if (!p) return;
+  document.getElementById('selected-profile-banner').style.display = 'flex';
+  document.getElementById('banner-avatar').textContent = p.avatar;
+  document.getElementById('banner-name').textContent = p.child_name;
+  document.getElementById('banner-level').textContent = `Nivå ${p.level} · ${p.stars} ⭐`;
+}
+
+function selectAvatar(el) {
+  document.querySelectorAll('.avatar-opt').forEach(a => a.style.border = '2px solid transparent');
+  el.style.border = '2px solid #4f46e5';
+  appState.selectedAvatar = el.textContent;
+}
+
+async function saveProfile() {
+  const { data: { user } } = await sb.auth.getUser();
+  const name = document.getElementById('child-name').value.trim();
+  const age = document.getElementById('child-age').value;
+  if (!name) { alert('Skriv inn barnets navn'); return; }
+  await sb.from('profiles').insert({ user_id: user.id, child_name: name, age: +age, avatar: appState.selectedAvatar });
+  document.getElementById('add-profile-form').style.display = 'none';
+  document.getElementById('child-name').value = '';
+  document.getElementById('child-age').value = '';
+  await loadProfiles(user.id);
+}
+
+// TABS
+function showTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.app-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  const idx = ['tab-profiles','tab-reading','tab-progress'].indexOf(tabId);
+  document.querySelectorAll('.app-tab')[idx].classList.add('active');
+  if (tabId === 'tab-progress') loadProgress();
+}
+
+// READING APP
+function tokenize(text) { return text.trim().split(/\s+/).filter(Boolean); }
+
+function setExercise(val, btn) {
+  appState.exercise = val;
+  document.querySelectorAll('.exercise-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('time-setting').style.display = val === 'timed' ? 'block' : 'none';
+}
+
+function setTime(val) {
+  appState.timeLimit = +val;
+  document.getElementById('timelabel').textContent = val;
+}
+
+document.getElementById('textInput').addEventListener('input', e => {
+  document.getElementById('start-btn').disabled = !e.target.value.trim();
+});
+
+function handleImage(input) {
+  const file = input.files[0];
+  if (!file) return;
+  appState.imageFile = file;
+  const prev = document.getElementById('img-preview');
+  prev.src = URL.createObjectURL(file);
+  prev.style.display = 'block';
+  document.getElementById('ocrBtn').style.display = 'inline-block';
+}
+
+async function runOCR() {
+  const btn = document.getElementById('ocrBtn');
+  btn.textContent = 'Leser tekst...'; btn.disabled = true;
+  const base64 = await new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result.split(',')[1]);
+    r.onerror = rej;
+    r.readAsDataURL(appState.imageFile);
+  });
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: [
+      { type: 'image', source: { type: 'base64', media_type: appState.imageFile.type, data: base64 } },
+      { type: 'text', text: 'Trekk ut all tekst fra dette bildet. Returner kun teksten.' }
+    ]}]})
+  });
+  const data = await resp.json();
+  document.getElementById('textInput').value = data.content?.find(b => b.type === 'text')?.text || '';
+  document.getElementById('start-btn').disabled = false;
+  btn.textContent = 'Trekk ut tekst'; btn.disabled = false;
+}
+
+function startSession() {
+  const text = document.getElementById('textInput').value;
+  const w = tokenize(text);
+  if (!w.length) return;
+  appState.words = w;
+  appState.wordStates = new Array(w.length).fill('none');
+  appState.currentIdx = 0;
+  appState.timeLeft = appState.timeLimit;
+  appState.running = true;
+  document.getElementById('reading-setup').style.display = 'none';
+  document.getElementById('reading-active').style.display = 'block';
+  document.getElementById('reading-result').style.display = 'none';
+  const info = document.getElementById('reading-info');
+  info.textContent = appState.listenMode ? '🎤 Barnet leser høyt. Ord merkes automatisk.' :
+    appState.exercise === 'word' ? 'Trykk ✅ eller ❌ for hvert ord.' : 'Trykk på ord som leses FEIL (de blir røde).';
+  renderWords();
+  if (appState.exercise === 'timed') {
+    const td = document.getElementById('timer-display');
+    td.style.display = 'block';
+    td.textContent = '⏱ ' + appState.timeLeft + 's';
+    startTimer();
+  }
+  if (appState.listenMode) startRecognition();
+}
+
+function renderWords() {
+  const html = appState.words.map((w, i) => {
+    const s = appState.wordStates[i];
+    const isCur = i === appState.currentIdx && appState.exercise === 'word';
+    const cls = isCur ? 'current' : s === 'correct' ? 'correct' : s === 'wrong' ? 'wrong' : '';
+    const click = !appState.listenMode && appState.exercise === 'timed' ? 'clickable' : '';
+    const btns = (appState.exercise === 'word' && isCur && !appState.listenMode) ?
+      `<span class="word-btns"><button class="word-btn ok" onclick="markWord(${i},'correct')">✅</button><button class="word-btn fail" onclick="markWord(${i},'wrong')">❌</button></span>` : '';
+    return `<span class="word-wrap"><span class="word ${cls} ${click}" onclick="clickWord(${i})">${w}</span>${btns}</span>`;
+  }).join('');
+  document.getElementById('text-display').innerHTML = html;
+  const c = appState.wordStates.filter(s => s === 'correct').length;
+  const wr = appState.wordStates.filter(s => s === 'wrong').length;
+  document.getElementById('stat-correct').textContent = '✅ Riktig: ' + c;
+  document.getElementById('stat-wrong').textContent = '❌ Feil: ' + wr;
+  document.getElementById('stat-left').textContent = 'Ord igjen: ' + (appState.words.length - appState.currentIdx);
+}
+
+function clickWord(i) {
+  if (appState.listenMode || appState.exercise !== 'timed') return;
+  appState.wordStates[i] = appState.wordStates[i] === 'wrong' ? 'none' : 'wrong';
+  renderWords();
+}
+
+function markWord(i, val) {
+  appState.wordStates[i] = val;
+  if (appState.exercise === 'word' && i === appState.currentIdx) {
+    appState.currentIdx++;
+    if (appState.currentIdx >= appState.words.length) { renderWords(); setTimeout(endSession, 400); return; }
+  }
+  renderWords();
+}
+
+function startTimer() {
+  clearInterval(appState.timerInterval);
+  appState.timerInterval = setInterval(() => {
+    appState.timeLeft--;
+    const td = document.getElementById('timer-display');
+    if (td) { td.textContent = '⏱ ' + appState.timeLeft + 's'; td.className = 'timer' + (appState.timeLeft <= 10 ? ' urgent' : ''); }
+    if (appState.timeLeft <= 0) endSession();
+  }, 1000);
+}
+
+function startRecognition() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return;
+  const rec = new SR();
+  rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = false;
+  appState.recognition = rec;
+  rec.onresult = e => {
+    const spoken = e.results[e.results.length-1][0].transcript.trim().toLowerCase().replace(/[.,!?;:]/g,'');
+    const i = appState.currentIdx;
+    if (i >= appState.words.length) return;
+    const expected = appState.words[i].toLowerCase().replace(/[.,!?;:»«""'']/g,'');
+    const correct = spoken === expected || spoken.includes(expected) || expected.includes(spoken);
+    appState.wordStates[i] = correct ? 'correct' : 'wrong';
+    appState.currentIdx++;
+    renderWords();
+    if (appState.exercise === 'word' && appState.currentIdx >= appState.words.length) setTimeout(endSession, 400);
+  };
+  rec.onerror = () => {};
+  rec.onend = () => { if (appState.running) rec.start(); };
+  rec.start();
+}
+
+function stopRecognition() {
+  if (appState.recognition) { appState.recognition.onend = null; appState.recognition.stop(); }
+}
+
+async function endSession() {
+  clearInterval(appState.timerInterval);
+  stopRecognition();
+  appState.running = false;
+  const correct = appState.wordStates.filter(s => s === 'correct').length;
+  const wrong = appState.wordStates.filter(s => s === 'wrong').length;
+  const read = appState.wordStates.filter(s => s !== 'none').length;
+  const wpm = appState.exercise === 'timed' ? Math.round((correct / appState.timeLimit) * 60) : null;
+  const stars = Math.min(5, Math.floor(correct / 5));
+
+  // Save to Supabase
+  const { data: { user } } = await sb.auth.getUser();
+  if (user && appState.selectedProfile) {
+    await sb.from('reading_sessions').insert({
+      profile_id: appState.selectedProfile.id,
+      user_id: user.id,
+      exercise_type: appState.exercise,
+      total_words: appState.words.length,
+      correct_words: correct,
+      wrong_words: wrong,
+      words_per_minute: wpm || 0,
+      duration_seconds: appState.timeLimit - appState.timeLeft
+    });
+    await sb.from('profiles').update({ stars: (appState.selectedProfile.stars || 0) + stars }).eq('id', appState.selectedProfile.id);
+    appState.selectedProfile.stars += stars;
+  }
+
+  document.getElementById('reading-active').style.display = 'none';
+  document.getElementById('reading-result').style.display = 'block';
+  document.getElementById('stars-earned').textContent = stars > 0 ? '⭐'.repeat(stars) + ' +' + stars + ' stjerner!' : '';
+
+  let gridHtml = `
+    <div class="result-card" style="background:#d1fae5"><div class="lbl" style="color:#059669">✅ Riktige ord</div><div class="val" style="color:#059669">${correct}</div></div>
+    <div class="result-card" style="background:#fee2e2"><div class="lbl" style="color:#dc2626">❌ Feil ord</div><div class="val" style="color:#dc2626">${wrong}</div></div>
+    <div class="result-card" style="background:#eef2ff"><div class="lbl" style="color:#4f46e5">📖 Leste ord</div><div class="val" style="color:#4f46e5">${read}</div></div>
+  `;
+  if (wpm !== null) gridHtml += `<div class="result-card" style="background:#fef3c7"><div class="lbl" style="color:#d97706">🚀 Ord/min</div><div class="val" style="color:#d97706">${wpm}</div></div>`;
+  document.getElementById('results-grid').innerHTML = gridHtml;
+
+  if (wpm !== null) {
+    document.getElementById('wpm-section').style.display = 'block';
+    document.getElementById('progress-fill').style.cssText = `width:${Math.min(100,(wpm/150)*100)}%;background:${wpm>=100?'#059669':'#f59e0b'}`;
+    document.getElementById('wpm-feedback').style.color = wpm >= 100 ? '#059669' : '#d97706';
+    document.getElementById('wpm-feedback').textContent = wpm >= 100 ? `Flott! Leser over snittet (${wpm} ord/min)! 🌟` : `Leser ${wpm} ord/min — snittet er 100. Fortsett å øve! 💪`;
+  }
+
+  const review = appState.words.map((w, i) => {
+    const s = appState.wordStates[i];
+    const bg = s==='correct'?'#d1fae5':s==='wrong'?'#fee2e2':'#f3f4f6';
+    const col = s==='correct'?'#065f46':s==='wrong'?'#991b1b':'#6b7280';
+    return `<span style="display:inline-block;margin:2px 3px;padding:2px 7px;border-radius:6px;background:${bg};color:${col}">${w}</span>`;
+  }).join('');
+  document.getElementById('review-text').innerHTML = review;
+}
+
+function resetSession() {
+  document.getElementById('reading-setup').style.display = 'block';
+  document.getElementById('reading-active').style.display = 'none';
+  document.getElementById('reading-result').style.display = 'none';
+  document.getElementById('textInput').value = '';
+  document.getElementById('start-btn').disabled = true;
+}
+
+function tryAgain() {
+  appState.wordStates = new Array(appState.words.length).fill('none');
+  appState.currentIdx = 0; appState.timeLeft = appState.timeLimit; appState.running = true;
+  document.getElementById('reading-result').style.display = 'none';
+  document.getElementById('reading-active').style.display = 'block';
+  renderWords();
+  if (appState.exercise === 'timed') startTimer();
+  if (appState.listenMode) startRecognition();
+}
+
+// PROGRESS
+async function loadProgress() {
+  if (!appState.selectedProfile) {
+    document.getElementById('progress-content').innerHTML = '<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil først.</p>';
+    return;
+  }
+  const { data } = await sb.from('reading_sessions').select('*').eq('profile_id', appState.selectedProfile.id).order('created_at', { ascending: false }).limit(20);
+  if (!data || !data.length) {
+    document.getElementById('progress-content').innerHTML = '<p style="color:#6b7280;text-align:center;padding:40px">Ingen øvelser ennå. Gjennomfør en leseøkt for å se fremgang her!</p>';
+    return;
+  }
+  const html = `
+    <h3 style="margin-bottom:20px;font-size:18px">${appState.selectedProfile.avatar} ${appState.selectedProfile.child_name} – Siste øvelser</h3>
+    <div class="progress-list">
+      ${data.map(s => `
+        <div class="session-item">
+          <div>
+            <div style="font-weight:700">${s.exercise_type === 'timed' ? '⏱ Tidsbasert' : '📝 Ord for ord'}</div>
+            <div class="session-date">${new Date(s.created_at).toLocaleDateString('nb-NO')}</div>
+          </div>
+          <div class="session-stats">
+            <div class="session-stat"><div class="n" style="color:#059669">${s.correct_words}</div><div class="l">Riktige</div></div>
+            <div class="session-stat"><div class="n" style="color:#dc2626">${s.wrong_words}</div><div class="l">Feil</div></div>
+            ${s.words_per_minute > 0 ? `<div class="session-stat"><div class="n" style="color:#4f46e5">${s.words_per_minute}</div><div class="l">Ord/min</div></div>` : ''}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  document.getElementById('progress-content').innerHTML = html;
+}
+
+// FAQ
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+// CHECK SESSION ON LOAD
+(async () => {
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) { await loadApp(); }
+})();
+</script>
+</body>
+</html>
