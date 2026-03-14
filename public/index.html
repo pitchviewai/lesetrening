@@ -324,6 +324,7 @@
       <div class="form-group"><label>E-post</label><input type="email" id="login-email" placeholder="din@epost.no"></div>
       <div class="form-group"><label>Passord</label><input type="password" id="login-password" placeholder="••••••••"></div>
       <button class="auth-btn" id="login-btn" onclick="handleLogin()">Logg inn</button>
+      <div class="auth-switch" style="margin-top:12px"><a onclick="showPage('forgot')" style="color:#9ca3af;font-weight:600">Glemt passord?</a></div>
       <div class="auth-switch">Har du ikke konto? <a onclick="showPage('register')">Registrer deg gratis</a></div>
     </div>
   </div>
@@ -341,6 +342,22 @@
       <div class="form-group"><label>Passord</label><input type="password" id="register-password" placeholder="Minst 6 tegn"></div>
       <button class="auth-btn" id="register-btn" onclick="handleRegister()">Opprett konto og start 🚀</button>
       <div class="auth-switch">Har du allerede konto? <a onclick="showPage('login')">Logg inn</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- GLEMT PASSORD -->
+<div id="page-forgot" class="page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+      <h2>Glemt passord?</h2>
+      <p>Skriv inn e-postadressen din så sender vi deg en lenke for å tilbakestille passordet.</p>
+      <div class="auth-error" id="forgot-error"></div>
+      <div class="auth-error" id="forgot-success" style="background:#d1fae5;color:#065f46;display:none"></div>
+      <div class="form-group"><label>E-post</label><input type="email" id="forgot-email" placeholder="din@epost.no"></div>
+      <button class="auth-btn" id="forgot-btn" onclick="handleForgot()">Send tilbakestillingslenke</button>
+      <div class="auth-switch"><a onclick="showPage('login')">← Tilbake til innlogging</a></div>
     </div>
   </div>
 </div>
@@ -503,19 +520,37 @@ async function handleRegister() {
   btn.disabled = true; btn.textContent = 'Oppretter konto...';
   const email = document.getElementById('register-email').value;
   const pw = document.getElementById('register-password').value;
-  if (pw.length < 6) {
-    showAuthError('register-error', 'Passordet må være minst 6 tegn.');
-    btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀';
-    return;
-  }
+  if (!email) { showAuthError('register-error', 'Skriv inn e-postadressen din.'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; return; }
+  if (pw.length < 6) { showAuthError('register-error', 'Passordet må være minst 6 tegn.'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; return; }
   const { error } = await sb.auth.signUp({ email, password: pw });
   if (error) {
-    showAuthError('register-error', error.message);
+    const norsk = {
+      'User already registered': 'Denne e-postadressen er allerede registrert. Prøv å logge inn i stedet.',
+      'Invalid email': 'Ugyldig e-postadresse. Sjekk at du har skrevet riktig.',
+      'Password should be at least 6 characters': 'Passordet må være minst 6 tegn.',
+    };
+    showAuthError('register-error', norsk[error.message] || 'Noe gikk galt. Prøv igjen.');
     btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀';
   } else {
     await loadApp();
     showPage('app');
   }
+}
+
+async function handleForgot() {
+  const btn = document.getElementById('forgot-btn');
+  btn.disabled = true; btn.textContent = 'Sender...';
+  const email = document.getElementById('forgot-email').value;
+  if (!email) { showAuthError('forgot-error', 'Skriv inn e-postadressen din.'); btn.disabled = false; btn.textContent = 'Send tilbakestillingslenke'; return; }
+  const { error } = await sb.auth.resetPasswordForEmail(email);
+  if (error) {
+    showAuthError('forgot-error', 'Noe gikk galt. Sjekk e-postadressen og prøv igjen.');
+  } else {
+    const s = document.getElementById('forgot-success');
+    s.textContent = '✅ Sjekk e-posten din for tilbakestillingslenke!';
+    s.style.display = 'block';
+  }
+  btn.disabled = false; btn.textContent = 'Send tilbakestillingslenke';
 }
 
 async function handleLogout() {
