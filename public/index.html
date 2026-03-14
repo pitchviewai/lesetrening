@@ -1035,7 +1035,7 @@ function startRecognition() {
     appState.wordStates[i] = correct ? 'correct' : 'wrong'; appState.currentIdx++; renderWords();
     if (appState.exercise === 'word' && appState.currentIdx >= appState.words.length) setTimeout(endSession, 400);
   };
-  rec.onerror = () {};
+  rec.onerror = () => {};
   rec.onend = () => { if (appState.running) rec.start(); };
   rec.start();
 }
