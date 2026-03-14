@@ -99,11 +99,36 @@
     .auth-btn { width: 100%; padding: 16px; background: #4f46e5; color: #fff; border: none; border-radius: 50px; font-size: 17px; font-weight: 800; cursor: pointer; font-family: inherit; margin-top: 8px; transition: transform 0.2s; }
     .auth-btn:hover { transform: translateY(-2px); }
     .auth-btn:disabled { background: #d1d5db; cursor: default; transform: none; }
-    .auth-btn-danger { background: #dc2626; }
     .auth-switch { text-align: center; margin-top: 16px; font-size: 14px; color: #6b7280; }
     .auth-switch a { color: #4f46e5; font-weight: 700; cursor: pointer; text-decoration: none; }
     .auth-error { background: #fee2e2; color: #991b1b; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
     .auth-success { background: #d1fae5; color: #065f46; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
+
+    /* WELCOME PAGE */
+    .welcome-container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+    .welcome-hero { text-align: center; margin-bottom: 48px; }
+    .welcome-hero h1 { font-size: 40px; font-weight: 900; color: #1e1b4b; margin-bottom: 12px; }
+    .welcome-hero p { font-size: 18px; color: #6b7280; line-height: 1.7; }
+    .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+    .info-card { background: #f8f7ff; border-radius: 20px; padding: 24px; border: 1.5px solid #e0e7ff; }
+    .info-card .ic-icon { font-size: 32px; margin-bottom: 12px; }
+    .info-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; color: #1e1b4b; }
+    .info-card p { font-size: 14px; color: #6b7280; line-height: 1.6; }
+    .info-card ul { list-style: none; margin-top: 8px; }
+    .info-card ul li { font-size: 14px; color: #4b5563; padding: 4px 0; display: flex; gap: 8px; }
+    .info-card ul li::before { content: "✓"; color: #4f46e5; font-weight: 900; flex-shrink: 0; }
+    .info-card ul li.no::before { content: "✗"; color: #dc2626; }
+    .welcome-steps { margin-bottom: 40px; }
+    .welcome-step { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1.5px solid #f3f4f6; }
+    .welcome-step:last-child { border-bottom: none; }
+    .ws-num { background: #4f46e5; color: #fff; width: 36px; height: 36px; border-radius: 50%; font-size: 16px; font-weight: 900; line-height: 36px; text-align: center; flex-shrink: 0; }
+    .ws-content h3 { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
+    .ws-content p { font-size: 14px; color: #6b7280; line-height: 1.6; }
+    .welcome-cta { text-align: center; background: linear-gradient(135deg, #4f46e5, #7c3aed); border-radius: 24px; padding: 40px; color: #fff; }
+    .welcome-cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
+    .welcome-cta p { font-size: 16px; color: #c7d2fe; margin-bottom: 24px; }
+
+    /* APP */
     .app-container { max-width: 760px; margin: 0 auto; padding: 32px 24px; }
     .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
     .app-header h2 { font-size: 22px; font-weight: 900; }
@@ -177,21 +202,26 @@
     .settings-section { margin-bottom: 32px; }
     .settings-section h3 { font-size: 18px; font-weight: 800; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f3f4f6; }
     .danger-zone { background: #fff5f5; border-radius: 16px; padding: 24px; border: 1.5px solid #fee2e2; }
+    .reward-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .reward-item { display: flex; justify-content: space-between; align-items: center; background: #f8f7ff; border-radius: 12px; padding: 12px 16px; }
+    .reward-item span { font-weight: 600; font-size: 15px; }
+    .reward-stars { color: #f59e0b; font-weight: 800; font-size: 13px; }
     @media (max-width: 768px) {
       .hero { flex-direction: column; padding: 40px 20px; }
       .hero h1 { font-size: 36px; }
       nav { padding: 16px 20px; }
       .why-grid { grid-template-columns: 1fr; }
+      .info-cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
 <nav id="main-nav">
-  <div class="logo" onclick="showPage('home')">Lese<span>lab</span></div>
+  <div class="logo" onclick="goHome()">Lese<span>lab</span></div>
   <div class="nav-links">
-    <a onclick="showPage('home')">Hjem</a>
-    <a onclick="document.getElementById('pricing-section').scrollIntoView({behavior:'smooth'})">Priser</a>
+    <a onclick="goHome()">Hjem</a>
+    <a onclick="scrollPricing()">Priser</a>
     <a id="nav-login-btn" onclick="showPage('login')" class="btn-nav">Logg inn</a>
     <a id="nav-app-btn" onclick="showPage('app')" class="btn-nav" style="display:none">Min side</a>
   </div>
@@ -206,7 +236,7 @@
         <h1>Hjelp barnet ditt å bli en <span>bedre leser</span></h1>
         <p>Leselab gjør lesetrening morsomt og enkelt hjemme. Lim inn tekst fra barnets bok, og følg fremgangen i sanntid.</p>
         <div class="btn-group">
-          <button class="btn-primary" onclick="showPage('register')">Start gratis nå 🚀</button>
+          <button class="btn-primary" id="home-cta-btn" onclick="homeCTA()">Start gratis nå 🚀</button>
           <button class="btn-secondary" onclick="document.getElementById('how-section').scrollIntoView({behavior:'smooth'})">Se hvordan det fungerer</button>
         </div>
       </div>
@@ -295,7 +325,7 @@
   <section class="faq">
     <div class="section-label">Spørsmål og svar</div>
     <div class="section-title">Vanlige spørsmål</div>
-    <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">Trenger vi mikrofon eller spesielt utstyr?<span class="faq-arrow">▼</span></div><div class="faq-a">Nei! Alle moderne telefoner, nettbrett og laptoper har innebygd mikrofon som fungerer fint. Ingen nedlasting nødvendig.</div></div>
+    <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">Trenger vi mikrofon eller spesielt utstyr?<span class="faq-arrow">▼</span></div><div class="faq-a">Nei! Alle moderne telefoner, nettbrett og laptoper har innebygd mikrofon som fungerer fint. AirPods og andre trådløse øreplugger fungerer også optimalt.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvilke nettlesere fungerer best?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer best i Chrome og Edge. Safari på iPhone og iPad fungerer også. Firefox støtter ikke talegjenkjenning, men manuell modus fungerer alltid.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Fungerer Leselab for barn med dysleksi?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja! Vi anbefaler manuell modus for barn med dysleksi, slik at forelder kan vurdere hvert ord direkte.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg avbestille når som helst?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja, du kan avbestille abonnementet når som helst uten bindingstid.</div></div>
@@ -310,10 +340,8 @@
   <footer>
     <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
     <div class="footer-links">
-      <a href="#">Om oss</a>
-      <a href="#">Personvernerklæring</a>
-      <a href="#">Vilkår for bruk</a>
-      <a href="#">Kontakt</a>
+      <a href="#">Om oss</a><a href="#">Personvernerklæring</a>
+      <a href="#">Vilkår for bruk</a><a href="#">Kontakt</a>
     </div>
     <div class="footer-copy">© 2026 Leselab · Kristiansand, Norge</div>
   </footer>
@@ -381,6 +409,90 @@
       <div class="form-group"><label>Nytt passord</label><input type="password" id="reset-password" placeholder="Minst 6 tegn"></div>
       <div class="form-group"><label>Bekreft passord</label><input type="password" id="reset-password2" placeholder="Gjenta passordet"></div>
       <button class="auth-btn" id="reset-btn" onclick="handleReset()">Lagre nytt passord</button>
+    </div>
+  </div>
+</div>
+
+<!-- VELKOMSTSIDE -->
+<div id="page-welcome" class="page">
+  <div class="welcome-container">
+    <div class="welcome-hero">
+      <div style="font-size:64px;margin-bottom:16px">🎉</div>
+      <h1>Velkommen til Leselab!</h1>
+      <p>Vi er glade for at du er med. Her er alt du trenger å vite for å komme i gang.</p>
+    </div>
+
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="ic-icon">📱</div>
+        <h3>Fungerer på</h3>
+        <ul>
+          <li>Telefon og nettbrett</li>
+          <li>PC og Mac</li>
+          <li>AirPods og trådløse øreplugger</li>
+          <li>Innebygd mikrofon</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🌐</div>
+        <h3>Nettlesere</h3>
+        <ul>
+          <li>Chrome (anbefalt)</li>
+          <li>Edge</li>
+          <li>Safari (iPhone/iPad)</li>
+          <li class="no" style="color:#dc2626">Firefox (talegjenkjenning virker ikke)</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">📝</div>
+        <h3>Ord for ord</h3>
+        <p>Du sitter ved siden av barnet og trykker ✅ for riktig leste ord og ❌ for feil. Perfekt for grundig trening og nybegynnere.</p>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">⏱</div>
+        <h3>Tidsbasert</h3>
+        <p>Barnet leser så mange ord som mulig på tid. Appen måler ord per minutt og sammenligner med gjennomsnittet for alderen.</p>
+      </div>
+    </div>
+
+    <div class="welcome-steps">
+      <h2 style="font-size:24px;font-weight:900;margin-bottom:24px">Kom i gang på 3 steg</h2>
+      <div class="welcome-step">
+        <div class="ws-num">1</div>
+        <div class="ws-content">
+          <h3>Opprett barneprofil</h3>
+          <p>Legg til barnets navn, alder og velg en morsom avatar. Du kan ha opptil 3 barn på familieabonnementet.</p>
+        </div>
+      </div>
+      <div class="welcome-step">
+        <div class="ws-num">2</div>
+        <div class="ws-content">
+          <h3>Velg en tekst</h3>
+          <p>Lim inn tekst fra barnets bok, eller ta et bilde av en side – appen leser teksten ut automatisk.</p>
+        </div>
+      </div>
+      <div class="welcome-step">
+        <div class="ws-num">3</div>
+        <div class="ws-content">
+          <h3>Start leseøkten</h3>
+          <p>Velg øvelsestype og trykk start. Barnet leser høyt mens du følger med – eller la appen lytte automatisk via mikrofonen.</p>
+        </div>
+      </div>
+      <div class="welcome-step">
+        <div class="ws-num">⭐</div>
+        <div class="ws-content">
+          <h3>Belønninger</h3>
+          <p>Barnet tjener stjerner for hvert riktige ord og klatrer opp i nivåer. Du kan legge inn egne belønninger inne i appen under barnets profil – for eksempel "20 stjerner = iskrem!" 🍦</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="welcome-cta">
+      <h2>Klar til å starte? 🚀</h2>
+      <p>Opprett barnets profil og gjennomfør din første leseøkt på under 2 minutter.</p>
+      <button onclick="showPage('app')" style="background:#fff;color:#4f46e5;padding:16px 36px;border-radius:50px;font-size:18px;font-weight:900;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.15)">
+        Opprett barneprofil →
+      </button>
     </div>
   </div>
 </div>
@@ -506,6 +618,18 @@
     <!-- SETTINGS -->
     <div id="tab-settings" class="tab-content">
       <div class="settings-section">
+        <h3>🏆 Egne belønninger</h3>
+        <p style="color:#6b7280;font-size:14px;margin-bottom:16px">Legg inn egne belønninger for barnet ditt – f.eks. "20 stjerner = iskrem!" 🍦</p>
+        <div id="rewards-profile-select" style="margin-bottom:16px"></div>
+        <div id="reward-list" class="reward-list"></div>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <input type="text" id="reward-text" placeholder="F.eks. Velg kveldskos 🍿" style="flex:1;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
+          <input type="number" id="reward-stars" placeholder="Stjerner" style="width:100px;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
+          <button class="btn btn-indigo" onclick="addReward()">Legg til</button>
+        </div>
+      </div>
+
+      <div class="settings-section">
         <h3>🔑 Endre passord</h3>
         <div class="auth-error" id="pw-error"></div>
         <div class="auth-success" id="pw-success"></div>
@@ -542,7 +666,8 @@ const appState = {
   exercise: 'word', words: [], wordStates: [], currentIdx: 0,
   timeLimit: 60, timeLeft: 60, running: false, listenMode: false,
   timerInterval: null, recognition: null, imageFile: null,
-  selectedProfile: null, selectedAvatar: '🦁', profiles: []
+  selectedProfile: null, selectedAvatar: '🦁', profiles: [],
+  isNewUser: false
 };
 
 function showPage(page) {
@@ -551,14 +676,33 @@ function showPage(page) {
   window.scrollTo(0, 0);
 }
 
+function goHome() {
+  sb.auth.getSession().then(({ data: { session } }) => {
+    if (session) showPage('app'); else showPage('home');
+  });
+}
+
+function scrollPricing() {
+  showPage('home');
+  setTimeout(() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' }), 100);
+}
+
+function homeCTA() {
+  sb.auth.getSession().then(({ data: { session } }) => {
+    if (session) showPage('app'); else showPage('register');
+  });
+}
+
 function showAuthError(id, msg) {
   const el = document.getElementById(id);
+  if (!el) return;
   el.textContent = msg; el.style.display = 'block';
   setTimeout(() => el.style.display = 'none', 6000);
 }
 
 function showAuthSuccess(id, msg) {
   const el = document.getElementById(id);
+  if (!el) return;
   el.textContent = msg; el.style.display = 'block';
   setTimeout(() => el.style.display = 'none', 6000);
 }
@@ -567,14 +711,11 @@ const norskFeil = {
   'Invalid login credentials': 'Feil e-post eller passord. Prøv igjen.',
   'Email not confirmed': 'Du må bekrefte e-postadressen din først. Sjekk innboksen.',
   'User already registered': 'Denne e-postadressen er allerede registrert. Prøv å logge inn.',
-  'Invalid email': 'Ugyldig e-postadresse. Sjekk at du har skrevet riktig.',
+  'Invalid email': 'Ugyldig e-postadresse.',
   'Password should be at least 6 characters': 'Passordet må være minst 6 tegn.',
-  'Token has expired or is invalid': 'Lenken har utløpt. Be om en ny.',
 };
 
-function oversett(msg) {
-  return norskFeil[msg] || 'Noe gikk galt. Prøv igjen.';
-}
+function oversett(msg) { return norskFeil[msg] || 'Noe gikk galt. Prøv igjen.'; }
 
 async function handleLogin() {
   const btn = document.getElementById('login-btn');
@@ -614,11 +755,8 @@ async function handleForgot() {
   const email = document.getElementById('forgot-email').value;
   if (!email) { showAuthError('forgot-error', 'Skriv inn e-postadressen din.'); btn.disabled = false; btn.textContent = 'Send tilbakestillingslenke'; return; }
   const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: 'https://leselab.no' });
-  if (error) {
-    showAuthError('forgot-error', oversett(error.message));
-  } else {
-    showAuthSuccess('forgot-success', '✅ Sjekk e-posten din for tilbakestillingslenke!');
-  }
+  if (error) { showAuthError('forgot-error', oversett(error.message)); }
+  else { showAuthSuccess('forgot-success', '✅ Sjekk e-posten din for tilbakestillingslenke!'); }
   btn.disabled = false; btn.textContent = 'Send tilbakestillingslenke';
 }
 
@@ -630,13 +768,8 @@ async function handleReset() {
   if (pw.length < 6) { showAuthError('reset-error', 'Passordet må være minst 6 tegn.'); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; return; }
   if (pw !== pw2) { showAuthError('reset-error', 'Passordene er ikke like.'); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; return; }
   const { error } = await sb.auth.updateUser({ password: pw });
-  if (error) {
-    showAuthError('reset-error', oversett(error.message));
-    btn.disabled = false; btn.textContent = 'Lagre nytt passord';
-  } else {
-    showAuthSuccess('reset-success', '✅ Passord oppdatert!');
-    setTimeout(() => { loadApp(); showPage('app'); }, 1500);
-  }
+  if (error) { showAuthError('reset-error', oversett(error.message)); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; }
+  else { showAuthSuccess('reset-success', '✅ Passord oppdatert!'); setTimeout(() => { loadApp(); showPage('app'); }, 1500); }
 }
 
 async function changePassword() {
@@ -655,13 +788,11 @@ async function logoutAll() {
 }
 
 async function confirmDeleteAccount() {
-  const ok = confirm('Er du sikker? Dette sletter kontoen din og alle data permanent. Dette kan ikke angres!');
-  if (!ok) return;
+  if (!confirm('Er du sikker? Dette sletter kontoen din og alle data permanent.')) return;
   const { data: { user } } = await sb.auth.getUser();
   if (user) {
     await sb.from('reading_sessions').delete().eq('user_id', user.id);
     await sb.from('profiles').delete().eq('user_id', user.id);
-    await sb.auth.admin?.deleteUser(user.id);
     await sb.auth.signOut();
   }
   updateNav(false); showPage('home');
@@ -683,6 +814,7 @@ async function loadApp() {
   if (!user) return;
   updateNav(true);
   await loadProfiles(user.id);
+  renderRewardsProfileSelect();
 }
 
 async function loadProfiles(userId) {
@@ -732,6 +864,52 @@ async function saveProfile() {
   document.getElementById('add-profile-form').style.display = 'none';
   document.getElementById('child-name').value = ''; document.getElementById('child-age').value = '';
   await loadProfiles(user.id);
+  renderRewardsProfileSelect();
+}
+
+// REWARDS
+function renderRewardsProfileSelect() {
+  const el = document.getElementById('rewards-profile-select');
+  if (!el || !appState.profiles.length) return;
+  el.innerHTML = `<label class="form-label">Velg barneprofil</label>
+    <select id="reward-profile-id" style="width:100%;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;margin-bottom:12px">
+      ${appState.profiles.map(p => `<option value="${p.id}">${p.avatar} ${p.child_name}</option>`).join('')}
+    </select>`;
+  loadRewards();
+}
+
+async function loadRewards() {
+  const profileId = document.getElementById('reward-profile-id')?.value;
+  if (!profileId) return;
+  const { data } = await sb.from('rewards').select('*').eq('profile_id', profileId).order('stars_required');
+  const list = document.getElementById('reward-list');
+  if (!data || !data.length) { list.innerHTML = '<p style="color:#9ca3af;font-size:14px">Ingen belønninger lagt til ennå.</p>'; return; }
+  list.innerHTML = data.map(r => `
+    <div class="reward-item">
+      <span>${r.reward_text}</span>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="reward-stars">⭐ ${r.stars_required} stjerner</span>
+        <button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteReward('${r.id}')">Slett</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function addReward() {
+  const profileId = document.getElementById('reward-profile-id')?.value;
+  const text = document.getElementById('reward-text').value.trim();
+  const stars = document.getElementById('reward-stars').value;
+  if (!profileId || !text || !stars) { alert('Fyll inn belønning og antall stjerner.'); return; }
+  const { data: { user } } = await sb.auth.getUser();
+  await sb.from('rewards').insert({ profile_id: profileId, user_id: user.id, reward_text: text, stars_required: +stars });
+  document.getElementById('reward-text').value = '';
+  document.getElementById('reward-stars').value = '';
+  loadRewards();
+}
+
+async function deleteReward(id) {
+  await sb.from('rewards').delete().eq('id', id);
+  loadRewards();
 }
 
 function showTab(tabId) {
@@ -741,17 +919,16 @@ function showTab(tabId) {
   const idx = ['tab-profiles','tab-reading','tab-progress','tab-settings'].indexOf(tabId);
   document.querySelectorAll('.app-tab')[idx].classList.add('active');
   if (tabId === 'tab-progress') loadProgress();
+  if (tabId === 'tab-settings') { renderRewardsProfileSelect(); }
 }
 
 function tokenize(text) { return text.trim().split(/\s+/).filter(Boolean); }
-
 function setExercise(val, btn) {
   appState.exercise = val;
   document.querySelectorAll('.exercise-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('time-setting').style.display = val === 'timed' ? 'block' : 'none';
 }
-
 function setTime(val) { appState.timeLimit = +val; document.getElementById('timelabel').textContent = val; }
 
 document.getElementById('textInput').addEventListener('input', e => {
@@ -770,9 +947,7 @@ async function runOCR() {
   const btn = document.getElementById('ocrBtn');
   btn.textContent = 'Leser tekst...'; btn.disabled = true;
   const base64 = await new Promise((res, rej) => {
-    const r = new FileReader();
-    r.onload = () => res(r.result.split(',')[1]); r.onerror = rej;
-    r.readAsDataURL(appState.imageFile);
+    const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(appState.imageFile);
   });
   const resp = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -800,9 +975,7 @@ function startSession() {
     appState.exercise === 'word' ? 'Trykk ✅ eller ❌ for hvert ord.' : 'Trykk på ord som leses FEIL (de blir røde).';
   renderWords();
   if (appState.exercise === 'timed') {
-    const td = document.getElementById('timer-display');
-    td.style.display = 'block'; td.textContent = '⏱ ' + appState.timeLeft + 's';
-    startTimer();
+    const td = document.getElementById('timer-display'); td.style.display = 'block'; td.textContent = '⏱ ' + appState.timeLeft + 's'; startTimer();
   }
   if (appState.listenMode) startRecognition();
 }
@@ -827,8 +1000,7 @@ function renderWords() {
 
 function clickWord(i) {
   if (appState.listenMode || appState.exercise !== 'timed') return;
-  appState.wordStates[i] = appState.wordStates[i] === 'wrong' ? 'none' : 'wrong';
-  renderWords();
+  appState.wordStates[i] = appState.wordStates[i] === 'wrong' ? 'none' : 'wrong'; renderWords();
 }
 
 function markWord(i, val) {
@@ -860,11 +1032,10 @@ function startRecognition() {
     const i = appState.currentIdx; if (i >= appState.words.length) return;
     const expected = appState.words[i].toLowerCase().replace(/[.,!?;:»«""'']/g,'');
     const correct = spoken === expected || spoken.includes(expected) || expected.includes(spoken);
-    appState.wordStates[i] = correct ? 'correct' : 'wrong';
-    appState.currentIdx++; renderWords();
+    appState.wordStates[i] = correct ? 'correct' : 'wrong'; appState.currentIdx++; renderWords();
     if (appState.exercise === 'word' && appState.currentIdx >= appState.words.length) setTimeout(endSession, 400);
   };
-  rec.onerror = () => {};
+  rec.onerror = () {};
   rec.onend = () => { if (appState.running) rec.start(); };
   rec.start();
 }
@@ -892,6 +1063,11 @@ async function endSession() {
     const newLevel = Math.floor(newStars / 20) + 1;
     await sb.from('profiles').update({ stars: newStars, level: newLevel }).eq('id', appState.selectedProfile.id);
     appState.selectedProfile.stars = newStars; appState.selectedProfile.level = newLevel;
+    // Sjekk om noen belønninger er oppnådd
+    const { data: rewards } = await sb.from('rewards').select('*').eq('profile_id', appState.selectedProfile.id).lte('stars_required', newStars).gt('stars_required', newStars - stars);
+    if (rewards && rewards.length > 0) {
+      setTimeout(() => alert('🎉 ' + appState.selectedProfile.child_name + ' har oppnådd en belønning: ' + rewards[0].reward_text + '!'), 500);
+    }
   }
   document.getElementById('reading-active').style.display = 'none';
   document.getElementById('reading-result').style.display = 'block';
@@ -967,11 +1143,15 @@ async function loadProgress() {
 
 function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
 
-// Håndter redirect fra passord-tilbakestilling
+// Håndter redirect og sesjon
 (async () => {
   const hash = window.location.hash;
-  if (hash.includes('type=recovery')) {
-    showPage('reset');
+  if (hash.includes('type=recovery')) { showPage('reset'); return; }
+  if (hash.includes('type=signup') || hash.includes('access_token')) {
+    await sb.auth.getSession();
+    await loadApp();
+    showPage('welcome');
+    window.history.replaceState(null, '', window.location.pathname);
     return;
   }
   const { data: { session } } = await sb.auth.getSession();
