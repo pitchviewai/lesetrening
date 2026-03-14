@@ -532,8 +532,8 @@ async function handleRegister() {
     showAuthError('register-error', norsk[error.message] || 'Noe gikk galt. Prøv igjen.');
     btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀';
   } else {
-    await loadApp();
-    showPage('app');
+    showPage('login');
+    showAuthError('login-error', '✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen før du logger inn.');
   }
 }
 
