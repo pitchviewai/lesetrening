@@ -199,4 +199,935 @@
     .settings-section h3 { font-size: 18px; font-weight: 800; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f3f4f6; }
     .danger-zone { background: #fff5f5; border-radius: 16px; padding: 24px; border: 1.5px solid #fee2e2; }
     .reward-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
-    .reward-item { display: flex; justify-content: space
+    .reward-item { display: flex; justify-content: space-between; align-items: center; background: #f8f7ff; border-radius: 12px; padding: 12px 16px; }
+    .reward-item span { font-weight: 600; font-size: 15px; }
+    .reward-stars { color: #f59e0b; font-weight: 800; font-size: 13px; }
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; padding: 40px 20px; }
+      .hero h1 { font-size: 36px; }
+      nav { padding: 16px 20px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .info-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo" onclick="goHome()">Lese<span>lab</span></div>
+  <div class="nav-links">
+    <a onclick="goHome()">Hjem</a>
+    <a onclick="scrollPricing()">Priser</a>
+    <a id="nav-login-btn" onclick="showPage('login')" class="btn-nav">Logg inn</a>
+    <a id="nav-app-btn" onclick="showPage('app')" class="btn-nav" style="display:none">Min side</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <section style="background:linear-gradient(160deg,#f8f7ff 0%,#fff 100%)">
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-badge">🌟 Gratis å prøve – ingen kredittkort</div>
+        <h1>Hjelp barnet ditt å bli en <span>bedre leser</span></h1>
+        <p>Leselab gjør lesetrening morsomt og enkelt hjemme. Lim inn tekst fra barnets bok, og følg fremgangen i sanntid.</p>
+        <div class="btn-group">
+          <button class="btn-primary" onclick="homeCTA()">Start gratis nå 🚀</button>
+          <button class="btn-secondary" onclick="document.getElementById('how-section').scrollIntoView({behavior:'smooth'})">Se hvordan det fungerer</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-title">📖 Leseøkt pågår...</div>
+          <div class="reading-demo">
+            <span class="w w-ok">Ole</span><span class="w w-ok">og</span>
+            <span class="w w-ok">Karoline</span><span class="w w-err">sprange</span>
+            <span class="w w-ok">mot</span><span class="w w-ok">skogen</span>
+            <span class="w w-ok">mens</span><span class="w w-cur">solen</span>
+            <span class="w w-plain">gikk</span><span class="w w-plain">ned.</span>
+          </div>
+          <div class="demo-stats">
+            <div class="demo-stat"><div class="num" style="color:#059669">7</div><div class="lbl">✅ Riktige</div></div>
+            <div class="demo-stat"><div class="num" style="color:#dc2626">1</div><div class="lbl">❌ Feil</div></div>
+            <div class="demo-stat"><div class="num" style="color:#4f46e5">58</div><div class="lbl">⏱ Sekunder</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how-section">
+    <div class="section-label">Slik fungerer det</div>
+    <div class="section-title">Tre enkle steg</div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-icon">📚</div><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av siden.</p></div>
+      <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser høyt</h3><p>Appen lytter og markerer hvert ord grønt eller rødt i sanntid.</p></div>
+      <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg lesehastighet og nøyaktighet over tid. Barnet tjener stjerner!</p></div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="section-label">Hvorfor Leselab</div>
+    <div class="section-title">Laget av foreldre, for foreldre</div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">📖</div><div><h3>Bruk barnets egne bøker</h3><p>Ikke generiske øvingstekster – bruk tekster barnet allerede er motivert for å lese.</p></div></div>
+      <div class="why-card"><div class="why-icon">⚡</div><div><h3>Umiddelbar tilbakemelding</h3><p>Hvert ord farges grønt eller rødt i sanntid. Barnet ser selv hva de mestrer.</p></div></div>
+      <div class="why-card"><div class="why-icon">📊</div><div><h3>Følg utviklingen</h3><p>Se lesehastighet i ord per minutt og sammenlign med gjennomsnittet.</p></div></div>
+      <div class="why-card"><div class="why-icon">🌟</div><div><h3>Motiverende belønninger</h3><p>Barnet samler stjerner og klatrer i nivåer etter hvert som de leser.</p></div></div>
+      <div class="why-card"><div class="why-icon">📱</div><div><h3>Fungerer på alle enheter</h3><p>Telefon, nettbrett eller PC – uten nedlasting.</p></div></div>
+      <div class="why-card"><div class="why-icon">🔒</div><div><h3>Trygt og GDPR-sikret</h3><p>Barnets data lagres trygt og deles aldri med tredjeparter.</p></div></div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="quote-text">"Datteren min leste 50 ord i minuttet. Etter 3 uker med Leselab leser hun 78 ord – og vil gjerne øve mer!"</div>
+    <div class="quote-author">— Forelder fra Kristiansand</div>
+  </section>
+
+  <section class="pricing" id="pricing-section">
+    <div class="section-label">Priser</div>
+    <div class="section-title">Enkel og rettferdig prising</div>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h3>Gratis</h3>
+        <div class="price">0 <span>kr/mnd</span></div>
+        <ul class="pricing-features">
+          <li>5 leseøkter per måned</li>
+          <li>Ord-for-ord og tidsbasert modus</li>
+          <li>Grunnleggende statistikk</li>
+          <li class="no">Fremgangsoversikt</li>
+          <li class="no">Belønninger og nivåer</li>
+          <li class="no">Flere barneprofiler</li>
+        </ul>
+        <button class="btn-secondary" style="width:100%;padding:14px;border-radius:50px;font-weight:800;font-size:15px;cursor:pointer" onclick="showPage('register')">Kom i gang gratis</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="featured-badge">Mest populær</div>
+        <h3>Familie</h3>
+        <div class="price">99 <span>kr/mnd</span></div>
+        <ul class="pricing-features">
+          <li>Ubegrenset antall øvelser</li>
+          <li>Ord-for-ord og tidsbasert modus</li>
+          <li>Full statistikk og fremgang</li>
+          <li>Belønninger og nivåer</li>
+          <li>Opptil 3 barneprofiler</li>
+          <li>Prioritert støtte</li>
+        </ul>
+        <button class="btn-primary" style="width:100%;padding:14px;border-radius:50px;font-weight:800;font-size:15px;cursor:pointer" onclick="showPage('register')">Prøv gratis i 30 dager</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="section-label">Spørsmål og svar</div>
+    <div class="section-title">Vanlige spørsmål</div>
+    <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">Trenger vi mikrofon eller spesielt utstyr?<span class="faq-arrow">▼</span></div><div class="faq-a">Nei! Alle moderne telefoner, nettbrett og laptoper har innebygd mikrofon. AirPods og trådløse øreplugger fungerer også optimalt.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvilke nettlesere fungerer best?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer best i Chrome og Edge. Safari på iPhone og iPad fungerer også. Firefox støtter ikke talegjenkjenning, men manuell modus fungerer alltid.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Fungerer Leselab for barn med dysleksi?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja! Vi anbefaler manuell modus for barn med dysleksi, slik at forelder kan vurdere hvert ord direkte.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg avbestille når som helst?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja, du kan avbestille når som helst uten bindingstid.</div></div>
+  </section>
+
+  <section class="cta">
+    <h2>Klar til å se fremgangen? 🚀</h2>
+    <p>Bli med foreldre som bruker Leselab for å hjelpe barna sine å lese bedre.</p>
+    <button class="btn-primary" onclick="showPage('register')">Start gratis – ingen kredittkort</button>
+  </section>
+
+  <footer>
+    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
+    <div class="footer-links">
+      <a href="#">Om oss</a><a href="#">Personvernerklæring</a>
+      <a href="#">Vilkår for bruk</a><a href="#">Kontakt</a>
+    </div>
+    <div class="footer-copy">© 2026 Leselab · Kristiansand, Norge</div>
+  </footer>
+</div>
+
+<!-- LOGIN -->
+<div id="page-login" class="page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+      <h2>Logg inn</h2>
+      <p>Velkommen tilbake!</p>
+      <div class="auth-error" id="login-error"></div>
+      <div class="auth-success" id="login-success"></div>
+      <div class="form-group"><label>E-post</label><input type="email" id="login-email" placeholder="din@epost.no"></div>
+      <div class="form-group"><label>Passord</label><input type="password" id="login-password" placeholder="••••••••"></div>
+      <button class="auth-btn" id="login-btn" onclick="handleLogin()">Logg inn</button>
+      <div class="auth-switch"><a onclick="showPage('forgot')" style="color:#9ca3af;font-weight:600">Glemt passord?</a></div>
+      <div class="auth-switch">Har du ikke konto? <a onclick="showPage('register')">Registrer deg gratis</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER -->
+<div id="page-register" class="page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+      <h2>Opprett konto</h2>
+      <p>Gratis – ingen kredittkort nødvendig</p>
+      <div class="auth-error" id="register-error"></div>
+      <div class="form-group"><label>E-post</label><input type="email" id="register-email" placeholder="din@epost.no"></div>
+      <div class="form-group"><label>Passord</label><input type="password" id="register-password" placeholder="Minst 6 tegn"></div>
+      <button class="auth-btn" id="register-btn" onclick="handleRegister()">Opprett konto og start 🚀</button>
+      <div class="auth-switch">Har du allerede konto? <a onclick="showPage('login')">Logg inn</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- GLEMT PASSORD -->
+<div id="page-forgot" class="page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+      <h2>Glemt passord?</h2>
+      <p>Skriv inn e-postadressen din så sender vi deg en lenke for å tilbakestille passordet.</p>
+      <div class="auth-error" id="forgot-error"></div>
+      <div class="auth-success" id="forgot-success"></div>
+      <div class="form-group"><label>E-post</label><input type="email" id="forgot-email" placeholder="din@epost.no"></div>
+      <button class="auth-btn" id="forgot-btn" onclick="handleForgot()">Send tilbakestillingslenke</button>
+      <div class="auth-switch"><a onclick="showPage('login')">← Tilbake til innlogging</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- TILBAKESTILL PASSORD -->
+<div id="page-reset" class="page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+      <h2>Nytt passord</h2>
+      <p>Skriv inn ditt nye passord.</p>
+      <div class="auth-error" id="reset-error"></div>
+      <div class="auth-success" id="reset-success"></div>
+      <div class="form-group"><label>Nytt passord</label><input type="password" id="reset-password" placeholder="Minst 6 tegn"></div>
+      <div class="form-group"><label>Bekreft passord</label><input type="password" id="reset-password2" placeholder="Gjenta passordet"></div>
+      <button class="auth-btn" id="reset-btn" onclick="handleReset()">Lagre nytt passord</button>
+    </div>
+  </div>
+</div>
+
+<!-- VELKOMSTSIDE -->
+<div id="page-welcome" class="page">
+  <div class="welcome-container">
+    <div class="welcome-hero">
+      <div style="font-size:64px;margin-bottom:16px">🎉</div>
+      <h1>Velkommen til Leselab!</h1>
+      <p>Vi er glade for at du er med. Her er alt du trenger å vite for å komme i gang.</p>
+    </div>
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="ic-icon">📱</div>
+        <h3>Fungerer på</h3>
+        <ul>
+          <li>Telefon og nettbrett</li>
+          <li>PC og Mac</li>
+          <li>AirPods og trådløse øreplugger</li>
+          <li>Innebygd mikrofon</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🌐</div>
+        <h3>Nettlesere</h3>
+        <ul>
+          <li>Chrome (anbefalt)</li>
+          <li>Edge</li>
+          <li>Safari (iPhone/iPad)</li>
+          <li class="no">Firefox (talegjenkjenning virker ikke)</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">📝</div>
+        <h3>Ord for ord</h3>
+        <p>Du sitter ved siden av barnet og trykker ✅ for riktige ord og ❌ for feil. Perfekt for grundig trening.</p>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">⏱</div>
+        <h3>Tidsbasert</h3>
+        <p>Barnet leser så mange ord som mulig på tid. Appen måler ord per minutt og sammenligner med gjennomsnittet.</p>
+      </div>
+    </div>
+    <div class="welcome-steps">
+      <h2 style="font-size:24px;font-weight:900;margin-bottom:24px">Kom i gang på 3 steg</h2>
+      <div class="welcome-step">
+        <div class="ws-num">1</div>
+        <div class="ws-content"><h3>Opprett barneprofil</h3><p>Legg til barnets navn, alder og velg en morsom avatar. Du kan ha opptil 3 barn på familieabonnementet.</p></div>
+      </div>
+      <div class="welcome-step">
+        <div class="ws-num">2</div>
+        <div class="ws-content"><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av en side – appen leser teksten ut automatisk.</p></div>
+      </div>
+      <div class="welcome-step">
+        <div class="ws-num">3</div>
+        <div class="ws-content"><h3>Start leseøkten</h3><p>Velg øvelsestype og trykk start. Barnet leser høyt mens du følger med – eller la appen lytte automatisk.</p></div>
+      </div>
+      <div class="welcome-step">
+        <div class="ws-num">⭐</div>
+        <div class="ws-content"><h3>Belønninger</h3><p>Barnet tjener stjerner og klatrer i nivåer. Du kan legge inn egne belønninger under ⚙️ Innstillinger – f.eks. "20 stjerner = iskrem!" 🍦</p></div>
+      </div>
+    </div>
+    <div class="welcome-cta">
+      <h2>Klar til å starte? 🚀</h2>
+      <p>Opprett barnets profil og gjennomfør din første leseøkt på under 2 minutter.</p>
+      <button onclick="showPage('app')" style="background:#fff;color:#4f46e5;padding:16px 36px;border-radius:50px;font-size:18px;font-weight:900;border:none;cursor:pointer;">
+        Opprett barneprofil →
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="page-app" class="page">
+  <div class="app-container">
+    <div class="app-header">
+      <h2>👋 Hei! Velkommen til Leselab</h2>
+      <button class="btn btn-gray" onclick="handleLogout()">Logg ut</button>
+    </div>
+    <div class="app-tabs">
+      <button class="app-tab active" onclick="showTab('tab-profiles')">👶 Profiler</button>
+      <button class="app-tab" onclick="showTab('tab-reading')">📖 Les nå</button>
+      <button class="app-tab" onclick="showTab('tab-progress')">📊 Fremgang</button>
+      <button class="app-tab" onclick="showTab('tab-settings')">⚙️ Innstillinger</button>
+    </div>
+
+    <div id="tab-profiles" class="tab-content active">
+      <div id="profiles-grid" class="profiles-grid"></div>
+      <div id="add-profile-form" style="display:none;background:#f9fafb;border-radius:16px;padding:24px;margin-top:16px">
+        <h3 style="margin-bottom:16px;font-size:18px">Legg til barneprofil</h3>
+        <div class="form-group"><label>Barnets navn</label><input type="text" id="child-name" placeholder="F.eks. Emma"></div>
+        <div class="form-group"><label>Alder</label><input type="number" id="child-age" placeholder="F.eks. 9" min="4" max="18"></div>
+        <div class="form-group">
+          <label>Velg avatar</label>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid #4f46e5">🦁</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🐼</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🦊</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🐸</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🦋</span>
+            <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🐬</span>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-indigo" onclick="saveProfile()">Lagre profil</button>
+          <button class="btn btn-gray" onclick="document.getElementById('add-profile-form').style.display='none'">Avbryt</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-reading" class="tab-content">
+      <div id="reading-setup">
+        <div id="selected-profile-banner" style="display:none;background:#eef2ff;border-radius:14px;padding:14px 20px;margin-bottom:20px;align-items:center;gap:12px">
+          <span id="banner-avatar" style="font-size:28px"></span>
+          <div><div style="font-weight:800" id="banner-name"></div><div style="font-size:13px;color:#6b7280" id="banner-level"></div></div>
+        </div>
+        <div class="exercise-options">
+          <button class="exercise-btn active" onclick="setExercise('word',this)"><div class="etitle">📝 Ord for ord</div><div class="edesc">Merk riktig/feil underveis</div></button>
+          <button class="exercise-btn" onclick="setExercise('timed',this)"><div class="etitle">⏱ Tidsbasert</div><div class="edesc">Les mest mulig på tid</div></button>
+        </div>
+        <div id="time-setting" style="display:none;margin-bottom:20px">
+          <label class="form-label">Tid: <span id="timelabel">60</span> sekunder</label>
+          <input type="range" min="15" max="120" step="15" value="60" oninput="setTime(this.value)">
+          <div class="range-labels"><span>15s</span><span>120s</span></div>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="listenCheck" onchange="appState.listenMode=this.checked">
+          <label for="listenCheck" style="display:inline;font-weight:600">🎤 Automatisk gjenkjenning (barnet leser høyt)</label>
+        </div>
+        <div class="card">
+          <label class="form-label">Lim inn tekst</label>
+          <textarea id="textInput" placeholder="Lim inn tekst fra boken her..."></textarea>
+        </div>
+        <div class="upload-box">
+          <div style="font-weight:700;margin-bottom:8px">📷 Eller skann en side fra boken</div>
+          <div class="btn-row">
+            <button class="btn btn-indigo" onclick="document.getElementById('imgInput').click()">Velg bilde / Ta foto</button>
+            <button class="btn btn-green" id="ocrBtn" style="display:none" onclick="runOCR()">Trekk ut tekst</button>
+          </div>
+          <input type="file" id="imgInput" accept="image/*" capture="environment" style="display:none" onchange="handleImage(this)">
+          <img id="img-preview" style="max-height:150px;border-radius:8px;margin-top:12px;display:none">
+        </div>
+        <button class="btn btn-indigo btn-large" onclick="startSession()" id="start-btn" disabled>Start øvelse 🚀</button>
+      </div>
+      <div id="reading-active" style="display:none">
+        <div class="header-row">
+          <h2 style="font-size:20px;font-weight:900">Les teksten</h2>
+          <div style="display:flex;gap:12px;align-items:center">
+            <div class="timer" id="timer-display" style="display:none"></div>
+            <button class="btn btn-gray" onclick="endSession()">Avslutt</button>
+          </div>
+        </div>
+        <div class="info-box" id="reading-info"></div>
+        <div class="text-display" id="text-display"></div>
+        <div class="stats-row">
+          <span style="color:#059669;font-weight:700" id="stat-correct">✅ Riktig: 0</span>
+          <span style="color:#dc2626;font-weight:700" id="stat-wrong">❌ Feil: 0</span>
+          <span style="color:#6b7280" id="stat-left">Ord igjen: 0</span>
+        </div>
+      </div>
+      <div id="reading-result" style="display:none">
+        <h2 style="font-size:28px;font-weight:900;margin-bottom:24px">🎉 Ferdig!</h2>
+        <div class="stars-earned" id="stars-earned"></div>
+        <div class="results-grid" id="results-grid"></div>
+        <div id="wpm-section" style="display:none" class="card">
+          <label class="form-label">Lesehastighet sammenlignet med snitt</label>
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div><div class="progress-marker"></div></div>
+          <div class="range-labels"><span>0</span><span style="color:#4f46e5">Snitt (100 ord/min)</span><span>150+</span></div>
+          <p id="wpm-feedback" style="margin-top:12px;font-weight:600"></p>
+        </div>
+        <div class="card">
+          <label class="form-label">Gjennomgang av teksten</label>
+          <div class="review-text" id="review-text"></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-indigo btn-large" onclick="resetSession()">🔄 Ny øvelse</button>
+          <button class="btn btn-green btn-large" onclick="tryAgain()">🔁 Prøv igjen</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-progress" class="tab-content">
+      <div id="progress-content">
+        <p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil og gjennomfør leseøkter for å se fremgang her.</p>
+      </div>
+    </div>
+
+    <div id="tab-settings" class="tab-content">
+      <div class="settings-section">
+        <h3>🏆 Egne belønninger</h3>
+        <p style="color:#6b7280;font-size:14px;margin-bottom:16px">Legg inn egne belønninger – f.eks. "20 stjerner = iskrem!" 🍦</p>
+        <div id="rewards-profile-select" style="margin-bottom:16px"></div>
+        <div id="reward-list" class="reward-list"></div>
+        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+          <input type="text" id="reward-text" placeholder="F.eks. Velg kveldskos 🍿" style="flex:1;min-width:180px;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
+          <input type="number" id="reward-stars" placeholder="Stjerner" style="width:100px;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
+          <button class="btn btn-indigo" onclick="addReward()">Legg til</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <h3>🔑 Endre passord</h3>
+        <div class="auth-error" id="pw-error"></div>
+        <div class="auth-success" id="pw-success"></div>
+        <div class="form-group"><label>Nytt passord</label><input type="password" id="new-password" placeholder="Minst 6 tegn"></div>
+        <div class="form-group"><label>Bekreft nytt passord</label><input type="password" id="new-password2" placeholder="Gjenta passordet"></div>
+        <button class="btn btn-indigo" onclick="changePassword()">Lagre nytt passord</button>
+      </div>
+      <div class="settings-section">
+        <h3>📵 Logg ut fra alle enheter</h3>
+        <p style="color:#6b7280;font-size:14px;margin-bottom:16px">Logger deg ut fra alle nettlesere og enheter.</p>
+        <button class="btn btn-gray" onclick="logoutAll()">Logg ut fra alle enheter</button>
+      </div>
+      <div class="settings-section">
+        <div class="danger-zone">
+          <h3 style="color:#dc2626;border-bottom-color:#fee2e2">⚠️ Slett konto</h3>
+          <p style="color:#6b7280;font-size:14px;margin-bottom:16px">Dette sletter kontoen og alle data permanent.</p>
+          <button class="btn btn-red" onclick="confirmDeleteAccount()">Slett min konto permanent</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const { createClient } = supabase;
+const sb = createClient(
+  'https://qvphwkdkgmiucecckeyl.supabase.co',
+  'sb_publishable_z458n4cnZ9Et2kJluixHGw_kGUHL0yE'
+);
+
+const appState = {
+  exercise: 'word', words: [], wordStates: [], currentIdx: 0,
+  timeLimit: 60, timeLeft: 60, running: false, listenMode: false,
+  timerInterval: null, recognition: null, imageFile: null,
+  selectedProfile: null, selectedAvatar: '🦁', profiles: []
+};
+
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function goHome() {
+  sb.auth.getSession().then(({ data: { session } }) => {
+    if (session) showPage('app'); else showPage('home');
+  }).catch(() => showPage('home'));
+}
+
+function scrollPricing() {
+  showPage('home');
+  setTimeout(() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' }), 100);
+}
+
+function homeCTA() {
+  sb.auth.getSession().then(({ data: { session } }) => {
+    if (session) showPage('app'); else showPage('register');
+  }).catch(() => showPage('register'));
+}
+
+function showAuthMsg(id, msg, type) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.style.display = 'block';
+  el.style.background = type === 'success' ? '#d1fae5' : '#fee2e2';
+  el.style.color = type === 'success' ? '#065f46' : '#991b1b';
+  setTimeout(() => el.style.display = 'none', 6000);
+}
+
+const norskFeil = {
+  'Invalid login credentials': 'Feil e-post eller passord. Prøv igjen.',
+  'Email not confirmed': 'Du må bekrefte e-postadressen din først. Sjekk innboksen.',
+  'User already registered': 'Denne e-postadressen er allerede registrert. Prøv å logge inn.',
+  'Invalid email': 'Ugyldig e-postadresse.',
+  'Password should be at least 6 characters': 'Passordet må være minst 6 tegn.',
+};
+
+function oversett(msg) { return norskFeil[msg] || 'Noe gikk galt. Prøv igjen.'; }
+
+async function handleLogin() {
+  const btn = document.getElementById('login-btn');
+  btn.disabled = true; btn.textContent = 'Logger inn...';
+  const { error } = await sb.auth.signInWithPassword({
+    email: document.getElementById('login-email').value,
+    password: document.getElementById('login-password').value
+  });
+  if (error) {
+    showAuthMsg('login-error', oversett(error.message), 'error');
+    btn.disabled = false; btn.textContent = 'Logg inn';
+  } else {
+    await loadApp(); showPage('app');
+  }
+}
+
+async function handleRegister() {
+  const btn = document.getElementById('register-btn');
+  btn.disabled = true; btn.textContent = 'Oppretter konto...';
+  const email = document.getElementById('register-email').value;
+  const pw = document.getElementById('register-password').value;
+  if (!email) { showAuthMsg('register-error', 'Skriv inn e-postadressen din.', 'error'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; return; }
+  if (pw.length < 6) { showAuthMsg('register-error', 'Passordet må være minst 6 tegn.', 'error'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; return; }
+  const { error } = await sb.auth.signUp({ email, password: pw });
+  if (error) {
+    showAuthMsg('register-error', oversett(error.message), 'error');
+    btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀';
+  } else {
+    showPage('login');
+    showAuthMsg('login-success', '✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen før du logger inn.', 'success');
+  }
+}
+
+async function handleForgot() {
+  const btn = document.getElementById('forgot-btn');
+  btn.disabled = true; btn.textContent = 'Sender...';
+  const email = document.getElementById('forgot-email').value;
+  if (!email) { showAuthMsg('forgot-error', 'Skriv inn e-postadressen din.', 'error'); btn.disabled = false; btn.textContent = 'Send tilbakestillingslenke'; return; }
+  const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: 'https://leselab.no' });
+  if (error) { showAuthMsg('forgot-error', oversett(error.message), 'error'); }
+  else { showAuthMsg('forgot-success', '✅ Sjekk e-posten din for tilbakestillingslenke!', 'success'); }
+  btn.disabled = false; btn.textContent = 'Send tilbakestillingslenke';
+}
+
+async function handleReset() {
+  const btn = document.getElementById('reset-btn');
+  btn.disabled = true; btn.textContent = 'Lagrer...';
+  const pw = document.getElementById('reset-password').value;
+  const pw2 = document.getElementById('reset-password2').value;
+  if (pw.length < 6) { showAuthMsg('reset-error', 'Passordet må være minst 6 tegn.', 'error'); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; return; }
+  if (pw !== pw2) { showAuthMsg('reset-error', 'Passordene er ikke like.', 'error'); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; return; }
+  const { error } = await sb.auth.updateUser({ password: pw });
+  if (error) { showAuthMsg('reset-error', oversett(error.message), 'error'); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; }
+  else { showAuthMsg('reset-success', '✅ Passord oppdatert!', 'success'); setTimeout(() => { loadApp(); showPage('app'); }, 1500); }
+}
+
+async function changePassword() {
+  const pw = document.getElementById('new-password').value;
+  const pw2 = document.getElementById('new-password2').value;
+  if (pw.length < 6) { showAuthMsg('pw-error', 'Passordet må være minst 6 tegn.', 'error'); return; }
+  if (pw !== pw2) { showAuthMsg('pw-error', 'Passordene er ikke like.', 'error'); return; }
+  const { error } = await sb.auth.updateUser({ password: pw });
+  if (error) { showAuthMsg('pw-error', oversett(error.message), 'error'); }
+  else { showAuthMsg('pw-success', '✅ Passord oppdatert!', 'success'); document.getElementById('new-password').value = ''; document.getElementById('new-password2').value = ''; }
+}
+
+async function logoutAll() {
+  await sb.auth.signOut({ scope: 'global' });
+  updateNav(false); showPage('home');
+}
+
+async function confirmDeleteAccount() {
+  if (!confirm('Er du sikker? Dette sletter kontoen din og alle data permanent.')) return;
+  const { data: { user } } = await sb.auth.getUser();
+  if (user) {
+    await sb.from('reading_sessions').delete().eq('user_id', user.id);
+    await sb.from('profiles').delete().eq('user_id', user.id);
+    await sb.from('rewards').delete().eq('user_id', user.id);
+    await sb.auth.signOut();
+  }
+  updateNav(false); showPage('home');
+  alert('Kontoen din er slettet.');
+}
+
+async function handleLogout() {
+  await sb.auth.signOut();
+  updateNav(false); showPage('home');
+}
+
+function updateNav(loggedIn) {
+  document.getElementById('nav-login-btn').style.display = loggedIn ? 'none' : 'inline-block';
+  document.getElementById('nav-app-btn').style.display = loggedIn ? 'inline-block' : 'none';
+}
+
+async function loadApp() {
+  const { data: { user } } = await sb.auth.getUser();
+  if (!user) return;
+  updateNav(true);
+  await loadProfiles(user.id);
+}
+
+async function loadProfiles(userId) {
+  const { data } = await sb.from('profiles').select('*').eq('user_id', userId).order('created_at');
+  appState.profiles = data || [];
+  renderProfiles();
+}
+
+function renderProfiles() {
+  const grid = document.getElementById('profiles-grid');
+  let html = appState.profiles.map(p => `
+    <div class="profile-card ${appState.selectedProfile?.id === p.id ? 'selected' : ''}" onclick="selectProfile('${p.id}')">
+      <div class="profile-avatar">${p.avatar}</div>
+      <div class="profile-name">${p.child_name}</div>
+      <div class="profile-level">Nivå ${p.level} · ${p.stars} ⭐</div>
+    </div>
+  `).join('');
+  html += `<div class="add-profile" onclick="document.getElementById('add-profile-form').style.display='block'"><div style="font-size:32px">➕</div><div style="font-weight:700;margin-top:8px">Legg til barn</div></div>`;
+  grid.innerHTML = html;
+}
+
+function selectProfile(id) {
+  appState.selectedProfile = appState.profiles.find(p => p.id === id);
+  renderProfiles(); updateProfileBanner(); showTab('tab-reading');
+}
+
+function updateProfileBanner() {
+  const p = appState.selectedProfile; if (!p) return;
+  document.getElementById('selected-profile-banner').style.display = 'flex';
+  document.getElementById('banner-avatar').textContent = p.avatar;
+  document.getElementById('banner-name').textContent = p.child_name;
+  document.getElementById('banner-level').textContent = `Nivå ${p.level} · ${p.stars} ⭐`;
+}
+
+function selectAvatar(el) {
+  document.querySelectorAll('.avatar-opt').forEach(a => a.style.border = '2px solid transparent');
+  el.style.border = '2px solid #4f46e5';
+  appState.selectedAvatar = el.textContent;
+}
+
+async function saveProfile() {
+  const { data: { user } } = await sb.auth.getUser();
+  const name = document.getElementById('child-name').value.trim();
+  const age = document.getElementById('child-age').value;
+  if (!name) { alert('Skriv inn barnets navn'); return; }
+  await sb.from('profiles').insert({ user_id: user.id, child_name: name, age: +age, avatar: appState.selectedAvatar });
+  document.getElementById('add-profile-form').style.display = 'none';
+  document.getElementById('child-name').value = ''; document.getElementById('child-age').value = '';
+  await loadProfiles(user.id);
+  renderRewardsProfileSelect();
+}
+
+function renderRewardsProfileSelect() {
+  const el = document.getElementById('rewards-profile-select');
+  if (!el || !appState.profiles.length) return;
+  el.innerHTML = `<label class="form-label">Velg barneprofil</label>
+    <select id="reward-profile-id" onchange="loadRewards()" style="width:100%;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;margin-bottom:12px">
+      ${appState.profiles.map(p => `<option value="${p.id}">${p.avatar} ${p.child_name}</option>`).join('')}
+    </select>`;
+  loadRewards();
+}
+
+async function loadRewards() {
+  const profileId = document.getElementById('reward-profile-id')?.value;
+  if (!profileId) return;
+  const { data } = await sb.from('rewards').select('*').eq('profile_id', profileId).order('stars_required');
+  const list = document.getElementById('reward-list');
+  if (!data || !data.length) { list.innerHTML = '<p style="color:#9ca3af;font-size:14px">Ingen belønninger lagt til ennå.</p>'; return; }
+  list.innerHTML = data.map(r => `
+    <div class="reward-item">
+      <span>${r.reward_text}</span>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="reward-stars">⭐ ${r.stars_required} stjerner</span>
+        <button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteReward('${r.id}')">Slett</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function addReward() {
+  const profileId = document.getElementById('reward-profile-id')?.value;
+  const text = document.getElementById('reward-text').value.trim();
+  const stars = document.getElementById('reward-stars').value;
+  if (!profileId || !text || !stars) { alert('Fyll inn belønning og antall stjerner.'); return; }
+  const { data: { user } } = await sb.auth.getUser();
+  await sb.from('rewards').insert({ profile_id: profileId, user_id: user.id, reward_text: text, stars_required: +stars });
+  document.getElementById('reward-text').value = '';
+  document.getElementById('reward-stars').value = '';
+  loadRewards();
+}
+
+async function deleteReward(id) {
+  await sb.from('rewards').delete().eq('id', id);
+  loadRewards();
+}
+
+function showTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.app-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  const idx = ['tab-profiles','tab-reading','tab-progress','tab-settings'].indexOf(tabId);
+  document.querySelectorAll('.app-tab')[idx].classList.add('active');
+  if (tabId === 'tab-progress') loadProgress();
+  if (tabId === 'tab-settings') renderRewardsProfileSelect();
+}
+
+function tokenize(text) { return text.trim().split(/\s+/).filter(Boolean); }
+
+function setExercise(val, btn) {
+  appState.exercise = val;
+  document.querySelectorAll('.exercise-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('time-setting').style.display = val === 'timed' ? 'block' : 'none';
+}
+
+function setTime(val) { appState.timeLimit = +val; document.getElementById('timelabel').textContent = val; }
+
+document.getElementById('textInput').addEventListener('input', e => {
+  document.getElementById('start-btn').disabled = !e.target.value.trim();
+});
+
+function handleImage(input) {
+  const file = input.files[0]; if (!file) return;
+  appState.imageFile = file;
+  const prev = document.getElementById('img-preview');
+  prev.src = URL.createObjectURL(file); prev.style.display = 'block';
+  document.getElementById('ocrBtn').style.display = 'inline-block';
+}
+
+async function runOCR() {
+  const btn = document.getElementById('ocrBtn');
+  btn.textContent = 'Leser tekst...'; btn.disabled = true;
+  const base64 = await new Promise((res, rej) => {
+    const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(appState.imageFile);
+  });
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: [
+      { type: 'image', source: { type: 'base64', media_type: appState.imageFile.type, data: base64 } },
+      { type: 'text', text: 'Trekk ut all tekst fra dette bildet. Returner kun teksten.' }
+    ]}]})
+  });
+  const data = await resp.json();
+  const ta = document.getElementById('textInput');
+  ta.value = data.content?.find(b => b.type === 'text')?.text || '';
+  document.getElementById('start-btn').disabled = !ta.value.trim();
+  btn.textContent = 'Trekk ut tekst'; btn.disabled = false;
+}
+
+function startSession() {
+  const w = tokenize(document.getElementById('textInput').value);
+  if (!w.length) return;
+  appState.words = w; appState.wordStates = new Array(w.length).fill('none');
+  appState.currentIdx = 0; appState.timeLeft = appState.timeLimit; appState.running = true;
+  document.getElementById('reading-setup').style.display = 'none';
+  document.getElementById('reading-active').style.display = 'block';
+  document.getElementById('reading-result').style.display = 'none';
+  document.getElementById('reading-info').textContent = appState.listenMode ? '🎤 Barnet leser høyt. Ord merkes automatisk.' :
+    appState.exercise === 'word' ? 'Trykk ✅ eller ❌ for hvert ord.' : 'Trykk på ord som leses FEIL (de blir røde).';
+  renderWords();
+  if (appState.exercise === 'timed') {
+    const td = document.getElementById('timer-display'); td.style.display = 'block'; td.textContent = '⏱ ' + appState.timeLeft + 's'; startTimer();
+  }
+  if (appState.listenMode) startRecognition();
+}
+
+function renderWords() {
+  const html = appState.words.map((w, i) => {
+    const s = appState.wordStates[i];
+    const isCur = i === appState.currentIdx && appState.exercise === 'word';
+    const cls = isCur ? 'current' : s === 'correct' ? 'correct' : s === 'wrong' ? 'wrong' : '';
+    const click = !appState.listenMode && appState.exercise === 'timed' ? 'clickable' : '';
+    const btns = (appState.exercise === 'word' && isCur && !appState.listenMode) ?
+      `<span class="word-btns"><button class="word-btn ok" onclick="markWord(${i},'correct')">✅</button><button class="word-btn fail" onclick="markWord(${i},'wrong')">❌</button></span>` : '';
+    return `<span class="word-wrap"><span class="word ${cls} ${click}" onclick="clickWord(${i})">${w}</span>${btns}</span>`;
+  }).join('');
+  document.getElementById('text-display').innerHTML = html;
+  const c = appState.wordStates.filter(s => s === 'correct').length;
+  const wr = appState.wordStates.filter(s => s === 'wrong').length;
+  document.getElementById('stat-correct').textContent = '✅ Riktig: ' + c;
+  document.getElementById('stat-wrong').textContent = '❌ Feil: ' + wr;
+  document.getElementById('stat-left').textContent = 'Ord igjen: ' + (appState.words.length - appState.currentIdx);
+}
+
+function clickWord(i) {
+  if (appState.listenMode || appState.exercise !== 'timed') return;
+  appState.wordStates[i] = appState.wordStates[i] === 'wrong' ? 'none' : 'wrong'; renderWords();
+}
+
+function markWord(i, val) {
+  appState.wordStates[i] = val;
+  if (appState.exercise === 'word' && i === appState.currentIdx) {
+    appState.currentIdx++;
+    if (appState.currentIdx >= appState.words.length) { renderWords(); setTimeout(endSession, 400); return; }
+  }
+  renderWords();
+}
+
+function startTimer() {
+  clearInterval(appState.timerInterval);
+  appState.timerInterval = setInterval(() => {
+    appState.timeLeft--;
+    const td = document.getElementById('timer-display');
+    if (td) { td.textContent = '⏱ ' + appState.timeLeft + 's'; td.className = 'timer' + (appState.timeLeft <= 10 ? ' urgent' : ''); }
+    if (appState.timeLeft <= 0) endSession();
+  }, 1000);
+}
+
+function startRecognition() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition; if (!SR) return;
+  const rec = new SR();
+  rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = false;
+  appState.recognition = rec;
+  rec.onresult = e => {
+    const spoken = e.results[e.results.length-1][0].transcript.trim().toLowerCase().replace(/[.,!?;:]/g,'');
+    const i = appState.currentIdx; if (i >= appState.words.length) return;
+    const expected = appState.words[i].toLowerCase().replace(/[.,!?;:»«""'']/g,'');
+    const correct = spoken === expected || spoken.includes(expected) || expected.includes(spoken);
+    appState.wordStates[i] = correct ? 'correct' : 'wrong'; appState.currentIdx++; renderWords();
+    if (appState.exercise === 'word' && appState.currentIdx >= appState.words.length) setTimeout(endSession, 400);
+  };
+  rec.onerror = () => {};
+  rec.onend = () => { if (appState.running) rec.start(); };
+  rec.start();
+}
+
+function stopRecognition() {
+  if (appState.recognition) { appState.recognition.onend = null; appState.recognition.stop(); }
+}
+
+async function endSession() {
+  clearInterval(appState.timerInterval); stopRecognition(); appState.running = false;
+  const correct = appState.wordStates.filter(s => s === 'correct').length;
+  const wrong = appState.wordStates.filter(s => s === 'wrong').length;
+  const read = appState.wordStates.filter(s => s !== 'none').length;
+  const wpm = appState.exercise === 'timed' ? Math.round((correct / appState.timeLimit) * 60) : null;
+  const stars = Math.min(5, Math.floor(correct / 5));
+  const { data: { user } } = await sb.auth.getUser();
+  if (user && appState.selectedProfile) {
+    await sb.from('reading_sessions').insert({
+      profile_id: appState.selectedProfile.id, user_id: user.id,
+      exercise_type: appState.exercise, total_words: appState.words.length,
+      correct_words: correct, wrong_words: wrong,
+      words_per_minute: wpm || 0, duration_seconds: appState.timeLimit - appState.timeLeft
+    });
+    const newStars = (appState.selectedProfile.stars || 0) + stars;
+    const newLevel = Math.floor(newStars / 20) + 1;
+    await sb.from('profiles').update({ stars: newStars, level: newLevel }).eq('id', appState.selectedProfile.id);
+    appState.selectedProfile.stars = newStars; appState.selectedProfile.level = newLevel;
+    const { data: rewards } = await sb.from('rewards').select('*')
+      .eq('profile_id', appState.selectedProfile.id)
+      .lte('stars_required', newStars)
+      .gt('stars_required', newStars - stars);
+    if (rewards && rewards.length > 0) {
+      setTimeout(() => alert('🎉 ' + appState.selectedProfile.child_name + ' har oppnådd en belønning: ' + rewards[0].reward_text + '!'), 500);
+    }
+  }
+  document.getElementById('reading-active').style.display = 'none';
+  document.getElementById('reading-result').style.display = 'block';
+  document.getElementById('stars-earned').textContent = stars > 0 ? '⭐'.repeat(stars) + ' +' + stars + ' stjerner!' : '💪 Fortsett å øve!';
+  let gridHtml = `
+    <div class="result-card" style="background:#d1fae5"><div class="lbl" style="color:#059669">✅ Riktige ord</div><div class="val" style="color:#059669">${correct}</div></div>
+    <div class="result-card" style="background:#fee2e2"><div class="lbl" style="color:#dc2626">❌ Feil ord</div><div class="val" style="color:#dc2626">${wrong}</div></div>
+    <div class="result-card" style="background:#eef2ff"><div class="lbl" style="color:#4f46e5">📖 Leste ord</div><div class="val" style="color:#4f46e5">${read}</div></div>
+  `;
+  if (wpm !== null) gridHtml += `<div class="result-card" style="background:#fef3c7"><div class="lbl" style="color:#d97706">🚀 Ord/min</div><div class="val" style="color:#d97706">${wpm}</div></div>`;
+  document.getElementById('results-grid').innerHTML = gridHtml;
+  if (wpm !== null) {
+    document.getElementById('wpm-section').style.display = 'block';
+    document.getElementById('progress-fill').style.cssText = `width:${Math.min(100,(wpm/150)*100)}%;background:${wpm>=100?'#059669':'#f59e0b'}`;
+    document.getElementById('wpm-feedback').style.color = wpm >= 100 ? '#059669' : '#d97706';
+    document.getElementById('wpm-feedback').textContent = wpm >= 100 ? `Flott! Leser over snittet (${wpm} ord/min)! 🌟` : `Leser ${wpm} ord/min — snittet er 100. Fortsett å øve! 💪`;
+  }
+  document.getElementById('review-text').innerHTML = appState.words.map((w, i) => {
+    const s = appState.wordStates[i];
+    const bg = s==='correct'?'#d1fae5':s==='wrong'?'#fee2e2':'#f3f4f6';
+    const col = s==='correct'?'#065f46':s==='wrong'?'#991b1b':'#6b7280';
+    return `<span style="display:inline-block;margin:2px 3px;padding:2px 7px;border-radius:6px;background:${bg};color:${col}">${w}</span>`;
+  }).join('');
+}
+
+function resetSession() {
+  document.getElementById('reading-setup').style.display = 'block';
+  document.getElementById('reading-active').style.display = 'none';
+  document.getElementById('reading-result').style.display = 'none';
+  document.getElementById('textInput').value = '';
+  document.getElementById('start-btn').disabled = true;
+}
+
+function tryAgain() {
+  appState.wordStates = new Array(appState.words.length).fill('none');
+  appState.currentIdx = 0; appState.timeLeft = appState.timeLimit; appState.running = true;
+  document.getElementById('reading-result').style.display = 'none';
+  document.getElementById('reading-active').style.display = 'block';
+  renderWords();
+  if (appState.exercise === 'timed') startTimer();
+  if (appState.listenMode) startRecognition();
+}
+
+async function loadProgress() {
+  if (!appState.selectedProfile) {
+    document.getElementById('progress-content').innerHTML = '<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil først.</p>';
+    return;
+  }
+  const { data } = await sb.from('reading_sessions').select('*').eq('profile_id', appState.selectedProfile.id).order('created_at', { ascending: false }).limit(20);
+  if (!data || !data.length) {
+    document.getElementById('progress-content').innerHTML = '<p style="color:#6b7280;text-align:center;padding:40px">Ingen øvelser ennå. Gjennomfør en leseøkt for å se fremgang her!</p>';
+    return;
+  }
+  document.getElementById('progress-content').innerHTML = `
+    <h3 style="margin-bottom:20px;font-size:18px">${appState.selectedProfile.avatar} ${appState.selectedProfile.child_name} – Siste øvelser</h3>
+    <div class="progress-list">
+      ${data.map(s => `
+        <div class="session-item">
+          <div>
+            <div style="font-weight:700">${s.exercise_type === 'timed' ? '⏱ Tidsbasert' : '📝 Ord for ord'}</div>
+            <div class="session-date">${new Date(s.created_at).toLocaleDateString('nb-NO')}</div>
+          </div>
+          <div class="session-stats">
+            <div class="session-stat"><div class="n" style="color:#059669">${s.correct_words}</div><div class="l">Riktige</div></div>
+            <div class="session-stat"><div class="n" style="color:#dc2626">${s.wrong_words}</div><div class="l">Feil</div></div>
+            ${s.words_per_minute > 0 ? `<div class="session-stat"><div class="n" style="color:#4f46e5">${s.words_per_minute}</div><div class="l">Ord/min</div></div>` : ''}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+(async () => {
+  const hash = window.location.hash;
+  if (hash.includes('type=recovery')) { showPage('reset'); return; }
+  if (hash.includes('type=signup') || hash.includes('access_token')) {
+    await sb.auth.getSession();
+    await loadApp();
+    showPage('welcome');
+    window.history.replaceState(null, '', window.location.pathname);
+    return;
+  }
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) await loadApp();
+})();
+</script>
+</body>
+</html>
