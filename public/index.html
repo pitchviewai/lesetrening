@@ -888,6 +888,7 @@ function showTab(tabId) {
   document.querySelectorAll('.app-tab')[idx].classList.add('active');
   if (tabId === 'tab-progress') loadProgress();
   if (tabId === 'tab-settings') renderRewardsProfileSelect();
+  sessionStorage.setItem('activeTab', tabId);
 }
 
 function tokenize(text) { return text.trim().split(/\s+/).filter(Boolean); }
@@ -1126,7 +1127,11 @@ function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
     return;
   }
   const { data: { session } } = await sb.auth.getSession();
-  if (session) await loadApp();
+ if (session) {
+  await loadApp();
+  const savedTab = sessionStorage.getItem('activeTab');
+  if (savedTab) showTab(savedTab);
+}
 })();
 </script>
 </body>
