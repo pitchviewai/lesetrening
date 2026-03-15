@@ -1132,6 +1132,8 @@ function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
     const savedTab = sessionStorage.getItem('activeTab');
     showPage('app');
     if (savedTab) setTimeout(() => showTab(savedTab), 100);
+      } else {
+    showPage('home');
   }
 })();
 
