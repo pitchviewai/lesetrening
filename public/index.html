@@ -888,7 +888,14 @@ function showTab(tabId) {
   document.querySelectorAll('.app-tab')[idx].classList.add('active');
   if (tabId === 'tab-progress') loadProgress();
   if (tabId === 'tab-settings') renderRewardsProfileSelect();
-  sessionStorage.setItem('activeTab', tabId);
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) {
+    await loadApp();
+    showPage('app');
+  } else {
+    showPage('home');
+  }
+})();
 }
 
 function tokenize(text) { return text.trim().split(/\s+/).filter(Boolean); }
