@@ -1127,12 +1127,16 @@ function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
     return;
   }
   const { data: { session } } = await sb.auth.getSession();
- if (session) {
-  await loadApp();
-  const savedTab = sessionStorage.getItem('activeTab');
-  if (savedTab) showTab(savedTab);
-}
+  if (session) {
+    await loadApp();
+    const savedTab = sessionStorage.getItem('activeTab');
+    showPage('app');
+    if (savedTab) setTimeout(() => showTab(savedTab), 100);
+  }
 })();
+
+Den viktige endringen er showPage('app') – tidligere lastet vi appen men glemte å faktisk vise appsiden! Commit og test. 👍
+
 </script>
 </body>
 </html>
