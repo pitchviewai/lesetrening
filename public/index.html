@@ -1051,7 +1051,13 @@ function startTimer() {
 }
 
 function startRecognition() {
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition; if (!SR) return;
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) {
+    alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bruk manuell modus, eller bytt til Chrome/Edge.');
+    document.getElementById('listenCheck').checked = false;
+    appState.listenMode = false;
+    return;
+  }
   const rec = new SR();
   rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = false;
   appState.recognition = rec;
