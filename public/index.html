@@ -1070,6 +1070,10 @@ if (correct) {
   appState.wordStates[i] = 'correct';
   appState.currentIdx++;
   renderWords();
+} else if (spoken.length > 2) {
+  appState.wordStates[i] = 'wrong';
+  appState.currentIdx++;
+  renderWords();
 }
     if (appState.exercise === 'word' && appState.currentIdx >= appState.words.length) setTimeout(endSession, 400);
   };
