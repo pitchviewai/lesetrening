@@ -325,6 +325,7 @@
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvilke nettlesere fungerer best?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer best i Chrome og Edge. Safari på iPhone og iPad fungerer også. Firefox støtter ikke talegjenkjenning, men manuell modus fungerer alltid.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Fungerer Leselab for barn med dysleksi?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja! Vi anbefaler manuell modus for barn med dysleksi, slik at forelder kan vurdere hvert ord direkte.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg avbestille når som helst?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja, du kan avbestille når som helst uten bindingstid.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvor nøyaktig er talegjenkjenningen?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer bra for vanlige norske ord, men kan slite med sjeldne ord, dialekter eller utydelig uttale. For best resultat anbefaler vi manuell modus (forelder trykker ✅/❌) når nøyaktighet er viktig, og talegjenkjenning når dere vil ha en rask og morsom leseøkt.</div></div>
   </section>
 
   <section class="cta">
@@ -1002,14 +1003,6 @@ function startSession() {
   if (appState.exercise === 'timed') {
     const td = document.getElementById('timer-display'); td.style.display = 'block'; td.textContent = '⏱ ' + appState.timeLeft + 's'; startTimer();
   }
-  function levenshtein(a, b) {
-  const m = a.length, n = b.length;
-  const dp = Array.from({length: m+1}, (_, i) => Array.from({length: n+1}, (_, j) => i || j));
-  for (let i = 1; i <= m; i++)
-    for (let j = 1; j <= n; j++)
-      dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
-  return dp[m][n];
-}
   if (appState.listenMode) startRecognition();
 }
 
@@ -1075,10 +1068,7 @@ function startRecognition() {
       const i = appState.currentIdx;
       if (i >= appState.words.length) break;
       const expected = appState.words[i].toLowerCase().replace(/[.,!?;:»«""'']/g,'');
-    const correct = spoken === expected || 
-  spoken.includes(expected) || 
-  expected.includes(spoken) ||
- levenshtein(spoken, expected) <= Math.floor(expected.length / 4);
+      const correct = spoken === expected || spoken.includes(expected) || expected.includes(spoken);
       if (correct) {
         appState.wordStates[i] = 'correct';
         appState.currentIdx++;
