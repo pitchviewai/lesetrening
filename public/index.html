@@ -1057,9 +1057,9 @@ function startRecognition() {
     return;
   }
   const rec = new SR();
-  rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = true;
+  rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = false;
   appState.recognition = rec;
-rec.onresult = e => {
+  rec.onresult = e => {
     const result = e.results[e.results.length-1];
     if (!result.isFinal) return;
     const spokenWords = result[0].transcript.trim().toLowerCase().replace(/[.,!?;:]/g,'').split(/\s+/).filter(Boolean);
@@ -1078,8 +1078,6 @@ rec.onresult = e => {
         renderWords();
       }
     }
-  };
-    if (appState.exercise === 'word' && appState.currentIdx >= appState.words.length) setTimeout(endSession, 400);
   };
   rec.onerror = () => {};
   rec.onend = () => { if (appState.running) rec.start(); };
