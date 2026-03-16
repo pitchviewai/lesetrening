@@ -1004,6 +1004,14 @@ function handleImage(input) {
   prev.src = URL.createObjectURL(file); prev.style.display = 'block';
   document.getElementById('ocrBtn').style.display = 'inline-block';
 }
+  let ocrController = null;
+
+function abortOCR() {
+  if (ocrController) ocrController.abort();
+  document.getElementById('ocrBtn').textContent = 'Trekk ut tekst';
+  document.getElementById('ocrBtn').disabled = false;
+  document.getElementById('ocrAbortBtn').style.display = 'none';
+}
 async function runOCR() {
   const btn = document.getElementById('ocrBtn');
   btn.textContent = 'Leser tekst...'; btn.disabled = true;
