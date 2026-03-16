@@ -939,7 +939,10 @@ function showTab(tabId) {
   if (tabId === 'tab-progress') loadProgress();
   if (tabId === 'tab-settings') renderRewardsProfileSelect();
 }
-
+function loadExampleText() {
+  document.getElementById('textInput').value = 'Emma og hunden Bella løp ut i skogen. Det var sol og fugler sang i trærne. Plutselig stoppet Bella og snuste på noe i gresset. Det var et lite pinnsvin! Emma satte seg rolig ned og så på det. Pinnsvinet rullet seg sammen til en ball. Bella logret med halen og ville leke. Men pinnsvinet ville ikke leke. Etter en stund rullet det stille bort mellom trærne. Emma og Bella gikk videre inn i skogen og lurte på hva de ville finne neste gang.';
+  document.getElementById('start-btn').disabled = false;
+}
 function tokenize(text) { return text.trim().split(/\s+/).filter(Boolean); }
 
 function setExercise(val, btn) {
