@@ -1006,21 +1006,40 @@ function handleImage(input) {
 async function runOCR() {
   const btn = document.getElementById('ocrBtn');
   btn.textContent = 'Leser tekst...'; btn.disabled = true;
-  const base64 = await new Promise((res, rej) => {
-    const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(appState.imageFile);
-  });
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: [
-      { type: 'image', source: { type: 'base64', media_type: appState.imageFile.type, data: base64 } },
-      { type: 'text', text: 'Trekk ut all tekst fra dette bildet. Returner kun teksten.' }
-    ]}]})
-  });
-  const data = await resp.json();
-  const ta = document.getElementById('textInput');
-  ta.value = data.content?.find(b => b.type === 'text')?.text || '';
-  document.getElementById('start-btn').disabled = !ta.value.trim();
+  
+  const abortBtn = document.createElement('button');
+  abortBtn.className = 'btn btn-red'; abortBtn.textContent = 'Avbryt';
+  abortBtn.style.marginLeft = '8px';
+  let aborted = false;
+  abortBtn.onclick = () => { aborted = true; btn.textContent = 'Trekk ut tekst'; btn.disabled = false; abortBtn.remove(); };
+  setTimeout(() => { if (!aborted) btn.parentNode.insertBefore(abortBtn, btn.nextSibling); }, 3000);
+
+  try {
+    const base64 = await new Promise((res, rej) => {
+      const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(appState.imageFile);
+    });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      signal: controller.signal,
+      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: [
+        { type: 'image', source: { type: 'base64', media_type: appState.imageFile.type, data: base64 } },
+        { type: 'text', text: 'Trekk ut all tekst fra dette bildet. Returner kun teksten.' }
+      ]}]})
+    });
+    clearTimeout(timeout);
+    if (!aborted) {
+      const data = await resp.json();
+      const ta = document.getElementById('textInput');
+      ta.value = data.content?.find(b => b.type === 'text')?.text || '';
+      document.getElementById('start-btn').disabled = !ta.value.trim();
+    }
+  } catch(e) {
+    if (!aborted) alert('⚠️ Kunne ikke lese teksten. Prøv igjen eller lim inn tekst manuelt.');
+  }
   btn.textContent = 'Trekk ut tekst'; btn.disabled = false;
+  abortBtn.remove();
 }
 
 // LESEØKT
