@@ -1057,10 +1057,12 @@ function startRecognition() {
     return;
   }
   const rec = new SR();
-  rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = false;
+  rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = true;
   appState.recognition = rec;
-  rec.onresult = e => {
-    const spoken = e.results[e.results.length-1][0].transcript.trim().toLowerCase().replace(/[.,!?;:]/g,'');
+rec.onresult = e => {
+    const result = e.results[e.results.length-1];
+    if (!result.isFinal) return;
+    const spoken = result[0].transcript.trim().toLowerCase().replace(/[.,!?;:]/g,'');
     const i = appState.currentIdx; if (i >= appState.words.length) return;
     const expected = appState.words[i].toLowerCase().replace(/[.,!?;:»«""'']/g,'');
     const correct = spoken === expected || spoken.includes(expected) || expected.includes(spoken);
