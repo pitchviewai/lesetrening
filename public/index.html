@@ -1060,7 +1060,7 @@ function startRecognition() {
   const rec = new SR();
   rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = false;
   appState.recognition = rec;
-  rec.onresult = e => {
+rec.onresult = e => {
     const result = e.results[e.results.length-1];
     if (!result.isFinal) return;
     const spokenWords = result[0].transcript.trim().toLowerCase().replace(/[.,!?;:]/g,'').split(/\s+/).filter(Boolean);
@@ -1068,15 +1068,21 @@ function startRecognition() {
       const i = appState.currentIdx;
       if (i >= appState.words.length) break;
       const expected = appState.words[i].toLowerCase().replace(/[.,!?;:»«""'']/g,'');
-      const correct = spoken === expected || spoken.includes(expected) || expected.includes(spoken);
+      const correct = spoken === expected || spoken.includes(expected) || expected.includes(spoken) || levenshtein(spoken, expected) <= Math.floor(expected.length / 4);
       if (correct) {
         appState.wordStates[i] = 'correct';
+        appState.wordAttempts[i] = 0;
         appState.currentIdx++;
         renderWords();
       } else if (spoken.length > 2) {
-        appState.wordStates[i] = 'wrong';
-        appState.currentIdx++;
-        renderWords();
+        appState.wordAttempts[i] = (appState.wordAttempts[i] || 0) + 1;
+        if (appState.wordAttempts[i] >= 3) {
+          appState.wordStates[i] = 'skip';
+          appState.currentIdx++;
+          renderWords();
+        } else {
+          renderWords();
+        }
       }
     }
   };
