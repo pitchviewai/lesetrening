@@ -1244,10 +1244,12 @@ async function loadProgress() {
     <div class="card">
       <label class="form-label">⭐ Stjerner tjent (siste ${data.length} økter)</label>
       <div class="stars-chart">
-        ${data.slice(0, 20).map(s => {
-          const earned = Math.min(5, s.correct_words > 0 ? Math.floor(s.correct_words / 20) + 1 : 0);
-          return `<div class="star-dot" title="${new Date(s.created_at).toLocaleDateString('nb-NO')}">${earned > 0 ? '⭐'.repeat(Math.min(earned, 3)) : '○'}</div>`;
-        }).join('')}
+${data.slice(0, 5).map(s => {
+  const earned = Math.min(5, s.correct_words > 0 ? Math.floor(s.correct_words / 20) + 1 : 0);
+  return `<div class="star-dot" title="${new Date(s.created_at).toLocaleDateString('nb-NO')}" style="width:44px;height:44px;font-size:13px;font-weight:900;background:${earned > 0 ? '#fef3c7' : '#f3f4f6'};color:${earned > 0 ? '#d97706' : '#9ca3af'};border-color:${earned > 0 ? '#f59e0b' : '#e5e7eb'}">
+    ${earned > 0 ? '⭐' : '○'}<br><span style="font-size:11px">${earned}</span>
+  </div>`;
+}).join('')}
       </div>
     </div>
     ${wpmSessions.length > 0 ? `
