@@ -536,6 +536,14 @@
         <div class="card">
           <label class="form-label">Lim inn tekst</label>
           <textarea id="textInput" placeholder="Lim inn tekst fra boken her..."></textarea>
+          <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+            <input type="text" id="save-text-title" placeholder="Gi teksten et navn..." style="flex:1;min-width:160px;padding:10px;border-radius:8px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
+            <button class="btn btn-green" onclick="saveText()">💾 Lagre tekst</button>
+          </div>
+        </div>
+        <div id="saved-texts-box" style="margin-bottom:16px;display:none">
+          <label class="form-label">📚 Lagrede tekster</label>
+          <div id="saved-texts-list"></div>
         </div>
         <div class="upload-box">
           <div style="font-weight:700;margin-bottom:8px">📷 Eller skann en side fra boken</div>
@@ -629,7 +637,7 @@
 const { createClient } = supabase;
 const sb = createClient(
   'https://qvphwkdkgmiucecckeyl.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2cGh3a2RrZ21pdWNlY2NrZXlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0NjgyNjIsImV4cCI6MjA4OTA0NDI2Mn0.2caC2B9j_XlP8d-wQHmtvD2vv2jPx5tdzETAVRzcg9w'
+  'sb_publishable_z458n4cnZ9Et2kJluixHGw_kGUHL0yE'
 );
 
 const appState = {
@@ -786,6 +794,7 @@ async function loadProfiles(userId) {
   const { data } = await sb.from('profiles').select('*').eq('user_id', userId).order('created_at');
   appState.profiles = data || [];
   renderProfiles();
+  loadSavedTexts();
 }
 
 function renderProfiles() {
@@ -799,6 +808,50 @@ function renderProfiles() {
   `).join('');
   html += `<div class="add-profile" onclick="document.getElementById('add-profile-form').style.display='block'"><div style="font-size:32px">➕</div><div style="font-weight:700;margin-top:8px">Legg til barn</div></div>`;
   grid.innerHTML = html;
+}
+
+async function saveText() {
+  const title = document.getElementById('save-text-title').value.trim();
+  const content = document.getElementById('textInput').value.trim();
+  if (!title) { alert('Gi teksten et navn først.'); return; }
+  if (!content) { alert('Det er ingen tekst å lagre.'); return; }
+  const { data: { user } } = await sb.auth.getUser();
+  const profileId = appState.selectedProfile?.id || null;
+  await sb.from('saved_texts').insert({ user_id: user.id, profile_id: profileId, title, content });
+  document.getElementById('save-text-title').value = '';
+  alert('✅ Tekst lagret!');
+  loadSavedTexts();
+}
+
+async function loadSavedTexts() {
+  const { data: { user } } = await sb.auth.getUser();
+  if (!user) return;
+  const { data } = await sb.from('saved_texts').select('*').eq('user_id', user.id).order('created_at', { ascending: false });
+  const box = document.getElementById('saved-texts-box');
+  const list = document.getElementById('saved-texts-list');
+  if (!box || !list) return;
+  if (!data || !data.length) { box.style.display = 'none'; return; }
+  box.style.display = 'block';
+  list.innerHTML = data.map(t => `
+    <div style="display:flex;justify-content:space-between;align-items:center;background:#f8f7ff;border-radius:10px;padding:10px 14px;margin-bottom:8px;border:1.5px solid #e0e7ff">
+      <span style="font-weight:700;font-size:14px;cursor:pointer;color:#4f46e5" onclick="loadSavedText('${t.id}')">${t.title}</span>
+      <button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteSavedText('${t.id}')">Slett</button>
+    </div>
+  `).join('');
+}
+
+async function loadSavedText(id) {
+  const { data } = await sb.from('saved_texts').select('*').eq('id', id).single();
+  if (!data) return;
+  document.getElementById('textInput').value = data.content;
+  document.getElementById('start-btn').disabled = false;
+  window.scrollTo(0, document.getElementById('textInput').offsetTop - 100);
+}
+
+async function deleteSavedText(id) {
+  if (!confirm('Slette denne teksten?')) return;
+  await sb.from('saved_texts').delete().eq('id', id);
+  loadSavedTexts();
 }
 
 function selectProfile(id) {
