@@ -171,6 +171,7 @@
     .word.current { background: #e0e7ff; border-color: #4f46e5; font-weight: 700; }
     .word.correct { background: #d1fae5; color: #065f46; }
     .word.wrong { background: #fee2e2; color: #991b1b; }
+    .word.skip { background: #fef3c7; color: #92400e; }
     .word.clickable { cursor: pointer; }
     .word-btns { display: inline-block; margin-left: 4px; }
     .word-btn { padding: 2px 8px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin-right: 2px; }
@@ -643,7 +644,7 @@ const sb = createClient(
 );
 
 const appState = {
-  exercise: 'word', words: [], wordStates: [], currentIdx: 0,
+  exercise: 'word', words: [], wordStates: [], wordAttempts: [], currentIdx: 0,
   timeLimit: 60, timeLeft: 60, running: false, listenMode: false,
   timerInterval: null, recognition: null, imageFile: null,
   selectedProfile: null, selectedAvatar: '🦁', profiles: []
@@ -992,7 +993,7 @@ async function runOCR() {
 function startSession() {
   const w = tokenize(document.getElementById('textInput').value);
   if (!w.length) return;
-  appState.words = w; appState.wordStates = new Array(w.length).fill('none');
+  appState.words = w; appState.wordStates = new Array(w.length).fill('none'); appState.wordAttempts = new Array(w.length).fill(0);
   appState.currentIdx = 0; appState.timeLeft = appState.timeLimit; appState.running = true;
   document.getElementById('reading-setup').style.display = 'none';
   document.getElementById('reading-active').style.display = 'block';
@@ -1010,7 +1011,7 @@ function renderWords() {
   const html = appState.words.map((w, i) => {
     const s = appState.wordStates[i];
     const isCur = i === appState.currentIdx && appState.exercise === 'word';
-    const cls = isCur ? 'current' : s === 'correct' ? 'correct' : s === 'wrong' ? 'wrong' : '';
+    const cls = isCur ? 'current' : s === 'correct' ? 'correct' : s === 'wrong' ? 'wrong' : s === 'skip' ? 'skip' : '';
     const click = !appState.listenMode && appState.exercise === 'timed' ? 'clickable' : '';
     const btns = (appState.exercise === 'word' && isCur && !appState.listenMode) ?
       `<span class="word-btns"><button class="word-btn ok" onclick="markWord(${i},'correct')">✅</button><button class="word-btn fail" onclick="markWord(${i},'wrong')">❌</button></span>` : '';
