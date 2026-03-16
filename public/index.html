@@ -1078,7 +1078,7 @@ function startRecognition() {
     const correct = spoken === expected || 
   spoken.includes(expected) || 
   expected.includes(spoken) ||
-  levenshtein(spoken, expected) <= 1;
+ levenshtein(spoken, expected) <= Math.floor(expected.length / 4);
       if (correct) {
         appState.wordStates[i] = 'correct';
         appState.currentIdx++;
