@@ -457,7 +457,7 @@
       </div>
       <div class="welcome-step">
         <div class="ws-num">2</div>
-        <div class="ws-content"><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av en bokside med telefonen – teksten leses ut automatisk.</p></div>
+        <div class="ws-content"><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av en side – appen leser teksten ut automatisk.</p></div>
       </div>
       <div class="welcome-step">
         <div class="ws-num">3</div>
@@ -536,7 +536,6 @@
         <div class="card">
           <label class="form-label">Lim inn tekst</label>
           <textarea id="textInput" placeholder="Lim inn tekst fra boken her..."></textarea>
-<button class="btn btn-gray" style="margin-top:8px;font-size:14px" onclick="loadExampleText()">📖 Prøv med eksempeltekst</button>
           <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
             <input type="text" id="save-text-title" placeholder="Gi teksten et navn..." style="flex:1;min-width:160px;padding:10px;border-radius:8px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
             <button class="btn btn-green" onclick="saveText()">💾 Lagre tekst</button>
@@ -939,16 +938,8 @@ function showTab(tabId) {
   if (tabId === 'tab-progress') loadProgress();
   if (tabId === 'tab-settings') renderRewardsProfileSelect();
 }
-function loadExampleText() {
-  document.getElementById('textInput').value = 'Emma og hunden Bella løp ut i skogen. Det var sol og fugler sang i trærne. Plutselig stoppet Bella og snuste på noe i gresset. Det var et lite pinnsvin! Emma satte seg rolig ned og så på det. Pinnsvinet rullet seg sammen til en ball. Bella logret med halen og ville leke. Men pinnsvinet ville ikke leke. Etter en stund rullet det stille bort mellom trærne. Emma og Bella gikk videre inn i skogen og lurte på hva de ville finne neste gang.';
-  document.getElementById('start-btn').disabled = false;
-}
-function loadExampleText() {
-  document.getElementById('textInput').value = 'Emma og hunden Bella løp ut i skogen. Det var sol og fugler sang i trærne. Plutselig stoppet Bella og snuste på noe i gresset. Det var et lite pinnsvin! Emma satte seg rolig ned og så på det. Pinnsvinet rullet seg sammen til en ball. Bella logret med halen og ville leke. Men pinnsvinet ville ikke leke. Etter en stund rullet det stille bort mellom trærne. Emma og Bella gikk videre inn i skogen og lurte på hva de ville finne neste gang.';
-  document.getElementById('start-btn').disabled = false;
-}
 
-function tokenize(text) {
+function tokenize(text) { return text.trim().split(/\s+/).filter(Boolean); }
 
 function setExercise(val, btn) {
   appState.exercise = val;
@@ -1054,7 +1045,8 @@ function startRecognition() {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SR) {
     alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bruk manuell modus, eller bytt til Chrome/Edge.');
-    document.getElementById('listenCheck').checked = false;
+    const cb = document.getElementById('listenCheck');
+    if (cb) cb.checked = false;
     appState.listenMode = false;
     return;
   }
