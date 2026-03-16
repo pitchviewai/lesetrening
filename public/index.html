@@ -1067,7 +1067,10 @@ function startRecognition() {
       const i = appState.currentIdx;
       if (i >= appState.words.length) break;
       const expected = appState.words[i].toLowerCase().replace(/[.,!?;:»«""'']/g,'');
-      const correct = spoken === expected || spoken.includes(expected) || expected.includes(spoken);
+    const correct = spoken === expected || 
+  spoken.includes(expected) || 
+  expected.includes(spoken) ||
+  levenshtein(spoken, expected) <= 1;
       if (correct) {
         appState.wordStates[i] = 'correct';
         appState.currentIdx++;
