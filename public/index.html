@@ -171,7 +171,6 @@
     .word.current { background: #e0e7ff; border-color: #4f46e5; font-weight: 700; }
     .word.correct { background: #d1fae5; color: #065f46; }
     .word.wrong { background: #fee2e2; color: #991b1b; }
-    .word.skip { background: #fef3c7; color: #92400e; }
     .word.clickable { cursor: pointer; }
     .word-btns { display: inline-block; margin-left: 4px; }
     .word-btn { padding: 2px 8px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin-right: 2px; }
@@ -203,6 +202,22 @@
     .reward-item { display: flex; justify-content: space-between; align-items: center; background: #f8f7ff; border-radius: 12px; padding: 12px 16px; }
     .reward-item span { font-weight: 600; font-size: 15px; }
     .reward-stars { color: #f59e0b; font-weight: 800; font-size: 13px; }
+    /* KONFETTI */
+    .confetti-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
+    .confetti-piece { position: absolute; width: 10px; height: 10px; border-radius: 2px; animation: confetti-fall 3s ease-in forwards; }
+    @keyframes confetti-fall { 0% { transform: translateY(-20px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
+    /* FREMGANG BARNEVENNLIG */
+    .progress-hero { text-align: center; padding: 24px; background: linear-gradient(135deg, #eef2ff, #fef3c7); border-radius: 20px; margin-bottom: 24px; }
+    .progress-hero .avatar { font-size: 56px; margin-bottom: 8px; }
+    .progress-hero h3 { font-size: 22px; font-weight: 900; color: #1e1b4b; }
+    .progress-hero .tagline { font-size: 15px; color: #6b7280; margin-top: 4px; }
+    .stars-chart { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; justify-content: center; }
+    .star-dot { width: 36px; height: 36px; border-radius: 50%; background: #fef3c7; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 2px solid #f59e0b; }
+    .wpm-meter { background: #f8f7ff; border-radius: 16px; padding: 20px; margin-bottom: 16px; }
+    .wpm-meter h4 { font-size: 15px; font-weight: 800; margin-bottom: 12px; color: #4f46e5; }
+    .wpm-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .wpm-bar-row .date { font-size: 12px; color: #9ca3af; width: 60px; flex-shrink: 0; }
+    .wpm-bar { height: 28px; border-radius: 8px; background: linear-gradient(90deg, #4f46e5, #7c3aed); display: flex; align-items: center; padding: 0 10px; color: #fff; font-size: 13px; font-weight: 800; min-width: 40px; transition: width 0.8s; }
     @media (max-width: 768px) {
       .hero { flex-direction: column; padding: 40px 20px; }
       .hero h1 { font-size: 36px; }
@@ -242,10 +257,10 @@
           <div class="hero-card-title">📖 Leseøkt pågår...</div>
           <div class="reading-demo">
             <span class="w w-ok">Emma</span><span class="w w-ok">og</span>
-            <span class="w w-ok">hunden</span><span class="w w-err">sprange</span>
-            <span class="w w-ok">mot</span><span class="w w-ok">skogen</span>
-            <span class="w w-ok">mens</span><span class="w w-cur">solen</span>
-            <span class="w w-plain">gikk</span><span class="w w-plain">ned.</span>
+            <span class="w w-ok">hunden</span><span class="w w-err">Bella</span>
+            <span class="w w-ok">løp</span><span class="w w-ok">mot</span>
+            <span class="w w-ok">skogen</span><span class="w w-cur">mens</span>
+            <span class="w w-plain">solen</span><span class="w w-plain">skinte.</span>
           </div>
           <div class="demo-stats">
             <div class="demo-stat"><div class="num" style="color:#059669">7</div><div class="lbl">✅ Riktige</div></div>
@@ -262,8 +277,8 @@
     <div class="section-title">Tre enkle steg</div>
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-icon">📚</div><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av en bokside med telefonen – teksten leses ut automatisk.</p></div>
-      <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser høyt</h3><p>Appen lytter og markerer hvert ord grønt eller rødt i sanntid.</p></div>
-      <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg lesehastighet og nøyaktighet over tid. Barnet tjener stjerner!</p></div>
+      <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser høyt</h3><p>Appen lytter og markerer hvert ord grønt i sanntid. Barnet kan prøve vanskelige ord om igjen!</p></div>
+      <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg lesehastighet og utvikling over tid med morsome grafer og stjerner!</p></div>
     </div>
   </section>
 
@@ -272,8 +287,8 @@
     <div class="section-title">Laget av foreldre, for foreldre</div>
     <div class="why-grid">
       <div class="why-card"><div class="why-icon">📖</div><div><h3>Bruk barnets egne bøker</h3><p>Ikke generiske øvingstekster – bruk tekster barnet allerede er motivert for å lese.</p></div></div>
-      <div class="why-card"><div class="why-icon">⚡</div><div><h3>Umiddelbar tilbakemelding</h3><p>Hvert ord farges grønt eller rødt i sanntid. Barnet ser selv hva de mestrer.</p></div></div>
-      <div class="why-card"><div class="why-icon">📊</div><div><h3>Følg utviklingen</h3><p>Se lesehastighet i ord per minutt og sammenlign med gjennomsnittet.</p></div></div>
+      <div class="why-card"><div class="why-icon">⚡</div><div><h3>Umiddelbar tilbakemelding</h3><p>Hvert ord farges grønt i sanntid med en glad pling. Barnet ser og hører fremgangen!</p></div></div>
+      <div class="why-card"><div class="why-icon">📊</div><div><h3>Følg utviklingen</h3><p>Se lesehastighet i ord per minutt og følg fremgangen med barnevennlige grafer.</p></div></div>
       <div class="why-card"><div class="why-icon">🌟</div><div><h3>Motiverende belønninger</h3><p>Barnet samler stjerner og klatrer i nivåer etter hvert som de leser.</p></div></div>
       <div class="why-card"><div class="why-icon">📱</div><div><h3>Fungerer på alle enheter</h3><p>Telefon, nettbrett eller PC – uten nedlasting.</p></div></div>
       <div class="why-card"><div class="why-icon">🔒</div><div><h3>Trygt og GDPR-sikret</h3><p>Barnets data lagres trygt og deles aldri med tredjeparter.</p></div></div>
@@ -294,7 +309,7 @@
         <div class="price">0 <span>kr/mnd</span></div>
         <ul class="pricing-features">
           <li>5 leseøkter per måned</li>
-          <li>Ord-for-ord og tidsbasert modus</li>
+          <li>Øvings- og tidsbasert modus</li>
           <li>Grunnleggende statistikk</li>
           <li class="no">Fremgangsoversikt</li>
           <li class="no">Belønninger og nivåer</li>
@@ -308,7 +323,7 @@
         <div class="price">99 <span>kr/mnd</span></div>
         <ul class="pricing-features">
           <li>Ubegrenset antall øvelser</li>
-          <li>Ord-for-ord og tidsbasert modus</li>
+          <li>Øvings- og tidsbasert modus</li>
           <li>Full statistikk og fremgang</li>
           <li>Belønninger og nivåer</li>
           <li>Opptil 3 barneprofiler</li>
@@ -324,9 +339,9 @@
     <div class="section-title">Vanlige spørsmål</div>
     <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">Trenger vi mikrofon eller spesielt utstyr?<span class="faq-arrow">▼</span></div><div class="faq-a">Nei! Alle moderne telefoner, nettbrett og laptoper har innebygd mikrofon. AirPods og trådløse øreplugger fungerer også optimalt.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvilke nettlesere fungerer best?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer best i Chrome og Edge. Safari på iPhone og iPad fungerer også. Firefox støtter ikke talegjenkjenning, men manuell modus fungerer alltid.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvor nøyaktig er talegjenkjenningen?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer bra for vanlige norske ord, men kan slite med sjeldne ord, dialekter eller utydelig uttale. I øvingsmodusen kan barnet prøve vanskelige ord om igjen til de sitter. For full kontroll anbefaler vi manuell modus der forelder markerer hvert ord.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Fungerer Leselab for barn med dysleksi?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja! Vi anbefaler manuell modus for barn med dysleksi, slik at forelder kan vurdere hvert ord direkte.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg avbestille når som helst?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja, du kan avbestille når som helst uten bindingstid.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvor nøyaktig er talegjenkjenningen?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer bra for vanlige norske ord, men kan slite med sjeldne ord, dialekter eller utydelig uttale. For best resultat anbefaler vi manuell modus (forelder trykker ✅/❌) når nøyaktighet er viktig, og talegjenkjenning når dere vil ha en rask og morsom leseøkt.</div></div>
   </section>
 
   <section class="cta">
@@ -385,7 +400,7 @@
     <div class="auth-card">
       <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
       <h2>Glemt passord?</h2>
-      <p>Skriv inn e-postadressen din så sender vi deg en lenke for å tilbakestille passordet.</p>
+      <p>Skriv inn e-postadressen din så sender vi deg en lenke.</p>
       <div class="auth-error" id="forgot-error"></div>
       <div class="auth-success" id="forgot-success"></div>
       <div class="form-group"><label>E-post</label><input type="email" id="forgot-email" placeholder="din@epost.no"></div>
@@ -441,9 +456,9 @@
         </ul>
       </div>
       <div class="info-card">
-        <div class="ic-icon">📝</div>
-        <h3>Ord for ord</h3>
-        <p>Du sitter ved siden av barnet og trykker ✅ for riktige ord og ❌ for feil. Perfekt for grundig trening.</p>
+        <div class="ic-icon">🌱</div>
+        <h3>Øvingsmodus</h3>
+        <p>Barnet leser i sitt eget tempo. Riktige ord markeres med en glad pling! Prøv vanskelige ord om igjen til de sitter.</p>
       </div>
       <div class="info-card">
         <div class="ic-icon">⏱</div>
@@ -455,19 +470,19 @@
       <h2 style="font-size:24px;font-weight:900;margin-bottom:24px">Kom i gang på 3 steg</h2>
       <div class="welcome-step">
         <div class="ws-num">1</div>
-        <div class="ws-content"><h3>Opprett barneprofil</h3><p>Legg til barnets navn, alder og velg en morsom avatar. Du kan ha opptil 3 barn på familieabonnementet.</p></div>
+        <div class="ws-content"><h3>Opprett barneprofil</h3><p>Legg til barnets navn, alder og velg en morsom avatar.</p></div>
       </div>
       <div class="welcome-step">
         <div class="ws-num">2</div>
-        <div class="ws-content"><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av en bokside med telefonen – teksten leses ut automatisk.</p></div>
+        <div class="ws-content"><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde med telefonen.</p></div>
       </div>
       <div class="welcome-step">
         <div class="ws-num">3</div>
-        <div class="ws-content"><h3>Start leseøkten</h3><p>Velg øvelsestype og trykk start. Barnet leser høyt mens du følger med – eller la appen lytte automatisk.</p></div>
+        <div class="ws-content"><h3>Start leseøkten</h3><p>Barnet leser høyt og appen lytter. Riktige ord lyser grønt med en pling!</p></div>
       </div>
       <div class="welcome-step">
         <div class="ws-num">⭐</div>
-        <div class="ws-content"><h3>Belønninger</h3><p>Barnet tjener stjerner og klatrer i nivåer. Du kan legge inn egne belønninger under ⚙️ Innstillinger – f.eks. "20 stjerner = iskrem!" 🍦</p></div>
+        <div class="ws-content"><h3>Belønninger</h3><p>Barnet tjener stjerner og klatrer i nivåer. Legg inn egne belønninger under ⚙️ Innstillinger!</p></div>
       </div>
     </div>
     <div class="welcome-cta">
@@ -493,6 +508,7 @@
       <button class="app-tab" onclick="showTab('tab-progress')">📊 Fremgang</button>
       <button class="app-tab" onclick="showTab('tab-settings')">⚙️ Innstillinger</button>
     </div>
+
     <div id="tab-profiles" class="tab-content active">
       <div id="profiles-grid" class="profiles-grid"></div>
       <div id="add-profile-form" style="display:none;background:#f9fafb;border-radius:16px;padding:24px;margin-top:16px">
@@ -516,6 +532,7 @@
         </div>
       </div>
     </div>
+
     <div id="tab-reading" class="tab-content">
       <div id="reading-setup">
         <div id="selected-profile-banner" style="display:none;background:#eef2ff;border-radius:14px;padding:14px 20px;margin-bottom:20px;align-items:center;gap:12px">
@@ -523,7 +540,7 @@
           <div><div style="font-weight:800" id="banner-name"></div><div style="font-size:13px;color:#6b7280" id="banner-level"></div></div>
         </div>
         <div class="exercise-options">
-          <button class="exercise-btn active" onclick="setExercise('word',this)"><div class="etitle">📝 Ord for ord</div><div class="edesc">Merk riktig/feil underveis</div></button>
+          <button class="exercise-btn active" onclick="setExercise('practice',this)"><div class="etitle">🌱 Øvingsmodus</div><div class="edesc">Les i eget tempo, prøv om igjen</div></button>
           <button class="exercise-btn" onclick="setExercise('timed',this)"><div class="etitle">⏱ Tidsbasert</div><div class="edesc">Les mest mulig på tid</div></button>
         </div>
         <div id="time-setting" style="display:none;margin-bottom:20px">
@@ -532,8 +549,8 @@
           <div class="range-labels"><span>15s</span><span>120s</span></div>
         </div>
         <div class="checkbox-row">
-          <input type="checkbox" id="listenCheck" onchange="appState.listenMode=this.checked">
-          <label for="listenCheck" style="display:inline;font-weight:600">🎤 Automatisk gjenkjenning (barnet leser høyt)</label>
+          <input type="checkbox" id="listenCheck" checked onchange="appState.listenMode=this.checked">
+          <label for="listenCheck" style="display:inline;font-weight:600">🎤 Talegjenkjenning (barnet leser høyt)</label>
         </div>
         <div class="card">
           <label class="form-label">Lim inn tekst</label>
@@ -559,9 +576,10 @@
         </div>
         <button class="btn btn-indigo btn-large" onclick="startSession()" id="start-btn" disabled>Start øvelse 🚀</button>
       </div>
+
       <div id="reading-active" style="display:none">
         <div class="header-row">
-          <h2 style="font-size:20px;font-weight:900">Les teksten</h2>
+          <h2 style="font-size:20px;font-weight:900" id="reading-title">Les teksten</h2>
           <div style="display:flex;gap:12px;align-items:center">
             <div class="timer" id="timer-display" style="display:none"></div>
             <button class="btn btn-gray" onclick="endSession()">Avslutt</button>
@@ -571,12 +589,17 @@
         <div class="text-display" id="text-display"></div>
         <div class="stats-row">
           <span style="color:#059669;font-weight:700" id="stat-correct">✅ Riktig: 0</span>
-          <span style="color:#dc2626;font-weight:700" id="stat-wrong">❌ Feil: 0</span>
           <span style="color:#6b7280" id="stat-left">Ord igjen: 0</span>
         </div>
       </div>
+
       <div id="reading-result" style="display:none">
-        <h2 style="font-size:28px;font-weight:900;margin-bottom:24px">🎉 Ferdig!</h2>
+        <div id="confetti-container" class="confetti-container"></div>
+        <div style="text-align:center;padding:20px 0">
+          <div id="result-avatar" style="font-size:72px;margin-bottom:8px"></div>
+          <h2 style="font-size:32px;font-weight:900;color:#4f46e5;margin-bottom:8px" id="result-title">🎉 Fantastisk jobbet!</h2>
+          <p style="color:#6b7280;font-size:16px" id="result-subtitle"></p>
+        </div>
         <div class="stars-earned" id="stars-earned"></div>
         <div class="results-grid" id="results-grid"></div>
         <div id="wpm-section" style="display:none" class="card">
@@ -590,16 +613,18 @@
           <div class="review-text" id="review-text"></div>
         </div>
         <div class="btn-row">
-          <button class="btn btn-indigo btn-large" onclick="resetSession()">🔄 Ny øvelse</button>
+          <button class="btn btn-indigo btn-large" onclick="resetSession()">📚 Les ny tekst</button>
           <button class="btn btn-green btn-large" onclick="tryAgain()">🔁 Prøv igjen</button>
         </div>
       </div>
     </div>
+
     <div id="tab-progress" class="tab-content">
       <div id="progress-content">
-        <p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil og gjennomfør leseøkter for å se fremgang her.</p>
+        <p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil for å se fremgang.</p>
       </div>
     </div>
+
     <div id="tab-settings" class="tab-content">
       <div class="settings-section">
         <h3>🏆 Egne belønninger</h3>
@@ -643,11 +668,70 @@ const sb = createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2cGh3a2RrZ21pdWNlY2NrZXlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0NjgyNjIsImV4cCI6MjA4OTA0NDI2Mn0.2caC2B9j_XlP8d-wQHmtvD2vv2jPx5tdzETAVRzcg9w'
 );
 
+// WEB AUDIO
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playPling() {
+  try {
+    const o = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    o.connect(g); g.connect(audioCtx.destination);
+    o.frequency.setValueAtTime(880, audioCtx.currentTime);
+    o.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
+    g.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+    o.start(); o.stop(audioCtx.currentTime + 0.3);
+  } catch(e) {}
+}
+
+function playFinish() {
+  try {
+    const notes = [523, 659, 784, 1047];
+    notes.forEach((freq, i) => {
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      o.connect(g); g.connect(audioCtx.destination);
+      o.frequency.value = freq;
+      g.gain.setValueAtTime(0.3, audioCtx.currentTime + i * 0.15);
+      g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.15 + 0.4);
+      o.start(audioCtx.currentTime + i * 0.15);
+      o.stop(audioCtx.currentTime + i * 0.15 + 0.4);
+    });
+  } catch(e) {}
+}
+
+function playWarning() {
+  try {
+    const o = audioCtx.createOscillator();
+    const g = audioCtx.createGain();
+    o.connect(g); g.connect(audioCtx.destination);
+    o.frequency.value = 440;
+    g.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+    o.start(); o.stop(audioCtx.currentTime + 0.2);
+  } catch(e) {}
+}
+
+function launchConfetti() {
+  const container = document.getElementById('confetti-container');
+  if (!container) return;
+  container.innerHTML = '';
+  const colors = ['#4f46e5','#f59e0b','#059669','#dc2626','#7c3aed','#0ea5e9'];
+  for (let i = 0; i < 80; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.cssText = `left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-delay:${Math.random()*1}s;animation-duration:${2+Math.random()*2}s;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;border-radius:${Math.random()>0.5?'50%':'2px'}`;
+    container.appendChild(piece);
+  }
+  setTimeout(() => { if (container) container.innerHTML = ''; }, 4000);
+}
+
 const appState = {
-  exercise: 'word', words: [], wordStates: [], wordAttempts: [], currentIdx: 0,
-  timeLimit: 60, timeLeft: 60, running: false, listenMode: false,
+  exercise: 'practice', words: [], wordStates: [], wordAttempts: [], currentIdx: 0,
+  timeLimit: 60, timeLeft: 60, running: false, listenMode: true,
   timerInterval: null, recognition: null, imageFile: null,
-  selectedProfile: null, selectedAvatar: '🦁', profiles: []
+  selectedProfile: null, selectedAvatar: '🦁', profiles: [],
+  warningPlayed: false
 };
 
 function showPage(page) {
@@ -676,8 +760,7 @@ function homeCTA() {
 function showAuthMsg(id, msg, type) {
   const el = document.getElementById(id);
   if (!el) return;
-  el.textContent = msg;
-  el.style.display = 'block';
+  el.textContent = msg; el.style.display = 'block';
   el.style.background = type === 'success' ? '#d1fae5' : '#fee2e2';
   el.style.color = type === 'success' ? '#065f46' : '#991b1b';
   setTimeout(() => el.style.display = 'none', 6000);
@@ -690,7 +773,6 @@ const norskFeil = {
   'Invalid email': 'Ugyldig e-postadresse.',
   'Password should be at least 6 characters': 'Passordet må være minst 6 tegn.',
 };
-
 function oversett(msg) { return norskFeil[msg] || 'Noe gikk galt. Prøv igjen.'; }
 
 async function handleLogin() {
@@ -700,12 +782,8 @@ async function handleLogin() {
     email: document.getElementById('login-email').value,
     password: document.getElementById('login-password').value
   });
-  if (error) {
-    showAuthMsg('login-error', oversett(error.message), 'error');
-    btn.disabled = false; btn.textContent = 'Logg inn';
-  } else {
-    await loadApp(); showPage('app');
-  }
+  if (error) { showAuthMsg('login-error', oversett(error.message), 'error'); btn.disabled = false; btn.textContent = 'Logg inn'; }
+  else { await loadApp(); showPage('app'); }
 }
 
 async function handleRegister() {
@@ -716,13 +794,8 @@ async function handleRegister() {
   if (!email) { showAuthMsg('register-error', 'Skriv inn e-postadressen din.', 'error'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; return; }
   if (pw.length < 6) { showAuthMsg('register-error', 'Passordet må være minst 6 tegn.', 'error'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; return; }
   const { error } = await sb.auth.signUp({ email, password: pw });
-  if (error) {
-    showAuthMsg('register-error', oversett(error.message), 'error');
-    btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀';
-  } else {
-    showPage('login');
-    showAuthMsg('login-success', '✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen før du logger inn.', 'success');
-  }
+  if (error) { showAuthMsg('register-error', oversett(error.message), 'error'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; }
+  else { showPage('login'); showAuthMsg('login-success', '✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen før du logger inn.', 'success'); }
 }
 
 async function handleForgot() {
@@ -758,10 +831,7 @@ async function changePassword() {
   else { showAuthMsg('pw-success', '✅ Passord oppdatert!', 'success'); document.getElementById('new-password').value = ''; document.getElementById('new-password2').value = ''; }
 }
 
-async function logoutAll() {
-  await sb.auth.signOut({ scope: 'global' });
-  updateNav(false); showPage('home');
-}
+async function logoutAll() { await sb.auth.signOut({ scope: 'global' }); updateNav(false); showPage('home'); }
 
 async function confirmDeleteAccount() {
   if (!confirm('Er du sikker? Dette sletter kontoen din og alle data permanent.')) return;
@@ -773,14 +843,10 @@ async function confirmDeleteAccount() {
     await sb.from('saved_texts').delete().eq('user_id', user.id);
     await sb.auth.signOut();
   }
-  updateNav(false); showPage('home');
-  alert('Kontoen din er slettet.');
+  updateNav(false); showPage('home'); alert('Kontoen din er slettet.');
 }
 
-async function handleLogout() {
-  await sb.auth.signOut();
-  updateNav(false); showPage('home');
-}
+async function handleLogout() { await sb.auth.signOut(); updateNav(false); showPage('home'); }
 
 function updateNav(loggedIn) {
   document.getElementById('nav-login-btn').style.display = loggedIn ? 'none' : 'inline-block';
@@ -879,15 +945,11 @@ async function addReward() {
   if (!profileId || !text || !stars) { alert('Fyll inn belønning og antall stjerner.'); return; }
   const { data: { user } } = await sb.auth.getUser();
   await sb.from('rewards').insert({ profile_id: profileId, user_id: user.id, reward_text: text, stars_required: +stars });
-  document.getElementById('reward-text').value = '';
-  document.getElementById('reward-stars').value = '';
+  document.getElementById('reward-text').value = ''; document.getElementById('reward-stars').value = '';
   loadRewards();
 }
 
-async function deleteReward(id) {
-  await sb.from('rewards').delete().eq('id', id);
-  loadRewards();
-}
+async function deleteReward(id) { await sb.from('rewards').delete().eq('id', id); loadRewards(); }
 
 async function saveText() {
   const title = document.getElementById('save-text-title').value.trim();
@@ -895,8 +957,7 @@ async function saveText() {
   if (!title) { alert('Gi teksten et navn først.'); return; }
   if (!content) { alert('Det er ingen tekst å lagre.'); return; }
   const { data: { user } } = await sb.auth.getUser();
-  const profileId = appState.selectedProfile?.id || null;
-  await sb.from('saved_texts').insert({ user_id: user.id, profile_id: profileId, title, content });
+  await sb.from('saved_texts').insert({ user_id: user.id, profile_id: appState.selectedProfile?.id || null, title, content });
   document.getElementById('save-text-title').value = '';
   alert('✅ Tekst lagret!');
   loadSavedTexts();
@@ -991,18 +1052,28 @@ async function runOCR() {
 }
 
 function startSession() {
+  if (audioCtx.state === 'suspended') audioCtx.resume();
   const w = tokenize(document.getElementById('textInput').value);
   if (!w.length) return;
-  appState.words = w; appState.wordStates = new Array(w.length).fill('none'); appState.wordAttempts = new Array(w.length).fill(0);
-  appState.currentIdx = 0; appState.timeLeft = appState.timeLimit; appState.running = true;
+  appState.words = w;
+  appState.wordStates = new Array(w.length).fill('none');
+  appState.wordAttempts = new Array(w.length).fill(0);
+  appState.currentIdx = 0;
+  appState.timeLeft = appState.timeLimit;
+  appState.running = true;
+  appState.warningPlayed = false;
   document.getElementById('reading-setup').style.display = 'none';
   document.getElementById('reading-active').style.display = 'block';
   document.getElementById('reading-result').style.display = 'none';
-  document.getElementById('reading-info').textContent = appState.listenMode ? '🎤 Barnet leser høyt. Ord merkes automatisk.' :
-    appState.exercise === 'word' ? 'Trykk ✅ eller ❌ for hvert ord.' : 'Trykk på ord som leses FEIL (de blir røde).';
+  document.getElementById('reading-title').textContent = appState.exercise === 'practice' ? '🌱 Øvingsmodus' : '⏱ Tidsbasert';
+  document.getElementById('reading-info').textContent = appState.listenMode
+    ? (appState.exercise === 'practice' ? '🎤 Les høyt – ta din tid! Prøv vanskelige ord om igjen.' : '🎤 Les så mange ord som mulig!')
+    : (appState.exercise === 'practice' ? 'Trykk ✅ for hvert riktige ord.' : 'Trykk på ord som leses FEIL.');
   renderWords();
   if (appState.exercise === 'timed') {
-    const td = document.getElementById('timer-display'); td.style.display = 'block'; td.textContent = '⏱ ' + appState.timeLeft + 's'; startTimer();
+    const td = document.getElementById('timer-display');
+    td.style.display = 'block'; td.textContent = '⏱ ' + appState.timeLeft + 's';
+    startTimer();
   }
   if (appState.listenMode) startRecognition();
 }
@@ -1010,29 +1081,29 @@ function startSession() {
 function renderWords() {
   const html = appState.words.map((w, i) => {
     const s = appState.wordStates[i];
-    const isCur = i === appState.currentIdx && appState.exercise === 'word';
-    const cls = isCur ? 'current' : s === 'correct' ? 'correct' : s === 'wrong' ? 'wrong' : s === 'skip' ? 'skip' : '';
+    const isCur = i === appState.currentIdx && !appState.listenMode && appState.exercise === 'practice';
+    const cls = isCur ? 'current' : s === 'correct' ? 'correct' : s === 'wrong' ? 'wrong' : '';
     const click = !appState.listenMode && appState.exercise === 'timed' ? 'clickable' : '';
-    const btns = (appState.exercise === 'word' && isCur && !appState.listenMode) ?
+    const btns = (!appState.listenMode && appState.exercise === 'practice' && isCur) ?
       `<span class="word-btns"><button class="word-btn ok" onclick="markWord(${i},'correct')">✅</button><button class="word-btn fail" onclick="markWord(${i},'wrong')">❌</button></span>` : '';
     return `<span class="word-wrap"><span class="word ${cls} ${click}" onclick="clickWord(${i})">${w}</span>${btns}</span>`;
   }).join('');
   document.getElementById('text-display').innerHTML = html;
   const c = appState.wordStates.filter(s => s === 'correct').length;
-  const wr = appState.wordStates.filter(s => s === 'wrong').length;
   document.getElementById('stat-correct').textContent = '✅ Riktig: ' + c;
-  document.getElementById('stat-wrong').textContent = '❌ Feil: ' + wr;
   document.getElementById('stat-left').textContent = 'Ord igjen: ' + (appState.words.length - appState.currentIdx);
 }
 
 function clickWord(i) {
   if (appState.listenMode || appState.exercise !== 'timed') return;
-  appState.wordStates[i] = appState.wordStates[i] === 'wrong' ? 'none' : 'wrong'; renderWords();
+  appState.wordStates[i] = appState.wordStates[i] === 'wrong' ? 'none' : 'wrong';
+  renderWords();
 }
 
 function markWord(i, val) {
   appState.wordStates[i] = val;
-  if (appState.exercise === 'word' && i === appState.currentIdx) {
+  if (val === 'correct') playPling();
+  if (appState.exercise === 'practice' && i === appState.currentIdx) {
     appState.currentIdx++;
     if (appState.currentIdx >= appState.words.length) { renderWords(); setTimeout(endSession, 400); return; }
   }
@@ -1045,8 +1116,18 @@ function startTimer() {
     appState.timeLeft--;
     const td = document.getElementById('timer-display');
     if (td) { td.textContent = '⏱ ' + appState.timeLeft + 's'; td.className = 'timer' + (appState.timeLeft <= 10 ? ' urgent' : ''); }
+    if (appState.timeLeft === 10 && !appState.warningPlayed) { playWarning(); appState.warningPlayed = true; }
     if (appState.timeLeft <= 0) endSession();
   }, 1000);
+}
+
+function levenshtein(a, b) {
+  const m = a.length, n = b.length;
+  const dp = Array.from({length: m+1}, (_, i) => Array.from({length: n+1}, (_, j) => i || j));
+  for (let i = 1; i <= m; i++)
+    for (let j = 1; j <= n; j++)
+      dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+  return dp[m][n];
 }
 
 function startRecognition() {
@@ -1061,7 +1142,7 @@ function startRecognition() {
   const rec = new SR();
   rec.lang = 'nb-NO'; rec.continuous = true; rec.interimResults = false;
   appState.recognition = rec;
-rec.onresult = e => {
+  rec.onresult = e => {
     const result = e.results[e.results.length-1];
     if (!result.isFinal) return;
     const spokenWords = result[0].transcript.trim().toLowerCase().replace(/[.,!?;:]/g,'').split(/\s+/).filter(Boolean);
@@ -1074,15 +1155,11 @@ rec.onresult = e => {
         appState.wordStates[i] = 'correct';
         appState.wordAttempts[i] = 0;
         appState.currentIdx++;
+        playPling();
         renderWords();
-      } else if (spoken.length > 2) {
-        appState.wordAttempts[i] = (appState.wordAttempts[i] || 0) + 1;
-        if (appState.wordAttempts[i] >= 3) {
-          appState.wordStates[i] = 'skip';
-          appState.currentIdx++;
-          renderWords();
-        } else {
-          renderWords();
+        if (appState.exercise === 'practice' && appState.currentIdx >= appState.words.length) {
+          setTimeout(endSession, 400);
+          break;
         }
       }
     }
@@ -1103,6 +1180,10 @@ async function endSession() {
   const read = appState.wordStates.filter(s => s !== 'none').length;
   const wpm = appState.exercise === 'timed' ? Math.round((correct / appState.timeLimit) * 60) : null;
   const stars = Math.min(5, Math.floor(correct / 5));
+
+  playFinish();
+  launchConfetti();
+
   const { data: { user } } = await sb.auth.getUser();
   if (user && appState.selectedProfile) {
     await sb.from('reading_sessions').insert({
@@ -1120,25 +1201,35 @@ async function endSession() {
       .lte('stars_required', newStars)
       .gt('stars_required', newStars - stars);
     if (rewards && rewards.length > 0) {
-      setTimeout(() => alert('🎉 ' + appState.selectedProfile.child_name + ' har oppnådd en belønning: ' + rewards[0].reward_text + '!'), 500);
+      setTimeout(() => alert('🎉 ' + appState.selectedProfile.child_name + ' har oppnådd en belønning: ' + rewards[0].reward_text + '!'), 1000);
     }
   }
+
   document.getElementById('reading-active').style.display = 'none';
   document.getElementById('reading-result').style.display = 'block';
+
+  const avatar = appState.selectedProfile?.avatar || '🌟';
+  document.getElementById('result-avatar').textContent = avatar;
+
+  const msgs = ['Fantastisk jobbet! 🌟', 'Du er en lesehelt! 🦁', 'Så flink du er! 🎉', 'Kjempebra! 🚀'];
+  document.getElementById('result-title').textContent = msgs[Math.floor(Math.random() * msgs.length)];
+  document.getElementById('result-subtitle').textContent = appState.selectedProfile ? appState.selectedProfile.child_name + ' – du er stolt av deg selv!' : 'Bra innsats!';
   document.getElementById('stars-earned').textContent = stars > 0 ? '⭐'.repeat(stars) + ' +' + stars + ' stjerner!' : '💪 Fortsett å øve!';
+
   let gridHtml = `
     <div class="result-card" style="background:#d1fae5"><div class="lbl" style="color:#059669">✅ Riktige ord</div><div class="val" style="color:#059669">${correct}</div></div>
-    <div class="result-card" style="background:#fee2e2"><div class="lbl" style="color:#dc2626">❌ Feil ord</div><div class="val" style="color:#dc2626">${wrong}</div></div>
     <div class="result-card" style="background:#eef2ff"><div class="lbl" style="color:#4f46e5">📖 Leste ord</div><div class="val" style="color:#4f46e5">${read}</div></div>
   `;
   if (wpm !== null) gridHtml += `<div class="result-card" style="background:#fef3c7"><div class="lbl" style="color:#d97706">🚀 Ord/min</div><div class="val" style="color:#d97706">${wpm}</div></div>`;
   document.getElementById('results-grid').innerHTML = gridHtml;
+
   if (wpm !== null) {
     document.getElementById('wpm-section').style.display = 'block';
     document.getElementById('progress-fill').style.cssText = `width:${Math.min(100,(wpm/150)*100)}%;background:${wpm>=100?'#059669':'#f59e0b'}`;
     document.getElementById('wpm-feedback').style.color = wpm >= 100 ? '#059669' : '#d97706';
     document.getElementById('wpm-feedback').textContent = wpm >= 100 ? `Flott! Leser over snittet (${wpm} ord/min)! 🌟` : `Leser ${wpm} ord/min — snittet er 100. Fortsett å øve! 💪`;
   }
+
   document.getElementById('review-text').innerHTML = appState.words.map((w, i) => {
     const s = appState.wordStates[i];
     const bg = s==='correct'?'#d1fae5':s==='wrong'?'#fee2e2':'#f3f4f6';
@@ -1157,7 +1248,9 @@ function resetSession() {
 
 function tryAgain() {
   appState.wordStates = new Array(appState.words.length).fill('none');
-  appState.currentIdx = 0; appState.timeLeft = appState.timeLimit; appState.running = true;
+  appState.wordAttempts = new Array(appState.words.length).fill(0);
+  appState.currentIdx = 0; appState.timeLeft = appState.timeLimit;
+  appState.running = true; appState.warningPlayed = false;
   document.getElementById('reading-result').style.display = 'none';
   document.getElementById('reading-active').style.display = 'block';
   renderWords();
@@ -1170,24 +1263,73 @@ async function loadProgress() {
     document.getElementById('progress-content').innerHTML = '<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil først.</p>';
     return;
   }
-  const { data } = await sb.from('reading_sessions').select('*').eq('profile_id', appState.selectedProfile.id).order('created_at', { ascending: false }).limit(20);
+  const p = appState.selectedProfile;
+  const { data } = await sb.from('reading_sessions').select('*').eq('profile_id', p.id).order('created_at', { ascending: false }).limit(20);
+
   if (!data || !data.length) {
-    document.getElementById('progress-content').innerHTML = '<p style="color:#6b7280;text-align:center;padding:40px">Ingen øvelser ennå. Gjennomfør en leseøkt for å se fremgang her!</p>';
+    document.getElementById('progress-content').innerHTML = `
+      <div class="progress-hero">
+        <div class="avatar">${p.avatar}</div>
+        <h3>${p.child_name}</h3>
+        <p class="tagline">Nivå ${p.level} · ${p.stars} ⭐ totalt</p>
+      </div>
+      <p style="color:#6b7280;text-align:center;padding:20px">Ingen øvelser ennå. Gjennomfør en leseøkt for å se fremgang her!</p>
+    `;
     return;
   }
+
+  const totalStars = data.reduce((sum, s) => sum + Math.min(5, Math.floor(s.correct_words / 5)), 0);
+  const avgWpm = Math.round(data.filter(s => s.words_per_minute > 0).reduce((sum, s) => sum + s.words_per_minute, 0) / (data.filter(s => s.words_per_minute > 0).length || 1));
+
+  const encouragement = avgWpm >= 100 ? '🌟 Du leser over gjennomsnittet! Fantastisk!' :
+    avgWpm >= 70 ? '🚀 Du blir bedre og bedre! Fortsett!' :
+    '💪 Øving gjør mester! Du klarer det!';
+
+  const wpmSessions = data.filter(s => s.words_per_minute > 0).slice(0, 7).reverse();
+  const maxWpm = Math.max(...wpmSessions.map(s => s.words_per_minute), 1);
+
   document.getElementById('progress-content').innerHTML = `
-    <h3 style="margin-bottom:20px;font-size:18px">${appState.selectedProfile.avatar} ${appState.selectedProfile.child_name} – Siste øvelser</h3>
+    <div class="progress-hero">
+      <div class="avatar">${p.avatar}</div>
+      <h3>${p.child_name}</h3>
+      <p class="tagline">Nivå ${p.level} · ${p.stars} ⭐ totalt</p>
+      <p style="margin-top:8px;font-size:14px;color:#4f46e5;font-weight:700">${encouragement}</p>
+    </div>
+
+    <div class="card">
+      <label class="form-label">⭐ Stjerner tjent (siste ${data.length} økter)</label>
+      <div class="stars-chart">
+        ${data.slice(0, 20).map(s => {
+          const earned = Math.min(5, Math.floor(s.correct_words / 5));
+          return `<div class="star-dot" title="${new Date(s.created_at).toLocaleDateString('nb-NO')}">${earned > 0 ? '⭐'.repeat(earned) : '○'}</div>`;
+        }).join('')}
+      </div>
+    </div>
+
+    ${wpmSessions.length > 0 ? `
+    <div class="wpm-meter">
+      <h4>🚀 Ord per minutt – utvikling</h4>
+      ${wpmSessions.map(s => `
+        <div class="wpm-bar-row">
+          <span class="date">${new Date(s.created_at).toLocaleDateString('nb-NO', {day:'numeric',month:'short'})}</span>
+          <div class="wpm-bar" style="width:${Math.max(10, (s.words_per_minute/maxWpm)*100)}%">${s.words_per_minute}</div>
+        </div>
+      `).join('')}
+      <div style="font-size:12px;color:#9ca3af;margin-top:8px">Snitt for alder: 100 ord/min</div>
+    </div>` : ''}
+
     <div class="progress-list">
+      <h4 style="font-size:15px;font-weight:800;margin-bottom:12px">📅 Siste leseøkter</h4>
       ${data.map(s => `
         <div class="session-item">
           <div>
-            <div style="font-weight:700">${s.exercise_type === 'timed' ? '⏱ Tidsbasert' : '📝 Ord for ord'}</div>
-            <div class="session-date">${new Date(s.created_at).toLocaleDateString('nb-NO')}</div>
+            <div style="font-weight:700">${s.exercise_type === 'timed' ? '⏱ Tidsbasert' : '🌱 Øvingsmodus'}</div>
+            <div class="session-date">${new Date(s.created_at).toLocaleDateString('nb-NO')} kl. ${new Date(s.created_at).toLocaleTimeString('nb-NO', {hour:'2-digit',minute:'2-digit'})}</div>
           </div>
           <div class="session-stats">
             <div class="session-stat"><div class="n" style="color:#059669">${s.correct_words}</div><div class="l">Riktige</div></div>
-            <div class="session-stat"><div class="n" style="color:#dc2626">${s.wrong_words}</div><div class="l">Feil</div></div>
             ${s.words_per_minute > 0 ? `<div class="session-stat"><div class="n" style="color:#4f46e5">${s.words_per_minute}</div><div class="l">Ord/min</div></div>` : ''}
+            <div class="session-stat"><div class="n" style="color:#f59e0b">${Math.min(5, Math.floor(s.correct_words/5))}</div><div class="l">⭐</div></div>
           </div>
         </div>
       `).join('')}
