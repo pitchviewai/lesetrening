@@ -1084,7 +1084,11 @@ function setLength(len, btn){
 
 async function generateText(){
   const childName=document.getElementById('gen-child').value.trim();
-  if(!childName){alert('Skriv inn barnets navn!');return;}
+ if(!childName && !pet && !friend && !sibling && !activity && !hero){
+  alert('Fyll inn minst ett felt for å lage en personlig historie!');
+  return;
+}
+const nameToUse = childName || 'barnet';
 
   const pet=document.getElementById('gen-pet').value.trim();
   const friend=document.getElementById('gen-friend').value.trim();
@@ -1114,7 +1118,7 @@ async function generateText(){
     hero && `Favorittfigur: ${hero}`
   ].filter(Boolean).join(', ');
 
-  const prompt=`Du er en kreativ norsk barnebokforfatter. ${lengthInstructions} Historien handler om ${childName}${details ? ` og involverer: ${details}` : ''}. ${difficultyNote} Skriv på bokmål. Returner KUN selve teksten, ingen tittel, ingen forklaringer, ingen ekstra linjer.`;
+  const prompt=`Du er en kreativ norsk barnebokforfatter. ${lengthInstructions} Historien handler om ${nameToUse}${details ? ` og involverer: ${details}` : ''}. ${difficultyNote} Skriv på bokmål. Returner KUN selve teksten, ingen tittel, ingen forklaringer, ingen ekstra linjer.`;
 
   document.getElementById('gen-btn').disabled=true;
   document.getElementById('gen-generating').style.display='block';
