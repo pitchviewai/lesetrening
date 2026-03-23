@@ -25,9 +25,9 @@
     .hero h1 span { color: #4f46e5; }
     .hero p { font-size: 18px; color: #6b7280; line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
     .btn-group { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary { background: #4f46e5; color: #fff; padding: 16px 32px; border-radius: 50px; font-size: 17px; font-weight: 800; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(79,70,229,0.35); transition: transform 0.2s; display: inline-block; }
+    .btn-primary { background: #4f46e5; color: #fff; padding: 16px 32px; border-radius: 50px; font-size: 17px; font-weight: 800; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(79,70,229,0.35); transition: transform 0.2s; display: inline-block; }
     .btn-primary:hover { transform: translateY(-2px); }
-    .btn-secondary { background: #fff; color: #4f46e5; padding: 16px 32px; border-radius: 50px; font-size: 17px; font-weight: 800; text-decoration: none; border: 2px solid #e0e7ff; cursor: pointer; display: inline-block; }
+    .btn-secondary { background: #fff; color: #4f46e5; padding: 16px 32px; border-radius: 50px; font-size: 17px; font-weight: 800; border: 2px solid #e0e7ff; cursor: pointer; display: inline-block; }
     .hero-visual { flex: 1; display: flex; justify-content: center; }
     .hero-card { background: linear-gradient(135deg, #eef2ff 0%, #fef3c7 100%); border-radius: 28px; padding: 32px; max-width: 380px; width: 100%; box-shadow: 0 12px 40px rgba(79,70,229,0.12); }
     .hero-card-title { font-size: 13px; font-weight: 700; color: #6b7280; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
@@ -96,12 +96,10 @@
     .content-page ul { margin: 0 0 16px 20px; }
     .content-page ul li { font-size: 15px; color: #4b5563; line-height: 1.8; margin-bottom: 6px; }
     .content-back { display: inline-flex; align-items: center; gap: 8px; color: #4f46e5; font-weight: 700; cursor: pointer; margin-bottom: 32px; font-size: 15px; }
-    .content-back:hover { text-decoration: underline; }
     .contact-form { background: #f8f7ff; border-radius: 20px; padding: 32px; margin-top: 32px; border: 1.5px solid #e0e7ff; }
     .contact-form .form-group { margin-bottom: 20px; }
     .contact-form label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; }
     .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 14px 16px; border-radius: 12px; border: 2px solid #e5e7eb; font-size: 15px; font-family: inherit; background: #fff; }
-    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #4f46e5; }
     .contact-form textarea { height: 140px; resize: vertical; }
     .about-hero { background: linear-gradient(135deg, #eef2ff, #fef3c7); border-radius: 24px; padding: 40px; text-align: center; margin-bottom: 40px; }
     .about-hero .big-emoji { font-size: 72px; margin-bottom: 16px; }
@@ -152,8 +150,8 @@
     .app-container { max-width: 760px; margin: 0 auto; padding: 32px 24px; }
     .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
     .app-header h2 { font-size: 22px; font-weight: 900; }
-    .app-tabs { display: flex; gap: 8px; background: #f3f4f6; border-radius: 14px; padding: 6px; margin-bottom: 28px; overflow-x: auto; }
-    .app-tab { flex: 1; padding: 10px; border-radius: 10px; border: none; background: transparent; font-family: inherit; font-weight: 700; font-size: 14px; cursor: pointer; color: #6b7280; white-space: nowrap; }
+    .app-tabs { display: flex; gap: 6px; background: #f3f4f6; border-radius: 14px; padding: 6px; margin-bottom: 28px; overflow-x: auto; }
+    .app-tab { flex: 1; padding: 10px 8px; border-radius: 10px; border: none; background: transparent; font-family: inherit; font-weight: 700; font-size: 13px; cursor: pointer; color: #6b7280; white-space: nowrap; }
     .app-tab.active { background: #fff; color: #4f46e5; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
@@ -174,7 +172,6 @@
     .form-label { font-weight: 700; display: block; margin-bottom: 8px; font-size: 14px; }
     textarea { width: 100%; height: 140px; padding: 12px; border-radius: 10px; border: 2px solid #e5e7eb; font-size: 15px; resize: vertical; font-family: inherit; }
     textarea:focus { outline: none; border-color: #4f46e5; }
-    .upload-box { padding: 16px; background: #f9fafb; border-radius: 12px; border: 2px dashed #d1d5db; margin-bottom: 20px; }
     .btn { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; font-size: 15px; font-family: inherit; transition: transform 0.2s; }
     .btn:hover { transform: translateY(-1px); }
     .btn-indigo { background: #4f46e5; color: #fff; }
@@ -182,6 +179,7 @@
     .btn-gray { background: #6b7280; color: #fff; }
     .btn-red { background: #dc2626; color: #fff; }
     .btn-yellow { background: #f59e0b; color: #fff; }
+    .btn-purple { background: #7c3aed; color: #fff; }
     .btn-large { width: 100%; padding: 16px; font-size: 18px; border-radius: 12px; margin-top: 8px; }
     .btn:disabled { background: #d1d5db; cursor: default; transform: none; }
     .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -189,14 +187,32 @@
     input[type=range] { width: 100%; }
     .info-box { padding: 10px 14px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; background: #fef3c7; color: #92400e; }
 
-    /* Ord-for-ord display */
+    /* AI Tekstgenerator */
+    .gen-hero { background: linear-gradient(135deg, #f3e8ff, #eef2ff); border-radius: 20px; padding: 28px; margin-bottom: 24px; text-align: center; border: 1.5px solid #e0e7ff; }
+    .gen-hero h3 { font-size: 22px; font-weight: 900; color: #4f46e5; margin-bottom: 8px; }
+    .gen-hero p { font-size: 14px; color: #6b7280; }
+    .gen-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+    .gen-field { display: flex; flex-direction: column; gap: 6px; }
+    .gen-field label { font-size: 13px; font-weight: 700; color: #4b5563; }
+    .gen-field input { padding: 10px 12px; border-radius: 10px; border: 2px solid #e5e7eb; font-size: 14px; font-family: inherit; transition: border-color 0.2s; }
+    .gen-field input:focus { outline: none; border-color: #7c3aed; }
+    .gen-field input::placeholder { color: #d1d5db; }
+    .length-options { display: flex; gap: 10px; margin-bottom: 20px; }
+    .length-btn { flex: 1; padding: 10px; border-radius: 10px; border: 2px solid #e5e7eb; background: #fff; cursor: pointer; text-align: center; font-family: inherit; font-weight: 700; font-size: 14px; color: #6b7280; transition: all 0.2s; }
+    .length-btn.active { border-color: #7c3aed; background: #f3e8ff; color: #7c3aed; }
+    .gen-result { background: #f8f7ff; border-radius: 16px; padding: 20px; border: 2px solid #e0e7ff; margin-bottom: 16px; }
+    .gen-result-text { font-size: 16px; line-height: 1.8; color: #1e1b4b; white-space: pre-wrap; }
+    .generating-indicator { display: flex; align-items: center; gap: 12px; padding: 20px; background: #f3e8ff; border-radius: 12px; margin-bottom: 16px; }
+    .gen-spinner { width: 24px; height: 24px; border: 3px solid #e0e7ff; border-top-color: #7c3aed; border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Ord-for-ord */
     .word-display-area { padding: 32px 24px; border-radius: 20px; border: 2px solid #e5e7eb; margin-bottom: 20px; min-height: 160px; }
     .word-flow { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
     .word-chip { display: inline-block; padding: 6px 12px; border-radius: 10px; font-size: 18px; font-weight: 700; transition: all 0.2s; }
     .word-chip.pending { background: #f3f4f6; color: #9ca3af; }
     .word-chip.current { background: #eef2ff; color: #4f46e5; border: 2px solid #4f46e5; font-size: 22px; transform: scale(1.1); }
     .word-chip.correct { background: #d1fae5; color: #065f46; }
-    .word-chip.wrong { background: #fee2e2; color: #991b1b; }
     .word-chip.skipped { background: #fef3c7; color: #92400e; }
     .big-current-word { text-align: center; font-size: 52px; font-weight: 900; color: #4f46e5; margin: 16px 0; letter-spacing: 2px; }
     .attempt-dots { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; }
@@ -207,8 +223,6 @@
     .manual-btn:hover { transform: scale(1.1); }
     .manual-btn-correct { background: #d1fae5; color: #065f46; }
     .manual-btn-wrong { background: #fee2e2; color: #991b1b; }
-
-    /* Setning-display (tidsbasert) */
     .sentence-display { padding: 24px; border-radius: 16px; border: 1px solid #e5e7eb; margin-bottom: 16px; min-height: 120px; }
     .sentence-done { font-size: 20px; line-height: 2.2; color: #9ca3af; margin-bottom: 12px; }
     .sentence-active { font-size: 26px; line-height: 2.4; font-weight: 700; background: #eef2ff; border-radius: 12px; padding: 16px; margin-bottom: 12px; border: 2px solid #4f46e5; }
@@ -219,15 +233,12 @@
     .sent-dot { width: 12px; height: 12px; border-radius: 50%; background: #e5e7eb; transition: background 0.3s; }
     .sent-dot.done { background: #059669; }
     .sent-dot.active { background: #4f46e5; transform: scale(1.3); }
-
-    /* Øvemodus for feilord */
     .drill-overlay { background: linear-gradient(135deg, #fef3c7, #fff7ed); border-radius: 20px; padding: 32px; margin-bottom: 16px; border: 2px solid #f59e0b; }
     .drill-word { text-align: center; font-size: 64px; font-weight: 900; color: #4f46e5; margin: 16px 0; letter-spacing: 3px; }
     .drill-progress { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
     .drill-dot { width: 16px; height: 16px; border-radius: 50%; background: #e5e7eb; }
     .drill-dot.done { background: #059669; }
     .drill-dot.active { background: #f59e0b; transform: scale(1.3); }
-
     .confetti-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
     .confetti-piece { position: absolute; width: 10px; height: 10px; border-radius: 2px; animation: confetti-fall 3s ease-in forwards; }
     @keyframes confetti-fall { 0% { transform: translateY(-20px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
@@ -268,7 +279,7 @@
       .hero { flex-direction: column; padding: 40px 20px; }
       .hero h1 { font-size: 36px; }
       nav { padding: 16px 20px; }
-      .why-grid, .value-cards { grid-template-columns: 1fr; }
+      .why-grid, .value-cards, .gen-fields { grid-template-columns: 1fr; }
       .info-cards { grid-template-columns: 1fr; }
       .big-current-word { font-size: 40px; }
       .drill-word { font-size: 48px; }
@@ -295,7 +306,7 @@
       <div class="hero-text">
         <div class="hero-badge">🌟 Gratis å prøve – ingen kredittkort</div>
         <h1>Hjelp barnet ditt å bli en <span>bedre leser</span></h1>
-        <p>Leselab gjør lesetrening morsomt og enkelt hjemme. Lim inn tekst fra barnets bok, og følg fremgangen i sanntid.</p>
+        <p>Leselab gjør lesetrening morsomt og enkelt hjemme. Lag personlige historier med barnets egne navn, og følg fremgangen i sanntid.</p>
         <div class="btn-group">
           <button class="btn-primary" onclick="homeCTA()">Start gratis nå 🚀</button>
           <button class="btn-secondary" onclick="document.getElementById('how-section').scrollIntoView({behavior:'smooth'})">Se hvordan det fungerer</button>
@@ -325,7 +336,7 @@
     <div class="section-label">Slik fungerer det</div>
     <div class="section-title">Tre enkle steg</div>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-icon">📚</div><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller bruk vår tekstgenerator for en personlig historie.</p></div>
+      <div class="step"><div class="step-num">1</div><div class="step-icon">✨</div><h3>Lag en personlig historie</h3><p>Fyll inn barnets navn, hundens navn og favorittaktivitet – AI lager en unik historie!</p></div>
       <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser høyt</h3><p>Appen lytter og markerer ord grønt. Prøv vanskelige ord om igjen!</p></div>
       <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg utvikling over tid med morsomme grafer og stjerner!</p></div>
     </div>
@@ -335,7 +346,7 @@
     <div class="section-label">Hvorfor Leselab</div>
     <div class="section-title">Laget av foreldre, for foreldre</div>
     <div class="why-grid">
-      <div class="why-card"><div class="why-icon">📖</div><div><h3>Bruk barnets egne bøker</h3><p>Ikke generiske øvingstekster – bruk tekster barnet allerede er motivert for å lese.</p></div></div>
+      <div class="why-card"><div class="why-icon">✨</div><div><h3>Personlige historier</h3><p>AI lager unike tekster med barnets egne navn og interesser – så mye morsommere å lese!</p></div></div>
       <div class="why-card"><div class="why-icon">⚡</div><div><h3>Ord-for-ord med stemme</h3><p>Barnet leser hvert ord høyt. Riktige ord blir grønne med en pling!</p></div></div>
       <div class="why-card"><div class="why-icon">📊</div><div><h3>Følg utviklingen</h3><p>Se fremgangen med barnevennlige grafer og oppmuntrende meldinger.</p></div></div>
       <div class="why-card"><div class="why-icon">🌟</div><div><h3>Motiverende belønninger</h3><p>Barnet samler stjerner og klatrer i nivåer etter hvert som de leser.</p></div></div>
@@ -358,8 +369,8 @@
         <div class="price">0 <span>kr/mnd</span></div>
         <ul class="pricing-features">
           <li>5 leseøkter per måned</li>
+          <li>AI-tekstgenerator</li>
           <li>Øvings- og tidsbasert modus</li>
-          <li>Grunnleggende statistikk</li>
           <li class="no">Fremgangsoversikt</li>
           <li class="no">Belønninger og nivåer</li>
           <li class="no">Flere barneprofiler</li>
@@ -372,7 +383,7 @@
         <div class="price">99 <span>kr/mnd</span></div>
         <ul class="pricing-features">
           <li>Ubegrenset antall øvelser</li>
-          <li>Øvings- og tidsbasert modus</li>
+          <li>AI-tekstgenerator</li>
           <li>Full statistikk og fremgang</li>
           <li>Belønninger og nivåer</li>
           <li>Opptil 3 barneprofiler</li>
@@ -402,10 +413,8 @@
   <footer>
     <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
     <div class="footer-links">
-      <a onclick="showPage('about')">Om oss</a>
-      <a onclick="showPage('privacy')">Personvernerklæring</a>
-      <a onclick="showPage('terms')">Vilkår for bruk</a>
-      <a onclick="showPage('contact')">Kontakt</a>
+      <a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a>
+      <a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a>
     </div>
     <div class="footer-copy">© 2026 Leselab · Norge</div>
   </footer>
@@ -418,15 +427,13 @@
     <h1>Om Leselab</h1><p class="subtitle">Laget av en forelder, for foreldre</p>
     <div class="about-hero"><div class="big-emoji">📖</div><h2>Historien bak Leselab</h2><p>Leselab ble til da jeg oppdaget at datteren min på 9 år leste rundt 50 ord i minuttet – halvparten av gjennomsnittet for alderen. Jeg lette etter enkle verktøy foreldre kunne bruke hjemme, men fant ikke noe som passet. Så lagde jeg det selv.</p></div>
     <h2>Hva vi tror på</h2>
-    <p>Lesetrening trenger ikke være kjedelig eller stressende. De beste resultatene kommer når barn leser tekster de selv er motiverte for. Leselab lar foreldre bruke barnets egne bøker slik at lesetreningen føles naturlig og morsom.</p>
+    <p>Lesetrening trenger ikke være kjedelig eller stressende. De beste resultatene kommer når barn leser tekster de selv er motiverte for. Leselab lar foreldre lage personlige historier med barnets egne navn og interesser.</p>
     <div class="value-cards">
       <div class="value-card"><div class="vi">🏠</div><h3>Hjemme er best</h3><p>Daglig øving hjemme gir resultater. Vi gjør det enkelt nok til at det faktisk skjer.</p></div>
       <div class="value-card"><div class="vi">🌱</div><h3>Fremgang, ikke perfeksjon</h3><p>Vi feirer alle steg fremover. Hvert ord er en seier.</p></div>
       <div class="value-card"><div class="vi">🔒</div><h3>Trygghet for familien</h3><p>Barnets data er privat og deles aldri med tredjeparter.</p></div>
       <div class="value-card"><div class="vi">💡</div><h3>Enkel teknologi</h3><p>Ingen nedlasting, ingen komplisert oppsett – bare åpne nettleseren og start.</p></div>
     </div>
-    <h2>Kontakt oss</h2>
-    <p>Spørsmål eller ideer? Send oss en melding på <strong>hei@leselab.no</strong> eller via <a onclick="showPage('contact')" style="color:#4f46e5;cursor:pointer;font-weight:700">kontaktskjemaet</a>.</p>
   </div>
   <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
@@ -454,14 +461,13 @@
   <div class="content-page">
     <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
     <h1>Personvernerklæring</h1><p class="subtitle">Sist oppdatert: mars 2026</p>
-    <p>Leselab tar personvern på alvor. Denne erklæringen forklarer hvilke opplysninger vi samler inn, hvordan de brukes, og hvilke rettigheter du har.</p>
-    <h2>1. Behandlingsansvarlig</h2><p>Leselab er ansvarlig for behandlingen av dine personopplysninger. Kontakt oss på hei@leselab.no ved spørsmål.</p>
-    <h2>2. Hvilke opplysninger samler vi inn?</h2><ul><li>E-postadresse (ved registrering)</li><li>Barnets navn, alder og valgt avatar</li><li>Leseresultater og fremgangsdata knyttet til barneprofilen</li><li>Tekster du lagrer i tjenesten</li></ul>
-    <h2>3. Hvorfor behandler vi disse opplysningene?</h2><ul><li>For å levere og drifte tjenesten</li><li>For å vise fremgangsdata og statistikk</li><li>For å sende viktige servicevarslinger</li></ul>
-    <h2>4. Deling med tredjeparter</h2><p>Vi deler ikke dine personopplysninger med tredjeparter for markedsføringsformål. Vi bruker følgende underleverandører:</p><ul><li><strong>Supabase</strong> – database og autentisering (EU-servere)</li><li><strong>Vercel</strong> – hosting</li><li><strong>Anthropic</strong> – AI-tekstgenerering (ingen data lagres)</li></ul>
-    <h2>5. Dine rettigheter</h2><p>Du kan slette kontoen din under Innstillinger → Slett konto, eller kontakte oss på hei@leselab.no.</p>
-    <h2>6. Cookies</h2><p>Vi bruker kun nødvendige informasjonskapsler for innlogging. Ingen sporings- eller reklamecookies.</p>
-    <h2>7. Kontakt</h2><p>Spørsmål: hei@leselab.no. Du kan også klage til Datatilsynet (datatilsynet.no).</p>
+    <p>Leselab tar personvern på alvor.</p>
+    <h2>1. Behandlingsansvarlig</h2><p>Leselab. Kontakt: hei@leselab.no</p>
+    <h2>2. Opplysninger vi samler inn</h2><ul><li>E-postadresse</li><li>Barnets navn, alder og avatar</li><li>Leseresultater og fremgangsdata</li><li>Tekster du lagrer</li></ul>
+    <h2>3. Formål</h2><ul><li>Levere og drifte tjenesten</li><li>Vise fremgangsdata</li><li>Sende servicevarslinger</li></ul>
+    <h2>4. Underleverandører</h2><ul><li><strong>Supabase</strong> – database (EU)</li><li><strong>Vercel</strong> – hosting</li><li><strong>Anthropic</strong> – AI-tekstgenerering (ingen data lagres)</li></ul>
+    <h2>5. Dine rettigheter</h2><p>Slett konto under Innstillinger, eller kontakt hei@leselab.no. Klager til Datatilsynet (datatilsynet.no).</p>
+    <h2>6. Cookies</h2><p>Kun nødvendige innloggingscookies. Ingen reklame- eller sporingscookies.</p>
   </div>
   <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
@@ -471,70 +477,58 @@
   <div class="content-page">
     <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
     <h1>Vilkår for bruk</h1><p class="subtitle">Sist oppdatert: mars 2026</p>
-    <p>Ved å bruke Leselab godtar du disse vilkårene.</p>
-    <h2>1. Om tjenesten</h2><p>Leselab er et nettbasert verktøy for lesetrening beregnet på barn, tilbudt som gratisversjon og betalt familieversjon.</p>
-    <h2>2. Brukerkonto</h2><p>Du er ansvarlig for å holde innloggingsinformasjonen din konfidensiell og for all aktivitet under din konto.</p>
-    <h2>3. Akseptabel bruk</h2><ul><li>Tjenesten er kun for lovlig og redelig bruk</li><li>Du må ikke forsøke å misbruke eller forstyrre tjenesten</li><li>Du er ansvarlig for innholdet du laster opp eller limer inn</li></ul>
-    <h2>4. Betaling</h2><p>Betalt abonnement faktureres månedlig. Du kan avbestille når som helst uten bindingstid.</p>
-    <h2>5. Ansvarsbegrensning</h2><p>Leselab er et hjelpeverktøy og erstatter ikke pedagogisk vurdering eller profesjonell støtte.</p>
-    <h2>6. Kontakt</h2><p>Spørsmål: hei@leselab.no</p>
+    <h2>1. Om tjenesten</h2><p>Leselab er et nettbasert lesetreningsverktøy for barn.</p>
+    <h2>2. Brukerkonto</h2><p>Du er ansvarlig for aktivitet under din konto.</p>
+    <h2>3. Akseptabel bruk</h2><ul><li>Kun lovlig bruk</li><li>Ikke forsøk å misbruke tjenesten</li><li>Du er ansvarlig for innhold du laster opp</li></ul>
+    <h2>4. Betaling</h2><p>Månedlig abonnement. Avbestill når som helst uten bindingstid.</p>
+    <h2>5. Ansvarsbegrensning</h2><p>Leselab erstatter ikke pedagogisk vurdering eller profesjonell støtte.</p>
+    <h2>6. Kontakt</h2><p>hei@leselab.no</p>
   </div>
   <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
 
-<!-- LOGIN -->
-<div id="page-login" class="page">
-  <div class="auth-container"><div class="auth-card">
-    <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-    <h2>Logg inn</h2><p>Velkommen tilbake!</p>
-    <div class="auth-error" id="login-error"></div>
-    <div class="auth-success" id="login-success"></div>
-    <div class="form-group"><label>E-post</label><input type="email" id="login-email" placeholder="din@epost.no"></div>
-    <div class="form-group"><label>Passord</label><input type="password" id="login-password" placeholder="••••••••"></div>
-    <button class="auth-btn" id="login-btn" onclick="handleLogin()">Logg inn</button>
-    <div class="auth-switch"><a onclick="showPage('forgot')" style="color:#9ca3af;font-weight:600">Glemt passord?</a></div>
-    <div class="auth-switch">Har du ikke konto? <a onclick="showPage('register')">Registrer deg gratis</a></div>
-  </div></div>
-</div>
+<!-- AUTH SIDER -->
+<div id="page-login" class="page"><div class="auth-container"><div class="auth-card">
+  <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+  <h2>Logg inn</h2><p>Velkommen tilbake!</p>
+  <div class="auth-error" id="login-error"></div>
+  <div class="auth-success" id="login-success"></div>
+  <div class="form-group"><label>E-post</label><input type="email" id="login-email" placeholder="din@epost.no"></div>
+  <div class="form-group"><label>Passord</label><input type="password" id="login-password" placeholder="••••••••"></div>
+  <button class="auth-btn" id="login-btn" onclick="handleLogin()">Logg inn</button>
+  <div class="auth-switch"><a onclick="showPage('forgot')" style="color:#9ca3af;font-weight:600">Glemt passord?</a></div>
+  <div class="auth-switch">Har du ikke konto? <a onclick="showPage('register')">Registrer deg gratis</a></div>
+</div></div></div>
 
-<!-- REGISTER -->
-<div id="page-register" class="page">
-  <div class="auth-container"><div class="auth-card">
-    <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-    <h2>Opprett konto</h2><p>Gratis – ingen kredittkort nødvendig</p>
-    <div class="auth-error" id="register-error"></div>
-    <div class="form-group"><label>E-post</label><input type="email" id="register-email" placeholder="din@epost.no"></div>
-    <div class="form-group"><label>Passord</label><input type="password" id="register-password" placeholder="Minst 6 tegn"></div>
-    <button class="auth-btn" id="register-btn" onclick="handleRegister()">Opprett konto og start 🚀</button>
-    <div class="auth-switch">Har du allerede konto? <a onclick="showPage('login')">Logg inn</a></div>
-  </div></div>
-</div>
+<div id="page-register" class="page"><div class="auth-container"><div class="auth-card">
+  <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+  <h2>Opprett konto</h2><p>Gratis – ingen kredittkort nødvendig</p>
+  <div class="auth-error" id="register-error"></div>
+  <div class="form-group"><label>E-post</label><input type="email" id="register-email" placeholder="din@epost.no"></div>
+  <div class="form-group"><label>Passord</label><input type="password" id="register-password" placeholder="Minst 6 tegn"></div>
+  <button class="auth-btn" id="register-btn" onclick="handleRegister()">Opprett konto og start 🚀</button>
+  <div class="auth-switch">Har du allerede konto? <a onclick="showPage('login')">Logg inn</a></div>
+</div></div></div>
 
-<!-- GLEMT PASSORD -->
-<div id="page-forgot" class="page">
-  <div class="auth-container"><div class="auth-card">
-    <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-    <h2>Glemt passord?</h2><p>Skriv inn e-postadressen din så sender vi deg en lenke.</p>
-    <div class="auth-error" id="forgot-error"></div>
-    <div class="auth-success" id="forgot-success"></div>
-    <div class="form-group"><label>E-post</label><input type="email" id="forgot-email" placeholder="din@epost.no"></div>
-    <button class="auth-btn" id="forgot-btn" onclick="handleForgot()">Send tilbakestillingslenke</button>
-    <div class="auth-switch"><a onclick="showPage('login')">← Tilbake til innlogging</a></div>
-  </div></div>
-</div>
+<div id="page-forgot" class="page"><div class="auth-container"><div class="auth-card">
+  <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+  <h2>Glemt passord?</h2><p>Skriv inn e-posten din så sender vi en lenke.</p>
+  <div class="auth-error" id="forgot-error"></div>
+  <div class="auth-success" id="forgot-success"></div>
+  <div class="form-group"><label>E-post</label><input type="email" id="forgot-email" placeholder="din@epost.no"></div>
+  <button class="auth-btn" id="forgot-btn" onclick="handleForgot()">Send tilbakestillingslenke</button>
+  <div class="auth-switch"><a onclick="showPage('login')">← Tilbake til innlogging</a></div>
+</div></div></div>
 
-<!-- TILBAKESTILL PASSORD -->
-<div id="page-reset" class="page">
-  <div class="auth-container"><div class="auth-card">
-    <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-    <h2>Nytt passord</h2><p>Skriv inn ditt nye passord.</p>
-    <div class="auth-error" id="reset-error"></div>
-    <div class="auth-success" id="reset-success"></div>
-    <div class="form-group"><label>Nytt passord</label><input type="password" id="reset-password" placeholder="Minst 6 tegn"></div>
-    <div class="form-group"><label>Bekreft passord</label><input type="password" id="reset-password2" placeholder="Gjenta passordet"></div>
-    <button class="auth-btn" id="reset-btn" onclick="handleReset()">Lagre nytt passord</button>
-  </div></div>
-</div>
+<div id="page-reset" class="page"><div class="auth-container"><div class="auth-card">
+  <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+  <h2>Nytt passord</h2><p>Skriv inn ditt nye passord.</p>
+  <div class="auth-error" id="reset-error"></div>
+  <div class="auth-success" id="reset-success"></div>
+  <div class="form-group"><label>Nytt passord</label><input type="password" id="reset-password" placeholder="Minst 6 tegn"></div>
+  <div class="form-group"><label>Bekreft passord</label><input type="password" id="reset-password2" placeholder="Gjenta passordet"></div>
+  <button class="auth-btn" id="reset-btn" onclick="handleReset()">Lagre nytt passord</button>
+</div></div></div>
 
 <!-- VELKOMSTSIDE -->
 <div id="page-welcome" class="page">
@@ -549,7 +543,7 @@
     <div class="welcome-steps">
       <h2 style="font-size:24px;font-weight:900;margin-bottom:24px">Kom i gang på 3 steg</h2>
       <div class="welcome-step"><div class="ws-num">1</div><div class="ws-content"><h3>Opprett barneprofil</h3><p>Legg til barnets navn, alder og velg en morsom avatar.</p></div></div>
-      <div class="welcome-step"><div class="ws-num">2</div><div class="ws-content"><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller bruk eksempelteksten.</p></div></div>
+      <div class="welcome-step"><div class="ws-num">2</div><div class="ws-content"><h3>Lag en personlig historie</h3><p>Fyll inn navn og interesser – AI lager en unik tekst tilpasset barnet!</p></div></div>
       <div class="welcome-step"><div class="ws-num">3</div><div class="ws-content"><h3>Start leseøkten</h3><p>Barnet leser hvert ord høyt. Riktige ord lyser grønt med en pling!</p></div></div>
       <div class="welcome-step"><div class="ws-num">⭐</div><div class="ws-content"><h3>Belønninger</h3><p>Barnet tjener stjerner og klatrer i nivåer. Legg inn egne belønninger under ⚙️ Innstillinger!</p></div></div>
     </div>
@@ -566,6 +560,7 @@
     </div>
     <div class="app-tabs">
       <button class="app-tab active" onclick="showTab('tab-profiles')">👶 Profiler</button>
+      <button class="app-tab" onclick="showTab('tab-generate')">✨ Lag tekst</button>
       <button class="app-tab" onclick="showTab('tab-reading')">📖 Les nå</button>
       <button class="app-tab" onclick="showTab('tab-progress')">📊 Fremgang</button>
       <button class="app-tab" onclick="showTab('tab-settings')">⚙️ Innstillinger</button>
@@ -595,10 +590,60 @@
       </div>
     </div>
 
+    <!-- LAG TEKST (AI-generator) -->
+    <div id="tab-generate" class="tab-content">
+      <div class="gen-hero">
+        <h3>✨ Lag en personlig lesehistorie</h3>
+        <p>Fyll inn detaljer om barnet – AI lager en unik historie tilpasset akkurat dem!</p>
+      </div>
+
+      <div class="card">
+        <label class="form-label">📏 Lengde på teksten</label>
+        <div class="length-options">
+          <button class="length-btn" id="len-short" onclick="setLength('short',this)">Kort<br><span style="font-size:11px;font-weight:600;color:#9ca3af">5–7 setninger</span></button>
+          <button class="length-btn active" id="len-medium" onclick="setLength('medium',this)">Middels<br><span style="font-size:11px;font-weight:600;color:#9ca3af">10–12 setninger</span></button>
+          <button class="length-btn" id="len-long" onclick="setLength('long',this)">Lang<br><span style="font-size:11px;font-weight:600;color:#9ca3af">15–18 setninger</span></button>
+        </div>
+      </div>
+
+      <div class="card">
+        <label class="form-label">👤 Fortell om barnet <span style="font-weight:400;color:#9ca3af">(fyll inn det du vil bruke)</span></label>
+        <div class="gen-fields">
+          <div class="gen-field"><label>🧒 Barnets navn *</label><input type="text" id="gen-child" placeholder="F.eks. Emma"></div>
+          <div class="gen-field"><label>🐾 Hund / katt / dyr</label><input type="text" id="gen-pet" placeholder="F.eks. Bella (hund)"></div>
+          <div class="gen-field"><label>👫 Beste venn</label><input type="text" id="gen-friend" placeholder="F.eks. Lucas"></div>
+          <div class="gen-field"><label>👧 Søsken</label><input type="text" id="gen-sibling" placeholder="F.eks. Noah (bror)"></div>
+          <div class="gen-field"><label>⚽ Favorittaktivitet</label><input type="text" id="gen-activity" placeholder="F.eks. fotball"></div>
+          <div class="gen-field"><label>🦸 Favorittfigur</label><input type="text" id="gen-hero" placeholder="F.eks. Spiderman"></div>
+        </div>
+      </div>
+
+      <div id="gen-generating" style="display:none">
+        <div class="generating-indicator">
+          <div class="gen-spinner"></div>
+          <div><div style="font-weight:800;color:#7c3aed">Lager en unik historie...</div><div style="font-size:13px;color:#6b7280;margin-top:2px">Dette tar noen sekunder</div></div>
+        </div>
+      </div>
+
+      <div id="gen-result-box" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <label class="form-label" style="margin:0">📖 Din personlige historie</label>
+          <button class="btn btn-gray" style="font-size:13px;padding:6px 14px" onclick="regenerateText()">🔄 Lag ny versjon</button>
+        </div>
+        <div class="gen-result">
+          <div class="gen-result-text" id="gen-result-text"></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-green btn-large" onclick="useGeneratedText()" style="flex:2">📖 Bruk denne teksten</button>
+          <button class="btn btn-indigo btn-large" onclick="saveGeneratedText()" style="flex:1">💾 Lagre</button>
+        </div>
+      </div>
+
+      <button class="btn btn-purple btn-large" id="gen-btn" onclick="generateText()">✨ Lag personlig historie</button>
+    </div>
+
     <!-- LES NÅ -->
     <div id="tab-reading" class="tab-content">
-
-      <!-- SETUP -->
       <div id="reading-setup">
         <div id="selected-profile-banner" style="display:none;background:#eef2ff;border-radius:14px;padding:14px 20px;margin-bottom:20px;align-items:center;gap:12px">
           <span id="banner-avatar" style="font-size:28px"></span>
@@ -608,8 +653,6 @@
           <button class="exercise-btn active" onclick="setExercise('practice',this)"><div class="etitle">🌱 Øvingsmodus</div><div class="edesc">Ord for ord – med stemmestøtte</div></button>
           <button class="exercise-btn" onclick="setExercise('timed',this)"><div class="etitle">⏱ Tidsbasert</div><div class="edesc">Les mest mulig på tid</div></button>
         </div>
-
-        <!-- Valg av input-metode for øvingsmodus -->
         <div id="practice-input-method" style="margin-bottom:20px">
           <label class="form-label">Hvordan skal ord godkjennes?</label>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -617,7 +660,6 @@
             <button class="exercise-btn" id="method-manual-btn" onclick="setInputMethod('manual',this)" style="flex:1;min-width:120px"><div class="etitle">👆 Manuell</div><div class="edesc">Forelder trykker ✅ / ❌</div></button>
           </div>
         </div>
-
         <div id="time-setting" style="display:none;margin-bottom:20px">
           <label class="form-label">Tid: <span id="timelabel">60</span> sekunder</label>
           <input type="range" min="15" max="120" step="15" value="60" oninput="setTime(this.value)">
@@ -625,7 +667,7 @@
         </div>
         <div class="card">
           <label class="form-label">Lim inn tekst</label>
-          <textarea id="textInput" placeholder="Lim inn tekst fra boken her..."></textarea>
+          <textarea id="textInput" placeholder="Lim inn tekst her, eller lag en personlig tekst under ✨ Lag tekst"></textarea>
           <button class="btn btn-gray" style="margin-top:8px;font-size:14px" onclick="loadExampleText()">📖 Prøv med eksempeltekst</button>
           <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
             <input type="text" id="save-text-title" placeholder="Gi teksten et navn for å lagre den..." style="flex:1;min-width:160px;padding:10px;border-radius:8px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
@@ -639,7 +681,7 @@
         <button class="btn btn-indigo btn-large" onclick="startSession()" id="start-btn" disabled>Start øvelse 🚀</button>
       </div>
 
-      <!-- AKTIV ØKT – ORD FOR ORD (øvingsmodus) -->
+      <!-- Aktiv økt – ord for ord -->
       <div id="reading-active-practice" style="display:none">
         <div class="header-row">
           <h2 style="font-size:20px;font-weight:900">🌱 Øvingsmodus</h2>
@@ -649,9 +691,7 @@
         <div class="word-display-area">
           <div class="big-current-word" id="big-current-word">–</div>
           <div class="attempt-dots" id="attempt-dots">
-            <div class="attempt-dot"></div>
-            <div class="attempt-dot"></div>
-            <div class="attempt-dot"></div>
+            <div class="attempt-dot"></div><div class="attempt-dot"></div><div class="attempt-dot"></div>
           </div>
           <div id="manual-controls" style="display:none">
             <div class="manual-btns">
@@ -668,7 +708,7 @@
         </div>
       </div>
 
-      <!-- AKTIV ØKT – SETNINGSBASERT (tidsbasert) -->
+      <!-- Aktiv økt – tidsbasert -->
       <div id="reading-active-timed" style="display:none">
         <div class="header-row">
           <h2 style="font-size:20px;font-weight:900">⏱ Tidsbasert</h2>
@@ -686,7 +726,7 @@
         </div>
       </div>
 
-      <!-- ØVEMODUS FOR FEILORD -->
+      <!-- Øvemodus feilord -->
       <div id="reading-drill" style="display:none">
         <div class="header-row">
           <h2 style="font-size:20px;font-weight:900">🔁 Øv på vanskelige ord</h2>
@@ -706,12 +746,10 @@
             </div>
           </div>
         </div>
-        <div class="stats-row">
-          <span style="color:#059669;font-weight:700" id="drill-stat">Ord igjen: 0</span>
-        </div>
+        <div class="stats-row"><span style="color:#059669;font-weight:700" id="drill-stat">Ord igjen: 0</span></div>
       </div>
 
-      <!-- RESULTAT -->
+      <!-- Resultat -->
       <div id="reading-result" style="display:none">
         <div id="confetti-container" class="confetti-container"></div>
         <div class="stars-earned" id="stars-earned"></div>
@@ -799,122 +837,115 @@ function getAudio() {
 }
 function playPling() {
   try {
-    const ctx = getAudio(), o = ctx.createOscillator(), g = ctx.createGain();
-    o.connect(g); g.connect(ctx.destination);
-    o.frequency.setValueAtTime(880, ctx.currentTime);
-    o.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
-    g.gain.setValueAtTime(0.3, ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
-    o.start(); o.stop(ctx.currentTime + 0.3);
-  } catch(e) {}
+    const ctx=getAudio(),o=ctx.createOscillator(),g=ctx.createGain();
+    o.connect(g);g.connect(ctx.destination);
+    o.frequency.setValueAtTime(880,ctx.currentTime);
+    o.frequency.exponentialRampToValueAtTime(1200,ctx.currentTime+0.1);
+    g.gain.setValueAtTime(0.3,ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.3);
+    o.start();o.stop(ctx.currentTime+0.3);
+  }catch(e){}
 }
 function playWrong() {
   try {
-    const ctx = getAudio(), o = ctx.createOscillator(), g = ctx.createGain();
-    o.connect(g); g.connect(ctx.destination);
-    o.type = 'sawtooth';
-    o.frequency.setValueAtTime(300, ctx.currentTime);
-    o.frequency.exponentialRampToValueAtTime(150, ctx.currentTime + 0.2);
-    g.gain.setValueAtTime(0.25, ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
-    o.start(); o.stop(ctx.currentTime + 0.25);
-  } catch(e) {}
+    const ctx=getAudio(),o=ctx.createOscillator(),g=ctx.createGain();
+    o.connect(g);g.connect(ctx.destination);
+    o.type='sawtooth';
+    o.frequency.setValueAtTime(300,ctx.currentTime);
+    o.frequency.exponentialRampToValueAtTime(150,ctx.currentTime+0.2);
+    g.gain.setValueAtTime(0.25,ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.25);
+    o.start();o.stop(ctx.currentTime+0.25);
+  }catch(e){}
 }
 function playFinish() {
   try {
-    const ctx = getAudio();
-    [523, 659, 784, 1047].forEach((freq, i) => {
-      const o = ctx.createOscillator(), g = ctx.createGain();
-      o.connect(g); g.connect(ctx.destination);
-      o.frequency.value = freq;
-      g.gain.setValueAtTime(0.3, ctx.currentTime + i*0.15);
-      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i*0.15 + 0.4);
-      o.start(ctx.currentTime + i*0.15); o.stop(ctx.currentTime + i*0.15 + 0.4);
+    const ctx=getAudio();
+    [523,659,784,1047].forEach((freq,i)=>{
+      const o=ctx.createOscillator(),g=ctx.createGain();
+      o.connect(g);g.connect(ctx.destination);
+      o.frequency.value=freq;
+      g.gain.setValueAtTime(0.3,ctx.currentTime+i*0.15);
+      g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.15+0.4);
+      o.start(ctx.currentTime+i*0.15);o.stop(ctx.currentTime+i*0.15+0.4);
     });
-  } catch(e) {}
+  }catch(e){}
 }
 function playWarning() {
   try {
-    const ctx = getAudio(), o = ctx.createOscillator(), g = ctx.createGain();
-    o.connect(g); g.connect(ctx.destination);
-    o.frequency.value = 440;
-    g.gain.setValueAtTime(0.2, ctx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
-    o.start(); o.stop(ctx.currentTime + 0.2);
-  } catch(e) {}
+    const ctx=getAudio(),o=ctx.createOscillator(),g=ctx.createGain();
+    o.connect(g);g.connect(ctx.destination);
+    o.frequency.value=440;
+    g.gain.setValueAtTime(0.2,ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.2);
+    o.start();o.stop(ctx.currentTime+0.2);
+  }catch(e){}
 }
 function launchConfetti() {
-  const c = document.getElementById('confetti-container'); if (!c) return;
-  c.innerHTML = '';
-  const cols = ['#4f46e5','#f59e0b','#059669','#dc2626','#7c3aed','#0ea5e9'];
-  for (let i = 0; i < 80; i++) {
-    const p = document.createElement('div'); p.className = 'confetti-piece';
-    p.style.cssText = `left:${Math.random()*100}%;background:${cols[Math.floor(Math.random()*cols.length)]};animation-delay:${Math.random()}s;animation-duration:${2+Math.random()*2}s;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'}`;
+  const c=document.getElementById('confetti-container');if(!c)return;
+  c.innerHTML='';
+  const cols=['#4f46e5','#f59e0b','#059669','#dc2626','#7c3aed','#0ea5e9'];
+  for(let i=0;i<80;i++){
+    const p=document.createElement('div');p.className='confetti-piece';
+    p.style.cssText=`left:${Math.random()*100}%;background:${cols[Math.floor(Math.random()*cols.length)]};animation-delay:${Math.random()}s;animation-duration:${2+Math.random()*2}s;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'}`;
     c.appendChild(p);
   }
-  setTimeout(() => { if (c) c.innerHTML = ''; }, 4000);
+  setTimeout(()=>{if(c)c.innerHTML='';},4000);
 }
 
 // ── STATE ──────────────────────────────────────────────
 const appState = {
-  exercise: 'practice',
-  inputMethod: 'voice',
-  // Ord-for-ord (øvingsmodus)
-  words: [], wordStates: [], currentWordIdx: 0, wordAttempts: [],
-  // Setning (tidsbasert)
-  sentences: [], sentenceStates: [], currentSentenceIdx: 0,
-  // Felles
-  timeLimit: 60, timeLeft: 60, running: false, timerInterval: null,
-  recognition: null, selectedProfile: null,
-  selectedAvatar: '🦁', profiles: [], warningPlayed: false, startTime: null, lastText: '',
-  // Øvemodus
-  drillWords: [], drillIdx: 0, drillAttempts: 0
+  exercise:'practice', inputMethod:'voice',
+  words:[],wordStates:[],currentWordIdx:0,wordAttempts:[],
+  sentences:[],sentenceStates:[],currentSentenceIdx:0,
+  timeLimit:60,timeLeft:60,running:false,timerInterval:null,
+  recognition:null,selectedProfile:null,
+  selectedAvatar:'🦁',profiles:[],warningPlayed:false,startTime:null,lastText:'',
+  drillWords:[],drillIdx:0,drillAttempts:0,
+  genLength:'medium', lastGeneratedText:''
 };
 
 // ── HELPERS ────────────────────────────────────────────
-function tokenize(text) {
-  return text.match(/\S+/g) || [];
+function tokenize(text){return text.match(/\S+/g)||[];}
+function splitSentences(text){
+  const parts=text.match(/[^.!?]+[.!?]+/g);
+  return parts?parts.map(s=>s.trim()).filter(s=>s.length>2):[text.trim()];
 }
-function splitSentences(text) {
-  const parts = text.match(/[^.!?]+[.!?]+/g);
-  return parts ? parts.map(s => s.trim()).filter(s => s.length > 2) : [text.trim()];
-}
-function levenshtein(a, b) {
-  const m = a.length, n = b.length;
-  const dp = Array.from({length:m+1},(_,i)=>Array.from({length:n+1},(_,j)=>i||j));
-  for (let i=1;i<=m;i++) for (let j=1;j<=n;j++) dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
+function levenshtein(a,b){
+  const m=a.length,n=b.length;
+  const dp=Array.from({length:m+1},(_,i)=>Array.from({length:n+1},(_,j)=>i||j));
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
   return dp[m][n];
 }
-function wordMatch(spoken, expected) {
-  const s = spoken.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();
-  const e = expected.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();
-  return s === e || s.includes(e) || e.includes(s) || levenshtein(s, e) <= Math.floor(e.length / 4);
+function wordMatch(spoken,expected){
+  const s=spoken.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();
+  const e=expected.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();
+  return s===e||s.includes(e)||e.includes(s)||levenshtein(s,e)<=Math.floor(e.length/4);
 }
-function sentenceMatch(spoken, expected) {
-  const sp = spoken.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);
-  const ex = expected.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);
-  let matched = 0;
-  for (const sw of sp) for (const ew of ex) if (sw===ew||levenshtein(sw,ew)<=Math.floor(ew.length/4)){matched++;break;}
-  return matched/ex.length >= 0.7;
+function sentenceMatch(spoken,expected){
+  const sp=spoken.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);
+  const ex=expected.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);
+  let matched=0;
+  for(const sw of sp)for(const ew of ex)if(sw===ew||levenshtein(sw,ew)<=Math.floor(ew.length/4)){matched++;break;}
+  return matched/ex.length>=0.7;
 }
 
 // ── NAVIGATION ─────────────────────────────────────────
-function showPage(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const el = document.getElementById('page-'+page);
-  if (el) el.classList.add('active');
+function showPage(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const el=document.getElementById('page-'+page);if(el)el.classList.add('active');
   window.scrollTo(0,0);
 }
-function goHome() { showPage('home'); }
-function scrollPricing() {
+function goHome(){showPage('home');}
+function scrollPricing(){
   showPage('home');
-  setTimeout(()=>{ const el=document.getElementById('pricing-section'); if(el) el.scrollIntoView({behavior:'smooth'}); },100);
+  setTimeout(()=>{const el=document.getElementById('pricing-section');if(el)el.scrollIntoView({behavior:'smooth'});},100);
 }
-function homeCTA() {
+function homeCTA(){
   sb.auth.getSession().then(({data:{session}})=>showPage(session?'app':'register')).catch(()=>showPage('register'));
 }
-function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
-function submitContact() {
+function toggleFaq(el){el.parentElement.classList.toggle('open');}
+function submitContact(){
   const name=document.getElementById('contact-name').value.trim();
   const email=document.getElementById('contact-email').value.trim();
   const msg=document.getElementById('contact-message').value.trim();
@@ -926,66 +957,60 @@ function submitContact() {
 }
 
 // ── AUTH ───────────────────────────────────────────────
-function showAuthMsg(id, msg, type) {
-  const el=document.getElementById(id); if(!el) return;
-  el.textContent=msg; el.style.display='block';
+function showAuthMsg(id,msg,type){
+  const el=document.getElementById(id);if(!el)return;
+  el.textContent=msg;el.style.display='block';
   el.style.background=type==='success'?'#d1fae5':'#fee2e2';
   el.style.color=type==='success'?'#065f46':'#991b1b';
   setTimeout(()=>{el.style.display='none';},6000);
 }
-const norskFeil = {
-  'Invalid login credentials':'Feil e-post eller passord. Prøv igjen.',
-  'Email not confirmed':'Du må bekrefte e-postadressen din først. Sjekk innboksen.',
-  'User already registered':'Denne e-postadressen er allerede registrert. Prøv å logge inn.',
-  'Invalid email':'Ugyldig e-postadresse.',
-  'Password should be at least 6 characters':'Passordet må være minst 6 tegn.',
-};
+const norskFeil={'Invalid login credentials':'Feil e-post eller passord. Prøv igjen.','Email not confirmed':'Du må bekrefte e-postadressen din først. Sjekk innboksen.','User already registered':'Denne e-postadressen er allerede registrert. Prøv å logge inn.','Invalid email':'Ugyldig e-postadresse.','Password should be at least 6 characters':'Passordet må være minst 6 tegn.'};
 function oversett(msg){return norskFeil[msg]||'Noe gikk galt. Prøv igjen.';}
 
-async function handleLogin() {
-  const btn=document.getElementById('login-btn'); btn.disabled=true; btn.textContent='Logger inn...';
+async function handleLogin(){
+  const btn=document.getElementById('login-btn');btn.disabled=true;btn.textContent='Logger inn...';
   const {error}=await sb.auth.signInWithPassword({email:document.getElementById('login-email').value,password:document.getElementById('login-password').value});
   if(error){showAuthMsg('login-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Logg inn';}
   else{await loadApp();showPage('app');}
 }
-async function handleRegister() {
-  const btn=document.getElementById('register-btn'); btn.disabled=true; btn.textContent='Oppretter konto...';
-  const email=document.getElementById('register-email').value, pw=document.getElementById('register-password').value;
+async function handleRegister(){
+  const btn=document.getElementById('register-btn');btn.disabled=true;btn.textContent='Oppretter konto...';
+  const email=document.getElementById('register-email').value,pw=document.getElementById('register-password').value;
   if(!email){showAuthMsg('register-error','Skriv inn e-postadressen din.','error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';return;}
   if(pw.length<6){showAuthMsg('register-error','Passordet må være minst 6 tegn.','error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';return;}
   const {error}=await sb.auth.signUp({email,password:pw});
   if(error){showAuthMsg('register-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';}
   else{showPage('login');showAuthMsg('login-success','✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen før du logger inn.','success');}
 }
-async function handleForgot() {
-  const btn=document.getElementById('forgot-btn'); btn.disabled=true; btn.textContent='Sender...';
+async function handleForgot(){
+  const btn=document.getElementById('forgot-btn');btn.disabled=true;btn.textContent='Sender...';
   const email=document.getElementById('forgot-email').value;
   if(!email){showAuthMsg('forgot-error','Skriv inn e-postadressen din.','error');btn.disabled=false;btn.textContent='Send tilbakestillingslenke';return;}
   const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:'https://leselab.no'});
-  if(error) showAuthMsg('forgot-error',oversett(error.message),'error');
+  if(error)showAuthMsg('forgot-error',oversett(error.message),'error');
   else showAuthMsg('forgot-success','✅ Sjekk e-posten din for tilbakestillingslenke!','success');
-  btn.disabled=false; btn.textContent='Send tilbakestillingslenke';
+  btn.disabled=false;btn.textContent='Send tilbakestillingslenke';
 }
-async function handleReset() {
-  const btn=document.getElementById('reset-btn'); btn.disabled=true; btn.textContent='Lagrer...';
-  const pw=document.getElementById('reset-password').value, pw2=document.getElementById('reset-password2').value;
+async function handleReset(){
+  const btn=document.getElementById('reset-btn');btn.disabled=true;btn.textContent='Lagrer...';
+  const pw=document.getElementById('reset-password').value,pw2=document.getElementById('reset-password2').value;
   if(pw.length<6){showAuthMsg('reset-error','Passordet må være minst 6 tegn.','error');btn.disabled=false;btn.textContent='Lagre nytt passord';return;}
   if(pw!==pw2){showAuthMsg('reset-error','Passordene er ikke like.','error');btn.disabled=false;btn.textContent='Lagre nytt passord';return;}
   const {error}=await sb.auth.updateUser({password:pw});
   if(error){showAuthMsg('reset-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Lagre nytt passord';}
   else{showAuthMsg('reset-success','✅ Passord oppdatert!','success');setTimeout(()=>{loadApp();showPage('app');},1500);}
 }
-async function changePassword() {
-  const pw=document.getElementById('new-password').value, pw2=document.getElementById('new-password2').value;
+async function changePassword(){
+  const pw=document.getElementById('new-password').value,pw2=document.getElementById('new-password2').value;
   if(pw.length<6){showAuthMsg('pw-error','Passordet må være minst 6 tegn.','error');return;}
   if(pw!==pw2){showAuthMsg('pw-error','Passordene er ikke like.','error');return;}
   const {error}=await sb.auth.updateUser({password:pw});
-  if(error) showAuthMsg('pw-error',oversett(error.message),'error');
+  if(error)showAuthMsg('pw-error',oversett(error.message),'error');
   else{showAuthMsg('pw-success','✅ Passord oppdatert!','success');document.getElementById('new-password').value='';document.getElementById('new-password2').value='';}
 }
 async function logoutAll(){await sb.auth.signOut({scope:'global'});updateNav(false);showPage('home');}
-async function confirmDeleteAccount() {
-  if(!confirm('Er du sikker? Dette sletter kontoen din og alle data permanent.')) return;
+async function confirmDeleteAccount(){
+  if(!confirm('Er du sikker? Dette sletter kontoen din og alle data permanent.'))return;
   const {data:{user}}=await sb.auth.getUser();
   if(user){
     await sb.from('reading_sessions').delete().eq('user_id',user.id);
@@ -994,7 +1019,7 @@ async function confirmDeleteAccount() {
     await sb.from('saved_texts').delete().eq('user_id',user.id);
     await sb.auth.signOut();
   }
-  updateNav(false); showPage('home'); alert('Kontoen din er slettet.');
+  updateNav(false);showPage('home');alert('Kontoen din er slettet.');
 }
 async function handleLogout(){await sb.auth.signOut();updateNav(false);showPage('home');}
 function updateNav(loggedIn){
@@ -1004,14 +1029,14 @@ function updateNav(loggedIn){
 
 // ── LOAD APP ───────────────────────────────────────────
 async function loadApp(){
-  const {data:{user}}=await sb.auth.getUser(); if(!user) return;
-  updateNav(true); await loadProfiles(user.id); loadSavedTexts();
+  const {data:{user}}=await sb.auth.getUser();if(!user)return;
+  updateNav(true);await loadProfiles(user.id);loadSavedTexts();
 }
 
 // ── PROFILES ───────────────────────────────────────────
 async function loadProfiles(userId){
   const {data}=await sb.from('profiles').select('*').eq('user_id',userId).order('created_at');
-  appState.profiles=data||[]; renderProfiles();
+  appState.profiles=data||[];renderProfiles();
 }
 function renderProfiles(){
   const grid=document.getElementById('profiles-grid');
@@ -1026,10 +1051,10 @@ function renderProfiles(){
 }
 function selectProfile(id){
   appState.selectedProfile=appState.profiles.find(p=>p.id===id);
-  renderProfiles(); updateProfileBanner(); showTab('tab-reading');
+  renderProfiles();updateProfileBanner();showTab('tab-reading');
 }
 function updateProfileBanner(){
-  const p=appState.selectedProfile; if(!p) return;
+  const p=appState.selectedProfile;if(!p)return;
   document.getElementById('selected-profile-banner').style.display='flex';
   document.getElementById('banner-avatar').textContent=p.avatar;
   document.getElementById('banner-name').textContent=p.child_name;
@@ -1037,7 +1062,7 @@ function updateProfileBanner(){
 }
 function selectAvatar(el){
   document.querySelectorAll('.avatar-opt').forEach(a=>a.style.border='2px solid transparent');
-  el.style.border='2px solid #4f46e5'; appState.selectedAvatar=el.textContent;
+  el.style.border='2px solid #4f46e5';appState.selectedAvatar=el.textContent;
 }
 async function saveProfile(){
   const {data:{user}}=await sb.auth.getUser();
@@ -1046,14 +1071,101 @@ async function saveProfile(){
   if(!name){alert('Skriv inn barnets navn');return;}
   await sb.from('profiles').insert({user_id:user.id,child_name:name,age:+age,avatar:appState.selectedAvatar});
   document.getElementById('add-profile-form').style.display='none';
-  document.getElementById('child-name').value=''; document.getElementById('child-age').value='';
-  await loadProfiles(user.id); renderRewardsProfileSelect();
+  document.getElementById('child-name').value='';document.getElementById('child-age').value='';
+  await loadProfiles(user.id);renderRewardsProfileSelect();
+}
+
+// ── AI TEKSTGENERATOR ──────────────────────────────────
+function setLength(len, btn){
+  appState.genLength=len;
+  document.querySelectorAll('.length-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+async function generateText(){
+  const childName=document.getElementById('gen-child').value.trim();
+  if(!childName){alert('Skriv inn barnets navn!');return;}
+
+  const pet=document.getElementById('gen-pet').value.trim();
+  const friend=document.getElementById('gen-friend').value.trim();
+  const sibling=document.getElementById('gen-sibling').value.trim();
+  const activity=document.getElementById('gen-activity').value.trim();
+  const hero=document.getElementById('gen-hero').value.trim();
+
+  const age=appState.selectedProfile?.age||8;
+  const lengthInstructions={
+    short:'Skriv en kort fortelling på 5–7 setninger.',
+    medium:'Skriv en fortelling på 10–12 setninger.',
+    long:'Skriv en lengre fortelling på 15–18 setninger.'
+  }[appState.genLength];
+
+  // Sett ordnivå basert på alder
+  let difficultyNote='';
+  if(age<=6) difficultyNote='Bruk svært enkle ord og korte setninger (1–3 ord per setning). Barnet er 6 år eller yngre.';
+  else if(age<=8) difficultyNote='Bruk enkle ord og setninger på 4–6 ord. Barnet er 7–8 år.';
+  else if(age<=10) difficultyNote='Bruk vanlige ord og setninger på 5–8 ord. Barnet er 9–10 år.';
+  else difficultyNote='Bruk varierte ord og lengre setninger. Barnet er 11 år eller eldre.';
+
+  const details=[
+    pet && `Dyret heter ${pet}`,
+    friend && `Beste vennen heter ${friend}`,
+    sibling && `Søsken: ${sibling}`,
+    activity && `Favorittaktivitet: ${activity}`,
+    hero && `Favorittfigur: ${hero}`
+  ].filter(Boolean).join(', ');
+
+  const prompt=`Du er en kreativ norsk barnebokforfatter. ${lengthInstructions} Historien handler om ${childName}${details ? ` og involverer: ${details}` : ''}. ${difficultyNote} Skriv på bokmål. Returner KUN selve teksten, ingen tittel, ingen forklaringer, ingen ekstra linjer.`;
+
+  document.getElementById('gen-btn').disabled=true;
+  document.getElementById('gen-generating').style.display='block';
+  document.getElementById('gen-result-box').style.display='none';
+
+  try {
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})
+    });
+    const data=await resp.json();
+    const text=data.content?.find(b=>b.type==='text')?.text||'';
+    if(text){
+      appState.lastGeneratedText=text;
+      document.getElementById('gen-result-text').textContent=text;
+      document.getElementById('gen-result-box').style.display='block';
+    } else {
+      alert('Noe gikk galt. Prøv igjen!');
+    }
+  } catch(e) {
+    alert('Kunne ikke generere tekst. Sjekk internettforbindelsen og prøv igjen.');
+  }
+  document.getElementById('gen-generating').style.display='none';
+  document.getElementById('gen-btn').disabled=false;
+}
+
+async function regenerateText(){ await generateText(); }
+
+function useGeneratedText(){
+  if(!appState.lastGeneratedText)return;
+  document.getElementById('textInput').value=appState.lastGeneratedText;
+  document.getElementById('start-btn').disabled=false;
+  showTab('tab-reading');
+}
+
+async function saveGeneratedText(){
+  if(!appState.lastGeneratedText)return;
+  const childName=document.getElementById('gen-child').value.trim()||'Barnet';
+  const title=`${childName}s historie – ${new Date().toLocaleDateString('nb-NO')}`;
+  const {data:{user}}=await sb.auth.getUser();
+  if(!user){alert('Logg inn for å lagre tekster.');return;}
+  await sb.from('saved_texts').insert({user_id:user.id,profile_id:appState.selectedProfile?.id||null,title,content:appState.lastGeneratedText});
+  alert(`✅ Lagret som "${title}"!`);
+  loadSavedTexts();
 }
 
 // ── REWARDS ────────────────────────────────────────────
 function renderRewardsProfileSelect(){
   const el=document.getElementById('rewards-profile-select');
-  if(!el||!appState.profiles.length) return;
+  if(!el||!appState.profiles.length)return;
   el.innerHTML=`<label class="form-label">Velg barneprofil</label>
     <select id="reward-profile-id" onchange="loadRewards()" style="width:100%;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;margin-bottom:12px">
       ${appState.profiles.map(p=>`<option value="${p.id}">${p.avatar} ${p.child_name}</option>`).join('')}
@@ -1061,7 +1173,7 @@ function renderRewardsProfileSelect(){
   loadRewards();
 }
 async function loadRewards(){
-  const pid=document.getElementById('reward-profile-id')?.value; if(!pid) return;
+  const pid=document.getElementById('reward-profile-id')?.value;if(!pid)return;
   const {data}=await sb.from('rewards').select('*').eq('profile_id',pid).order('stars_required');
   const list=document.getElementById('reward-list');
   if(!data||!data.length){list.innerHTML='<p style="color:#9ca3af;font-size:14px">Ingen belønninger lagt til ennå.</p>';return;}
@@ -1074,7 +1186,7 @@ async function addReward(){
   if(!pid||!text||!stars){alert('Fyll inn belønning og antall stjerner.');return;}
   const {data:{user}}=await sb.auth.getUser();
   await sb.from('rewards').insert({profile_id:pid,user_id:user.id,reward_text:text,stars_required:+stars});
-  document.getElementById('reward-text').value=''; document.getElementById('reward-stars').value='';
+  document.getElementById('reward-text').value='';document.getElementById('reward-stars').value='';
   loadRewards();
 }
 async function deleteReward(id){await sb.from('rewards').delete().eq('id',id);loadRewards();}
@@ -1088,26 +1200,26 @@ async function saveText(){
   const {data:{user}}=await sb.auth.getUser();
   await sb.from('saved_texts').insert({user_id:user.id,profile_id:appState.selectedProfile?.id||null,title,content});
   document.getElementById('save-text-title').value='';
-  alert('✅ Tekst lagret!'); loadSavedTexts();
+  alert('✅ Tekst lagret!');loadSavedTexts();
 }
 async function loadSavedTexts(){
-  const {data:{user}}=await sb.auth.getUser(); if(!user) return;
+  const {data:{user}}=await sb.auth.getUser();if(!user)return;
   const {data}=await sb.from('saved_texts').select('*').eq('user_id',user.id).order('created_at',{ascending:false});
-  const box=document.getElementById('saved-texts-box'), list=document.getElementById('saved-texts-list');
-  if(!box||!list) return;
+  const box=document.getElementById('saved-texts-box'),list=document.getElementById('saved-texts-list');
+  if(!box||!list)return;
   if(!data||!data.length){box.style.display='none';return;}
   box.style.display='block';
   list.innerHTML=data.map(t=>`<div style="display:flex;justify-content:space-between;align-items:center;background:#f8f7ff;border-radius:10px;padding:10px 14px;margin-bottom:8px;border:1.5px solid #e0e7ff"><span style="font-weight:700;font-size:14px;cursor:pointer;color:#4f46e5" onclick="loadSavedText('${t.id}')">${t.title}</span><button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteSavedText('${t.id}')">Slett</button></div>`).join('');
 }
 async function loadSavedText(id){
   const {data}=await sb.from('saved_texts').select('*').eq('id',id).single();
-  if(!data) return;
+  if(!data)return;
   document.getElementById('textInput').value=data.content;
   document.getElementById('start-btn').disabled=false;
 }
 async function deleteSavedText(id){
-  if(!confirm('Slette denne teksten?')) return;
-  await sb.from('saved_texts').delete().eq('id',id); loadSavedTexts();
+  if(!confirm('Slette denne teksten?'))return;
+  await sb.from('saved_texts').delete().eq('id',id);loadSavedTexts();
 }
 function loadExampleText(){
   document.getElementById('textInput').value='Emma og hunden Bella løp ut i skogen. Det var sol og fugler sang i trærne. Plutselig stoppet Bella og snuste på noe i gresset. Det var et lite pinnsvin! Emma satte seg rolig ned og så på det. Pinnsvinet rullet seg sammen til en ball. Bella logret med halen og ville leke. Men pinnsvinet ville ikke leke. Etter en stund rullet det stille bort mellom trærne. Emma og Bella gikk videre inn i skogen og lurte på hva de ville finne neste gang.';
@@ -1118,20 +1230,20 @@ function loadExampleText(){
 function showTab(tabId){
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.app-tab').forEach(t=>t.classList.remove('active'));
-  const tab=document.getElementById(tabId); if(tab) tab.classList.add('active');
-  const idx=['tab-profiles','tab-reading','tab-progress','tab-settings'].indexOf(tabId);
-  const tabs=document.querySelectorAll('.app-tab'); if(tabs[idx]) tabs[idx].classList.add('active');
-  if(tabId==='tab-progress') loadProgress();
-  if(tabId==='tab-settings') renderRewardsProfileSelect();
+  const tab=document.getElementById(tabId);if(tab)tab.classList.add('active');
+  const idx=['tab-profiles','tab-generate','tab-reading','tab-progress','tab-settings'].indexOf(tabId);
+  const tabs=document.querySelectorAll('.app-tab');if(tabs[idx])tabs[idx].classList.add('active');
+  if(tabId==='tab-progress')loadProgress();
+  if(tabId==='tab-settings')renderRewardsProfileSelect();
 }
-function setExercise(val, btn){
+function setExercise(val,btn){
   appState.exercise=val;
   document.querySelectorAll('.exercise-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('time-setting').style.display=val==='timed'?'block':'none';
   document.getElementById('practice-input-method').style.display=val==='practice'?'block':'none';
 }
-function setInputMethod(method, btn){
+function setInputMethod(method,btn){
   appState.inputMethod=method;
   document.getElementById('method-voice-btn').classList.remove('active');
   document.getElementById('method-manual-btn').classList.remove('active');
@@ -1146,168 +1258,124 @@ document.getElementById('textInput').addEventListener('input',function(e){
 function startSession(){
   try{getAudio().resume();}catch(e){}
   const text=document.getElementById('textInput').value.trim();
-  appState.lastText=text;
-  appState.running=true; appState.startTime=Date.now();
-
-  document.getElementById('reading-setup').style.display='none';
-  document.getElementById('reading-active-practice').style.display='none';
-  document.getElementById('reading-active-timed').style.display='none';
-  document.getElementById('reading-drill').style.display='none';
-  document.getElementById('reading-result').style.display='none';
-
+  appState.lastText=text;appState.running=true;appState.startTime=Date.now();
+  ['reading-setup','reading-active-practice','reading-active-timed','reading-drill','reading-result'].forEach(id=>{
+    document.getElementById(id).style.display='none';
+  });
   if(appState.exercise==='practice'){
     const words=tokenize(text);
-    appState.words=words;
-    appState.wordStates=new Array(words.length).fill('pending');
-    appState.wordAttempts=new Array(words.length).fill(0);
-    appState.currentWordIdx=0;
+    appState.words=words;appState.wordStates=new Array(words.length).fill('pending');
+    appState.wordAttempts=new Array(words.length).fill(0);appState.currentWordIdx=0;
     document.getElementById('reading-active-practice').style.display='block';
     document.getElementById('manual-controls').style.display=appState.inputMethod==='manual'?'block':'none';
     document.getElementById('practice-info').textContent=appState.inputMethod==='voice'?'🎤 Les ordet høyt!':'👆 Les ordet – forelder trykker ✅ eller ❌';
     renderWords();
-    if(appState.inputMethod==='voice') startWordRecognition();
+    if(appState.inputMethod==='voice')startWordRecognition();
   } else {
     const sentences=splitSentences(text);
-    appState.sentences=sentences;
-    appState.sentenceStates=new Array(sentences.length).fill('pending');
-    appState.currentSentenceIdx=0;
-    appState.timeLeft=appState.timeLimit;
-    appState.warningPlayed=false;
+    appState.sentences=sentences;appState.sentenceStates=new Array(sentences.length).fill('pending');
+    appState.currentSentenceIdx=0;appState.timeLeft=appState.timeLimit;appState.warningPlayed=false;
     document.getElementById('reading-active-timed').style.display='block';
-    const td=document.getElementById('timer-display'); td.textContent='⏱ '+appState.timeLeft+'s';
-    renderSentences(); startTimer(); startSentenceRecognition();
+    document.getElementById('timer-display').textContent='⏱ '+appState.timeLeft+'s';
+    renderSentences();startTimer();startSentenceRecognition();
   }
 }
 
-// ── ORD-FOR-ORD RENDERING ──────────────────────────────
+// ── ORD-FOR-ORD ────────────────────────────────────────
 function renderWords(){
-  const idx=appState.currentWordIdx;
-  const words=appState.words;
+  const idx=appState.currentWordIdx,words=appState.words;
   if(idx<words.length){
     document.getElementById('big-current-word').textContent=words[idx].replace(/[.,!?;:»«""'']/g,'');
   } else {
     document.getElementById('big-current-word').textContent='🎉';
   }
-  // attempt dots
   const attempts=appState.wordAttempts[idx]||0;
   const dots=document.getElementById('attempt-dots');
-  if(dots) dots.innerHTML=[0,1,2].map(i=>`<div class="attempt-dot ${i<attempts?'used':''}"></div>`).join('');
-
-  // word flow
+  if(dots)dots.innerHTML=[0,1,2].map(i=>`<div class="attempt-dot ${i<attempts?'used':''}"></div>`).join('');
   const flow=document.getElementById('word-flow');
-  if(flow) flow.innerHTML=words.map((w,i)=>{
+  if(flow)flow.innerHTML=words.map((w,i)=>{
     const s=appState.wordStates[i];
-    const cls=i===idx?'current':s==='correct'?'correct':s==='wrong'?'wrong':s==='skipped'?'skipped':'pending';
+    const cls=i===idx?'current':s==='correct'?'correct':s==='skipped'?'skipped':'pending';
     return `<span class="word-chip ${cls}">${w}</span>`;
   }).join('');
-
-  // stats
   const correct=appState.wordStates.filter(s=>s==='correct').length;
   const skipped=appState.wordStates.filter(s=>s==='skipped').length;
   document.getElementById('stat-correct-words').textContent=`✅ Riktige: ${correct}`;
   document.getElementById('stat-wrong-words').textContent=`⚠️ Hoppet over: ${skipped}`;
   document.getElementById('stat-words-left').textContent=`Gjenstår: ${Math.max(0,words.length-idx)}`;
 }
-
 function advanceWord(state){
   const idx=appState.currentWordIdx;
-  appState.wordStates[idx]=state;
-  appState.currentWordIdx++;
-  if(state==='correct') playPling();
+  appState.wordStates[idx]=state;appState.currentWordIdx++;
+  if(state==='correct')playPling();
   renderWords();
-  if(appState.currentWordIdx>=appState.words.length){
-    setTimeout(endSession,600);
-  }
+  if(appState.currentWordIdx>=appState.words.length)setTimeout(endSession,600);
 }
-
-function manualCorrect(){ if(appState.running&&appState.exercise==='practice') advanceWord('correct'); }
+function manualCorrect(){if(appState.running&&appState.exercise==='practice')advanceWord('correct');}
 function manualWrong(){
-  if(!appState.running||appState.exercise!=='practice') return;
+  if(!appState.running||appState.exercise!=='practice')return;
   const idx=appState.currentWordIdx;
   appState.wordAttempts[idx]=(appState.wordAttempts[idx]||0)+1;
   playWrong();
-  if(appState.wordAttempts[idx]>=3){
-    advanceWord('skipped');
-  } else {
-    renderWords();
-  }
+  if(appState.wordAttempts[idx]>=3)advanceWord('skipped');
+  else renderWords();
 }
 
 // ── WORD RECOGNITION ───────────────────────────────────
 function startWordRecognition(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){
-    alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til manuell modus eller bruk Chrome/Edge.');
-    document.getElementById('manual-controls').style.display='block';
-    appState.inputMethod='manual';
-    return;
-  }
-  const rec=new SR(); rec.lang='nb-NO'; rec.continuous=true; rec.interimResults=false;
+  if(!SR){alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til manuell modus eller bruk Chrome/Edge.');document.getElementById('manual-controls').style.display='block';appState.inputMethod='manual';return;}
+  const rec=new SR();rec.lang='nb-NO';rec.continuous=true;rec.interimResults=false;
   appState.recognition=rec;
   rec.onresult=function(e){
-    if(!appState.running||appState.exercise!=='practice') return;
-    const result=e.results[e.results.length-1]; if(!result.isFinal) return;
+    if(!appState.running||appState.exercise!=='practice')return;
+    const result=e.results[e.results.length-1];if(!result.isFinal)return;
     const spoken=result[0].transcript.trim();
-    const idx=appState.currentWordIdx; if(idx>=appState.words.length) return;
-    const expected=appState.words[idx];
-    if(wordMatch(spoken, expected)){
-      appState.wordAttempts[idx]=0;
-      advanceWord('correct');
-    } else {
-      appState.wordAttempts[idx]=(appState.wordAttempts[idx]||0)+1;
-      playWrong();
-      if(appState.wordAttempts[idx]>=3){
-        advanceWord('skipped');
-      } else {
-        renderWords();
-      }
-    }
+    const idx=appState.currentWordIdx;if(idx>=appState.words.length)return;
+    if(wordMatch(spoken,appState.words[idx])){appState.wordAttempts[idx]=0;advanceWord('correct');}
+    else{appState.wordAttempts[idx]=(appState.wordAttempts[idx]||0)+1;playWrong();if(appState.wordAttempts[idx]>=3)advanceWord('skipped');else renderWords();}
   };
-  rec.onerror=function(e){ if(e.error==='no-speech'){try{rec.stop();setTimeout(startWordRecognition,300);}catch(err){}} };
-  rec.onend=function(){ if(appState.running&&appState.exercise==='practice'){try{rec.start();}catch(e){}} };
+  rec.onerror=function(e){if(e.error==='no-speech'){try{rec.stop();setTimeout(startWordRecognition,300);}catch(err){}}};
+  rec.onend=function(){if(appState.running&&appState.exercise==='practice'){try{rec.start();}catch(e){}}};
   try{rec.start();}catch(e){}
 }
 
-// ── SETNING RECOGNITION (tidsbasert) ──────────────────
+// ── SENTENCE (TIDSBASERT) ──────────────────────────────
 function startSentenceRecognition(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!SR){alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til Chrome eller Edge.');return;}
-  const rec=new SR(); rec.lang='nb-NO'; rec.continuous=true; rec.interimResults=false;
+  const rec=new SR();rec.lang='nb-NO';rec.continuous=true;rec.interimResults=false;
   appState.recognition=rec;
   rec.onresult=function(e){
-    if(!appState.running||appState.exercise!=='timed') return;
-    const result=e.results[e.results.length-1]; if(!result.isFinal) return;
+    if(!appState.running||appState.exercise!=='timed')return;
+    const result=e.results[e.results.length-1];if(!result.isFinal)return;
     const spoken=result[0].transcript.trim();
-    const idx=appState.currentSentenceIdx; if(idx>=appState.sentences.length) return;
-    if(sentenceMatch(spoken,appState.sentences[idx])) advanceSentence();
+    const idx=appState.currentSentenceIdx;if(idx>=appState.sentences.length)return;
+    if(sentenceMatch(spoken,appState.sentences[idx]))advanceSentence();
   };
-  rec.onerror=function(e){ if(e.error==='no-speech'){try{rec.stop();setTimeout(startSentenceRecognition,300);}catch(err){}} };
-  rec.onend=function(){ if(appState.running&&appState.exercise==='timed'){try{rec.start();}catch(e){}} };
+  rec.onerror=function(e){if(e.error==='no-speech'){try{rec.stop();setTimeout(startSentenceRecognition,300);}catch(err){}}};
+  rec.onend=function(){if(appState.running&&appState.exercise==='timed'){try{rec.start();}catch(e){}}};
   try{rec.start();}catch(e){}
 }
-
-// ── SETNING RENDERING (tidsbasert) ────────────────────
 function renderSentences(){
-  const idx=appState.currentSentenceIdx, sentences=appState.sentences;
+  const idx=appState.currentSentenceIdx,sentences=appState.sentences;
   document.getElementById('sentence-progress').innerHTML=sentences.map((_,i)=>`<div class="sent-dot ${i<idx?'done':i===idx?'active':''}"></div>`).join('');
   let html='';
   const done=sentences.slice(0,idx).map(s=>`<div class="sentence-done">${s.split(/\s+/).map(w=>`<span class="word-done">${w}</span>`).join(' ')}</div>`).join('');
-  if(done) html+=done;
-  if(idx<sentences.length) html+=`<div class="sentence-active">${sentences[idx].split(/\s+/).map(w=>`<span class="word-active">${w}</span>`).join(' ')}</div>`;
-  if(idx+1<sentences.length) html+=`<div class="sentence-upcoming">${sentences[idx+1]}</div>`;
+  if(done)html+=done;
+  if(idx<sentences.length)html+=`<div class="sentence-active">${sentences[idx].split(/\s+/).map(w=>`<span class="word-active">${w}</span>`).join(' ')}</div>`;
+  if(idx+1<sentences.length)html+=`<div class="sentence-upcoming">${sentences[idx+1]}</div>`;
   document.getElementById('sentence-display').innerHTML=html;
   const active=document.querySelector('.sentence-active');
-  if(active) active.scrollIntoView({behavior:'smooth',block:'center'});
+  if(active)active.scrollIntoView({behavior:'smooth',block:'center'});
   document.getElementById('stat-sentences').textContent='✅ Setninger: '+appState.sentenceStates.filter(s=>s==='done').length;
   document.getElementById('stat-left').textContent='Gjenstår: '+(sentences.length-idx);
 }
 function advanceSentence(){
-  appState.sentenceStates[appState.currentSentenceIdx]='done';
-  appState.currentSentenceIdx++;
-  playPling(); renderSentences();
-  if(appState.currentSentenceIdx>=appState.sentences.length) setTimeout(endSession,500);
+  appState.sentenceStates[appState.currentSentenceIdx]='done';appState.currentSentenceIdx++;
+  playPling();renderSentences();
+  if(appState.currentSentenceIdx>=appState.sentences.length)setTimeout(endSession,500);
 }
-
 function startTimer(){
   clearInterval(appState.timerInterval);
   appState.timerInterval=setInterval(()=>{
@@ -1323,66 +1391,48 @@ function startTimer(){
 
 // ── END SESSION ────────────────────────────────────────
 async function endSession(){
-  appState.running=false; clearInterval(appState.timerInterval);
-  if(appState.recognition){try{appState.recognition.stop();}catch(e){} appState.recognition=null;}
-
-  let correctWords=0, totalWords=0, wpm=0, skippedWords=[];
+  appState.running=false;clearInterval(appState.timerInterval);
+  if(appState.recognition){try{appState.recognition.stop();}catch(e){}appState.recognition=null;}
+  let correctWords=0,totalWords=0,wpm=0,skippedWords=[];
   const elapsedSec=Math.max(1,(Date.now()-appState.startTime)/1000);
-
   if(appState.exercise==='practice'){
     correctWords=appState.wordStates.filter(s=>s==='correct').length;
     totalWords=appState.currentWordIdx;
     wpm=Math.round((correctWords/elapsedSec)*60);
     skippedWords=appState.words.filter((_,i)=>appState.wordStates[i]==='skipped').map(w=>w.replace(/[.,!?;:»«""'']/g,''));
   } else {
-    const doneSentences=appState.sentenceStates.filter(s=>s==='done').length;
     totalWords=appState.sentences.slice(0,appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;
-    correctWords=totalWords;
-    wpm=Math.round((totalWords/elapsedSec)*60);
+    correctWords=totalWords;wpm=Math.round((totalWords/elapsedSec)*60);
   }
-
   const stars=Math.min(5,Math.max(1,Math.floor(correctWords/5)+1));
-
-  document.getElementById('reading-active-practice').style.display='none';
-  document.getElementById('reading-active-timed').style.display='none';
+  ['reading-active-practice','reading-active-timed'].forEach(id=>document.getElementById(id).style.display='none');
   document.getElementById('reading-result').style.display='block';
   window.scrollTo(0,0);
-
   document.getElementById('stars-earned').innerHTML=`<div style="font-size:40px">${'⭐'.repeat(stars)}</div><div style="font-size:16px;color:#6b7280;margin-top:4px">${stars} stjerner tjent!</div>`;
   document.getElementById('results-grid').innerHTML=`
     <div class="result-card" style="background:#d1fae5"><div class="lbl" style="color:#065f46">✅ Riktige ord</div><div class="val" style="color:#065f46">${correctWords}</div></div>
     <div class="result-card" style="background:#eef2ff"><div class="lbl" style="color:#4f46e5">📖 Totalt ord</div><div class="val" style="color:#4f46e5">${totalWords}</div></div>`;
-
   if(appState.exercise==='timed'&&totalWords>0){
     document.getElementById('wpm-section').style.display='block';
     const pct=Math.min(100,(wpm/150)*100);
     document.getElementById('progress-fill').style.width=pct+'%';
     document.getElementById('progress-fill').style.background=wpm>=100?'#059669':wpm>=70?'#f59e0b':'#ef4444';
-    const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet! Fantastisk!','🏆 Imponerende lesehastighet!']:wpm>=70?['🚀 Du blir bedre og bedre!','💪 Bra jobbet – du er på rett vei!']:['💪 Øving gjør mester!','🌱 Hver økt gjør deg bedre!'];
+    const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet! Fantastisk!','🏆 Imponerende lesehastighet!']:wpm>=70?['🚀 Du blir bedre og bedre!','💪 Bra jobbet!']:['💪 Øving gjør mester!','🌱 Hver økt gjør deg bedre!'];
     document.getElementById('wpm-feedback').textContent=msgs[Math.floor(Math.random()*msgs.length)];
-  } else { document.getElementById('wpm-section').style.display='none'; }
-
-  // Vanskelige ord
-  const skippedSection=document.getElementById('skipped-words-section');
-  const drillBtn=document.getElementById('drill-btn');
+  } else document.getElementById('wpm-section').style.display='none';
+  const skippedSection=document.getElementById('skipped-words-section'),drillBtn=document.getElementById('drill-btn');
   if(skippedWords.length>0){
     skippedSection.style.display='block';
     document.getElementById('skipped-words-list').innerHTML=skippedWords.map(w=>`<span style="background:#fee2e2;color:#991b1b;padding:6px 12px;border-radius:8px;font-weight:700;font-size:16px">${w}</span>`).join('');
-    drillBtn.style.display='block';
-    appState.drillWords=skippedWords;
-  } else {
-    skippedSection.style.display='none';
-    drillBtn.style.display='none';
-  }
-
+    drillBtn.style.display='block';appState.drillWords=skippedWords;
+  } else {skippedSection.style.display='none';drillBtn.style.display='none';}
   const avatar=appState.selectedProfile?.avatar||'📖';
   const childName=appState.selectedProfile?.child_name||'';
   const resultMsgs=['Fantastisk jobbet! 🌟','Du er en lesehelt! 🦁','Så flink du er! 🎉','Kjempebra! 🚀'];
   document.getElementById('result-avatar').textContent=avatar;
   document.getElementById('result-title').textContent=resultMsgs[Math.floor(Math.random()*resultMsgs.length)];
   document.getElementById('result-subtitle').textContent=childName?childName+' – du bør være stolt av deg selv!':'Bra innsats!';
-  playFinish(); launchConfetti();
-
+  playFinish();launchConfetti();
   if(appState.selectedProfile){
     const {data:{user}}=await sb.auth.getUser();
     if(user){
@@ -1390,12 +1440,11 @@ async function endSession(){
       const newStars=(appState.selectedProfile.stars||0)+stars;
       const newLevel=Math.floor(newStars/10)+1;
       await sb.from('profiles').update({stars:newStars,level:newLevel}).eq('id',appState.selectedProfile.id);
-      appState.selectedProfile.stars=newStars; appState.selectedProfile.level=newLevel;
+      appState.selectedProfile.stars=newStars;appState.selectedProfile.level=newLevel;
       updateProfileBanner();
     }
   }
 }
-
 function resetSession(){
   document.getElementById('reading-setup').style.display='block';
   document.getElementById('reading-result').style.display='none';
@@ -1409,79 +1458,64 @@ function tryAgain(){
   document.getElementById('start-btn').disabled=false;
 }
 
-// ── DRILL (øvemodus for feilord) ──────────────────────
+// ── DRILL ──────────────────────────────────────────────
 function startDrill(){
-  if(!appState.drillWords.length) return;
-  appState.drillIdx=0; appState.drillAttempts=0;
+  if(!appState.drillWords.length)return;
+  appState.drillIdx=0;appState.drillAttempts=0;
   document.getElementById('reading-result').style.display='none';
   document.getElementById('reading-drill').style.display='block';
   document.getElementById('drill-manual-controls').style.display=appState.inputMethod==='manual'?'block':'none';
-  appState.running=true;
-  renderDrill();
-  if(appState.inputMethod==='voice') startDrillRecognition();
+  appState.running=true;renderDrill();
+  if(appState.inputMethod==='voice')startDrillRecognition();
 }
 function renderDrill(){
-  const idx=appState.drillIdx, words=appState.drillWords;
-  if(idx>=words.length){ endDrill(); return; }
+  const idx=appState.drillIdx,words=appState.drillWords;
+  if(idx>=words.length){endDrill();return;}
   document.getElementById('drill-word').textContent=words[idx];
   document.getElementById('drill-progress').innerHTML=words.map((_,i)=>`<div class="drill-dot ${i<idx?'done':i===idx?'active':''}"></div>`).join('');
   document.getElementById('drill-stat').textContent=`Ord igjen: ${words.length-idx}`;
   const dots=document.getElementById('drill-attempt-dots');
-  if(dots) dots.innerHTML=[0,1,2].map(i=>`<div class="attempt-dot ${i<appState.drillAttempts?'used':''}"></div>`).join('');
+  if(dots)dots.innerHTML=[0,1,2].map(i=>`<div class="attempt-dot ${i<appState.drillAttempts?'used':''}"></div>`).join('');
 }
-function advanceDrill(){
-  appState.drillIdx++; appState.drillAttempts=0;
-  playPling(); renderDrill();
-}
-function drillManualCorrect(){ advanceDrill(); }
-function drillManualWrong(){
-  appState.drillAttempts++; playWrong();
-  if(appState.drillAttempts>=3){ appState.drillIdx++; appState.drillAttempts=0; renderDrill(); }
-  else renderDrill();
-}
-function skipDrill(){ endDrill(); }
+function advanceDrill(){appState.drillIdx++;appState.drillAttempts=0;playPling();renderDrill();}
+function drillManualCorrect(){advanceDrill();}
+function drillManualWrong(){appState.drillAttempts++;playWrong();if(appState.drillAttempts>=3){appState.drillIdx++;appState.drillAttempts=0;renderDrill();}else renderDrill();}
+function skipDrill(){endDrill();}
 function endDrill(){
   appState.running=false;
-  if(appState.recognition){try{appState.recognition.stop();}catch(e){} appState.recognition=null;}
+  if(appState.recognition){try{appState.recognition.stop();}catch(e){}appState.recognition=null;}
   document.getElementById('reading-drill').style.display='none';
-  // Vis resultat igjen
   document.getElementById('reading-result').style.display='block';
   document.getElementById('drill-btn').style.display='none';
   document.getElementById('skipped-words-section').style.display='none';
 }
 function startDrillRecognition(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){ document.getElementById('drill-manual-controls').style.display='block'; return; }
-  const rec=new SR(); rec.lang='nb-NO'; rec.continuous=true; rec.interimResults=false;
+  if(!SR){document.getElementById('drill-manual-controls').style.display='block';return;}
+  const rec=new SR();rec.lang='nb-NO';rec.continuous=true;rec.interimResults=false;
   appState.recognition=rec;
   rec.onresult=function(e){
-    if(!appState.running) return;
-    const result=e.results[e.results.length-1]; if(!result.isFinal) return;
+    if(!appState.running)return;
+    const result=e.results[e.results.length-1];if(!result.isFinal)return;
     const spoken=result[0].transcript.trim();
-    const idx=appState.drillIdx; if(idx>=appState.drillWords.length) return;
-    if(wordMatch(spoken,appState.drillWords[idx])){ advanceDrill(); }
-    else {
-      appState.drillAttempts++; playWrong();
-      if(appState.drillAttempts>=3){ appState.drillIdx++; appState.drillAttempts=0; renderDrill(); }
-      else renderDrill();
-    }
+    const idx=appState.drillIdx;if(idx>=appState.drillWords.length)return;
+    if(wordMatch(spoken,appState.drillWords[idx]))advanceDrill();
+    else{appState.drillAttempts++;playWrong();if(appState.drillAttempts>=3){appState.drillIdx++;appState.drillAttempts=0;renderDrill();}else renderDrill();}
   };
-  rec.onerror=function(e){ if(e.error==='no-speech'){try{rec.stop();setTimeout(startDrillRecognition,300);}catch(err){}} };
-  rec.onend=function(){ if(appState.running){try{rec.start();}catch(e){}} };
+  rec.onerror=function(e){if(e.error==='no-speech'){try{rec.stop();setTimeout(startDrillRecognition,300);}catch(err){}}};
+  rec.onend=function(){if(appState.running){try{rec.start();}catch(e){}}};
   try{rec.start();}catch(e){}
 }
 
 // ── PROGRESS ───────────────────────────────────────────
 async function loadProgress(){
   if(!appState.selectedProfile){
-    document.getElementById('progress-content').innerHTML='<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil under 👶 Profiler for å se fremgang.</p>';
-    return;
+    document.getElementById('progress-content').innerHTML='<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil under 👶 Profiler for å se fremgang.</p>';return;
   }
   const p=appState.selectedProfile;
   const {data}=await sb.from('reading_sessions').select('*').eq('profile_id',p.id).order('created_at',{ascending:false}).limit(20);
   const lastFive=(data||[]).slice(0,5);
-  const progressMsgs=p.stars>=50?['🏆 Utrolig fremgang! Du er en ekte lesemester!']:p.stars>=20?['🚀 Du blir bedre og bedre! Fortsett!']:['🌱 Bra start! Hver økt teller!'];
-  const msg=progressMsgs[0];
+  const msgs=p.stars>=50?['🏆 Utrolig fremgang! Du er en ekte lesemester!']:p.stars>=20?['🚀 Du blir bedre og bedre! Fortsett!']:['🌱 Bra start! Hver økt teller!'];
   const starsChart=lastFive.length?lastFive.map(s=>{
     const earned=Math.min(5,s.correct_words>0?Math.floor(s.correct_words/20)+1:1);
     const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit'});
@@ -1501,7 +1535,7 @@ async function loadProgress(){
     <div class="progress-hero">
       <div style="font-size:56px;margin-bottom:8px">${p.avatar}</div>
       <h3 style="font-size:22px;font-weight:900;color:#1e1b4b">${p.child_name}</h3>
-      <div style="font-size:15px;color:#6b7280;margin-top:4px">${msg}</div>
+      <div style="font-size:15px;color:#6b7280;margin-top:4px">${msgs[0]}</div>
       <div style="margin-top:12px;font-size:18px;font-weight:800;color:#4f46e5">${p.stars} ⭐ · Nivå ${p.level}</div>
     </div>
     <div class="card"><div style="font-weight:800;font-size:16px;margin-bottom:12px">⭐ Siste 5 økter</div><div class="stars-chart">${starsChart}</div></div>
@@ -1510,16 +1544,16 @@ async function loadProgress(){
 }
 
 // ── INIT ───────────────────────────────────────────────
-(async () => {
+(async()=>{
   const hash=window.location.hash;
   if(hash.includes('type=recovery')){showPage('reset');return;}
   if(hash.includes('type=signup')||hash.includes('access_token')){
-    await sb.auth.getSession(); await loadApp(); showPage('welcome');
-    window.history.replaceState(null,'',window.location.pathname); return;
+    await sb.auth.getSession();await loadApp();showPage('welcome');
+    window.history.replaceState(null,'',window.location.pathname);return;
   }
   const {data:{session}}=await sb.auth.getSession();
   if(session){await loadApp();showPage('app');}
-  else{showPage('home');}
+  else showPage('home');
 })();
 </script>
 </body>
