@@ -249,27 +249,45 @@
     .timer.urgent { color: #ef4444; }
     .header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
     .stats-row { margin-top: 16px; display: flex; gap: 20px; font-size: 15px; flex-wrap: wrap; }
-    .progress-hero { text-align: center; padding: 24px; background: linear-gradient(135deg, #eef2ff, #fef3c7); border-radius: 20px; margin-bottom: 24px; }
-    .stars-chart { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; justify-content: center; }
-    .star-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; font-size: 18px; border: 2px solid #f59e0b; background: #fef3c7; color: #d97706; font-weight: 900; }
-    .wpm-meter { background: #f8f7ff; border-radius: 16px; padding: 20px; margin-bottom: 16px; }
-    .wpm-meter h4 { font-size: 15px; font-weight: 800; margin-bottom: 12px; color: #4f46e5; }
-    .wpm-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .wpm-bar-row .date { font-size: 12px; color: #9ca3af; width: 60px; flex-shrink: 0; }
-    .wpm-bar { height: 28px; border-radius: 8px; background: linear-gradient(90deg, #4f46e5, #7c3aed); display: flex; align-items: center; padding: 0 10px; color: #fff; font-size: 13px; font-weight: 800; min-width: 40px; }
-    .progress-list { display: flex; flex-direction: column; gap: 12px; }
+
+    /* FREMGANG */
+    .progress-hero { text-align: center; padding: 28px; background: linear-gradient(135deg, #eef2ff, #fef3c7); border-radius: 20px; margin-bottom: 20px; }
+    .streak-box { display: flex; align-items: center; justify-content: center; gap: 16px; background: linear-gradient(135deg, #fff7ed, #fef3c7); border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 2px solid #f59e0b; }
+    .streak-num { font-size: 48px; font-weight: 900; color: #f59e0b; line-height: 1; }
+    .streak-label { font-size: 14px; font-weight: 700; color: #92400e; }
+    .streak-fire { font-size: 40px; }
+    .badges-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+    .badge { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 16px 12px; border-radius: 16px; border: 2px solid #e5e7eb; background: #f9fafb; min-width: 80px; text-align: center; transition: all 0.2s; }
+    .badge.earned { border-color: #f59e0b; background: #fef3c7; }
+    .badge.locked { opacity: 0.4; filter: grayscale(1); }
+    .badge-icon { font-size: 32px; }
+    .badge-name { font-size: 11px; font-weight: 700; color: #4b5563; }
+    .badge-desc { font-size: 10px; color: #9ca3af; }
+    /* Linjegraf */
+    .line-chart-wrap { background: #f8f7ff; border-radius: 16px; padding: 20px; margin-bottom: 20px; }
+    .line-chart-wrap h4 { font-size: 15px; font-weight: 800; margin-bottom: 16px; color: #4f46e5; }
+    .line-chart { position: relative; height: 120px; }
+    .line-chart svg { width: 100%; height: 100%; overflow: visible; }
+    /* Belønninger */
+    .reward-profile-select { background: #eef2ff; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+    .reward-profile-select label { font-size: 14px; font-weight: 700; color: #4f46e5; display: block; margin-bottom: 8px; }
+    .reward-profile-select select { width: 100%; padding: 10px 12px; border-radius: 10px; border: 2px solid #c7d2fe; font-family: inherit; font-size: 14px; background: #fff; color: #1e1b4b; }
+    .reward-item { display: flex; justify-content: space-between; align-items: center; background: #f8f7ff; border-radius: 12px; padding: 14px 16px; border: 1.5px solid #e0e7ff; }
+    .reward-item-left { display: flex; flex-direction: column; gap: 3px; }
+    .reward-item-left span { font-weight: 700; font-size: 15px; color: #1e1b4b; }
+    .reward-stars { color: #f59e0b; font-weight: 800; font-size: 13px; }
+    .reward-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .reward-unlocked { background: #d1fae5; border-color: #059669; }
+    .reward-unlocked .reward-item-left span { color: #065f46; }
     .session-item { background: #f9fafb; border-radius: 14px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
     .session-date { font-size: 13px; color: #9ca3af; }
     .session-stats { display: flex; gap: 16px; }
     .session-stat .n { font-size: 20px; font-weight: 900; color: #4f46e5; }
     .session-stat .l { font-size: 11px; color: #9ca3af; }
+    .progress-list { display: flex; flex-direction: column; gap: 12px; }
     .settings-section { margin-bottom: 32px; }
     .settings-section h3 { font-size: 18px; font-weight: 800; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #f3f4f6; }
     .danger-zone { background: #fff5f5; border-radius: 16px; padding: 24px; border: 1.5px solid #fee2e2; }
-    .reward-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
-    .reward-item { display: flex; justify-content: space-between; align-items: center; background: #f8f7ff; border-radius: 12px; padding: 12px 16px; }
-    .reward-item span { font-weight: 600; font-size: 15px; }
-    .reward-stars { color: #f59e0b; font-weight: 800; font-size: 13px; }
     @media (max-width: 768px) {
       .hero { flex-direction: column; padding: 40px 20px; }
       .hero h1 { font-size: 36px; }
@@ -333,7 +351,7 @@
     <div class="steps">
       <div class="step"><div class="step-num">1</div><div class="step-icon">✨</div><h3>Lag en personlig historie</h3><p>Velg tema, fyll inn barnets navn og interesser – vi lager en unik, sammenhengende historie!</p></div>
       <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser høyt</h3><p>Appen lytter og markerer ord grønt. Prøv vanskelige ord om igjen!</p></div>
-      <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg utvikling over tid med morsomme grafer og stjerner!</p></div>
+      <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg utvikling over tid med streaks, badges og grafer!</p></div>
     </div>
   </section>
 
@@ -341,10 +359,10 @@
     <div class="section-label">Hvorfor Leselab</div>
     <div class="section-title">Laget av foreldre, for foreldre</div>
     <div class="why-grid">
-      <div class="why-card"><div class="why-icon">✨</div><div><h3>Personlige historier</h3><p>Vi lager unike tekster med barnets egne navn og interesser – så mye morsommere å lese!</p></div></div>
-      <div class="why-card"><div class="why-icon">⚡</div><div><h3>Ord-for-ord med stemme</h3><p>Barnet leser hvert ord høyt. Riktige ord blir grønne med en pling!</p></div></div>
-      <div class="why-card"><div class="why-icon">📊</div><div><h3>Følg utviklingen</h3><p>Se fremgangen med barnevennlige grafer og oppmuntrende meldinger.</p></div></div>
-      <div class="why-card"><div class="why-icon">🌟</div><div><h3>Motiverende belønninger</h3><p>Barnet samler stjerner og klatrer i nivåer etter hvert som de leser.</p></div></div>
+      <div class="why-card"><div class="why-icon">✨</div><div><h3>Personlige historier</h3><p>Vi lager unike tekster med barnets egne navn og interesser.</p></div></div>
+      <div class="why-card"><div class="why-icon">🔥</div><div><h3>Streaks og badges</h3><p>Barnet samler dager-på-rad og låser opp morsomme merker.</p></div></div>
+      <div class="why-card"><div class="why-icon">📊</div><div><h3>Følg utviklingen</h3><p>Linjegraf viser fremgang i lesehastighet over tid.</p></div></div>
+      <div class="why-card"><div class="why-icon">🌟</div><div><h3>Motiverende belønninger</h3><p>Foreldre setter egne belønninger – barnet jobber mot dem.</p></div></div>
       <div class="why-card"><div class="why-icon">📱</div><div><h3>Fungerer på alle enheter</h3><p>Telefon, nettbrett eller PC – uten nedlasting.</p></div></div>
       <div class="why-card"><div class="why-icon">🔒</div><div><h3>Trygt og GDPR-sikret</h3><p>Barnets data lagres trygt og deles aldri med tredjeparter.</p></div></div>
     </div>
@@ -366,9 +384,9 @@
           <li>5 leseøkter per måned</li>
           <li>Personlig tekstgenerator</li>
           <li>Øvings- og tidsbasert modus</li>
-          <li class="no">Fremgangsoversikt</li>
-          <li class="no">Belønninger og nivåer</li>
-          <li class="no">Flere barneprofiler</li>
+          <li class="no">Fremgangsoversikt med graf</li>
+          <li class="no">Streaks og badges</li>
+          <li class="no">Egne belønninger</li>
         </ul>
         <button class="btn-secondary" style="width:100%;padding:14px;border-radius:50px;font-weight:800;font-size:15px;cursor:pointer" onclick="showPage('register')">Kom i gang gratis</button>
       </div>
@@ -379,10 +397,10 @@
         <ul class="pricing-features">
           <li>Ubegrenset antall øvelser</li>
           <li>Personlig tekstgenerator</li>
-          <li>Full statistikk og fremgang</li>
-          <li>Belønninger og nivåer</li>
+          <li>Fremgangsgraf og statistikk</li>
+          <li>Streaks og badges</li>
+          <li>Egne belønninger</li>
           <li>Opptil 3 barneprofiler</li>
-          <li>Prioritert støtte</li>
         </ul>
         <button class="btn-primary" style="width:100%;padding:14px;border-radius:50px;font-weight:800;font-size:15px;cursor:pointer" onclick="showPage('register')">Prøv gratis i 30 dager</button>
       </div>
@@ -419,12 +437,12 @@
     <h1>Om Leselab</h1><p class="subtitle">Laget av en forelder, for foreldre</p>
     <div class="about-hero"><div class="big-emoji">📖</div><h2>Historien bak Leselab</h2><p>Leselab ble til da jeg oppdaget at datteren min på 9 år leste rundt 50 ord i minuttet – halvparten av gjennomsnittet for alderen. Jeg lette etter enkle verktøy foreldre kunne bruke hjemme, men fant ikke noe som passet. Så lagde jeg det selv.</p></div>
     <h2>Hva vi tror på</h2>
-    <p>Lesetrening trenger ikke være kjedelig eller stressende. De beste resultatene kommer når barn leser tekster de selv er motiverte for.</p>
+    <p>Lesetrening trenger ikke være kjedelig. De beste resultatene kommer når barn leser tekster de selv er motiverte for – med belønninger, streaks og personlige historier som holder motivasjonen oppe.</p>
     <div class="value-cards">
       <div class="value-card"><div class="vi">🏠</div><h3>Hjemme er best</h3><p>Daglig øving hjemme gir resultater.</p></div>
-      <div class="value-card"><div class="vi">🌱</div><h3>Fremgang, ikke perfeksjon</h3><p>Vi feirer alle steg fremover. Hvert ord er en seier.</p></div>
+      <div class="value-card"><div class="vi">🌱</div><h3>Fremgang, ikke perfeksjon</h3><p>Vi feirer alle steg fremover.</p></div>
       <div class="value-card"><div class="vi">🔒</div><h3>Trygghet for familien</h3><p>Barnets data er privat og deles aldri.</p></div>
-      <div class="value-card"><div class="vi">💡</div><h3>Enkel teknologi</h3><p>Ingen nedlasting – bare åpne nettleseren og start.</p></div>
+      <div class="value-card"><div class="vi">💡</div><h3>Enkel teknologi</h3><p>Ingen nedlasting – bare åpne nettleseren.</p></div>
     </div>
   </div>
   <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
@@ -456,8 +474,8 @@
     <h2>1. Behandlingsansvarlig</h2><p>Leselab. Kontakt: hei@leselab.no</p>
     <h2>2. Opplysninger vi samler inn</h2><ul><li>E-postadresse</li><li>Barnets navn, alder og avatar</li><li>Leseresultater og fremgangsdata</li><li>Tekster du lagrer</li></ul>
     <h2>3. Underleverandører</h2><ul><li><strong>Supabase</strong> – database (EU)</li><li><strong>Vercel</strong> – hosting</li></ul>
-    <h2>4. Dine rettigheter</h2><p>Slett konto under Innstillinger, eller kontakt hei@leselab.no. Klager til Datatilsynet (datatilsynet.no).</p>
-    <h2>5. Cookies</h2><p>Kun nødvendige innloggingscookies. Ingen reklame- eller sporingscookies.</p>
+    <h2>4. Dine rettigheter</h2><p>Slett konto under Innstillinger, eller kontakt hei@leselab.no.</p>
+    <h2>5. Cookies</h2><p>Kun nødvendige innloggingscookies.</p>
   </div>
   <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
@@ -469,7 +487,7 @@
     <h1>Vilkår for bruk</h1><p class="subtitle">Sist oppdatert: mars 2026</p>
     <h2>1. Om tjenesten</h2><p>Leselab er et nettbasert lesetreningsverktøy for barn.</p>
     <h2>2. Akseptabel bruk</h2><ul><li>Kun lovlig bruk</li><li>Du er ansvarlig for innhold du laster opp</li></ul>
-    <h2>3. Betaling</h2><p>Månedlig abonnement. Avbestill når som helst uten bindingstid.</p>
+    <h2>3. Betaling</h2><p>Månedlig abonnement. Avbestill når som helst.</p>
     <h2>4. Ansvarsbegrensning</h2><p>Leselab erstatter ikke pedagogisk vurdering eller profesjonell støtte.</p>
     <h2>5. Kontakt</h2><p>hei@leselab.no</p>
   </div>
@@ -501,7 +519,7 @@
 
 <div id="page-forgot" class="page"><div class="auth-container"><div class="auth-card">
   <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-  <h2>Glemt passord?</h2><p>Skriv inn e-posten din så sender vi en lenke.</p>
+  <h2>Glemt passord?</h2><p>Skriv inn e-posten din.</p>
   <div class="auth-error" id="forgot-error"></div>
   <div class="auth-success" id="forgot-success"></div>
   <div class="form-group"><label>E-post</label><input type="email" id="forgot-email" placeholder="din@epost.no"></div>
@@ -522,7 +540,7 @@
 <!-- VELKOMST -->
 <div id="page-welcome" class="page">
   <div class="welcome-container">
-    <div class="welcome-hero"><div style="font-size:64px;margin-bottom:16px">🎉</div><h1>Velkommen til Leselab!</h1><p>Vi er glade for at du er med. Her er alt du trenger for å komme i gang.</p></div>
+    <div class="welcome-hero"><div style="font-size:64px;margin-bottom:16px">🎉</div><h1>Velkommen til Leselab!</h1><p>Vi er glade for at du er med.</p></div>
     <div class="info-cards">
       <div class="info-card"><div class="ic-icon">📱</div><h3>Fungerer på / med</h3><ul><li>Telefon og nettbrett</li><li>PC og Mac (med innebygd mikrofon)</li><li>AirPods og trådløse øreplugger</li><li class="no">PC med ekstern skjerm uten mikrofon</li></ul></div>
       <div class="info-card"><div class="ic-icon">🌐</div><h3>Nettlesere</h3><ul><li>Chrome (anbefalt)</li><li>Edge</li><li>Safari (iPhone/iPad)</li><li class="no">Firefox (talegjenkjenning virker ikke)</li></ul></div>
@@ -531,10 +549,10 @@
     </div>
     <div class="welcome-steps">
       <h2 style="font-size:24px;font-weight:900;margin-bottom:24px">Kom i gang på 3 steg</h2>
-      <div class="welcome-step"><div class="ws-num">1</div><div class="ws-content"><h3>Opprett barneprofil</h3><p>Legg til barnets navn, alder og velg en morsom avatar.</p></div></div>
+      <div class="welcome-step"><div class="ws-num">1</div><div class="ws-content"><h3>Opprett barneprofil</h3><p>Legg til barnets navn, alder og velg avatar.</p></div></div>
       <div class="welcome-step"><div class="ws-num">2</div><div class="ws-content"><h3>Lag en personlig historie</h3><p>Velg tema og fyll inn navn – vi lager en unik tekst!</p></div></div>
-      <div class="welcome-step"><div class="ws-num">3</div><div class="ws-content"><h3>Start leseøkten</h3><p>Barnet leser hvert ord høyt. Riktige ord lyser grønt med en pling!</p></div></div>
-      <div class="welcome-step"><div class="ws-num">⭐</div><div class="ws-content"><h3>Belønninger</h3><p>Barnet tjener stjerner og klatrer i nivåer. Legg inn egne belønninger under ⚙️ Innstillinger!</p></div></div>
+      <div class="welcome-step"><div class="ws-num">3</div><div class="ws-content"><h3>Start leseøkten</h3><p>Barnet leser hvert ord høyt. Riktige ord lyser grønt!</p></div></div>
+      <div class="welcome-step"><div class="ws-num">⭐</div><div class="ws-content"><h3>Belønninger og streaks</h3><p>Barnet tjener stjerner og klatrer i nivåer. Legg inn egne belønninger under ⚙️ Innstillinger!</p></div></div>
     </div>
     <div class="welcome-cta"><h2>Klar til å starte? 🚀</h2><p>Opprett barnets profil og gjennomfør din første leseøkt på under 2 minutter.</p><button onclick="showPage('app')" style="background:#fff;color:#4f46e5;padding:16px 36px;border-radius:50px;font-size:18px;font-weight:900;border:none;cursor:pointer;">Opprett barneprofil →</button></div>
   </div>
@@ -588,10 +606,10 @@
       <div class="card">
         <label class="form-label">🎯 Velg tema for historien</label>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <button class="theme-btn active" onclick="setTheme('nature',this)">🌲 Eventyr i naturen<br><span style="font-size:12px;font-weight:400;color:#6b7280">Skog, fjell, strand og funn</span></button>
-          <button class="theme-btn" onclick="setTheme('pet',this)">🐾 En dag med kjæledyret<br><span style="font-size:12px;font-weight:400;color:#6b7280">Hund, katt eller annet dyr</span></button>
-          <button class="theme-btn" onclick="setTheme('activity',this)">⚽ Aktivitetsdag<br><span style="font-size:12px;font-weight:400;color:#6b7280">Fotball, tegning, svømming...</span></button>
-          <button class="theme-btn" onclick="setTheme('hero',this)">🦸 Superhelter og spenning<br><span style="font-size:12px;font-weight:400;color:#6b7280">Eventyr med favorittfiguren</span></button>
+          <button class="theme-btn active" onclick="setTheme('nature',this)">🌲 Eventyr i naturen<br><span style="font-size:12px;font-weight:400;color:#6b7280">Skog, fjell, strand</span></button>
+          <button class="theme-btn" onclick="setTheme('pet',this)">🐾 En dag med kjæledyret<br><span style="font-size:12px;font-weight:400;color:#6b7280">Hund, katt eller dyr</span></button>
+          <button class="theme-btn" onclick="setTheme('activity',this)">⚽ Aktivitetsdag<br><span style="font-size:12px;font-weight:400;color:#6b7280">Fotball, tegning...</span></button>
+          <button class="theme-btn" onclick="setTheme('hero',this)">🦸 Superhelter og spenning<br><span style="font-size:12px;font-weight:400;color:#6b7280">Favorittfiguren</span></button>
           <button class="theme-btn" onclick="setTheme('family',this)" style="grid-column:1/-1">👨‍👩‍👧 Familietur<br><span style="font-size:12px;font-weight:400;color:#6b7280">Tur med mamma, pappa, bestemor...</span></button>
         </div>
       </div>
@@ -767,13 +785,9 @@
     <div id="tab-settings" class="tab-content">
       <div class="settings-section">
         <h3>🏆 Egne belønninger</h3>
-        <p style="color:#6b7280;font-size:14px;margin-bottom:16px">Legg inn egne belønninger – f.eks. "20 stjerner = iskrem!" 🍦</p>
-        <div id="rewards-profile-select" style="margin-bottom:16px"></div>
-        <div id="reward-list" class="reward-list"></div>
-        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
-          <input type="text" id="reward-text" placeholder="F.eks. Velg kveldskos 🍿" style="flex:1;min-width:180px;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
-          <input type="number" id="reward-stars" placeholder="Stjerner" style="width:100px;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
-          <button class="btn btn-indigo" onclick="addReward()">Legg til</button>
+        <p style="color:#6b7280;font-size:14px;margin-bottom:16px">Legg inn egne belønninger barnet kan jobbe mot! 🍦</p>
+        <div id="rewards-section">
+          <p style="color:#9ca3af;font-size:14px">Velg en barneprofil under 👶 Profiler for å legge til belønninger.</p>
         </div>
       </div>
       <div class="settings-section">
@@ -824,8 +838,21 @@ const appState={
   recognition:null,selectedProfile:null,
   selectedAvatar:'🦁',profiles:[],warningPlayed:false,startTime:null,lastText:'',
   drillWords:[],drillIdx:0,drillAttempts:0,
-  genLength:'medium',genTheme:'nature',lastGeneratedText:''
+  genLength:'medium',genTheme:'nature',lastGeneratedText:'',
+  showAllSessions:false
 };
+
+// ── BADGES ─────────────────────────────────────────────
+const BADGES=[
+  {id:'first',icon:'🌱',name:'Første økt',desc:'Gjennomfør 1 økt',check:(s,_)=>s>=1},
+  {id:'five',icon:'⭐',name:'5 økter',desc:'Gjennomfør 5 økter',check:(s,_)=>s>=5},
+  {id:'ten',icon:'🏆',name:'10 økter',desc:'Gjennomfør 10 økter',check:(s,_)=>s>=10},
+  {id:'streak3',icon:'🔥',name:'3 dager på rad',desc:'Les 3 dager i strekk',check:(_,streak)=>streak>=3},
+  {id:'streak7',icon:'💎',name:'7 dager på rad',desc:'Les 7 dager i strekk',check:(_,streak)=>streak>=7},
+  {id:'speed50',icon:'🚀',name:'50 ord/min',desc:'Nå 50 ord i minuttet',check:(_,__,best)=>best>=50},
+  {id:'speed100',icon:'⚡',name:'100 ord/min',desc:'Nå 100 ord i minuttet',check:(_,__,best)=>best>=100},
+  {id:'stars50',icon:'🌟',name:'50 stjerner',desc:'Tjen 50 stjerner totalt',check:(_,__,___,stars)=>stars>=50},
+];
 
 // ── HELPERS ────────────────────────────────────────────
 function tokenize(t){return t.match(/\S+/g)||[];}
@@ -833,6 +860,13 @@ function splitSentences(t){const p=t.match(/[^.!?]+[.!?]+/g);return p?p.map(s=>s
 function levenshtein(a,b){const m=a.length,n=b.length,dp=Array.from({length:m+1},(_,i)=>Array.from({length:n+1},(_,j)=>i||j));for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);return dp[m][n];}
 function wordMatch(sp,ex){const s=sp.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim(),e=ex.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();return s===e||s.includes(e)||e.includes(s)||levenshtein(s,e)<=Math.floor(e.length/4);}
 function sentenceMatch(sp,ex){const s=sp.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/),e=ex.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);let m=0;for(const sw of s)for(const ew of e)if(sw===ew||levenshtein(sw,ew)<=Math.floor(ew.length/4)){m++;break;}return m/e.length>=0.7;}
+function calcStreak(sessions){
+  if(!sessions||!sessions.length)return 0;
+  const days=new Set(sessions.map(s=>new Date(s.created_at).toDateString()));
+  let streak=0,d=new Date();
+  while(days.has(d.toDateString())){streak++;d.setDate(d.getDate()-1);}
+  return streak;
+}
 
 // ── NAVIGATION ─────────────────────────────────────────
 function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));const el=document.getElementById('page-'+p);if(el)el.classList.add('active');window.scrollTo(0,0);}
@@ -862,14 +896,70 @@ async function loadApp(){const {data:{user}}=await sb.auth.getUser();if(!user)re
 // ── PROFILES ───────────────────────────────────────────
 async function loadProfiles(uid){const {data}=await sb.from('profiles').select('*').eq('user_id',uid).order('created_at');appState.profiles=data||[];renderProfiles();}
 function renderProfiles(){const g=document.getElementById('profiles-grid');let h=appState.profiles.map(p=>`<div class="profile-card ${appState.selectedProfile?.id===p.id?'selected':''}" onclick="selectProfile('${p.id}')"><div class="profile-avatar">${p.avatar}</div><div class="profile-name">${p.child_name}</div><div class="profile-level">Nivå ${p.level} · ${p.stars} ⭐</div></div>`).join('');h+=`<div class="add-profile" onclick="document.getElementById('add-profile-form').style.display='block'"><div style="font-size:32px">➕</div><div style="font-weight:700;margin-top:8px">Legg til barn</div></div>`;g.innerHTML=h;}
-function selectProfile(id){appState.selectedProfile=appState.profiles.find(p=>p.id===id);renderProfiles();updateProfileBanner();showTab('tab-reading');}
+function selectProfile(id){appState.selectedProfile=appState.profiles.find(p=>p.id===id);renderProfiles();updateProfileBanner();renderRewardsSection();showTab('tab-reading');}
 function updateProfileBanner(){const p=appState.selectedProfile;if(!p)return;document.getElementById('selected-profile-banner').style.display='flex';document.getElementById('banner-avatar').textContent=p.avatar;document.getElementById('banner-name').textContent=p.child_name;document.getElementById('banner-level').textContent=`Nivå ${p.level} · ${p.stars} ⭐`;}
 function selectAvatar(el){document.querySelectorAll('.avatar-opt').forEach(a=>a.style.border='2px solid transparent');el.style.border='2px solid #4f46e5';appState.selectedAvatar=el.textContent;}
-async function saveProfile(){const {data:{user}}=await sb.auth.getUser();const name=document.getElementById('child-name').value.trim();const age=document.getElementById('child-age').value;if(!name){alert('Skriv inn barnets navn');return;}await sb.from('profiles').insert({user_id:user.id,child_name:name,age:+age,avatar:appState.selectedAvatar});document.getElementById('add-profile-form').style.display='none';document.getElementById('child-name').value='';document.getElementById('child-age').value='';await loadProfiles(user.id);renderRewardsProfileSelect();}
+async function saveProfile(){const {data:{user}}=await sb.auth.getUser();const name=document.getElementById('child-name').value.trim();const age=document.getElementById('child-age').value;if(!name){alert('Skriv inn barnets navn');return;}await sb.from('profiles').insert({user_id:user.id,child_name:name,age:+age,avatar:appState.selectedAvatar});document.getElementById('add-profile-form').style.display='none';document.getElementById('child-name').value='';document.getElementById('child-age').value='';await loadProfiles(user.id);}
+
+// ── BELØNNINGER ────────────────────────────────────────
+function renderRewardsSection(){
+  const section=document.getElementById('rewards-section');
+  if(!appState.selectedProfile){
+    section.innerHTML='<p style="color:#9ca3af;font-size:14px">Velg en barneprofil under 👶 Profiler for å legge til belønninger.</p>';
+    return;
+  }
+  const p=appState.selectedProfile;
+  section.innerHTML=`
+    <div class="reward-profile-select">
+      <label>Belønninger for: ${p.avatar} ${p.child_name} · ${p.stars} ⭐ samlet</label>
+    </div>
+    <div id="reward-list" class="reward-list"></div>
+    <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+      <input type="text" id="reward-text" placeholder="F.eks. Velg film på kino 🎬" style="flex:1;min-width:180px;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
+      <input type="number" id="reward-stars" placeholder="⭐ Stjerner" style="width:110px;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px">
+      <button class="btn btn-indigo" onclick="addReward()">Legg til</button>
+    </div>`;
+  loadRewards();
+}
+async function loadRewards(){
+  if(!appState.selectedProfile)return;
+  const pid=appState.selectedProfile.id;
+  const {data}=await sb.from('rewards').select('*').eq('profile_id',pid).order('stars_required');
+  const list=document.getElementById('reward-list');
+  if(!list)return;
+  if(!data||!data.length){list.innerHTML='<p style="color:#9ca3af;font-size:14px;padding:8px 0">Ingen belønninger lagt til ennå. Legg til en belønning over! 👆</p>';return;}
+  const currentStars=appState.selectedProfile.stars||0;
+  list.innerHTML=data.map(r=>{
+    const unlocked=currentStars>=r.stars_required;
+    return `<div class="reward-item ${unlocked?'reward-unlocked':''}">
+      <div class="reward-item-left">
+        <span>${unlocked?'✅ ':'🎯 '}${r.reward_text}</span>
+        <span class="reward-stars">⭐ ${r.stars_required} stjerner${unlocked?' – Oppnådd!':` (mangler ${r.stars_required-currentStars})`}</span>
+      </div>
+      <button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteReward('${r.id}')">Slett</button>
+    </div>`;
+  }).join('');
+}
+async function addReward(){
+  if(!appState.selectedProfile){alert('Velg en barneprofil først.');return;}
+  const text=document.getElementById('reward-text').value.trim();
+  const stars=document.getElementById('reward-stars').value;
+  if(!text||!stars){alert('Fyll inn belønning og antall stjerner.');return;}
+  if(+stars<=0){alert('Skriv inn et positivt antall stjerner.');return;}
+  const {data:{user}}=await sb.auth.getUser();
+  await sb.from('rewards').insert({profile_id:appState.selectedProfile.id,user_id:user.id,reward_text:text,stars_required:+stars});
+  document.getElementById('reward-text').value='';
+  document.getElementById('reward-stars').value='';
+  loadRewards();
+}
+async function deleteReward(id){
+  if(!confirm('Slette denne belønningen?'))return;
+  await sb.from('rewards').delete().eq('id',id);
+  loadRewards();
+}
 
 // ── TEKSTGENERATOR ─────────────────────────────────────
 function setLength(len,btn){appState.genLength=len;document.querySelectorAll('.length-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
-
 function setTheme(theme,btn){
   appState.genTheme=theme;
   document.querySelectorAll('.theme-btn').forEach(b=>{b.style.borderColor='#e5e7eb';b.style.background='#fff';});
@@ -879,7 +969,6 @@ function setTheme(theme,btn){
   document.getElementById('gen-hero-field').style.display=theme==='hero'?'flex':'none';
   document.getElementById('gen-family-field').style.display=theme==='family'?'flex':'none';
 }
-
 function generateText(){
   const child=document.getElementById('gen-child').value.trim();
   const pet=document.getElementById('gen-pet').value.trim();
@@ -892,109 +981,36 @@ function generateText(){
   const pick=arr=>arr[Math.floor(Math.random()*arr.length)];
   const target={short:6,medium:10,long:15}[appState.genLength]||10;
   let sentences=[];
-
   if(theme==='nature'){
     const steder=['skogen','fjellet','stranden','engen','søen','parken'];
     const vaer=['solen skinte varmt','det var en fin og stille dag','skyene drev sakte forbi','det var lunt og godt ute'];
     const funn=['et lite pinnsvin','en fargerik sommerfugl','en liten frosk','et spor i sanden','en gammel hule mellom steinene','en bekk med blankt vann'];
     const sted=pick(steder),f=pick(funn);
-    sentences=[
-      `${name} dro ut på eventyr til ${sted} en dag da ${pick(vaer)}.`,
-      `${name} hadde med seg sekk og vann, klar for å utforske.`,
-      friend?`${friend} ventet allerede der og vinket da ${name} kom.`:`Fuglene sang i trærne og alt var stille og fredfullt.`,
-      friend?`– Endelig! ropte ${friend}. – Jeg har funnet noe kult!`:`${name} gikk stille og forsiktig for å ikke skremme dyrene.`,
-      `Plutselig stoppet ${name} opp. Der, rett foran, var ${f}!`,
-      `${name} holdt pusten og tok et forsiktig steg nærmere.`,
-      friend?`${friend} hvisket: – Ikke beveg deg. Bare se!`:`Det var så stille at ${name} kunne høre hjertet banke.`,
-      `De sto lenge og bare så. Det var nesten magisk.`,
-      `På veien hjem snakket ${name} ${friend?'og '+friend:''} om alt de hadde sett.`,
-      `${name} bestemte seg for å komme tilbake snart. Naturen hadde så mye å by på.`,
-      `– Dette var den beste dagen på lenge, tenkte ${name} med et stort smil.`,
-    ];
+    sentences=[`${name} dro ut på eventyr til ${sted} en dag da ${pick(vaer)}.`,`${name} hadde med seg sekk og vann, klar for å utforske.`,friend?`${friend} ventet allerede der og vinket da ${name} kom.`:`Fuglene sang i trærne og alt var stille og fredfullt.`,friend?`– Endelig! ropte ${friend}. – Jeg har funnet noe kult!`:`${name} gikk stille og forsiktig for å ikke skremme dyrene.`,`Plutselig stoppet ${name} opp. Der, rett foran, var ${f}!`,`${name} holdt pusten og tok et forsiktig steg nærmere.`,friend?`${friend} hvisket: – Ikke beveg deg. Bare se!`:`Det var så stille at ${name} kunne høre hjertet banke.`,`De sto lenge og bare så. Det var nesten magisk.`,`På veien hjem snakket ${name} ${friend?'og '+friend:''} om alt de hadde sett.`,`${name} bestemte seg for å komme tilbake snart. Naturen hadde så mye å by på.`,`– Dette var den beste dagen på lenge, tenkte ${name} med et stort smil.`];
   } else if(theme==='pet'){
     const petName=pet||'kjæledyret';
-    const steder=['parken','skogen','stranden','hagen','nabolaget'];
-    const sted=pick(steder);
-    sentences=[
-      `${name} og ${petName} skulle ha sin helt egne dag sammen.`,
-      `${name} tok på seg støvlene og festet båndet. ${petName} hoppet spent rundt.`,
-      `De gikk til ${sted}, og ${petName} snuste nysgjerrig på alt.`,
-      `Plutselig stoppet ${petName} opp og spidset ørene. Hva hadde ${petName} hørt?`,
-      `${name} så seg rundt, men oppdaget ingenting. ${petName} visste noe ${name} ikke visste.`,
-      `Så kom det – en liten fugl landet rett foran dem på stien.`,
-      `${petName} logret og hoppet, men fuglen var ikke redd og hoppet bare litt til siden.`,
-      `${name} lo høyt. – Du er ikke så skummel, du, sa ${name} til ${petName}.`,
-      `De lekte lenge ute før de satte seg ned i gresset og hvilte.`,
-      `${name} klapte ${petName} og kjente seg veldig glad og takknemlig.`,
-      `– Du er den beste vennen jeg har, ${petName}, sa ${name} stille.`,
-    ];
+    const sted=pick(['parken','skogen','stranden','hagen','nabolaget']);
+    sentences=[`${name} og ${petName} skulle ha sin helt egne dag sammen.`,`${name} tok på seg støvlene og festet båndet. ${petName} hoppet spent rundt.`,`De gikk til ${sted}, og ${petName} snuste nysgjerrig på alt.`,`Plutselig stoppet ${petName} opp og spidset ørene. Hva hadde ${petName} hørt?`,`${name} så seg rundt, men oppdaget ingenting. ${petName} visste noe ${name} ikke visste.`,`Så kom det – en liten fugl landet rett foran dem på stien.`,`${petName} logret og hoppet, men fuglen var ikke redd og hoppet bare litt til siden.`,`${name} lo høyt. – Du er ikke så skummel, du, sa ${name} til ${petName}.`,`De lekte lenge ute før de satte seg ned i gresset og hvilte.`,`${name} klapte ${petName} og kjente seg veldig glad og takknemlig.`,`– Du er den beste vennen jeg har, ${petName}, sa ${name} stille.`];
   } else if(theme==='activity'){
     const act=activity||'favorittaktiviteten sin';
-    const steder=['idrettsbanen','parken','gymsalen','hagen','lekeplassen'];
-    const sted=pick(steder);
-    sentences=[
-      `${name} hadde gledet seg til denne dagen hele uken. I dag skulle ${name} drive med ${act}!`,
-      `${name} pakket sekken og sprang ut døren. Det var ingen tid å miste.`,
-      `Da ${name} kom til ${sted}, var alt klart og klart til start.`,
-      friend?`${friend} sto allerede der og vinket. – Kom igjen, vi starter! ropte ${friend}.`:`${name} varmet opp og kjente spenningen boble i magen.`,
-      `${name} kastet seg inn i det og glemte alt annet rundt seg.`,
-      friend?`${friend} og ${name} jobbet godt sammen og oppmuntret hverandre hele veien.`:`${name} prøvde igjen og igjen, og ble bedre for hver gang.`,
-      `Det var ett øyeblikk som var ekstra bra. ${name} kjente det på kroppen.`,
-      friend?`– Wow, det var kjempebra! ropte ${friend} og ga ${name} en high five.`:`${name} stoppet opp og smilte. Det føltes veldig bra.`,
-      `Etter en stund tok ${name} en pause og drakk litt vann.`,
-      `${name} tenkte: neste gang skal jeg klare det enda bedre.`,
-      `På veien hjem sang ${name} for seg selv. Det hadde vært en perfekt dag med ${act}.`,
-    ];
+    const sted=pick(['idrettsbanen','parken','gymsalen','hagen','lekeplassen']);
+    sentences=[`${name} hadde gledet seg til denne dagen hele uken. I dag skulle ${name} drive med ${act}!`,`${name} pakket sekken og sprang ut døren. Det var ingen tid å miste.`,`Da ${name} kom til ${sted}, var alt klart og klart til start.`,friend?`${friend} sto allerede der og vinket. – Kom igjen, vi starter! ropte ${friend}.`:`${name} varmet opp og kjente spenningen boble i magen.`,`${name} kastet seg inn i det og glemte alt annet rundt seg.`,friend?`${friend} og ${name} jobbet godt sammen og oppmuntret hverandre hele veien.`:`${name} prøvde igjen og igjen, og ble bedre for hver gang.`,`Det var ett øyeblikk som var ekstra bra. ${name} kjente det på kroppen.`,friend?`– Wow, det var kjempebra! ropte ${friend} og ga ${name} en high five.`:`${name} stoppet opp og smilte. Det føltes veldig bra.`,`Etter en stund tok ${name} en pause og drakk litt vann.`,`På veien hjem sang ${name} for seg selv. Det hadde vært en perfekt dag med ${act}.`];
   } else if(theme==='hero'){
     const heroName=hero||'superhelten';
-    sentences=[
-      `${name} hadde alltid drømt om å møte ${heroName}. En dag skjedde det noe merkelig.`,
-      `Det begynte med en lyd utenfor vinduet. ${name} kikket ut – og der var det et lys!`,
-      `${name} løp ut og fant et brev på trappen. Det var fra ${heroName}!`,
-      `– Kjære ${name}, jeg trenger din hjelp. Møt meg i parken klokken tre. – ${heroName}`,
-      `${name} hjertet banket fort. Dette var ikke en drøm!`,
-      friend?`${name} ringte ${friend} med en gang. – Du tror meg aldri, sa ${name}.`:`${name} tok på seg jakken og sprang av gårde.`,
-      `I parken sto ${heroName} og ventet bak et stort tre.`,
-      `– ${name}, du er modigere enn du tror, sa ${heroName} med et alvorlig blikk.`,
-      `Oppdraget var enkelt: finn den forsvunne skatten i skogen.`,
-      friend?`${name} og ${friend} satte i gang med ${heroName} ved sin side.`:`${name} visste nøyaktig hva som måtte gjøres.`,
-      `Da de fant skatten, jublet alle. ${name} hadde vært en ekte helt i dag.`,
-    ];
+    sentences=[`${name} hadde alltid drømt om å møte ${heroName}. En dag skjedde det noe merkelig.`,`Det begynte med en lyd utenfor vinduet. ${name} kikket ut – og der var det et lys!`,`${name} løp ut og fant et brev på trappen. Det var fra ${heroName}!`,`– Kjære ${name}, jeg trenger din hjelp. Møt meg i parken klokken tre. – ${heroName}`,`${name}s hjerte banket fort. Dette var ikke en drøm!`,friend?`${name} ringte ${friend} med en gang. – Du tror meg aldri, sa ${name}.`:`${name} tok på seg jakken og sprang av gårde.`,`I parken sto ${heroName} og ventet bak et stort tre.`,`– ${name}, du er modigere enn du tror, sa ${heroName} med et alvorlig blikk.`,`Oppdraget var enkelt: finn den forsvunne skatten i skogen.`,friend?`${name} og ${friend} satte i gang med ${heroName} ved sin side.`:`${name} visste nøyaktig hva som måtte gjøres.`,`Da de fant skatten, jublet alle. ${name} hadde vært en ekte helt i dag.`];
   } else if(theme==='family'){
     const fm=family||'familien';
-    const steder=['fjellet','stranden','hytten','byen','fornøyelsesparken'];
-    const sted=pick(steder);
-    sentences=[
-      `${name} og ${fm} dro på tur til ${sted}. Alle gledet seg veldig.`,
-      `Bilen var pakket og musikken var på. ${name} sang med fra baksetet.`,
-      `Da de kom frem, sto alle stille og så seg rundt. Det var vakkert.`,
-      `${fm} tok ${name} i hånden og sa: – Nå utforsker vi!`,
-      `De fant en sti og fulgte den inn mellom trærne.`,
-      `${name} oppdaget noe blinke mellom steinene. – Kom og se! ropte ${name}.`,
-      `${fm} bøyde seg ned og kikket. – Så flott! sa de.`,
-      `De spiste matpakke på en stor, flat stein og snakket om alt mulig.`,
-      `${name} tenkte at dette var noe av det beste – bare å være sammen med ${fm}.`,
-      `På veien hjem sovnet ${name} i bilen med et smil om munnen.`,
-      `Det var en dag ${name} og ${fm} aldri ville glemme.`,
-    ];
+    const sted=pick(['fjellet','stranden','hytten','byen','fornøyelsesparken']);
+    sentences=[`${name} og ${fm} dro på tur til ${sted}. Alle gledet seg veldig.`,`Bilen var pakket og musikken var på. ${name} sang med fra baksetet.`,`Da de kom frem, sto alle stille og så seg rundt. Det var vakkert.`,`${fm} tok ${name} i hånden og sa: – Nå utforsker vi!`,`De fant en sti og fulgte den inn mellom trærne.`,`${name} oppdaget noe blinke mellom steinene. – Kom og se! ropte ${name}.`,`${fm} bøyde seg ned og kikket. – Så flott! sa de.`,`De spiste matpakke på en stor, flat stein og snakket om alt mulig.`,`${name} tenkte at dette var noe av det beste – bare å være sammen med ${fm}.`,`På veien hjem sovnet ${name} i bilen med et smil om munnen.`,`Det var en dag ${name} og ${fm} aldri ville glemme.`];
   }
-
-  let result=sentences.slice(0,target);
-  const text=result.join(' ');
+  const text=sentences.slice(0,target).join(' ');
   appState.lastGeneratedText=text;
   document.getElementById('gen-result-text').textContent=text;
   document.getElementById('gen-result-box').style.display='block';
   document.getElementById('gen-btn').textContent='🔄 Lag ny versjon';
 }
-
 function useGeneratedText(){if(!appState.lastGeneratedText)return;document.getElementById('textInput').value=appState.lastGeneratedText;document.getElementById('start-btn').disabled=false;showTab('tab-reading');}
 async function saveGeneratedText(){if(!appState.lastGeneratedText)return;const childName=document.getElementById('gen-child').value.trim()||'Barnet';const title=`${childName}s historie – ${new Date().toLocaleDateString('nb-NO')}`;const {data:{user}}=await sb.auth.getUser();if(!user){alert('Logg inn for å lagre tekster.');return;}await sb.from('saved_texts').insert({user_id:user.id,profile_id:appState.selectedProfile?.id||null,title,content:appState.lastGeneratedText});alert(`✅ Lagret som "${title}"!`);loadSavedTexts();}
-
-// ── REWARDS ────────────────────────────────────────────
-function renderRewardsProfileSelect(){const el=document.getElementById('rewards-profile-select');if(!el||!appState.profiles.length)return;el.innerHTML=`<label class="form-label">Velg barneprofil</label><select id="reward-profile-id" onchange="loadRewards()" style="width:100%;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;margin-bottom:12px">${appState.profiles.map(p=>`<option value="${p.id}">${p.avatar} ${p.child_name}</option>`).join('')}</select>`;loadRewards();}
-async function loadRewards(){const pid=document.getElementById('reward-profile-id')?.value;if(!pid)return;const {data}=await sb.from('rewards').select('*').eq('profile_id',pid).order('stars_required');const list=document.getElementById('reward-list');if(!data||!data.length){list.innerHTML='<p style="color:#9ca3af;font-size:14px">Ingen belønninger lagt til ennå.</p>';return;}list.innerHTML=data.map(r=>`<div class="reward-item"><span>${r.reward_text}</span><div style="display:flex;align-items:center;gap:12px"><span class="reward-stars">⭐ ${r.stars_required} stjerner</span><button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteReward('${r.id}')">Slett</button></div></div>`).join('');}
-async function addReward(){const pid=document.getElementById('reward-profile-id')?.value;const text=document.getElementById('reward-text').value.trim();const stars=document.getElementById('reward-stars').value;if(!pid||!text||!stars){alert('Fyll inn belønning og antall stjerner.');return;}const {data:{user}}=await sb.auth.getUser();await sb.from('rewards').insert({profile_id:pid,user_id:user.id,reward_text:text,stars_required:+stars});document.getElementById('reward-text').value='';document.getElementById('reward-stars').value='';loadRewards();}
-async function deleteReward(id){await sb.from('rewards').delete().eq('id',id);loadRewards();}
 
 // ── SAVED TEXTS ────────────────────────────────────────
 async function saveText(){const title=document.getElementById('save-text-title').value.trim();const content=document.getElementById('textInput').value.trim();if(!title){alert('Gi teksten et navn først.');return;}if(!content){alert('Det er ingen tekst å lagre.');return;}const {data:{user}}=await sb.auth.getUser();await sb.from('saved_texts').insert({user_id:user.id,profile_id:appState.selectedProfile?.id||null,title,content});document.getElementById('save-text-title').value='';alert('✅ Tekst lagret!');loadSavedTexts();}
@@ -1004,7 +1020,7 @@ async function deleteSavedText(id){if(!confirm('Slette denne teksten?'))return;a
 function loadExampleText(){document.getElementById('textInput').value='Emma og hunden Bella løp ut i skogen. Det var sol og fugler sang i trærne. Plutselig stoppet Bella og snuste på noe i gresset. Det var et lite pinnsvin! Emma satte seg rolig ned og så på det. Pinnsvinet rullet seg sammen til en ball. Bella logret med halen og ville leke. Men pinnsvinet ville ikke leke. Etter en stund rullet det stille bort mellom trærne. Emma og Bella gikk videre inn i skogen og lurte på hva de ville finne neste gang.';document.getElementById('start-btn').disabled=false;}
 
 // ── TABS ───────────────────────────────────────────────
-function showTab(tabId){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.app-tab').forEach(t=>t.classList.remove('active'));const tab=document.getElementById(tabId);if(tab)tab.classList.add('active');const idx=['tab-profiles','tab-generate','tab-reading','tab-progress','tab-settings'].indexOf(tabId);const tabs=document.querySelectorAll('.app-tab');if(tabs[idx])tabs[idx].classList.add('active');if(tabId==='tab-progress')loadProgress();if(tabId==='tab-settings')renderRewardsProfileSelect();}
+function showTab(tabId){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.app-tab').forEach(t=>t.classList.remove('active'));const tab=document.getElementById(tabId);if(tab)tab.classList.add('active');const idx=['tab-profiles','tab-generate','tab-reading','tab-progress','tab-settings'].indexOf(tabId);const tabs=document.querySelectorAll('.app-tab');if(tabs[idx])tabs[idx].classList.add('active');if(tabId==='tab-progress'){appState.showAllSessions=false;loadProgress();}if(tabId==='tab-settings')renderRewardsSection();}
 function setExercise(val,btn){appState.exercise=val;document.querySelectorAll('.exercise-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('time-setting').style.display=val==='timed'?'block':'none';document.getElementById('practice-input-method').style.display=val==='practice'?'block':'none';}
 function setInputMethod(method,btn){appState.inputMethod=method;document.getElementById('method-voice-btn').classList.remove('active');document.getElementById('method-manual-btn').classList.remove('active');btn.classList.add('active');}
 function setTime(val){appState.timeLimit=+val;document.getElementById('timelabel').textContent=val;}
@@ -1094,33 +1110,22 @@ async function endSession(){
   let correctWords=0,totalWords=0,wpm=0,skippedWords=[];
   const elapsedSec=Math.max(1,(Date.now()-appState.startTime)/1000);
   if(appState.exercise==='practice'){
-    correctWords=appState.wordStates.filter(s=>s==='correct').length;
-    totalWords=appState.currentWordIdx;wpm=Math.round((correctWords/elapsedSec)*60);
+    correctWords=appState.wordStates.filter(s=>s==='correct').length;totalWords=appState.currentWordIdx;wpm=Math.round((correctWords/elapsedSec)*60);
     skippedWords=appState.words.filter((_,i)=>appState.wordStates[i]==='skipped').map(w=>w.replace(/[.,!?;:»«""'']/g,''));
   } else {
-    totalWords=appState.sentences.slice(0,appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;
-    correctWords=totalWords;wpm=Math.round((totalWords/elapsedSec)*60);
+    totalWords=appState.sentences.slice(0,appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;correctWords=totalWords;wpm=Math.round((totalWords/elapsedSec)*60);
   }
   const stars=Math.min(5,Math.max(1,Math.floor(correctWords/5)+1));
   ['reading-active-practice','reading-active-timed'].forEach(id=>document.getElementById(id).style.display='none');
   document.getElementById('reading-result').style.display='block';window.scrollTo(0,0);
   document.getElementById('stars-earned').innerHTML=`<div style="font-size:40px">${'⭐'.repeat(stars)}</div><div style="font-size:16px;color:#6b7280;margin-top:4px">${stars} stjerner tjent!</div>`;
   document.getElementById('results-grid').innerHTML=`<div class="result-card" style="background:#d1fae5"><div class="lbl" style="color:#065f46">✅ Riktige ord</div><div class="val" style="color:#065f46">${correctWords}</div></div><div class="result-card" style="background:#eef2ff"><div class="lbl" style="color:#4f46e5">📖 Totalt ord</div><div class="val" style="color:#4f46e5">${totalWords}</div></div>`;
-  if(appState.exercise==='timed'&&totalWords>0){
-    document.getElementById('wpm-section').style.display='block';
-    const pct=Math.min(100,(wpm/150)*100);
-    document.getElementById('progress-fill').style.width=pct+'%';
-    document.getElementById('progress-fill').style.background=wpm>=100?'#059669':wpm>=70?'#f59e0b':'#ef4444';
-    const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet!','🏆 Imponerende!']:wpm>=70?['🚀 Du blir bedre og bedre!','💪 Bra jobbet!']:['💪 Øving gjør mester!','🌱 Hver økt gjør deg bedre!'];
-    document.getElementById('wpm-feedback').textContent=msgs[Math.floor(Math.random()*msgs.length)];
-  } else document.getElementById('wpm-section').style.display='none';
+  if(appState.exercise==='timed'&&totalWords>0){document.getElementById('wpm-section').style.display='block';const pct=Math.min(100,(wpm/150)*100);document.getElementById('progress-fill').style.width=pct+'%';document.getElementById('progress-fill').style.background=wpm>=100?'#059669':wpm>=70?'#f59e0b':'#ef4444';const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet!','🏆 Imponerende!']:wpm>=70?['🚀 Du blir bedre og bedre!','💪 Bra jobbet!']:['💪 Øving gjør mester!','🌱 Hver økt gjør deg bedre!'];document.getElementById('wpm-feedback').textContent=msgs[Math.floor(Math.random()*msgs.length)];}else document.getElementById('wpm-section').style.display='none';
   const skippedSection=document.getElementById('skipped-words-section'),drillBtn=document.getElementById('drill-btn');
-  if(skippedWords.length>0){skippedSection.style.display='block';document.getElementById('skipped-words-list').innerHTML=skippedWords.map(w=>`<span style="background:#fee2e2;color:#991b1b;padding:6px 12px;border-radius:8px;font-weight:700;font-size:16px">${w}</span>`).join('');drillBtn.style.display='block';appState.drillWords=skippedWords;}
-  else{skippedSection.style.display='none';drillBtn.style.display='none';}
+  if(skippedWords.length>0){skippedSection.style.display='block';document.getElementById('skipped-words-list').innerHTML=skippedWords.map(w=>`<span style="background:#fee2e2;color:#991b1b;padding:6px 12px;border-radius:8px;font-weight:700;font-size:16px">${w}</span>`).join('');drillBtn.style.display='block';appState.drillWords=skippedWords;}else{skippedSection.style.display='none';drillBtn.style.display='none';}
   const avatar=appState.selectedProfile?.avatar||'📖',childName=appState.selectedProfile?.child_name||'';
   const rMsgs=['Fantastisk jobbet! 🌟','Du er en lesehelt! 🦁','Så flink du er! 🎉','Kjempebra! 🚀'];
-  document.getElementById('result-avatar').textContent=avatar;
-  document.getElementById('result-title').textContent=rMsgs[Math.floor(Math.random()*rMsgs.length)];
+  document.getElementById('result-avatar').textContent=avatar;document.getElementById('result-title').textContent=rMsgs[Math.floor(Math.random()*rMsgs.length)];
   document.getElementById('result-subtitle').textContent=childName?childName+' – du bør være stolt av deg selv!':'Bra innsats!';
   playFinish();launchConfetti();
   if(appState.selectedProfile){
@@ -1130,6 +1135,8 @@ async function endSession(){
       const newStars=(appState.selectedProfile.stars||0)+stars,newLevel=Math.floor(newStars/10)+1;
       await sb.from('profiles').update({stars:newStars,level:newLevel}).eq('id',appState.selectedProfile.id);
       appState.selectedProfile.stars=newStars;appState.selectedProfile.level=newLevel;updateProfileBanner();
+      // Oppdater belønningsseksjon hvis innstillinger er åpen
+      if(document.getElementById('tab-settings').classList.contains('active'))renderRewardsSection();
     }
   }
 }
@@ -1147,20 +1154,67 @@ function endDrill(){appState.running=false;if(appState.recognition){try{appState
 function startDrillRecognition(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){document.getElementById('drill-manual-controls').style.display='block';return;}const rec=new SR();rec.lang='nb-NO';rec.continuous=true;rec.interimResults=false;appState.recognition=rec;rec.onresult=function(e){if(!appState.running)return;const result=e.results[e.results.length-1];if(!result.isFinal)return;const spoken=result[0].transcript.trim();const idx=appState.drillIdx;if(idx>=appState.drillWords.length)return;if(wordMatch(spoken,appState.drillWords[idx]))advanceDrill();else{appState.drillAttempts++;playWrong();if(appState.drillAttempts>=3){appState.drillIdx++;appState.drillAttempts=0;renderDrill();}else renderDrill();}};rec.onerror=function(e){if(e.error==='no-speech'){try{rec.stop();setTimeout(startDrillRecognition,300);}catch(err){}}};rec.onend=function(){if(appState.running){try{rec.start();}catch(e){}}};try{rec.start();}catch(e){}}
 
 // ── PROGRESS ───────────────────────────────────────────
+function drawLineChart(data){
+  const wpmData=data.filter(s=>s.words_per_minute>0).slice(0,10).reverse();
+  if(wpmData.length<2)return'<p style="color:#9ca3af;font-size:13px;padding:8px">Trenger minst 2 tidsbaserte økter for å vise graf.</p>';
+  const vals=wpmData.map(s=>s.words_per_minute);
+  const max=Math.max(...vals,10),min=Math.min(...vals,0);
+  const W=300,H=80,pad=8;
+  const xStep=(W-pad*2)/(vals.length-1);
+  const yScale=(H-pad*2)/(max-min||1);
+  const pts=vals.map((v,i)=>`${pad+i*xStep},${H-pad-(v-min)*yScale}`);
+  const pathD='M'+pts.join(' L');
+  const areaD=`M${pad},${H-pad} L${pts.join(' L')} L${pad+(vals.length-1)*xStep},${H-pad} Z`;
+  const dots=pts.map((pt,i)=>{const[x,y]=pt.split(',');return `<circle cx="${x}" cy="${y}" r="4" fill="#4f46e5"/><title>${vals[i]} o/m</title>`;}).join('');
+  return `<div class="line-chart-wrap"><h4>📈 Lesehastighet over tid (ord/min)</h4><div class="line-chart"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"><defs><linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4f46e5" stop-opacity="0.2"/><stop offset="100%" stop-color="#4f46e5" stop-opacity="0"/></linearGradient></defs><path d="${areaD}" fill="url(#gr)"/><path d="${pathD}" fill="none" stroke="#4f46e5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>${dots}</svg></div><div style="display:flex;justify-content:space-between;font-size:11px;color:#9ca3af;margin-top:4px"><span>Tidligst</span><span>Sist</span></div></div>`;
+}
+
 async function loadProgress(){
   if(!appState.selectedProfile){document.getElementById('progress-content').innerHTML='<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil under 👶 Profiler for å se fremgang.</p>';return;}
   const p=appState.selectedProfile;
-  const {data}=await sb.from('reading_sessions').select('*').eq('profile_id',p.id).order('created_at',{ascending:false}).limit(20);
-  const lastFive=(data||[]).slice(0,5);
-  const msgs=p.stars>=50?'🏆 Utrolig fremgang!':p.stars>=20?'🚀 Du blir bedre og bedre!':'🌱 Bra start! Hver økt teller!';
-  const starsChart=lastFive.length?lastFive.map(s=>{const earned=Math.min(5,s.correct_words>0?Math.floor(s.correct_words/20)+1:1);const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit'});return `<div style="text-align:center"><div class="star-dot"><span style="font-size:16px">⭐</span><span style="font-size:11px">${earned}</span></div><div style="font-size:10px;color:#9ca3af;margin-top:4px">${dateStr}</div></div>`;}).join(''):'<p style="color:#9ca3af;font-size:14px">Ingen økter ennå.</p>';
-  const wpmRows=(data||[]).filter(s=>s.words_per_minute>0).slice(0,5).map(s=>{const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit'});const pct=Math.round((Math.min(s.words_per_minute,150)/150)*100);return `<div class="wpm-bar-row"><div class="date">${dateStr}</div><div class="wpm-bar" style="width:${pct}%">${s.words_per_minute} o/m</div></div>`;}).join('');
-  const sessionList=(data||[]).slice(0,10).map(s=>{const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit',year:'numeric'});const timeStr=new Date(s.created_at).toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit'});return `<div class="session-item"><div><div style="font-weight:700">${s.exercise_type==='practice'?'🌱 Øving':'⏱ Tidsbasert'}</div><div class="session-date">${dateStr} kl. ${timeStr}</div></div><div class="session-stats"><div class="session-stat"><div class="n">${s.correct_words}</div><div class="l">ord</div></div>${s.words_per_minute>0?`<div class="session-stat"><div class="n">${s.words_per_minute}</div><div class="l">o/min</div></div>`:''}</div></div>`;}).join('');
+  const {data:allData}=await sb.from('reading_sessions').select('*').eq('profile_id',p.id).order('created_at',{ascending:false});
+  const data=allData||[];
+  const totalSessions=data.length;
+  const streak=calcStreak(data);
+  const bestWpm=Math.max(0,...data.map(s=>s.words_per_minute||0));
+
+  // Badges
+  const badgesHTML=BADGES.map(b=>{
+    const earned=b.check(totalSessions,streak,bestWpm,p.stars||0);
+    return `<div class="badge ${earned?'earned':'locked'}"><div class="badge-icon">${b.icon}</div><div class="badge-name">${b.name}</div><div class="badge-desc">${b.desc}</div></div>`;
+  }).join('');
+
+  // Streak
+  const streakMsg=streak>=7?'Utrolig! Du er uslåelig! 🔥':streak>=3?'Flott innsats, fortsett!':streak>=1?'Bra start – kom tilbake i morgen!':'Les i dag for å starte en streak!';
+  const streakHTML=`<div class="streak-box"><div class="streak-fire">🔥</div><div><div class="streak-num">${streak}</div><div class="streak-label">dager på rad</div></div><div style="font-size:13px;color:#92400e;max-width:160px">${streakMsg}</div></div>`;
+
+  // Linjegraf
+  const chartHTML=drawLineChart(data);
+
+  // Siste 5 økter
+  const showAll=appState.showAllSessions;
+  const toShow=showAll?data:data.slice(0,5);
+  const sessionList=toShow.map(s=>{
+    const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit',year:'numeric'});
+    const timeStr=new Date(s.created_at).toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit'});
+    return `<div class="session-item"><div><div style="font-weight:700">${s.exercise_type==='practice'?'🌱 Øving':'⏱ Tidsbasert'}</div><div class="session-date">${dateStr} kl. ${timeStr}</div></div><div class="session-stats"><div class="session-stat"><div class="n">${s.correct_words}</div><div class="l">ord</div></div>${s.words_per_minute>0?`<div class="session-stat"><div class="n">${s.words_per_minute}</div><div class="l">o/min</div></div>`:''}</div></div>`;
+  }).join('');
+  const showMoreBtn=!showAll&&data.length>5?`<button class="btn btn-gray" style="width:100%;margin-top:8px;font-size:14px" onclick="appState.showAllSessions=true;loadProgress()">Vis alle ${data.length} økter ↓</button>`:'';
+
   document.getElementById('progress-content').innerHTML=`
-    <div class="progress-hero"><div style="font-size:56px;margin-bottom:8px">${p.avatar}</div><h3 style="font-size:22px;font-weight:900;color:#1e1b4b">${p.child_name}</h3><div style="font-size:15px;color:#6b7280;margin-top:4px">${msgs}</div><div style="margin-top:12px;font-size:18px;font-weight:800;color:#4f46e5">${p.stars} ⭐ · Nivå ${p.level}</div></div>
-    <div class="card"><div style="font-weight:800;font-size:16px;margin-bottom:12px">⭐ Siste 5 økter</div><div class="stars-chart">${starsChart}</div></div>
-    ${wpmRows?`<div class="wpm-meter"><h4>📈 Lesehastighet (ord per minutt)</h4>${wpmRows}</div>`:''}
-    ${sessionList?`<div><div style="font-weight:800;font-size:16px;margin-bottom:12px">📋 Alle økter (${(data||[]).length})</div><div class="progress-list">${sessionList}</div></div>`:''}`;
+    <div class="progress-hero">
+      <div style="font-size:56px;margin-bottom:8px">${p.avatar}</div>
+      <div style="font-size:22px;font-weight:900;color:#1e1b4b">${p.child_name}</div>
+      <div style="margin-top:8px;font-size:18px;font-weight:800;color:#4f46e5">${p.stars||0} ⭐ · Nivå ${p.level}</div>
+      ${bestWpm>0?`<div style="font-size:13px;color:#6b7280;margin-top:4px">Personlig rekord: ${bestWpm} ord/min 🏆</div>`:''}
+    </div>
+    ${streakHTML}
+    ${chartHTML}
+    <div class="card" style="margin-bottom:16px">
+      <div style="font-weight:800;font-size:16px;margin-bottom:16px">🏅 Merker</div>
+      <div class="badges-grid">${badgesHTML}</div>
+    </div>
+    ${sessionList?`<div><div style="font-weight:800;font-size:16px;margin-bottom:12px">📋 Økter (${totalSessions} totalt)</div><div class="progress-list">${sessionList}</div>${showMoreBtn}</div>`:'<p style="color:#9ca3af;font-size:14px;text-align:center;padding:16px">Ingen økter ennå. Start en leseøkt!</p>'}`;
 }
 
 // ── INIT ───────────────────────────────────────────────
