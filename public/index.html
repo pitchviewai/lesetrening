@@ -937,7 +937,7 @@ function showPage(page) {
   window.scrollTo(0,0);
 }
 function goHome() {
-  sb.auth.getSession().then(({data:{session}}) => showPage(session?'app':'home')).catch(()=>showPage('home'));
+  showPage('home');
 }
 function scrollPricing() {
   showPage('home');
