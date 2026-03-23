@@ -34,7 +34,6 @@
     .reading-demo { font-size: 20px; line-height: 2.4; }
     .w { display: inline-block; padding: 3px 8px; border-radius: 8px; margin: 2px; font-weight: 600; }
     .w-ok { background: #d1fae5; color: #065f46; }
-    .w-err { background: #fee2e2; color: #991b1b; }
     .w-cur { background: #e0e7ff; color: #3730a3; border: 2px solid #4f46e5; }
     .w-plain { color: #9ca3af; }
     .demo-stats { display: flex; gap: 12px; margin-top: 20px; }
@@ -86,8 +85,37 @@
     .cta p { font-size: 18px; color: #6b7280; margin-bottom: 36px; }
     footer { background: #1e1b4b; color: #a5b4fc; padding: 40px; text-align: center; }
     .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
-    .footer-links a { color: #a5b4fc; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .footer-links a { color: #a5b4fc; text-decoration: none; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .footer-links a:hover { color: #fff; }
     .footer-copy { font-size: 13px; color: #6b7280; }
+
+    /* Innholdssider */
+    .content-page { max-width: 760px; margin: 0 auto; padding: 60px 24px; }
+    .content-page h1 { font-size: 36px; font-weight: 900; color: #1e1b4b; margin-bottom: 8px; }
+    .content-page .subtitle { font-size: 16px; color: #6b7280; margin-bottom: 40px; }
+    .content-page h2 { font-size: 20px; font-weight: 800; color: #1e1b4b; margin: 32px 0 12px; }
+    .content-page p { font-size: 15px; color: #4b5563; line-height: 1.8; margin-bottom: 16px; }
+    .content-page ul { margin: 0 0 16px 20px; }
+    .content-page ul li { font-size: 15px; color: #4b5563; line-height: 1.8; margin-bottom: 6px; }
+    .content-back { display: inline-flex; align-items: center; gap: 8px; color: #4f46e5; font-weight: 700; cursor: pointer; margin-bottom: 32px; font-size: 15px; }
+    .content-back:hover { text-decoration: underline; }
+    .contact-form { background: #f8f7ff; border-radius: 20px; padding: 32px; margin-top: 32px; border: 1.5px solid #e0e7ff; }
+    .contact-form .form-group { margin-bottom: 20px; }
+    .contact-form label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; }
+    .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 14px 16px; border-radius: 12px; border: 2px solid #e5e7eb; font-size: 15px; font-family: inherit; transition: border-color 0.2s; background: #fff; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #4f46e5; }
+    .contact-form textarea { height: 140px; resize: vertical; }
+    .about-hero { background: linear-gradient(135deg, #eef2ff, #fef3c7); border-radius: 24px; padding: 40px; text-align: center; margin-bottom: 40px; }
+    .about-hero .big-emoji { font-size: 72px; margin-bottom: 16px; }
+    .about-hero h2 { font-size: 28px; font-weight: 900; color: #1e1b4b; margin-bottom: 12px; }
+    .about-hero p { font-size: 16px; color: #6b7280; line-height: 1.7; max-width: 540px; margin: 0 auto; }
+    .value-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .value-card { background: #f9fafb; border-radius: 16px; padding: 24px; border: 1.5px solid #f3f4f6; }
+    .value-card .vi { font-size: 28px; margin-bottom: 10px; }
+    .value-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+    .value-card p { font-size: 14px; color: #6b7280; line-height: 1.6; margin: 0; }
+
+    /* Auth */
     .auth-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8f7ff, #eef2ff); padding: 40px; }
     .auth-card { background: #fff; border-radius: 28px; padding: 48px 40px; max-width: 440px; width: 100%; box-shadow: 0 12px 40px rgba(79,70,229,0.12); }
     .auth-card h2 { font-size: 28px; font-weight: 900; margin-bottom: 8px; color: #1e1b4b; }
@@ -103,6 +131,8 @@
     .auth-switch a { color: #4f46e5; font-weight: 700; cursor: pointer; text-decoration: none; }
     .auth-error { background: #fee2e2; color: #991b1b; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
     .auth-success { background: #d1fae5; color: #065f46; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
+
+    /* Welcome */
     .welcome-container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
     .welcome-hero { text-align: center; margin-bottom: 48px; }
     .welcome-hero h1 { font-size: 40px; font-weight: 900; color: #1e1b4b; margin-bottom: 12px; }
@@ -125,6 +155,8 @@
     .welcome-cta { text-align: center; background: linear-gradient(135deg, #4f46e5, #7c3aed); border-radius: 24px; padding: 40px; color: #fff; }
     .welcome-cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
     .welcome-cta p { font-size: 16px; color: #c7d2fe; margin-bottom: 24px; }
+
+    /* App */
     .app-container { max-width: 760px; margin: 0 auto; padding: 32px 24px; }
     .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
     .app-header h2 { font-size: 22px; font-weight: 900; }
@@ -135,8 +167,7 @@
     .tab-content.active { display: block; }
     .profiles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; margin-bottom: 24px; }
     .profile-card { background: #f8f7ff; border-radius: 20px; padding: 24px 16px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.2s; }
-    .profile-card:hover { border-color: #4f46e5; background: #eef2ff; }
-    .profile-card.selected { border-color: #4f46e5; background: #eef2ff; }
+    .profile-card:hover, .profile-card.selected { border-color: #4f46e5; background: #eef2ff; }
     .profile-avatar { font-size: 40px; margin-bottom: 8px; }
     .profile-name { font-weight: 800; font-size: 15px; }
     .profile-level { font-size: 12px; color: #6b7280; margin-top: 4px; }
@@ -163,7 +194,6 @@
     .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
     .range-labels { display: flex; justify-content: space-between; font-size: 12px; color: #9ca3af; margin-top: 4px; }
     input[type=range] { width: 100%; }
-    .checkbox-row { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
     .info-box { padding: 10px 14px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; background: #fef3c7; color: #92400e; }
     .sentence-display { padding: 24px; border-radius: 16px; border: 1px solid #e5e7eb; margin-bottom: 16px; min-height: 120px; }
     .sentence-done { font-size: 20px; line-height: 2.2; color: #9ca3af; margin-bottom: 12px; }
@@ -191,9 +221,6 @@
     .header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
     .stats-row { margin-top: 16px; display: flex; gap: 20px; font-size: 15px; flex-wrap: wrap; }
     .progress-hero { text-align: center; padding: 24px; background: linear-gradient(135deg, #eef2ff, #fef3c7); border-radius: 20px; margin-bottom: 24px; }
-    .progress-hero .avatar { font-size: 56px; margin-bottom: 8px; }
-    .progress-hero h3 { font-size: 22px; font-weight: 900; color: #1e1b4b; }
-    .progress-hero .tagline { font-size: 15px; color: #6b7280; margin-top: 4px; }
     .stars-chart { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; justify-content: center; }
     .star-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; font-size: 18px; border: 2px solid #f59e0b; background: #fef3c7; color: #d97706; font-weight: 900; }
     .wpm-meter { background: #f8f7ff; border-radius: 16px; padding: 20px; margin-bottom: 16px; }
@@ -218,9 +245,10 @@
       .hero { flex-direction: column; padding: 40px 20px; }
       .hero h1 { font-size: 36px; }
       nav { padding: 16px 20px; }
-      .why-grid { grid-template-columns: 1fr; }
+      .why-grid, .value-cards { grid-template-columns: 1fr; }
       .info-cards { grid-template-columns: 1fr; }
       .sentence-active { font-size: 22px; }
+      .content-page { padding: 40px 20px; }
     }
   </style>
 </head>
@@ -350,8 +378,187 @@
   <footer>
     <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
     <div class="footer-links">
-      <a href="#">Om oss</a><a href="#">Personvernerklæring</a>
-      <a href="#">Vilkår for bruk</a><a href="#">Kontakt</a>
+      <a onclick="showPage('about')">Om oss</a>
+      <a onclick="showPage('privacy')">Personvernerklæring</a>
+      <a onclick="showPage('terms')">Vilkår for bruk</a>
+      <a onclick="showPage('contact')">Kontakt</a>
+    </div>
+    <div class="footer-copy">© 2026 Leselab · Norge</div>
+  </footer>
+</div>
+
+<!-- OM OSS -->
+<div id="page-about" class="page">
+  <div class="content-page">
+    <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
+    <h1>Om Leselab</h1>
+    <p class="subtitle">Laget av en forelder, for foreldre</p>
+    <div class="about-hero">
+      <div class="big-emoji">📖</div>
+      <h2>Historien bak Leselab</h2>
+      <p>Leselab ble til da jeg oppdaget at datteren min på 9 år leste rundt 50 ord i minuttet – halvparten av gjennomsnittet for alderen. Jeg lette etter enkle verktøy foreldre kunne bruke hjemme, men fant ikke noe som passet. Så lagde jeg det selv.</p>
+    </div>
+    <h2>Hva vi tror på</h2>
+    <p>Lesetrening trenger ikke være kjedelig eller stressende. De beste resultatene kommer når barn leser tekster de selv er motiverte for – ikke generiske øvingstekster. Leselab lar foreldre bruke barnets egne bøker, slik at lesetreningen føles naturlig og morsom.</p>
+    <div class="value-cards">
+      <div class="value-card"><div class="vi">🏠</div><h3>Hjemme er best</h3><p>Daglig øving hjemme gir resultater. Vi gjør det enkelt nok til at det faktisk skjer.</p></div>
+      <div class="value-card"><div class="vi">🌱</div><h3>Fremgang, ikke perfeksjon</h3><p>Vi feirer alle steg fremover. Hvert ord er en seier.</p></div>
+      <div class="value-card"><div class="vi">🔒</div><h3>Trygghet for familien</h3><p>Barnets data er privat og deles aldri med tredjeparter.</p></div>
+      <div class="value-card"><div class="vi">💡</div><h3>Enkel teknologi</h3><p>Ingen nedlasting, ingen komplisert oppsett – bare åpne nettleseren og start.</p></div>
+    </div>
+    <h2>Kontakt oss</h2>
+    <p>Har du spørsmål, tilbakemeldinger eller ideer? Vi hører gjerne fra deg på <strong>hei@leselab.no</strong> eller via <a onclick="showPage('contact')" style="color:#4f46e5;cursor:pointer;font-weight:700">kontaktskjemaet</a>.</p>
+  </div>
+  <footer>
+    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
+    <div class="footer-links">
+      <a onclick="showPage('about')">Om oss</a>
+      <a onclick="showPage('privacy')">Personvernerklæring</a>
+      <a onclick="showPage('terms')">Vilkår for bruk</a>
+      <a onclick="showPage('contact')">Kontakt</a>
+    </div>
+    <div class="footer-copy">© 2026 Leselab · Norge</div>
+  </footer>
+</div>
+
+<!-- KONTAKT -->
+<div id="page-contact" class="page">
+  <div class="content-page">
+    <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
+    <h1>Kontakt oss</h1>
+    <p class="subtitle">Vi svarer normalt innen 1–2 virkedager.</p>
+    <p>Du kan også nå oss direkte på <strong>hei@leselab.no</strong></p>
+    <div class="contact-form">
+      <div class="form-group"><label>Navn</label><input type="text" id="contact-name" placeholder="Ditt navn"></div>
+      <div class="form-group"><label>E-post</label><input type="email" id="contact-email" placeholder="din@epost.no"></div>
+      <div class="form-group">
+        <label>Gjelder</label>
+        <select id="contact-subject" style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-size:15px;font-family:inherit;background:#fff">
+          <option>Teknisk støtte</option>
+          <option>Spørsmål om betaling</option>
+          <option>Tilbakemelding eller idé</option>
+          <option>Annet</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Melding</label><textarea id="contact-message" placeholder="Skriv din melding her..."></textarea></div>
+      <div id="contact-success" style="display:none;background:#d1fae5;color:#065f46;padding:12px 16px;border-radius:10px;margin-bottom:16px;font-size:14px">✅ Meldingen er sendt! Vi svarer så snart vi kan.</div>
+      <button class="btn btn-indigo" style="padding:14px 32px;font-size:16px;border-radius:50px" onclick="submitContact()">Send melding</button>
+    </div>
+  </div>
+  <footer>
+    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
+    <div class="footer-links">
+      <a onclick="showPage('about')">Om oss</a>
+      <a onclick="showPage('privacy')">Personvernerklæring</a>
+      <a onclick="showPage('terms')">Vilkår for bruk</a>
+      <a onclick="showPage('contact')">Kontakt</a>
+    </div>
+    <div class="footer-copy">© 2026 Leselab · Norge</div>
+  </footer>
+</div>
+
+<!-- PERSONVERNERKLÆRING -->
+<div id="page-privacy" class="page">
+  <div class="content-page">
+    <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
+    <h1>Personvernerklæring</h1>
+    <p class="subtitle">Sist oppdatert: mars 2026</p>
+    <p>Leselab tar personvern på alvor. Denne erklæringen forklarer hvilke opplysninger vi samler inn, hvordan de brukes, og hvilke rettigheter du har.</p>
+
+    <h2>1. Behandlingsansvarlig</h2>
+    <p>Leselab er ansvarlig for behandlingen av dine personopplysninger. Kontakt oss på hei@leselab.no ved spørsmål.</p>
+
+    <h2>2. Hvilke opplysninger samler vi inn?</h2>
+    <ul>
+      <li>E-postadresse (ved registrering)</li>
+      <li>Barnets navn, alder og valgt avatar</li>
+      <li>Leseresultater og fremgangsdata knyttet til barneprofilen</li>
+      <li>Tekster du lagrer i tjenesten</li>
+    </ul>
+    <p>Vi samler ikke inn navn, adresse eller betalingsinformasjon direkte – betaling håndteres av Stripe med egne vilkår.</p>
+
+    <h2>3. Hvorfor behandler vi disse opplysningene?</h2>
+    <ul>
+      <li>For å levere og drifte tjenesten</li>
+      <li>For å vise fremgangsdata og statistikk</li>
+      <li>For å sende viktige servicevarslinger (ikke reklame)</li>
+    </ul>
+
+    <h2>4. Deling med tredjeparter</h2>
+    <p>Vi deler ikke dine personopplysninger med tredjeparter for markedsføringsformål. Vi bruker følgende underleverandører:</p>
+    <ul>
+      <li><strong>Supabase</strong> – database og autentisering (EU-servere)</li>
+      <li><strong>Vercel</strong> – hosting (EU-servere tilgjengelig)</li>
+      <li><strong>Anthropic</strong> – tekstgjenkjenning ved bildeskanning (bildet sendes kun for tekstutvinning og lagres ikke)</li>
+    </ul>
+
+    <h2>5. Lagring og sikkerhet</h2>
+    <p>Data lagres på sikre servere. Passord lagres kryptert og er aldri lesbare for oss. Vi bruker HTTPS for all kommunikasjon.</p>
+
+    <h2>6. Dine rettigheter</h2>
+    <p>Du har rett til innsyn, retting og sletting av dine opplysninger. Du kan slette kontoen din direkte i appen under Innstillinger → Slett konto, eller kontakte oss på hei@leselab.no.</p>
+
+    <h2>7. Cookies</h2>
+    <p>Vi bruker kun nødvendige informasjonskapsler for innlogging og sesjonshåndtering. Vi bruker ingen sporings- eller reklamecookies.</p>
+
+    <h2>8. Kontakt</h2>
+    <p>Spørsmål om personvern kan rettes til hei@leselab.no. Du kan også klage til Datatilsynet (datatilsynet.no) dersom du mener vi behandler opplysninger i strid med regelverket.</p>
+  </div>
+  <footer>
+    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
+    <div class="footer-links">
+      <a onclick="showPage('about')">Om oss</a>
+      <a onclick="showPage('privacy')">Personvernerklæring</a>
+      <a onclick="showPage('terms')">Vilkår for bruk</a>
+      <a onclick="showPage('contact')">Kontakt</a>
+    </div>
+    <div class="footer-copy">© 2026 Leselab · Norge</div>
+  </footer>
+</div>
+
+<!-- VILKÅR FOR BRUK -->
+<div id="page-terms" class="page">
+  <div class="content-page">
+    <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
+    <h1>Vilkår for bruk</h1>
+    <p class="subtitle">Sist oppdatert: mars 2026</p>
+    <p>Ved å bruke Leselab godtar du disse vilkårene. Les dem nøye.</p>
+
+    <h2>1. Om tjenesten</h2>
+    <p>Leselab er et nettbasert verktøy for lesetrening beregnet på barn. Tjenesten tilbys som en gratisversjon og en betalt familieversjon.</p>
+
+    <h2>2. Brukerkonto</h2>
+    <p>Du er ansvarlig for å holde innloggingsinformasjonen din konfidensiell. Du er ansvarlig for all aktivitet som skjer under din konto.</p>
+
+    <h2>3. Akseptabel bruk</h2>
+    <ul>
+      <li>Tjenesten er kun for lovlig og redelig bruk</li>
+      <li>Du må ikke forsøke å misbruke, hacke eller forstyrre tjenesten</li>
+      <li>Du er ansvarlig for innholdet du laster opp eller limer inn</li>
+    </ul>
+
+    <h2>4. Betaling og abonnement</h2>
+    <p>Betalt abonnement faktureres månedlig. Du kan avbestille når som helst uten bindingstid. Refusjon gis ikke for påbegynte perioder, med mindre det foreligger feil fra vår side.</p>
+
+    <h2>5. Tilgjengelighet</h2>
+    <p>Vi tilstreber høy oppetid, men kan ikke garantere at tjenesten alltid er tilgjengelig. Vi forbeholder oss retten til å gjøre vedlikehold som kan medføre kortere nedetid.</p>
+
+    <h2>6. Ansvarsbegrensning</h2>
+    <p>Leselab er et hjelpeverktøy og erstatter ikke pedagogisk vurdering eller profesjonell støtte. Vi er ikke ansvarlige for læringsutbytte.</p>
+
+    <h2>7. Endringer i vilkårene</h2>
+    <p>Vi kan oppdatere disse vilkårene. Vesentlige endringer varsles på e-post. Fortsatt bruk etter varsling anses som aksept.</p>
+
+    <h2>8. Kontakt</h2>
+    <p>Spørsmål om vilkårene kan rettes til hei@leselab.no.</p>
+  </div>
+  <footer>
+    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
+    <div class="footer-links">
+      <a onclick="showPage('about')">Om oss</a>
+      <a onclick="showPage('privacy')">Personvernerklæring</a>
+      <a onclick="showPage('terms')">Vilkår for bruk</a>
+      <a onclick="showPage('contact')">Kontakt</a>
     </div>
     <div class="footer-copy">© 2026 Leselab · Norge</div>
   </footer>
@@ -650,8 +857,7 @@ function getAudio() {
 }
 function playPling() {
   try {
-    const ctx = getAudio();
-    const o = ctx.createOscillator(), g = ctx.createGain();
+    const ctx = getAudio(), o = ctx.createOscillator(), g = ctx.createGain();
     o.connect(g); g.connect(ctx.destination);
     o.frequency.setValueAtTime(880, ctx.currentTime);
     o.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
@@ -667,17 +873,15 @@ function playFinish() {
       const o = ctx.createOscillator(), g = ctx.createGain();
       o.connect(g); g.connect(ctx.destination);
       o.frequency.value = freq;
-      g.gain.setValueAtTime(0.3, ctx.currentTime + i * 0.15);
-      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.15 + 0.4);
-      o.start(ctx.currentTime + i * 0.15);
-      o.stop(ctx.currentTime + i * 0.15 + 0.4);
+      g.gain.setValueAtTime(0.3, ctx.currentTime + i*0.15);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i*0.15 + 0.4);
+      o.start(ctx.currentTime + i*0.15); o.stop(ctx.currentTime + i*0.15 + 0.4);
     });
   } catch(e) {}
 }
 function playWarning() {
   try {
-    const ctx = getAudio();
-    const o = ctx.createOscillator(), g = ctx.createGain();
+    const ctx = getAudio(), o = ctx.createOscillator(), g = ctx.createGain();
     o.connect(g); g.connect(ctx.destination);
     o.frequency.value = 440;
     g.gain.setValueAtTime(0.2, ctx.currentTime);
@@ -686,27 +890,23 @@ function playWarning() {
   } catch(e) {}
 }
 function launchConfetti() {
-  const container = document.getElementById('confetti-container');
-  if (!container) return;
-  container.innerHTML = '';
-  const colors = ['#4f46e5','#f59e0b','#059669','#dc2626','#7c3aed','#0ea5e9'];
+  const c = document.getElementById('confetti-container'); if (!c) return;
+  c.innerHTML = '';
+  const cols = ['#4f46e5','#f59e0b','#059669','#dc2626','#7c3aed','#0ea5e9'];
   for (let i = 0; i < 80; i++) {
-    const p = document.createElement('div');
-    p.className = 'confetti-piece';
-    p.style.cssText = `left:${Math.random()*100}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-delay:${Math.random()}s;animation-duration:${2+Math.random()*2}s;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;border-radius:${Math.random()>0.5?'50%':'2px'}`;
-    container.appendChild(p);
+    const p = document.createElement('div'); p.className = 'confetti-piece';
+    p.style.cssText = `left:${Math.random()*100}%;background:${cols[Math.floor(Math.random()*cols.length)]};animation-delay:${Math.random()}s;animation-duration:${2+Math.random()*2}s;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'}`;
+    c.appendChild(p);
   }
-  setTimeout(() => { if (container) container.innerHTML = ''; }, 4000);
+  setTimeout(() => { if (c) c.innerHTML = ''; }, 4000);
 }
 
-// ── APP STATE ──────────────────────────────────────────
+// ── STATE ──────────────────────────────────────────────
 const appState = {
-  exercise: 'practice',
-  sentences: [], sentenceStates: [], currentSentenceIdx: 0,
+  exercise: 'practice', sentences: [], sentenceStates: [], currentSentenceIdx: 0,
   timeLimit: 60, timeLeft: 60, running: false, timerInterval: null,
   recognition: null, imageFile: null, selectedProfile: null,
-  selectedAvatar: '🦁', profiles: [], warningPlayed: false, startTime: null,
-  lastText: ''
+  selectedAvatar: '🦁', profiles: [], warningPlayed: false, startTime: null, lastText: ''
 };
 
 // ── HELPERS ────────────────────────────────────────────
@@ -714,659 +914,490 @@ function splitSentences(text) {
   const parts = text.match(/[^.!?]+[.!?]+/g);
   return parts ? parts.map(s => s.trim()).filter(s => s.length > 2) : [text.trim()];
 }
-
 function levenshtein(a, b) {
   const m = a.length, n = b.length;
-  const dp = Array.from({length: m+1}, (_, i) => Array.from({length: n+1}, (_, j) => i || j));
-  for (let i = 1; i <= m; i++)
-    for (let j = 1; j <= n; j++)
-      dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+  const dp = Array.from({length:m+1},(_,i)=>Array.from({length:n+1},(_,j)=>i||j));
+  for (let i=1;i<=m;i++) for (let j=1;j<=n;j++) dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
   return dp[m][n];
 }
-
 function sentenceMatch(spoken, expected) {
-  const sp = spoken.toLowerCase().replace(/[.,!?;:]/g, '').trim();
-  const ex = expected.toLowerCase().replace(/[.,!?;:]/g, '').trim();
-  const spWords = sp.split(/\s+/);
-  const exWords = ex.split(/\s+/);
+  const sp = spoken.toLowerCase().replace(/[.,!?;:]/g,'').trim();
+  const ex = expected.toLowerCase().replace(/[.,!?;:]/g,'').trim();
+  const spW = sp.split(/\s+/), exW = ex.split(/\s+/);
   let matched = 0;
-  for (const sw of spWords) {
-    for (const ew of exWords) {
-      if (sw === ew || levenshtein(sw, ew) <= Math.floor(ew.length / 4)) { matched++; break; }
-    }
-  }
-  return matched / exWords.length >= 0.7;
+  for (const sw of spW) for (const ew of exW) if (sw===ew||levenshtein(sw,ew)<=Math.floor(ew.length/4)){matched++;break;}
+  return matched/exW.length >= 0.7;
 }
 
 // ── NAVIGATION ─────────────────────────────────────────
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const el = document.getElementById('page-' + page);
+  const el = document.getElementById('page-'+page);
   if (el) el.classList.add('active');
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
 function goHome() {
-  sb.auth.getSession().then(({ data: { session } }) => {
-    showPage(session ? 'app' : 'home');
-  }).catch(() => showPage('home'));
+  sb.auth.getSession().then(({data:{session}}) => showPage(session?'app':'home')).catch(()=>showPage('home'));
 }
 function scrollPricing() {
   showPage('home');
-  setTimeout(() => { const el = document.getElementById('pricing-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100);
+  setTimeout(()=>{ const el=document.getElementById('pricing-section'); if(el) el.scrollIntoView({behavior:'smooth'}); },100);
 }
 function homeCTA() {
-  sb.auth.getSession().then(({ data: { session } }) => {
-    showPage(session ? 'app' : 'register');
-  }).catch(() => showPage('register'));
+  sb.auth.getSession().then(({data:{session}}) => showPage(session?'app':'register')).catch(()=>showPage('register'));
 }
-function toggleFaq(el) {
-  el.parentElement.classList.toggle('open');
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+function submitContact() {
+  const name = document.getElementById('contact-name').value.trim();
+  const email = document.getElementById('contact-email').value.trim();
+  const msg = document.getElementById('contact-message').value.trim();
+  if (!name || !email || !msg) { alert('Fyll inn alle felt.'); return; }
+  document.getElementById('contact-success').style.display = 'block';
+  document.getElementById('contact-name').value = '';
+  document.getElementById('contact-email').value = '';
+  document.getElementById('contact-message').value = '';
 }
 
-// ── AUTH HELPERS ───────────────────────────────────────
+// ── AUTH ───────────────────────────────────────────────
 function showAuthMsg(id, msg, type) {
   const el = document.getElementById(id); if (!el) return;
   el.textContent = msg; el.style.display = 'block';
-  el.style.background = type === 'success' ? '#d1fae5' : '#fee2e2';
-  el.style.color = type === 'success' ? '#065f46' : '#991b1b';
-  setTimeout(() => { el.style.display = 'none'; }, 6000);
+  el.style.background = type==='success'?'#d1fae5':'#fee2e2';
+  el.style.color = type==='success'?'#065f46':'#991b1b';
+  setTimeout(()=>{ el.style.display='none'; },6000);
 }
 const norskFeil = {
-  'Invalid login credentials': 'Feil e-post eller passord. Prøv igjen.',
-  'Email not confirmed': 'Du må bekrefte e-postadressen din først. Sjekk innboksen.',
-  'User already registered': 'Denne e-postadressen er allerede registrert. Prøv å logge inn.',
-  'Invalid email': 'Ugyldig e-postadresse.',
-  'Password should be at least 6 characters': 'Passordet må være minst 6 tegn.',
+  'Invalid login credentials':'Feil e-post eller passord. Prøv igjen.',
+  'Email not confirmed':'Du må bekrefte e-postadressen din først. Sjekk innboksen.',
+  'User already registered':'Denne e-postadressen er allerede registrert. Prøv å logge inn.',
+  'Invalid email':'Ugyldig e-postadresse.',
+  'Password should be at least 6 characters':'Passordet må være minst 6 tegn.',
 };
-function oversett(msg) { return norskFeil[msg] || 'Noe gikk galt. Prøv igjen.'; }
+function oversett(msg){return norskFeil[msg]||'Noe gikk galt. Prøv igjen.';}
 
-// ── AUTH ───────────────────────────────────────────────
 async function handleLogin() {
-  const btn = document.getElementById('login-btn');
-  btn.disabled = true; btn.textContent = 'Logger inn...';
-  const { error } = await sb.auth.signInWithPassword({
-    email: document.getElementById('login-email').value,
-    password: document.getElementById('login-password').value
-  });
-  if (error) { showAuthMsg('login-error', oversett(error.message), 'error'); btn.disabled = false; btn.textContent = 'Logg inn'; }
-  else { await loadApp(); showPage('app'); }
+  const btn=document.getElementById('login-btn'); btn.disabled=true; btn.textContent='Logger inn...';
+  const {error}=await sb.auth.signInWithPassword({email:document.getElementById('login-email').value,password:document.getElementById('login-password').value});
+  if(error){showAuthMsg('login-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Logg inn';}
+  else{await loadApp();showPage('app');}
 }
 async function handleRegister() {
-  const btn = document.getElementById('register-btn');
-  btn.disabled = true; btn.textContent = 'Oppretter konto...';
-  const email = document.getElementById('register-email').value;
-  const pw = document.getElementById('register-password').value;
-  if (!email) { showAuthMsg('register-error', 'Skriv inn e-postadressen din.', 'error'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; return; }
-  if (pw.length < 6) { showAuthMsg('register-error', 'Passordet må være minst 6 tegn.', 'error'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; return; }
-  const { error } = await sb.auth.signUp({ email, password: pw });
-  if (error) { showAuthMsg('register-error', oversett(error.message), 'error'); btn.disabled = false; btn.textContent = 'Opprett konto og start 🚀'; }
-  else { showPage('login'); showAuthMsg('login-success', '✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen før du logger inn.', 'success'); }
+  const btn=document.getElementById('register-btn'); btn.disabled=true; btn.textContent='Oppretter konto...';
+  const email=document.getElementById('register-email').value, pw=document.getElementById('register-password').value;
+  if(!email){showAuthMsg('register-error','Skriv inn e-postadressen din.','error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';return;}
+  if(pw.length<6){showAuthMsg('register-error','Passordet må være minst 6 tegn.','error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';return;}
+  const {error}=await sb.auth.signUp({email,password:pw});
+  if(error){showAuthMsg('register-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';}
+  else{showPage('login');showAuthMsg('login-success','✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen før du logger inn.','success');}
 }
 async function handleForgot() {
-  const btn = document.getElementById('forgot-btn');
-  btn.disabled = true; btn.textContent = 'Sender...';
-  const email = document.getElementById('forgot-email').value;
-  if (!email) { showAuthMsg('forgot-error', 'Skriv inn e-postadressen din.', 'error'); btn.disabled = false; btn.textContent = 'Send tilbakestillingslenke'; return; }
-  const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: 'https://leselab.no' });
-  if (error) { showAuthMsg('forgot-error', oversett(error.message), 'error'); }
-  else { showAuthMsg('forgot-success', '✅ Sjekk e-posten din for tilbakestillingslenke!', 'success'); }
-  btn.disabled = false; btn.textContent = 'Send tilbakestillingslenke';
+  const btn=document.getElementById('forgot-btn'); btn.disabled=true; btn.textContent='Sender...';
+  const email=document.getElementById('forgot-email').value;
+  if(!email){showAuthMsg('forgot-error','Skriv inn e-postadressen din.','error');btn.disabled=false;btn.textContent='Send tilbakestillingslenke';return;}
+  const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:'https://leselab.no'});
+  if(error) showAuthMsg('forgot-error',oversett(error.message),'error');
+  else showAuthMsg('forgot-success','✅ Sjekk e-posten din for tilbakestillingslenke!','success');
+  btn.disabled=false; btn.textContent='Send tilbakestillingslenke';
 }
 async function handleReset() {
-  const btn = document.getElementById('reset-btn');
-  btn.disabled = true; btn.textContent = 'Lagrer...';
-  const pw = document.getElementById('reset-password').value;
-  const pw2 = document.getElementById('reset-password2').value;
-  if (pw.length < 6) { showAuthMsg('reset-error', 'Passordet må være minst 6 tegn.', 'error'); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; return; }
-  if (pw !== pw2) { showAuthMsg('reset-error', 'Passordene er ikke like.', 'error'); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; return; }
-  const { error } = await sb.auth.updateUser({ password: pw });
-  if (error) { showAuthMsg('reset-error', oversett(error.message), 'error'); btn.disabled = false; btn.textContent = 'Lagre nytt passord'; }
-  else { showAuthMsg('reset-success', '✅ Passord oppdatert!', 'success'); setTimeout(() => { loadApp(); showPage('app'); }, 1500); }
+  const btn=document.getElementById('reset-btn'); btn.disabled=true; btn.textContent='Lagrer...';
+  const pw=document.getElementById('reset-password').value, pw2=document.getElementById('reset-password2').value;
+  if(pw.length<6){showAuthMsg('reset-error','Passordet må være minst 6 tegn.','error');btn.disabled=false;btn.textContent='Lagre nytt passord';return;}
+  if(pw!==pw2){showAuthMsg('reset-error','Passordene er ikke like.','error');btn.disabled=false;btn.textContent='Lagre nytt passord';return;}
+  const {error}=await sb.auth.updateUser({password:pw});
+  if(error){showAuthMsg('reset-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Lagre nytt passord';}
+  else{showAuthMsg('reset-success','✅ Passord oppdatert!','success');setTimeout(()=>{loadApp();showPage('app');},1500);}
 }
 async function changePassword() {
-  const pw = document.getElementById('new-password').value, pw2 = document.getElementById('new-password2').value;
-  if (pw.length < 6) { showAuthMsg('pw-error', 'Passordet må være minst 6 tegn.', 'error'); return; }
-  if (pw !== pw2) { showAuthMsg('pw-error', 'Passordene er ikke like.', 'error'); return; }
-  const { error } = await sb.auth.updateUser({ password: pw });
-  if (error) { showAuthMsg('pw-error', oversett(error.message), 'error'); }
-  else { showAuthMsg('pw-success', '✅ Passord oppdatert!', 'success'); document.getElementById('new-password').value = ''; document.getElementById('new-password2').value = ''; }
+  const pw=document.getElementById('new-password').value, pw2=document.getElementById('new-password2').value;
+  if(pw.length<6){showAuthMsg('pw-error','Passordet må være minst 6 tegn.','error');return;}
+  if(pw!==pw2){showAuthMsg('pw-error','Passordene er ikke like.','error');return;}
+  const {error}=await sb.auth.updateUser({password:pw});
+  if(error) showAuthMsg('pw-error',oversett(error.message),'error');
+  else{showAuthMsg('pw-success','✅ Passord oppdatert!','success');document.getElementById('new-password').value='';document.getElementById('new-password2').value='';}
 }
-async function logoutAll() { await sb.auth.signOut({ scope: 'global' }); updateNav(false); showPage('home'); }
+async function logoutAll(){await sb.auth.signOut({scope:'global'});updateNav(false);showPage('home');}
 async function confirmDeleteAccount() {
-  if (!confirm('Er du sikker? Dette sletter kontoen din og alle data permanent.')) return;
-  const { data: { user } } = await sb.auth.getUser();
-  if (user) {
-    await sb.from('reading_sessions').delete().eq('user_id', user.id);
-    await sb.from('profiles').delete().eq('user_id', user.id);
-    await sb.from('rewards').delete().eq('user_id', user.id);
-    await sb.from('saved_texts').delete().eq('user_id', user.id);
+  if(!confirm('Er du sikker? Dette sletter kontoen din og alle data permanent.')) return;
+  const {data:{user}}=await sb.auth.getUser();
+  if(user){
+    await sb.from('reading_sessions').delete().eq('user_id',user.id);
+    await sb.from('profiles').delete().eq('user_id',user.id);
+    await sb.from('rewards').delete().eq('user_id',user.id);
+    await sb.from('saved_texts').delete().eq('user_id',user.id);
     await sb.auth.signOut();
   }
   updateNav(false); showPage('home'); alert('Kontoen din er slettet.');
 }
-async function handleLogout() { await sb.auth.signOut(); updateNav(false); showPage('home'); }
-function updateNav(loggedIn) {
-  document.getElementById('nav-login-btn').style.display = loggedIn ? 'none' : 'inline-block';
-  document.getElementById('nav-app-btn').style.display = loggedIn ? 'inline-block' : 'none';
+async function handleLogout(){await sb.auth.signOut();updateNav(false);showPage('home');}
+function updateNav(loggedIn){
+  document.getElementById('nav-login-btn').style.display=loggedIn?'none':'inline-block';
+  document.getElementById('nav-app-btn').style.display=loggedIn?'inline-block':'none';
 }
 
 // ── LOAD APP ───────────────────────────────────────────
-async function loadApp() {
-  const { data: { user } } = await sb.auth.getUser();
-  if (!user) return;
-  updateNav(true);
-  await loadProfiles(user.id);
-  loadSavedTexts();
+async function loadApp(){
+  const {data:{user}}=await sb.auth.getUser(); if(!user) return;
+  updateNav(true); await loadProfiles(user.id); loadSavedTexts();
 }
 
 // ── PROFILES ───────────────────────────────────────────
-async function loadProfiles(userId) {
-  const { data } = await sb.from('profiles').select('*').eq('user_id', userId).order('created_at');
-  appState.profiles = data || [];
-  renderProfiles();
+async function loadProfiles(userId){
+  const {data}=await sb.from('profiles').select('*').eq('user_id',userId).order('created_at');
+  appState.profiles=data||[]; renderProfiles();
 }
-function renderProfiles() {
-  const grid = document.getElementById('profiles-grid');
-  let html = appState.profiles.map(p => `
-    <div class="profile-card ${appState.selectedProfile?.id === p.id ? 'selected' : ''}" onclick="selectProfile('${p.id}')">
+function renderProfiles(){
+  const grid=document.getElementById('profiles-grid');
+  let html=appState.profiles.map(p=>`
+    <div class="profile-card ${appState.selectedProfile?.id===p.id?'selected':''}" onclick="selectProfile('${p.id}')">
       <div class="profile-avatar">${p.avatar}</div>
       <div class="profile-name">${p.child_name}</div>
       <div class="profile-level">Nivå ${p.level} · ${p.stars} ⭐</div>
-    </div>
-  `).join('');
-  html += `<div class="add-profile" onclick="document.getElementById('add-profile-form').style.display='block'"><div style="font-size:32px">➕</div><div style="font-weight:700;margin-top:8px">Legg til barn</div></div>`;
-  grid.innerHTML = html;
+    </div>`).join('');
+  html+=`<div class="add-profile" onclick="document.getElementById('add-profile-form').style.display='block'"><div style="font-size:32px">➕</div><div style="font-weight:700;margin-top:8px">Legg til barn</div></div>`;
+  grid.innerHTML=html;
 }
-function selectProfile(id) {
-  appState.selectedProfile = appState.profiles.find(p => p.id === id);
+function selectProfile(id){
+  appState.selectedProfile=appState.profiles.find(p=>p.id===id);
   renderProfiles(); updateProfileBanner(); showTab('tab-reading');
 }
-function updateProfileBanner() {
-  const p = appState.selectedProfile; if (!p) return;
-  const banner = document.getElementById('selected-profile-banner');
-  banner.style.display = 'flex';
-  document.getElementById('banner-avatar').textContent = p.avatar;
-  document.getElementById('banner-name').textContent = p.child_name;
-  document.getElementById('banner-level').textContent = `Nivå ${p.level} · ${p.stars} ⭐`;
+function updateProfileBanner(){
+  const p=appState.selectedProfile; if(!p) return;
+  document.getElementById('selected-profile-banner').style.display='flex';
+  document.getElementById('banner-avatar').textContent=p.avatar;
+  document.getElementById('banner-name').textContent=p.child_name;
+  document.getElementById('banner-level').textContent=`Nivå ${p.level} · ${p.stars} ⭐`;
 }
-function selectAvatar(el) {
-  document.querySelectorAll('.avatar-opt').forEach(a => a.style.border = '2px solid transparent');
-  el.style.border = '2px solid #4f46e5';
-  appState.selectedAvatar = el.textContent;
+function selectAvatar(el){
+  document.querySelectorAll('.avatar-opt').forEach(a=>a.style.border='2px solid transparent');
+  el.style.border='2px solid #4f46e5'; appState.selectedAvatar=el.textContent;
 }
-async function saveProfile() {
-  const { data: { user } } = await sb.auth.getUser();
-  const name = document.getElementById('child-name').value.trim();
-  const age = document.getElementById('child-age').value;
-  if (!name) { alert('Skriv inn barnets navn'); return; }
-  await sb.from('profiles').insert({ user_id: user.id, child_name: name, age: +age, avatar: appState.selectedAvatar });
-  document.getElementById('add-profile-form').style.display = 'none';
-  document.getElementById('child-name').value = ''; document.getElementById('child-age').value = '';
+async function saveProfile(){
+  const {data:{user}}=await sb.auth.getUser();
+  const name=document.getElementById('child-name').value.trim();
+  const age=document.getElementById('child-age').value;
+  if(!name){alert('Skriv inn barnets navn');return;}
+  await sb.from('profiles').insert({user_id:user.id,child_name:name,age:+age,avatar:appState.selectedAvatar});
+  document.getElementById('add-profile-form').style.display='none';
+  document.getElementById('child-name').value=''; document.getElementById('child-age').value='';
   await loadProfiles(user.id); renderRewardsProfileSelect();
 }
 
 // ── REWARDS ────────────────────────────────────────────
-function renderRewardsProfileSelect() {
-  const el = document.getElementById('rewards-profile-select');
-  if (!el || !appState.profiles.length) return;
-  el.innerHTML = `<label class="form-label">Velg barneprofil</label>
+function renderRewardsProfileSelect(){
+  const el=document.getElementById('rewards-profile-select');
+  if(!el||!appState.profiles.length) return;
+  el.innerHTML=`<label class="form-label">Velg barneprofil</label>
     <select id="reward-profile-id" onchange="loadRewards()" style="width:100%;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;margin-bottom:12px">
-      ${appState.profiles.map(p => `<option value="${p.id}">${p.avatar} ${p.child_name}</option>`).join('')}
+      ${appState.profiles.map(p=>`<option value="${p.id}">${p.avatar} ${p.child_name}</option>`).join('')}
     </select>`;
   loadRewards();
 }
-async function loadRewards() {
-  const profileId = document.getElementById('reward-profile-id')?.value; if (!profileId) return;
-  const { data } = await sb.from('rewards').select('*').eq('profile_id', profileId).order('stars_required');
-  const list = document.getElementById('reward-list');
-  if (!data || !data.length) { list.innerHTML = '<p style="color:#9ca3af;font-size:14px">Ingen belønninger lagt til ennå.</p>'; return; }
-  list.innerHTML = data.map(r => `
-    <div class="reward-item">
-      <span>${r.reward_text}</span>
-      <div style="display:flex;align-items:center;gap:12px">
-        <span class="reward-stars">⭐ ${r.stars_required} stjerner</span>
-        <button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteReward('${r.id}')">Slett</button>
-      </div>
-    </div>
-  `).join('');
+async function loadRewards(){
+  const pid=document.getElementById('reward-profile-id')?.value; if(!pid) return;
+  const {data}=await sb.from('rewards').select('*').eq('profile_id',pid).order('stars_required');
+  const list=document.getElementById('reward-list');
+  if(!data||!data.length){list.innerHTML='<p style="color:#9ca3af;font-size:14px">Ingen belønninger lagt til ennå.</p>';return;}
+  list.innerHTML=data.map(r=>`<div class="reward-item"><span>${r.reward_text}</span><div style="display:flex;align-items:center;gap:12px"><span class="reward-stars">⭐ ${r.stars_required} stjerner</span><button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteReward('${r.id}')">Slett</button></div></div>`).join('');
 }
-async function addReward() {
-  const profileId = document.getElementById('reward-profile-id')?.value;
-  const text = document.getElementById('reward-text').value.trim();
-  const stars = document.getElementById('reward-stars').value;
-  if (!profileId || !text || !stars) { alert('Fyll inn belønning og antall stjerner.'); return; }
-  const { data: { user } } = await sb.auth.getUser();
-  await sb.from('rewards').insert({ profile_id: profileId, user_id: user.id, reward_text: text, stars_required: +stars });
-  document.getElementById('reward-text').value = ''; document.getElementById('reward-stars').value = '';
+async function addReward(){
+  const pid=document.getElementById('reward-profile-id')?.value;
+  const text=document.getElementById('reward-text').value.trim();
+  const stars=document.getElementById('reward-stars').value;
+  if(!pid||!text||!stars){alert('Fyll inn belønning og antall stjerner.');return;}
+  const {data:{user}}=await sb.auth.getUser();
+  await sb.from('rewards').insert({profile_id:pid,user_id:user.id,reward_text:text,stars_required:+stars});
+  document.getElementById('reward-text').value=''; document.getElementById('reward-stars').value='';
   loadRewards();
 }
-async function deleteReward(id) { await sb.from('rewards').delete().eq('id', id); loadRewards(); }
+async function deleteReward(id){await sb.from('rewards').delete().eq('id',id);loadRewards();}
 
 // ── SAVED TEXTS ────────────────────────────────────────
-async function saveText() {
-  const title = document.getElementById('save-text-title').value.trim();
-  const content = document.getElementById('textInput').value.trim();
-  if (!title) { alert('Gi teksten et navn først.'); return; }
-  if (!content) { alert('Det er ingen tekst å lagre.'); return; }
-  const { data: { user } } = await sb.auth.getUser();
-  await sb.from('saved_texts').insert({ user_id: user.id, profile_id: appState.selectedProfile?.id || null, title, content });
-  document.getElementById('save-text-title').value = '';
+async function saveText(){
+  const title=document.getElementById('save-text-title').value.trim();
+  const content=document.getElementById('textInput').value.trim();
+  if(!title){alert('Gi teksten et navn først.');return;}
+  if(!content){alert('Det er ingen tekst å lagre.');return;}
+  const {data:{user}}=await sb.auth.getUser();
+  await sb.from('saved_texts').insert({user_id:user.id,profile_id:appState.selectedProfile?.id||null,title,content});
+  document.getElementById('save-text-title').value='';
   alert('✅ Tekst lagret!'); loadSavedTexts();
 }
-async function loadSavedTexts() {
-  const { data: { user } } = await sb.auth.getUser(); if (!user) return;
-  const { data } = await sb.from('saved_texts').select('*').eq('user_id', user.id).order('created_at', { ascending: false });
-  const box = document.getElementById('saved-texts-box'), list = document.getElementById('saved-texts-list');
-  if (!box || !list) return;
-  if (!data || !data.length) { box.style.display = 'none'; return; }
-  box.style.display = 'block';
-  list.innerHTML = data.map(t => `
-    <div style="display:flex;justify-content:space-between;align-items:center;background:#f8f7ff;border-radius:10px;padding:10px 14px;margin-bottom:8px;border:1.5px solid #e0e7ff">
-      <span style="font-weight:700;font-size:14px;cursor:pointer;color:#4f46e5" onclick="loadSavedText('${t.id}')">${t.title}</span>
-      <button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteSavedText('${t.id}')">Slett</button>
-    </div>
-  `).join('');
+async function loadSavedTexts(){
+  const {data:{user}}=await sb.auth.getUser(); if(!user) return;
+  const {data}=await sb.from('saved_texts').select('*').eq('user_id',user.id).order('created_at',{ascending:false});
+  const box=document.getElementById('saved-texts-box'), list=document.getElementById('saved-texts-list');
+  if(!box||!list) return;
+  if(!data||!data.length){box.style.display='none';return;}
+  box.style.display='block';
+  list.innerHTML=data.map(t=>`<div style="display:flex;justify-content:space-between;align-items:center;background:#f8f7ff;border-radius:10px;padding:10px 14px;margin-bottom:8px;border:1.5px solid #e0e7ff"><span style="font-weight:700;font-size:14px;cursor:pointer;color:#4f46e5" onclick="loadSavedText('${t.id}')">${t.title}</span><button class="btn btn-red" style="padding:4px 10px;font-size:13px" onclick="deleteSavedText('${t.id}')">Slett</button></div>`).join('');
 }
-async function loadSavedText(id) {
-  const { data } = await sb.from('saved_texts').select('*').eq('id', id).single();
-  if (!data) return;
-  document.getElementById('textInput').value = data.content;
-  document.getElementById('start-btn').disabled = false;
+async function loadSavedText(id){
+  const {data}=await sb.from('saved_texts').select('*').eq('id',id).single();
+  if(!data) return;
+  document.getElementById('textInput').value=data.content;
+  document.getElementById('start-btn').disabled=false;
 }
-async function deleteSavedText(id) {
-  if (!confirm('Slette denne teksten?')) return;
-  await sb.from('saved_texts').delete().eq('id', id); loadSavedTexts();
+async function deleteSavedText(id){
+  if(!confirm('Slette denne teksten?')) return;
+  await sb.from('saved_texts').delete().eq('id',id); loadSavedTexts();
 }
-function loadExampleText() {
-  document.getElementById('textInput').value = 'Emma og hunden Bella løp ut i skogen. Det var sol og fugler sang i trærne. Plutselig stoppet Bella og snuste på noe i gresset. Det var et lite pinnsvin! Emma satte seg rolig ned og så på det. Pinnsvinet rullet seg sammen til en ball. Bella logret med halen og ville leke. Men pinnsvinet ville ikke leke. Etter en stund rullet det stille bort mellom trærne. Emma og Bella gikk videre inn i skogen og lurte på hva de ville finne neste gang.';
-  document.getElementById('start-btn').disabled = false;
+function loadExampleText(){
+  document.getElementById('textInput').value='Emma og hunden Bella løp ut i skogen. Det var sol og fugler sang i trærne. Plutselig stoppet Bella og snuste på noe i gresset. Det var et lite pinnsvin! Emma satte seg rolig ned og så på det. Pinnsvinet rullet seg sammen til en ball. Bella logret med halen og ville leke. Men pinnsvinet ville ikke leke. Etter en stund rullet det stille bort mellom trærne. Emma og Bella gikk videre inn i skogen og lurte på hva de ville finne neste gang.';
+  document.getElementById('start-btn').disabled=false;
 }
 
 // ── TABS ───────────────────────────────────────────────
-function showTab(tabId) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.app-tab').forEach(t => t.classList.remove('active'));
-  const tab = document.getElementById(tabId);
-  if (tab) tab.classList.add('active');
-  const idx = ['tab-profiles','tab-reading','tab-progress','tab-settings'].indexOf(tabId);
-  const tabs = document.querySelectorAll('.app-tab');
-  if (tabs[idx]) tabs[idx].classList.add('active');
-  if (tabId === 'tab-progress') loadProgress();
-  if (tabId === 'tab-settings') renderRewardsProfileSelect();
+function showTab(tabId){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.app-tab').forEach(t=>t.classList.remove('active'));
+  const tab=document.getElementById(tabId); if(tab) tab.classList.add('active');
+  const idx=['tab-profiles','tab-reading','tab-progress','tab-settings'].indexOf(tabId);
+  const tabs=document.querySelectorAll('.app-tab'); if(tabs[idx]) tabs[idx].classList.add('active');
+  if(tabId==='tab-progress') loadProgress();
+  if(tabId==='tab-settings') renderRewardsProfileSelect();
 }
 
-// ── EXERCISE SETUP ─────────────────────────────────────
-function setExercise(val, btn) {
-  appState.exercise = val;
-  document.querySelectorAll('.exercise-btn').forEach(b => b.classList.remove('active'));
+// ── EXERCISE ───────────────────────────────────────────
+function setExercise(val,btn){
+  appState.exercise=val;
+  document.querySelectorAll('.exercise-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('time-setting').style.display = val === 'timed' ? 'block' : 'none';
+  document.getElementById('time-setting').style.display=val==='timed'?'block':'none';
 }
-function setTime(val) { appState.timeLimit = +val; document.getElementById('timelabel').textContent = val; }
-
-document.getElementById('textInput').addEventListener('input', function(e) {
-  document.getElementById('start-btn').disabled = !e.target.value.trim();
+function setTime(val){appState.timeLimit=+val;document.getElementById('timelabel').textContent=val;}
+document.getElementById('textInput').addEventListener('input',function(e){
+  document.getElementById('start-btn').disabled=!e.target.value.trim();
 });
 
 // ── IMAGE / OCR ────────────────────────────────────────
-function handleImage(input) {
-  const file = input.files[0]; if (!file) return;
-  appState.imageFile = file;
-  const prev = document.getElementById('img-preview');
-  prev.src = URL.createObjectURL(file); prev.style.display = 'block';
-  document.getElementById('ocrBtn').style.display = 'inline-block';
+function handleImage(input){
+  const file=input.files[0]; if(!file) return;
+  appState.imageFile=file;
+  const prev=document.getElementById('img-preview');
+  prev.src=URL.createObjectURL(file); prev.style.display='block';
+  document.getElementById('ocrBtn').style.display='inline-block';
 }
-
-let ocrController = null;
-function abortOCR() {
-  if (ocrController) ocrController.abort();
-  document.getElementById('ocrBtn').textContent = 'Trekk ut tekst';
-  document.getElementById('ocrBtn').disabled = false;
-  document.getElementById('ocrAbortBtn').style.display = 'none';
-  ocrController = null;
+let ocrController=null;
+function abortOCR(){
+  if(ocrController) ocrController.abort();
+  document.getElementById('ocrBtn').textContent='Trekk ut tekst';
+  document.getElementById('ocrBtn').disabled=false;
+  document.getElementById('ocrAbortBtn').style.display='none';
+  ocrController=null;
 }
-async function runOCR() {
-  const btn = document.getElementById('ocrBtn');
-  const abortBtn = document.getElementById('ocrAbortBtn');
-  btn.textContent = 'Leser tekst...'; btn.disabled = true;
-  abortBtn.style.display = 'inline-block';
-  ocrController = new AbortController();
-  const timeout = setTimeout(() => { if (ocrController) ocrController.abort(); }, 15000);
+async function runOCR(){
+  const btn=document.getElementById('ocrBtn'), abortBtn=document.getElementById('ocrAbortBtn');
+  btn.textContent='Leser tekst...'; btn.disabled=true; abortBtn.style.display='inline-block';
+  ocrController=new AbortController();
+  const timeout=setTimeout(()=>{ if(ocrController) ocrController.abort(); },15000);
   try {
-    const base64 = await new Promise((res, rej) => {
-      const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(appState.imageFile);
-    });
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      signal: ocrController.signal,
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514', max_tokens: 1000,
-        messages: [{ role: 'user', content: [
-          { type: 'image', source: { type: 'base64', media_type: appState.imageFile.type, data: base64 } },
-          { type: 'text', text: 'Trekk ut all tekst fra dette bildet. Returner kun teksten, ingen forklaringer.' }
-        ]}]
-      })
+    const base64=await new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result.split(',')[1]); r.onerror=rej; r.readAsDataURL(appState.imageFile); });
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST', headers:{'Content-Type':'application/json'}, signal:ocrController.signal,
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:[
+        {type:'image',source:{type:'base64',media_type:appState.imageFile.type,data:base64}},
+        {type:'text',text:'Trekk ut all tekst fra dette bildet. Returner kun teksten, ingen forklaringer.'}
+      ]}]})
     });
     clearTimeout(timeout);
-    const data = await resp.json();
-    const ta = document.getElementById('textInput');
-    ta.value = data.content?.find(b => b.type === 'text')?.text || '';
-    document.getElementById('start-btn').disabled = !ta.value.trim();
+    const data=await resp.json();
+    const ta=document.getElementById('textInput');
+    ta.value=data.content?.find(b=>b.type==='text')?.text||'';
+    document.getElementById('start-btn').disabled=!ta.value.trim();
   } catch(e) {
     clearTimeout(timeout);
-    if (e.name !== 'AbortError') alert('⚠️ Kunne ikke lese teksten. Prøv igjen eller lim inn tekst manuelt.');
+    if(e.name!=='AbortError') alert('⚠️ Kunne ikke lese teksten. Prøv igjen eller lim inn tekst manuelt.');
   }
-  btn.textContent = 'Trekk ut tekst'; btn.disabled = false;
-  abortBtn.style.display = 'none';
-  ocrController = null;
+  btn.textContent='Trekk ut tekst'; btn.disabled=false; abortBtn.style.display='none'; ocrController=null;
 }
 
 // ── SESSION ────────────────────────────────────────────
-function startSession() {
-  try { getAudio().resume(); } catch(e) {}
-  const text = document.getElementById('textInput').value.trim();
-  appState.lastText = text;
-  const sentences = splitSentences(text);
-  if (!sentences.length) return;
-  appState.sentences = sentences;
-  appState.sentenceStates = new Array(sentences.length).fill('pending');
-  appState.currentSentenceIdx = 0;
-  appState.timeLeft = appState.timeLimit;
-  appState.running = true;
-  appState.warningPlayed = false;
-  appState.startTime = Date.now();
-  document.getElementById('reading-setup').style.display = 'none';
-  document.getElementById('reading-active').style.display = 'block';
-  document.getElementById('reading-result').style.display = 'none';
-  document.getElementById('reading-title').textContent = appState.exercise === 'practice' ? '🌱 Øvingsmodus' : '⏱ Tidsbasert';
-  document.getElementById('reading-info').textContent = '🎤 Les setningen høyt – appen lytter!';
+function startSession(){
+  try{getAudio().resume();}catch(e){}
+  const text=document.getElementById('textInput').value.trim();
+  appState.lastText=text;
+  const sentences=splitSentences(text); if(!sentences.length) return;
+  appState.sentences=sentences;
+  appState.sentenceStates=new Array(sentences.length).fill('pending');
+  appState.currentSentenceIdx=0;
+  appState.timeLeft=appState.timeLimit;
+  appState.running=true; appState.warningPlayed=false; appState.startTime=Date.now();
+  document.getElementById('reading-setup').style.display='none';
+  document.getElementById('reading-active').style.display='block';
+  document.getElementById('reading-result').style.display='none';
+  document.getElementById('reading-title').textContent=appState.exercise==='practice'?'🌱 Øvingsmodus':'⏱ Tidsbasert';
+  document.getElementById('reading-info').textContent='🎤 Les setningen høyt – appen lytter!';
   renderSentences();
-  if (appState.exercise === 'timed') {
-    const td = document.getElementById('timer-display');
-    td.style.display = 'block'; td.textContent = '⏱ ' + appState.timeLeft + 's';
+  if(appState.exercise==='timed'){
+    const td=document.getElementById('timer-display'); td.style.display='block'; td.textContent='⏱ '+appState.timeLeft+'s';
     startTimer();
   }
   startRecognition();
 }
 
-function renderSentences() {
-  const idx = appState.currentSentenceIdx;
-  const sentences = appState.sentences;
-  const dots = sentences.map((_, i) => {
-    const cls = i < idx ? 'done' : i === idx ? 'active' : '';
-    return `<div class="sent-dot ${cls}"></div>`;
-  }).join('');
-  document.getElementById('sentence-progress').innerHTML = dots;
-
-  let html = '';
-  const doneHTML = sentences.slice(0, idx).map(s =>
-    `<div class="sentence-done">${s.split(/\s+/).map(w => `<span class="word-done">${w}</span>`).join(' ')}</div>`
-  ).join('');
-  if (doneHTML) html += doneHTML;
-
-  if (idx < sentences.length) {
-    html += `<div class="sentence-active">${sentences[idx].split(/\s+/).map(w => `<span class="word-active">${w}</span>`).join(' ')}</div>`;
-  }
-  if (idx + 1 < sentences.length) {
-    html += `<div class="sentence-upcoming">${sentences[idx + 1]}</div>`;
-  }
-  document.getElementById('sentence-display').innerHTML = html;
-
-  const active = document.querySelector('.sentence-active');
-  if (active) active.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-  const done = appState.sentenceStates.filter(s => s === 'done').length;
-  const left = sentences.length - idx;
-  document.getElementById('stat-sentences').textContent = '✅ Setninger: ' + done;
-  document.getElementById('stat-left').textContent = 'Gjenstår: ' + left;
+function renderSentences(){
+  const idx=appState.currentSentenceIdx, sentences=appState.sentences;
+  document.getElementById('sentence-progress').innerHTML=sentences.map((_,i)=>`<div class="sent-dot ${i<idx?'done':i===idx?'active':''}"></div>`).join('');
+  let html='';
+  const done=sentences.slice(0,idx).map(s=>`<div class="sentence-done">${s.split(/\s+/).map(w=>`<span class="word-done">${w}</span>`).join(' ')}</div>`).join('');
+  if(done) html+=done;
+  if(idx<sentences.length) html+=`<div class="sentence-active">${sentences[idx].split(/\s+/).map(w=>`<span class="word-active">${w}</span>`).join(' ')}</div>`;
+  if(idx+1<sentences.length) html+=`<div class="sentence-upcoming">${sentences[idx+1]}</div>`;
+  document.getElementById('sentence-display').innerHTML=html;
+  const active=document.querySelector('.sentence-active');
+  if(active) active.scrollIntoView({behavior:'smooth',block:'center'});
+  const doneCount=appState.sentenceStates.filter(s=>s==='done').length;
+  document.getElementById('stat-sentences').textContent='✅ Setninger: '+doneCount;
+  document.getElementById('stat-left').textContent='Gjenstår: '+(sentences.length-idx);
 }
 
-function advanceSentence() {
-  const idx = appState.currentSentenceIdx;
-  appState.sentenceStates[idx] = 'done';
+function advanceSentence(){
+  appState.sentenceStates[appState.currentSentenceIdx]='done';
   appState.currentSentenceIdx++;
-  playPling();
-  renderSentences();
-  if (appState.currentSentenceIdx >= appState.sentences.length) {
-    setTimeout(endSession, 500);
-  }
+  playPling(); renderSentences();
+  if(appState.currentSentenceIdx>=appState.sentences.length) setTimeout(endSession,500);
 }
 
-function startTimer() {
+function startTimer(){
   clearInterval(appState.timerInterval);
-  appState.timerInterval = setInterval(() => {
-    if (!appState.running) { clearInterval(appState.timerInterval); return; }
+  appState.timerInterval=setInterval(()=>{
+    if(!appState.running){clearInterval(appState.timerInterval);return;}
     appState.timeLeft--;
-    const td = document.getElementById('timer-display');
-    td.textContent = '⏱ ' + appState.timeLeft + 's';
-    td.className = 'timer' + (appState.timeLeft <= 10 ? ' urgent' : '');
-    if (appState.timeLeft === 10 && !appState.warningPlayed) { playWarning(); appState.warningPlayed = true; }
-    if (appState.timeLeft <= 0) { clearInterval(appState.timerInterval); endSession(); }
-  }, 1000);
+    const td=document.getElementById('timer-display');
+    td.textContent='⏱ '+appState.timeLeft+'s';
+    td.className='timer'+(appState.timeLeft<=10?' urgent':'');
+    if(appState.timeLeft===10&&!appState.warningPlayed){playWarning();appState.warningPlayed=true;}
+    if(appState.timeLeft<=0){clearInterval(appState.timerInterval);endSession();}
+  },1000);
 }
 
-async function endSession() {
-  appState.running = false;
-  clearInterval(appState.timerInterval);
-  if (appState.recognition) { try { appState.recognition.stop(); } catch(e) {} appState.recognition = null; }
-
-  const doneSentences = appState.sentenceStates.filter(s => s === 'done').length;
-  const totalWords = appState.sentences.slice(0, appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;
-  const elapsedSec = Math.max(1, (Date.now() - appState.startTime) / 1000);
-  const wpm = Math.round((totalWords / elapsedSec) * 60);
-  const stars = Math.min(5, Math.floor(doneSentences / 2) + 1);
-
-  document.getElementById('reading-active').style.display = 'none';
-  document.getElementById('reading-result').style.display = 'block';
-  window.scrollTo(0, 0);
-
-  const starsHTML = '⭐'.repeat(stars);
-  document.getElementById('stars-earned').innerHTML = `<div style="font-size:40px">${starsHTML}</div><div style="font-size:16px;color:#6b7280;margin-top:4px">${stars} stjerner tjent!</div>`;
-
-  document.getElementById('results-grid').innerHTML = `
-    <div class="result-card" style="background:#d1fae5">
-      <div class="lbl" style="color:#065f46">✅ Setninger lest</div>
-      <div class="val" style="color:#065f46">${doneSentences}</div>
-    </div>
-    <div class="result-card" style="background:#eef2ff">
-      <div class="lbl" style="color:#4f46e5">📖 Ord lest</div>
-      <div class="val" style="color:#4f46e5">${totalWords}</div>
-    </div>
-  `;
-
-  if (appState.exercise === 'timed' && totalWords > 0) {
-    document.getElementById('wpm-section').style.display = 'block';
-    const pct = Math.min(100, (wpm / 150) * 100);
-    document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('progress-fill').style.background = wpm >= 100 ? '#059669' : wpm >= 70 ? '#f59e0b' : '#ef4444';
-    const msgs = wpm >= 100
-      ? ['🌟 Du leser over gjennomsnittet! Fantastisk!', '🏆 Imponerende lesehastighet!', '🚀 Du er en lesehelt!']
-      : wpm >= 70
-        ? ['🚀 Du blir bedre og bedre! Fortsett!', '💪 Bra jobbet – du er på rett vei!', '⭐ Solid innsats, fortsett slik!']
-        : ['💪 Øving gjør mester! Du klarer det!', '🌱 Hver økt gjør deg bedre!', '❤️ Bra at du øver – det nytter!'];
-    document.getElementById('wpm-feedback').textContent = msgs[Math.floor(Math.random() * msgs.length)];
-  } else {
-    document.getElementById('wpm-section').style.display = 'none';
-  }
-
-  const avatar = appState.selectedProfile?.avatar || '📖';
-  const childName = appState.selectedProfile?.child_name || '';
-  const resultMsgs = ['Fantastisk jobbet! 🌟', 'Du er en lesehelt! 🦁', 'Så flink du er! 🎉', 'Kjempebra! 🚀'];
-  document.getElementById('result-avatar').textContent = avatar;
-  document.getElementById('result-title').textContent = resultMsgs[Math.floor(Math.random() * resultMsgs.length)];
-  document.getElementById('result-subtitle').textContent = childName ? childName + ' – du bør være stolt av deg selv!' : 'Bra innsats!';
-
-  playFinish();
-  launchConfetti();
-
-  if (appState.selectedProfile) {
-    const { data: { user } } = await sb.auth.getUser();
-    if (user) {
-      await sb.from('reading_sessions').insert({
-        profile_id: appState.selectedProfile.id,
-        user_id: user.id,
-        exercise_type: appState.exercise,
-        total_words: totalWords,
-        correct_words: totalWords,
-        wrong_words: 0,
-        words_per_minute: wpm,
-        duration_seconds: Math.round(elapsedSec),
-        text_used: appState.lastText.substring(0, 500)
-      });
-      const newStars = (appState.selectedProfile.stars || 0) + stars;
-      const newLevel = Math.floor(newStars / 10) + 1;
-      await sb.from('profiles').update({ stars: newStars, level: newLevel }).eq('id', appState.selectedProfile.id);
-      appState.selectedProfile.stars = newStars;
-      appState.selectedProfile.level = newLevel;
+async function endSession(){
+  appState.running=false; clearInterval(appState.timerInterval);
+  if(appState.recognition){try{appState.recognition.stop();}catch(e){} appState.recognition=null;}
+  const doneSentences=appState.sentenceStates.filter(s=>s==='done').length;
+  const totalWords=appState.sentences.slice(0,appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;
+  const elapsedSec=Math.max(1,(Date.now()-appState.startTime)/1000);
+  const wpm=Math.round((totalWords/elapsedSec)*60);
+  const stars=Math.min(5,Math.floor(doneSentences/2)+1);
+  document.getElementById('reading-active').style.display='none';
+  document.getElementById('reading-result').style.display='block';
+  window.scrollTo(0,0);
+  document.getElementById('stars-earned').innerHTML=`<div style="font-size:40px">${'⭐'.repeat(stars)}</div><div style="font-size:16px;color:#6b7280;margin-top:4px">${stars} stjerner tjent!</div>`;
+  document.getElementById('results-grid').innerHTML=`
+    <div class="result-card" style="background:#d1fae5"><div class="lbl" style="color:#065f46">✅ Setninger lest</div><div class="val" style="color:#065f46">${doneSentences}</div></div>
+    <div class="result-card" style="background:#eef2ff"><div class="lbl" style="color:#4f46e5">📖 Ord lest</div><div class="val" style="color:#4f46e5">${totalWords}</div></div>`;
+  if(appState.exercise==='timed'&&totalWords>0){
+    document.getElementById('wpm-section').style.display='block';
+    const pct=Math.min(100,(wpm/150)*100);
+    document.getElementById('progress-fill').style.width=pct+'%';
+    document.getElementById('progress-fill').style.background=wpm>=100?'#059669':wpm>=70?'#f59e0b':'#ef4444';
+    const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet! Fantastisk!','🏆 Imponerende lesehastighet!','🚀 Du er en lesehelt!']:wpm>=70?['🚀 Du blir bedre og bedre! Fortsett!','💪 Bra jobbet – du er på rett vei!','⭐ Solid innsats, fortsett slik!']:['💪 Øving gjør mester! Du klarer det!','🌱 Hver økt gjør deg bedre!','❤️ Bra at du øver – det nytter!'];
+    document.getElementById('wpm-feedback').textContent=msgs[Math.floor(Math.random()*msgs.length)];
+  } else { document.getElementById('wpm-section').style.display='none'; }
+  const avatar=appState.selectedProfile?.avatar||'📖';
+  const childName=appState.selectedProfile?.child_name||'';
+  const resultMsgs=['Fantastisk jobbet! 🌟','Du er en lesehelt! 🦁','Så flink du er! 🎉','Kjempebra! 🚀'];
+  document.getElementById('result-avatar').textContent=avatar;
+  document.getElementById('result-title').textContent=resultMsgs[Math.floor(Math.random()*resultMsgs.length)];
+  document.getElementById('result-subtitle').textContent=childName?childName+' – du bør være stolt av deg selv!':'Bra innsats!';
+  playFinish(); launchConfetti();
+  if(appState.selectedProfile){
+    const {data:{user}}=await sb.auth.getUser();
+    if(user){
+      await sb.from('reading_sessions').insert({profile_id:appState.selectedProfile.id,user_id:user.id,exercise_type:appState.exercise,total_words:totalWords,correct_words:totalWords,wrong_words:0,words_per_minute:wpm,duration_seconds:Math.round(elapsedSec),text_used:appState.lastText.substring(0,500)});
+      const newStars=(appState.selectedProfile.stars||0)+stars;
+      const newLevel=Math.floor(newStars/10)+1;
+      await sb.from('profiles').update({stars:newStars,level:newLevel}).eq('id',appState.selectedProfile.id);
+      appState.selectedProfile.stars=newStars; appState.selectedProfile.level=newLevel;
       updateProfileBanner();
     }
   }
 }
 
-function resetSession() {
-  document.getElementById('reading-setup').style.display = 'block';
-  document.getElementById('reading-active').style.display = 'none';
-  document.getElementById('reading-result').style.display = 'none';
-  document.getElementById('textInput').value = '';
-  document.getElementById('start-btn').disabled = true;
+function resetSession(){
+  document.getElementById('reading-setup').style.display='block';
+  document.getElementById('reading-active').style.display='none';
+  document.getElementById('reading-result').style.display='none';
+  document.getElementById('textInput').value='';
+  document.getElementById('start-btn').disabled=true;
 }
-function tryAgain() {
-  document.getElementById('reading-setup').style.display = 'block';
-  document.getElementById('reading-active').style.display = 'none';
-  document.getElementById('reading-result').style.display = 'none';
-  document.getElementById('textInput').value = appState.lastText;
-  document.getElementById('start-btn').disabled = false;
+function tryAgain(){
+  document.getElementById('reading-setup').style.display='block';
+  document.getElementById('reading-active').style.display='none';
+  document.getElementById('reading-result').style.display='none';
+  document.getElementById('textInput').value=appState.lastText;
+  document.getElementById('start-btn').disabled=false;
 }
 
-// ── SPEECH RECOGNITION ─────────────────────────────────
-function startRecognition() {
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SR) {
-    alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til Chrome eller Edge for best opplevelse.');
-    return;
-  }
-  const rec = new SR();
-  rec.lang = 'nb-NO';
-  rec.continuous = true;
-  rec.interimResults = false;
-  appState.recognition = rec;
-
-  rec.onresult = function(e) {
-    if (!appState.running) return;
-    const result = e.results[e.results.length - 1];
-    if (!result.isFinal) return;
-    const spoken = result[0].transcript.trim();
-    const idx = appState.currentSentenceIdx;
-    if (idx >= appState.sentences.length) return;
-    if (sentenceMatch(spoken, appState.sentences[idx])) {
-      advanceSentence();
-    }
+// ── SPEECH ─────────────────────────────────────────────
+function startRecognition(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til Chrome eller Edge for best opplevelse.');return;}
+  const rec=new SR(); rec.lang='nb-NO'; rec.continuous=true; rec.interimResults=false;
+  appState.recognition=rec;
+  rec.onresult=function(e){
+    if(!appState.running) return;
+    const result=e.results[e.results.length-1]; if(!result.isFinal) return;
+    const spoken=result[0].transcript.trim();
+    const idx=appState.currentSentenceIdx; if(idx>=appState.sentences.length) return;
+    if(sentenceMatch(spoken,appState.sentences[idx])) advanceSentence();
   };
-
-  rec.onerror = function(e) {
-    if (e.error === 'no-speech') { try { rec.stop(); setTimeout(startRecognition, 500); } catch(err) {} }
-  };
-
-  rec.onend = function() {
-    if (appState.running) { try { rec.start(); } catch(e) {} }
-  };
-
-  try { rec.start(); } catch(e) {}
+  rec.onerror=function(e){ if(e.error==='no-speech'){try{rec.stop();setTimeout(startRecognition,500);}catch(err){}} };
+  rec.onend=function(){ if(appState.running){try{rec.start();}catch(e){}} };
+  try{rec.start();}catch(e){}
 }
 
 // ── PROGRESS ───────────────────────────────────────────
-async function loadProgress() {
-  if (!appState.selectedProfile) {
-    document.getElementById('progress-content').innerHTML = '<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil under 👶 Profiler for å se fremgang.</p>';
+async function loadProgress(){
+  if(!appState.selectedProfile){
+    document.getElementById('progress-content').innerHTML='<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil under 👶 Profiler for å se fremgang.</p>';
     return;
   }
-  const p = appState.selectedProfile;
-  const { data } = await sb.from('reading_sessions').select('*').eq('profile_id', p.id).order('created_at', { ascending: false }).limit(20);
-
-  const totalSessions = data?.length || 0;
-  const lastFive = (data || []).slice(0, 5);
-
-  const progressMsgs = p.stars >= 50
-    ? ['🏆 Utrolig fremgang! Du er en ekte lesemester!', '🌟 Wow – du har virkelig jobbet hardt!']
-    : p.stars >= 20
-      ? ['🚀 Du blir bedre og bedre! Fortsett!', '⭐ Solid innsats – det synes på stjernene!']
-      : ['🌱 Bra start! Hver økt teller!', '💪 Øving gjør mester – du er på vei!'];
-  const msg = progressMsgs[Math.floor(Math.random() * progressMsgs.length)];
-
-  const starsChart = lastFive.length
-    ? lastFive.map(s => {
-        const earned = Math.min(5, s.correct_words > 0 ? Math.floor(s.correct_words / 20) + 1 : 1);
-        const dateStr = new Date(s.created_at).toLocaleDateString('nb-NO', { day: '2-digit', month: '2-digit' });
-        return `<div style="text-align:center">
-          <div class="star-dot"><span style="font-size:16px">⭐</span><span style="font-size:11px">${earned}</span></div>
-          <div style="font-size:10px;color:#9ca3af;margin-top:4px">${dateStr}</div>
-        </div>`;
-      }).join('')
-    : '<p style="color:#9ca3af;font-size:14px">Ingen økter ennå.</p>';
-
-  const wpmRows = (data || []).filter(s => s.words_per_minute > 0).slice(0, 5).map(s => {
-    const dateStr = new Date(s.created_at).toLocaleDateString('nb-NO', { day: '2-digit', month: '2-digit' });
-    const w = Math.min(s.words_per_minute, 150);
-    const pct = Math.round((w / 150) * 100);
-    return `<div class="wpm-bar-row">
-      <div class="date">${dateStr}</div>
-      <div class="wpm-bar" style="width:${pct}%">${s.words_per_minute} o/m</div>
-    </div>`;
+  const p=appState.selectedProfile;
+  const {data}=await sb.from('reading_sessions').select('*').eq('profile_id',p.id).order('created_at',{ascending:false}).limit(20);
+  const lastFive=(data||[]).slice(0,5);
+  const progressMsgs=p.stars>=50?['🏆 Utrolig fremgang! Du er en ekte lesemester!','🌟 Wow – du har virkelig jobbet hardt!']:p.stars>=20?['🚀 Du blir bedre og bedre! Fortsett!','⭐ Solid innsats – det synes på stjernene!']:['🌱 Bra start! Hver økt teller!','💪 Øving gjør mester – du er på vei!'];
+  const msg=progressMsgs[Math.floor(Math.random()*progressMsgs.length)];
+  const starsChart=lastFive.length?lastFive.map(s=>{
+    const earned=Math.min(5,s.correct_words>0?Math.floor(s.correct_words/20)+1:1);
+    const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit'});
+    return `<div style="text-align:center"><div class="star-dot"><span style="font-size:16px">⭐</span><span style="font-size:11px">${earned}</span></div><div style="font-size:10px;color:#9ca3af;margin-top:4px">${dateStr}</div></div>`;
+  }).join(''):'<p style="color:#9ca3af;font-size:14px">Ingen økter ennå.</p>';
+  const wpmRows=(data||[]).filter(s=>s.words_per_minute>0).slice(0,5).map(s=>{
+    const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit'});
+    const pct=Math.round((Math.min(s.words_per_minute,150)/150)*100);
+    return `<div class="wpm-bar-row"><div class="date">${dateStr}</div><div class="wpm-bar" style="width:${pct}%">${s.words_per_minute} o/m</div></div>`;
   }).join('');
-
-  const sessionList = (data || []).slice(0, 10).map(s => {
-    const dateStr = new Date(s.created_at).toLocaleDateString('nb-NO', { day: '2-digit', month: '2-digit', year: 'numeric' });
-    const timeStr = new Date(s.created_at).toLocaleTimeString('nb-NO', { hour: '2-digit', minute: '2-digit' });
-    return `<div class="session-item">
-      <div>
-        <div style="font-weight:700">${s.exercise_type === 'practice' ? '🌱 Øving' : '⏱ Tidsbasert'}</div>
-        <div class="session-date">${dateStr} kl. ${timeStr}</div>
-      </div>
-      <div class="session-stats">
-        <div class="session-stat"><div class="n">${s.correct_words}</div><div class="l">ord</div></div>
-        ${s.words_per_minute > 0 ? `<div class="session-stat"><div class="n">${s.words_per_minute}</div><div class="l">o/min</div></div>` : ''}
-      </div>
-    </div>`;
+  const sessionList=(data||[]).slice(0,10).map(s=>{
+    const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit',year:'numeric'});
+    const timeStr=new Date(s.created_at).toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit'});
+    return `<div class="session-item"><div><div style="font-weight:700">${s.exercise_type==='practice'?'🌱 Øving':'⏱ Tidsbasert'}</div><div class="session-date">${dateStr} kl. ${timeStr}</div></div><div class="session-stats"><div class="session-stat"><div class="n">${s.correct_words}</div><div class="l">ord</div></div>${s.words_per_minute>0?`<div class="session-stat"><div class="n">${s.words_per_minute}</div><div class="l">o/min</div></div>`:''}</div></div>`;
   }).join('');
-
-  document.getElementById('progress-content').innerHTML = `
+  document.getElementById('progress-content').innerHTML=`
     <div class="progress-hero">
-      <div class="avatar">${p.avatar}</div>
-      <h3>${p.child_name}</h3>
-      <div class="tagline">${msg}</div>
+      <div style="font-size:56px;margin-bottom:8px">${p.avatar}</div>
+      <h3 style="font-size:22px;font-weight:900;color:#1e1b4b">${p.child_name}</h3>
+      <div style="font-size:15px;color:#6b7280;margin-top:4px">${msg}</div>
       <div style="margin-top:12px;font-size:18px;font-weight:800;color:#4f46e5">${p.stars} ⭐ · Nivå ${p.level}</div>
     </div>
-    <div class="card">
-      <div style="font-weight:800;font-size:16px;margin-bottom:12px">⭐ Siste 5 økter</div>
-      <div class="stars-chart">${starsChart}</div>
-    </div>
-    ${wpmRows ? `<div class="wpm-meter"><h4>📈 Lesehastighet (ord per minutt)</h4>${wpmRows}</div>` : ''}
-    ${sessionList ? `<div><div style="font-weight:800;font-size:16px;margin-bottom:12px">📋 Alle økter (${totalSessions})</div><div class="progress-list">${sessionList}</div></div>` : ''}
-  `;
+    <div class="card"><div style="font-weight:800;font-size:16px;margin-bottom:12px">⭐ Siste 5 økter</div><div class="stars-chart">${starsChart}</div></div>
+    ${wpmRows?`<div class="wpm-meter"><h4>📈 Lesehastighet (ord per minutt)</h4>${wpmRows}</div>`:''}
+    ${sessionList?`<div><div style="font-weight:800;font-size:16px;margin-bottom:12px">📋 Alle økter (${(data||[]).length})</div><div class="progress-list">${sessionList}</div></div>`:''}`;
 }
 
 // ── INIT ───────────────────────────────────────────────
 (async () => {
-  const hash = window.location.hash;
-  if (hash.includes('type=recovery')) {
-    showPage('reset');
-    return;
+  const hash=window.location.hash;
+  if(hash.includes('type=recovery')){showPage('reset');return;}
+  if(hash.includes('type=signup')||hash.includes('access_token')){
+    await sb.auth.getSession(); await loadApp(); showPage('welcome');
+    window.history.replaceState(null,'',window.location.pathname); return;
   }
-  if (hash.includes('type=signup') || hash.includes('access_token')) {
-    await sb.auth.getSession();
-    await loadApp();
-    showPage('welcome');
-    window.history.replaceState(null, '', window.location.pathname);
-    return;
-  }
-  const { data: { session } } = await sb.auth.getSession();
-  if (session) {
-    await loadApp();
-    showPage('app');
-  } else {
-    showPage('home');
-  }
+  const {data:{session}}=await sb.auth.getSession();
+  if(session){await loadApp();showPage('app');}
+  else{showPage('home');}
 })();
 </script>
 </body>
