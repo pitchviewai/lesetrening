@@ -62,7 +62,7 @@
     .quote-author { color: #c7d2fe; font-size: 15px; font-weight: 600; }
     .pricing { padding: 80px 40px; background: #f8f7ff; }
     .pricing-cards { display: flex; gap: 24px; max-width: 800px; margin: 48px auto 0; flex-wrap: wrap; justify-content: center; }
-    .pricing-card { background: #fff; border-radius: 24px; padding: 36px 32px; flex: 1; min-width: 260px; max-width: 340px; border: 2px solid #f3f4f6; text-align: center; transition: transform 0.2s; }
+    .pricing-card { background: #fff; border-radius: 24px; padding: 36px 32px; flex: 1; min-width: 260px; max-width: 340px; border: 2px solid #f3f4f6; text-align: center; }
     .pricing-card.featured { border-color: #4f46e5; box-shadow: 0 8px 32px rgba(79,70,229,0.15); }
     .featured-badge { background: #4f46e5; color: #fff; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 50px; display: inline-block; margin-bottom: 16px; }
     .price { font-size: 42px; font-weight: 900; color: #1e1b4b; margin: 12px 0; }
@@ -189,19 +189,21 @@
     .gen-hero { background: linear-gradient(135deg, #f3e8ff, #eef2ff); border-radius: 20px; padding: 28px; margin-bottom: 24px; text-align: center; border: 1.5px solid #e0e7ff; }
     .gen-hero h3 { font-size: 22px; font-weight: 900; color: #4f46e5; margin-bottom: 8px; }
     .gen-hero p { font-size: 14px; color: #6b7280; }
-    .gen-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+    .theme-btn { padding: 14px; border-radius: 12px; border: 2px solid #e5e7eb; background: #fff; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14px; text-align: left; transition: all 0.2s; }
+    .theme-btn.active { border-color: #4f46e5; background: #eef2ff; }
+    .gen-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 4px; }
     .gen-field { display: flex; flex-direction: column; gap: 6px; }
     .gen-field label { font-size: 13px; font-weight: 700; color: #4b5563; }
-    .gen-field input { padding: 10px 12px; border-radius: 10px; border: 2px solid #e5e7eb; font-size: 14px; font-family: inherit; transition: border-color 0.2s; }
+    .gen-field input { padding: 10px 12px; border-radius: 10px; border: 2px solid #e5e7eb; font-size: 14px; font-family: inherit; }
     .gen-field input:focus { outline: none; border-color: #7c3aed; }
     .gen-field input::placeholder { color: #d1d5db; }
-    .length-options { display: flex; gap: 10px; margin-bottom: 20px; }
+    .length-options { display: flex; gap: 10px; margin-bottom: 4px; }
     .length-btn { flex: 1; padding: 10px; border-radius: 10px; border: 2px solid #e5e7eb; background: #fff; cursor: pointer; text-align: center; font-family: inherit; font-weight: 700; font-size: 14px; color: #6b7280; transition: all 0.2s; }
     .length-btn.active { border-color: #7c3aed; background: #f3e8ff; color: #7c3aed; }
     .gen-result { background: #f8f7ff; border-radius: 16px; padding: 20px; border: 2px solid #e0e7ff; margin-bottom: 16px; }
     .gen-result-text { font-size: 16px; line-height: 1.8; color: #1e1b4b; white-space: pre-wrap; }
     .word-display-area { padding: 32px 24px; border-radius: 20px; border: 2px solid #e5e7eb; margin-bottom: 20px; min-height: 160px; }
-    .word-flow { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .word-flow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .word-chip { display: inline-block; padding: 6px 12px; border-radius: 10px; font-size: 18px; font-weight: 700; transition: all 0.2s; }
     .word-chip.pending { background: #f3f4f6; color: #9ca3af; }
     .word-chip.current { background: #eef2ff; color: #4f46e5; border: 2px solid #4f46e5; font-size: 22px; transform: scale(1.1); }
@@ -329,7 +331,7 @@
     <div class="section-label">Slik fungerer det</div>
     <div class="section-title">Tre enkle steg</div>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-icon">✨</div><h3>Lag en personlig historie</h3><p>Fyll inn barnets navn, hundens navn og favorittaktivitet – vi lager en unik historie!</p></div>
+      <div class="step"><div class="step-num">1</div><div class="step-icon">✨</div><h3>Lag en personlig historie</h3><p>Velg tema, fyll inn barnets navn og interesser – vi lager en unik, sammenhengende historie!</p></div>
       <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser høyt</h3><p>Appen lytter og markerer ord grønt. Prøv vanskelige ord om igjen!</p></div>
       <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg utvikling over tid med morsomme grafer og stjerner!</p></div>
     </div>
@@ -405,10 +407,7 @@
 
   <footer>
     <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
-    <div class="footer-links">
-      <a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a>
-      <a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a>
-    </div>
+    <div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div>
     <div class="footer-copy">© 2026 Leselab · Norge</div>
   </footer>
 </div>
@@ -420,12 +419,12 @@
     <h1>Om Leselab</h1><p class="subtitle">Laget av en forelder, for foreldre</p>
     <div class="about-hero"><div class="big-emoji">📖</div><h2>Historien bak Leselab</h2><p>Leselab ble til da jeg oppdaget at datteren min på 9 år leste rundt 50 ord i minuttet – halvparten av gjennomsnittet for alderen. Jeg lette etter enkle verktøy foreldre kunne bruke hjemme, men fant ikke noe som passet. Så lagde jeg det selv.</p></div>
     <h2>Hva vi tror på</h2>
-    <p>Lesetrening trenger ikke være kjedelig eller stressende. De beste resultatene kommer når barn leser tekster de selv er motiverte for. Leselab lar foreldre lage personlige historier med barnets egne navn og interesser.</p>
+    <p>Lesetrening trenger ikke være kjedelig eller stressende. De beste resultatene kommer når barn leser tekster de selv er motiverte for.</p>
     <div class="value-cards">
-      <div class="value-card"><div class="vi">🏠</div><h3>Hjemme er best</h3><p>Daglig øving hjemme gir resultater. Vi gjør det enkelt nok til at det faktisk skjer.</p></div>
+      <div class="value-card"><div class="vi">🏠</div><h3>Hjemme er best</h3><p>Daglig øving hjemme gir resultater.</p></div>
       <div class="value-card"><div class="vi">🌱</div><h3>Fremgang, ikke perfeksjon</h3><p>Vi feirer alle steg fremover. Hvert ord er en seier.</p></div>
-      <div class="value-card"><div class="vi">🔒</div><h3>Trygghet for familien</h3><p>Barnets data er privat og deles aldri med tredjeparter.</p></div>
-      <div class="value-card"><div class="vi">💡</div><h3>Enkel teknologi</h3><p>Ingen nedlasting, ingen komplisert oppsett – bare åpne nettleseren og start.</p></div>
+      <div class="value-card"><div class="vi">🔒</div><h3>Trygghet for familien</h3><p>Barnets data er privat og deles aldri.</p></div>
+      <div class="value-card"><div class="vi">💡</div><h3>Enkel teknologi</h3><p>Ingen nedlasting – bare åpne nettleseren og start.</p></div>
     </div>
   </div>
   <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
@@ -442,7 +441,7 @@
       <div class="form-group"><label>E-post</label><input type="email" id="contact-email" placeholder="din@epost.no"></div>
       <div class="form-group"><label>Gjelder</label><select id="contact-subject" style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-size:15px;font-family:inherit;background:#fff"><option>Teknisk støtte</option><option>Spørsmål om betaling</option><option>Tilbakemelding eller idé</option><option>Annet</option></select></div>
       <div class="form-group"><label>Melding</label><textarea id="contact-message" placeholder="Skriv din melding her..."></textarea></div>
-      <div id="contact-success" style="display:none;background:#d1fae5;color:#065f46;padding:12px 16px;border-radius:10px;margin-bottom:16px;font-size:14px">✅ Meldingen er sendt! Vi svarer så snart vi kan.</div>
+      <div id="contact-success" style="display:none;background:#d1fae5;color:#065f46;padding:12px 16px;border-radius:10px;margin-bottom:16px;font-size:14px">✅ Meldingen er sendt!</div>
       <button class="btn btn-indigo" style="padding:14px 32px;font-size:16px;border-radius:50px" onclick="submitContact()">Send melding</button>
     </div>
   </div>
@@ -454,13 +453,11 @@
   <div class="content-page">
     <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
     <h1>Personvernerklæring</h1><p class="subtitle">Sist oppdatert: mars 2026</p>
-    <p>Leselab tar personvern på alvor.</p>
     <h2>1. Behandlingsansvarlig</h2><p>Leselab. Kontakt: hei@leselab.no</p>
     <h2>2. Opplysninger vi samler inn</h2><ul><li>E-postadresse</li><li>Barnets navn, alder og avatar</li><li>Leseresultater og fremgangsdata</li><li>Tekster du lagrer</li></ul>
-    <h2>3. Formål</h2><ul><li>Levere og drifte tjenesten</li><li>Vise fremgangsdata</li><li>Sende servicevarslinger</li></ul>
-    <h2>4. Underleverandører</h2><ul><li><strong>Supabase</strong> – database (EU)</li><li><strong>Vercel</strong> – hosting</li></ul>
-    <h2>5. Dine rettigheter</h2><p>Slett konto under Innstillinger, eller kontakt hei@leselab.no. Klager til Datatilsynet (datatilsynet.no).</p>
-    <h2>6. Cookies</h2><p>Kun nødvendige innloggingscookies. Ingen reklame- eller sporingscookies.</p>
+    <h2>3. Underleverandører</h2><ul><li><strong>Supabase</strong> – database (EU)</li><li><strong>Vercel</strong> – hosting</li></ul>
+    <h2>4. Dine rettigheter</h2><p>Slett konto under Innstillinger, eller kontakt hei@leselab.no. Klager til Datatilsynet (datatilsynet.no).</p>
+    <h2>5. Cookies</h2><p>Kun nødvendige innloggingscookies. Ingen reklame- eller sporingscookies.</p>
   </div>
   <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
@@ -471,11 +468,10 @@
     <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
     <h1>Vilkår for bruk</h1><p class="subtitle">Sist oppdatert: mars 2026</p>
     <h2>1. Om tjenesten</h2><p>Leselab er et nettbasert lesetreningsverktøy for barn.</p>
-    <h2>2. Brukerkonto</h2><p>Du er ansvarlig for aktivitet under din konto.</p>
-    <h2>3. Akseptabel bruk</h2><ul><li>Kun lovlig bruk</li><li>Ikke forsøk å misbruke tjenesten</li><li>Du er ansvarlig for innhold du laster opp</li></ul>
-    <h2>4. Betaling</h2><p>Månedlig abonnement. Avbestill når som helst uten bindingstid.</p>
-    <h2>5. Ansvarsbegrensning</h2><p>Leselab erstatter ikke pedagogisk vurdering eller profesjonell støtte.</p>
-    <h2>6. Kontakt</h2><p>hei@leselab.no</p>
+    <h2>2. Akseptabel bruk</h2><ul><li>Kun lovlig bruk</li><li>Du er ansvarlig for innhold du laster opp</li></ul>
+    <h2>3. Betaling</h2><p>Månedlig abonnement. Avbestill når som helst uten bindingstid.</p>
+    <h2>4. Ansvarsbegrensning</h2><p>Leselab erstatter ikke pedagogisk vurdering eller profesjonell støtte.</p>
+    <h2>5. Kontakt</h2><p>hei@leselab.no</p>
   </div>
   <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
@@ -523,20 +519,20 @@
   <button class="auth-btn" id="reset-btn" onclick="handleReset()">Lagre nytt passord</button>
 </div></div></div>
 
-<!-- VELKOMSTSIDE -->
+<!-- VELKOMST -->
 <div id="page-welcome" class="page">
   <div class="welcome-container">
-    <div class="welcome-hero"><div style="font-size:64px;margin-bottom:16px">🎉</div><h1>Velkommen til Leselab!</h1><p>Vi er glade for at du er med. Her er alt du trenger å vite for å komme i gang.</p></div>
+    <div class="welcome-hero"><div style="font-size:64px;margin-bottom:16px">🎉</div><h1>Velkommen til Leselab!</h1><p>Vi er glade for at du er med. Her er alt du trenger for å komme i gang.</p></div>
     <div class="info-cards">
       <div class="info-card"><div class="ic-icon">📱</div><h3>Fungerer på / med</h3><ul><li>Telefon og nettbrett</li><li>PC og Mac (med innebygd mikrofon)</li><li>AirPods og trådløse øreplugger</li><li class="no">PC med ekstern skjerm uten mikrofon</li></ul></div>
       <div class="info-card"><div class="ic-icon">🌐</div><h3>Nettlesere</h3><ul><li>Chrome (anbefalt)</li><li>Edge</li><li>Safari (iPhone/iPad)</li><li class="no">Firefox (talegjenkjenning virker ikke)</li></ul></div>
       <div class="info-card"><div class="ic-icon">🌱</div><h3>Øvingsmodus</h3><p>Barnet leser hvert ord høyt. Riktig = grønt og pling! Etter 3 forsøk går man videre.</p></div>
-      <div class="info-card"><div class="ic-icon">⏱</div><h3>Tidsbasert</h3><p>Barnet leser så mange setninger som mulig på tid. Perfekt for å teste lesehastighet!</p></div>
+      <div class="info-card"><div class="ic-icon">⏱</div><h3>Tidsbasert</h3><p>Barnet leser så mange setninger som mulig på tid.</p></div>
     </div>
     <div class="welcome-steps">
       <h2 style="font-size:24px;font-weight:900;margin-bottom:24px">Kom i gang på 3 steg</h2>
       <div class="welcome-step"><div class="ws-num">1</div><div class="ws-content"><h3>Opprett barneprofil</h3><p>Legg til barnets navn, alder og velg en morsom avatar.</p></div></div>
-      <div class="welcome-step"><div class="ws-num">2</div><div class="ws-content"><h3>Lag en personlig historie</h3><p>Fyll inn navn og interesser – vi lager en unik tekst tilpasset barnet!</p></div></div>
+      <div class="welcome-step"><div class="ws-num">2</div><div class="ws-content"><h3>Lag en personlig historie</h3><p>Velg tema og fyll inn navn – vi lager en unik tekst!</p></div></div>
       <div class="welcome-step"><div class="ws-num">3</div><div class="ws-content"><h3>Start leseøkten</h3><p>Barnet leser hvert ord høyt. Riktige ord lyser grønt med en pling!</p></div></div>
       <div class="welcome-step"><div class="ws-num">⭐</div><div class="ws-content"><h3>Belønninger</h3><p>Barnet tjener stjerner og klatrer i nivåer. Legg inn egne belønninger under ⚙️ Innstillinger!</p></div></div>
     </div>
@@ -587,10 +583,20 @@
     <div id="tab-generate" class="tab-content">
       <div class="gen-hero">
         <h3>✨ Lag en personlig lesehistorie</h3>
-        <p>Alle felt er valgfrie – fyll inn det du vil ha med, og vi lager en unik historie!</p>
+        <p>Velg tema, fyll inn navn – vi lager en sammenhengende historie!</p>
       </div>
       <div class="card">
-        <label class="form-label">📏 Lengde på teksten</label>
+        <label class="form-label">🎯 Velg tema for historien</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <button class="theme-btn active" onclick="setTheme('nature',this)">🌲 Eventyr i naturen<br><span style="font-size:12px;font-weight:400;color:#6b7280">Skog, fjell, strand og funn</span></button>
+          <button class="theme-btn" onclick="setTheme('pet',this)">🐾 En dag med kjæledyret<br><span style="font-size:12px;font-weight:400;color:#6b7280">Hund, katt eller annet dyr</span></button>
+          <button class="theme-btn" onclick="setTheme('activity',this)">⚽ Aktivitetsdag<br><span style="font-size:12px;font-weight:400;color:#6b7280">Fotball, tegning, svømming...</span></button>
+          <button class="theme-btn" onclick="setTheme('hero',this)">🦸 Superhelter og spenning<br><span style="font-size:12px;font-weight:400;color:#6b7280">Eventyr med favorittfiguren</span></button>
+          <button class="theme-btn" onclick="setTheme('family',this)" style="grid-column:1/-1">👨‍👩‍👧 Familietur<br><span style="font-size:12px;font-weight:400;color:#6b7280">Tur med mamma, pappa, bestemor...</span></button>
+        </div>
+      </div>
+      <div class="card">
+        <label class="form-label">📏 Lengde</label>
         <div class="length-options">
           <button class="length-btn" id="len-short" onclick="setLength('short',this)">Kort<br><span style="font-size:11px;font-weight:600;color:#9ca3af">~6 setninger</span></button>
           <button class="length-btn active" id="len-medium" onclick="setLength('medium',this)">Middels<br><span style="font-size:11px;font-weight:600;color:#9ca3af">~10 setninger</span></button>
@@ -598,14 +604,14 @@
         </div>
       </div>
       <div class="card">
-        <label class="form-label">👤 Fortell om barnet <span style="font-weight:400;color:#9ca3af">(alle felt er valgfrie)</span></label>
+        <label class="form-label">👤 Navn <span style="font-weight:400;color:#9ca3af">(alle felt er valgfrie)</span></label>
         <div class="gen-fields">
           <div class="gen-field"><label>🧒 Barnets navn</label><input type="text" id="gen-child" placeholder="F.eks. Emma"></div>
-          <div class="gen-field"><label>🐾 Hund / katt / dyr</label><input type="text" id="gen-pet" placeholder="F.eks. Bella (hund)"></div>
           <div class="gen-field"><label>👫 Beste venn</label><input type="text" id="gen-friend" placeholder="F.eks. Lucas"></div>
-          <div class="gen-field"><label>👧 Søsken</label><input type="text" id="gen-sibling" placeholder="F.eks. Noah (bror)"></div>
-          <div class="gen-field"><label>⚽ Favorittaktivitet</label><input type="text" id="gen-activity" placeholder="F.eks. fotball"></div>
-          <div class="gen-field"><label>🦸 Favorittfigur</label><input type="text" id="gen-hero" placeholder="F.eks. Spiderman"></div>
+          <div class="gen-field" id="gen-pet-field" style="display:none"><label>🐾 Kjæledyrets navn</label><input type="text" id="gen-pet" placeholder="F.eks. Bella"></div>
+          <div class="gen-field" id="gen-activity-field" style="display:none"><label>⚽ Aktivitet</label><input type="text" id="gen-activity" placeholder="F.eks. fotball"></div>
+          <div class="gen-field" id="gen-hero-field" style="display:none"><label>🦸 Favorittfigur</label><input type="text" id="gen-hero" placeholder="F.eks. Spiderman"></div>
+          <div class="gen-field" id="gen-family-field" style="display:none"><label>👨‍👩‍👧 Familiemedlem</label><input type="text" id="gen-family" placeholder="F.eks. bestemor"></div>
         </div>
       </div>
       <div id="gen-result-box" style="display:none">
@@ -613,9 +619,7 @@
           <label class="form-label" style="margin:0">📖 Din personlige historie</label>
           <button class="btn btn-gray" style="font-size:13px;padding:6px 14px" onclick="generateText()">🔄 Lag ny versjon</button>
         </div>
-        <div class="gen-result">
-          <div class="gen-result-text" id="gen-result-text"></div>
-        </div>
+        <div class="gen-result"><div class="gen-result-text" id="gen-result-text"></div></div>
         <div class="btn-row">
           <button class="btn btn-green btn-large" onclick="useGeneratedText()" style="flex:2">📖 Bruk denne teksten</button>
           <button class="btn btn-indigo btn-large" onclick="saveGeneratedText()" style="flex:1">💾 Lagre</button>
@@ -671,9 +675,7 @@
         <div class="info-box" id="practice-info">🎤 Les ordet høyt!</div>
         <div class="word-display-area">
           <div class="big-current-word" id="big-current-word">–</div>
-          <div class="attempt-dots" id="attempt-dots">
-            <div class="attempt-dot"></div><div class="attempt-dot"></div><div class="attempt-dot"></div>
-          </div>
+          <div class="attempt-dots" id="attempt-dots"><div class="attempt-dot"></div><div class="attempt-dot"></div><div class="attempt-dot"></div></div>
           <div id="manual-controls" style="display:none">
             <div class="manual-btns">
               <button class="manual-btn manual-btn-correct" onclick="manualCorrect()">✅</button>
@@ -715,9 +717,7 @@
         <div class="drill-overlay">
           <div class="drill-progress" id="drill-progress"></div>
           <div class="drill-word" id="drill-word">–</div>
-          <div class="attempt-dots" id="drill-attempt-dots">
-            <div class="attempt-dot"></div><div class="attempt-dot"></div><div class="attempt-dot"></div>
-          </div>
+          <div class="attempt-dots" id="drill-attempt-dots"><div class="attempt-dot"></div><div class="attempt-dot"></div><div class="attempt-dot"></div></div>
           <div id="drill-manual-controls" style="display:none">
             <div class="manual-btns">
               <button class="manual-btn manual-btn-correct" onclick="drillManualCorrect()">✅</button>
@@ -786,7 +786,6 @@
       </div>
       <div class="settings-section">
         <h3>📵 Logg ut fra alle enheter</h3>
-        <p style="color:#6b7280;font-size:14px;margin-bottom:16px">Logger deg ut fra alle nettlesere og enheter.</p>
         <button class="btn btn-gray" onclick="logoutAll()">Logg ut fra alle enheter</button>
       </div>
       <div class="settings-section">
@@ -812,7 +811,7 @@ let audioCtx;
 function getAudio(){if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();return audioCtx;}
 function playPling(){try{const ctx=getAudio(),o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.setValueAtTime(880,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(1200,ctx.currentTime+0.1);g.gain.setValueAtTime(0.3,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.3);o.start();o.stop(ctx.currentTime+0.3);}catch(e){}}
 function playWrong(){try{const ctx=getAudio(),o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sawtooth';o.frequency.setValueAtTime(300,ctx.currentTime);o.frequency.exponentialRampToValueAtTime(150,ctx.currentTime+0.2);g.gain.setValueAtTime(0.25,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.25);o.start();o.stop(ctx.currentTime+0.25);}catch(e){}}
-function playFinish(){try{const ctx=getAudio();[523,659,784,1047].forEach((freq,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=freq;g.gain.setValueAtTime(0.3,ctx.currentTime+i*0.15);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.15+0.4);o.start(ctx.currentTime+i*0.15);o.stop(ctx.currentTime+i*0.15+0.4);});}catch(e){}}
+function playFinish(){try{const ctx=getAudio();[523,659,784,1047].forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=f;g.gain.setValueAtTime(0.3,ctx.currentTime+i*0.15);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+i*0.15+0.4);o.start(ctx.currentTime+i*0.15);o.stop(ctx.currentTime+i*0.15+0.4);});}catch(e){}}
 function playWarning(){try{const ctx=getAudio(),o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=440;g.gain.setValueAtTime(0.2,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.2);o.start();o.stop(ctx.currentTime+0.2);}catch(e){}}
 function launchConfetti(){const c=document.getElementById('confetti-container');if(!c)return;c.innerHTML='';const cols=['#4f46e5','#f59e0b','#059669','#dc2626','#7c3aed','#0ea5e9'];for(let i=0;i<80;i++){const p=document.createElement('div');p.className='confetti-piece';p.style.cssText=`left:${Math.random()*100}%;background:${cols[Math.floor(Math.random()*cols.length)]};animation-delay:${Math.random()}s;animation-duration:${2+Math.random()*2}s;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;border-radius:${Math.random()>.5?'50%':'2px'}`;c.appendChild(p);}setTimeout(()=>{if(c)c.innerHTML='';},4000);}
 
@@ -825,44 +824,44 @@ const appState={
   recognition:null,selectedProfile:null,
   selectedAvatar:'🦁',profiles:[],warningPlayed:false,startTime:null,lastText:'',
   drillWords:[],drillIdx:0,drillAttempts:0,
-  genLength:'medium',lastGeneratedText:''
+  genLength:'medium',genTheme:'nature',lastGeneratedText:''
 };
 
 // ── HELPERS ────────────────────────────────────────────
 function tokenize(t){return t.match(/\S+/g)||[];}
 function splitSentences(t){const p=t.match(/[^.!?]+[.!?]+/g);return p?p.map(s=>s.trim()).filter(s=>s.length>2):[t.trim()];}
 function levenshtein(a,b){const m=a.length,n=b.length,dp=Array.from({length:m+1},(_,i)=>Array.from({length:n+1},(_,j)=>i||j));for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);return dp[m][n];}
-function wordMatch(spoken,expected){const s=spoken.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim(),e=expected.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();return s===e||s.includes(e)||e.includes(s)||levenshtein(s,e)<=Math.floor(e.length/4);}
-function sentenceMatch(spoken,expected){const sp=spoken.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/),ex=expected.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);let matched=0;for(const sw of sp)for(const ew of ex)if(sw===ew||levenshtein(sw,ew)<=Math.floor(ew.length/4)){matched++;break;}return matched/ex.length>=0.7;}
+function wordMatch(sp,ex){const s=sp.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim(),e=ex.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();return s===e||s.includes(e)||e.includes(s)||levenshtein(s,e)<=Math.floor(e.length/4);}
+function sentenceMatch(sp,ex){const s=sp.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/),e=ex.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);let m=0;for(const sw of s)for(const ew of e)if(sw===ew||levenshtein(sw,ew)<=Math.floor(ew.length/4)){m++;break;}return m/e.length>=0.7;}
 
 // ── NAVIGATION ─────────────────────────────────────────
-function showPage(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const el=document.getElementById('page-'+page);if(el)el.classList.add('active');window.scrollTo(0,0);}
+function showPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));const el=document.getElementById('page-'+p);if(el)el.classList.add('active');window.scrollTo(0,0);}
 function goHome(){showPage('home');}
 function scrollPricing(){showPage('home');setTimeout(()=>{const el=document.getElementById('pricing-section');if(el)el.scrollIntoView({behavior:'smooth'});},100);}
 function homeCTA(){sb.auth.getSession().then(({data:{session}})=>showPage(session?'app':'register')).catch(()=>showPage('register'));}
 function toggleFaq(el){el.parentElement.classList.toggle('open');}
-function submitContact(){const name=document.getElementById('contact-name').value.trim(),email=document.getElementById('contact-email').value.trim(),msg=document.getElementById('contact-message').value.trim();if(!name||!email||!msg){alert('Fyll inn alle felt.');return;}document.getElementById('contact-success').style.display='block';document.getElementById('contact-name').value='';document.getElementById('contact-email').value='';document.getElementById('contact-message').value='';}
+function submitContact(){const n=document.getElementById('contact-name').value.trim(),e=document.getElementById('contact-email').value.trim(),m=document.getElementById('contact-message').value.trim();if(!n||!e||!m){alert('Fyll inn alle felt.');return;}document.getElementById('contact-success').style.display='block';document.getElementById('contact-name').value='';document.getElementById('contact-email').value='';document.getElementById('contact-message').value='';}
 
 // ── AUTH ───────────────────────────────────────────────
-function showAuthMsg(id,msg,type){const el=document.getElementById(id);if(!el)return;el.textContent=msg;el.style.display='block';el.style.background=type==='success'?'#d1fae5':'#fee2e2';el.style.color=type==='success'?'#065f46':'#991b1b';setTimeout(()=>{el.style.display='none';},6000);}
-const norskFeil={'Invalid login credentials':'Feil e-post eller passord. Prøv igjen.','Email not confirmed':'Du må bekrefte e-postadressen din først. Sjekk innboksen.','User already registered':'Denne e-postadressen er allerede registrert. Prøv å logge inn.','Invalid email':'Ugyldig e-postadresse.','Password should be at least 6 characters':'Passordet må være minst 6 tegn.'};
-function oversett(msg){return norskFeil[msg]||'Noe gikk galt. Prøv igjen.';}
+function showAuthMsg(id,msg,type){const el=document.getElementById(id);if(!el)return;el.textContent=msg;el.style.display='block';el.style.background=type==='success'?'#d1fae5':'#fee2e2';el.style.color=type==='success'?'#065f46':'#991b1b';setTimeout(()=>el.style.display='none',6000);}
+const NF={'Invalid login credentials':'Feil e-post eller passord.','Email not confirmed':'Bekreft e-posten din først.','User already registered':'E-posten er allerede registrert.','Invalid email':'Ugyldig e-postadresse.','Password should be at least 6 characters':'Passordet må være minst 6 tegn.'};
+function oversett(m){return NF[m]||'Noe gikk galt. Prøv igjen.';}
 async function handleLogin(){const btn=document.getElementById('login-btn');btn.disabled=true;btn.textContent='Logger inn...';const {error}=await sb.auth.signInWithPassword({email:document.getElementById('login-email').value,password:document.getElementById('login-password').value});if(error){showAuthMsg('login-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Logg inn';}else{await loadApp();showPage('app');}}
-async function handleRegister(){const btn=document.getElementById('register-btn');btn.disabled=true;btn.textContent='Oppretter konto...';const email=document.getElementById('register-email').value,pw=document.getElementById('register-password').value;if(!email){showAuthMsg('register-error','Skriv inn e-postadressen din.','error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';return;}if(pw.length<6){showAuthMsg('register-error','Passordet må være minst 6 tegn.','error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';return;}const {error}=await sb.auth.signUp({email,password:pw});if(error){showAuthMsg('register-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';}else{showPage('login');showAuthMsg('login-success','✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen før du logger inn.','success');}}
-async function handleForgot(){const btn=document.getElementById('forgot-btn');btn.disabled=true;btn.textContent='Sender...';const email=document.getElementById('forgot-email').value;if(!email){showAuthMsg('forgot-error','Skriv inn e-postadressen din.','error');btn.disabled=false;btn.textContent='Send tilbakestillingslenke';return;}const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:'https://leselab.no'});if(error)showAuthMsg('forgot-error',oversett(error.message),'error');else showAuthMsg('forgot-success','✅ Sjekk e-posten din for tilbakestillingslenke!','success');btn.disabled=false;btn.textContent='Send tilbakestillingslenke';}
+async function handleRegister(){const btn=document.getElementById('register-btn');btn.disabled=true;btn.textContent='Oppretter...';const email=document.getElementById('register-email').value,pw=document.getElementById('register-password').value;if(!email){showAuthMsg('register-error','Skriv inn e-postadressen din.','error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';return;}if(pw.length<6){showAuthMsg('register-error','Passordet må være minst 6 tegn.','error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';return;}const {error}=await sb.auth.signUp({email,password:pw});if(error){showAuthMsg('register-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Opprett konto og start 🚀';}else{showPage('login');showAuthMsg('login-success','✅ Konto opprettet! Sjekk e-posten din og bekreft kontoen.','success');}}
+async function handleForgot(){const btn=document.getElementById('forgot-btn');btn.disabled=true;btn.textContent='Sender...';const email=document.getElementById('forgot-email').value;if(!email){showAuthMsg('forgot-error','Skriv inn e-postadressen din.','error');btn.disabled=false;btn.textContent='Send tilbakestillingslenke';return;}const {error}=await sb.auth.resetPasswordForEmail(email,{redirectTo:'https://leselab.no'});if(error)showAuthMsg('forgot-error',oversett(error.message),'error');else showAuthMsg('forgot-success','✅ Sjekk e-posten din!','success');btn.disabled=false;btn.textContent='Send tilbakestillingslenke';}
 async function handleReset(){const btn=document.getElementById('reset-btn');btn.disabled=true;btn.textContent='Lagrer...';const pw=document.getElementById('reset-password').value,pw2=document.getElementById('reset-password2').value;if(pw.length<6){showAuthMsg('reset-error','Passordet må være minst 6 tegn.','error');btn.disabled=false;btn.textContent='Lagre nytt passord';return;}if(pw!==pw2){showAuthMsg('reset-error','Passordene er ikke like.','error');btn.disabled=false;btn.textContent='Lagre nytt passord';return;}const {error}=await sb.auth.updateUser({password:pw});if(error){showAuthMsg('reset-error',oversett(error.message),'error');btn.disabled=false;btn.textContent='Lagre nytt passord';}else{showAuthMsg('reset-success','✅ Passord oppdatert!','success');setTimeout(()=>{loadApp();showPage('app');},1500);}}
 async function changePassword(){const pw=document.getElementById('new-password').value,pw2=document.getElementById('new-password2').value;if(pw.length<6){showAuthMsg('pw-error','Passordet må være minst 6 tegn.','error');return;}if(pw!==pw2){showAuthMsg('pw-error','Passordene er ikke like.','error');return;}const {error}=await sb.auth.updateUser({password:pw});if(error)showAuthMsg('pw-error',oversett(error.message),'error');else{showAuthMsg('pw-success','✅ Passord oppdatert!','success');document.getElementById('new-password').value='';document.getElementById('new-password2').value='';}}
 async function logoutAll(){await sb.auth.signOut({scope:'global'});updateNav(false);showPage('home');}
-async function confirmDeleteAccount(){if(!confirm('Er du sikker? Dette sletter kontoen din og alle data permanent.'))return;const {data:{user}}=await sb.auth.getUser();if(user){await sb.from('reading_sessions').delete().eq('user_id',user.id);await sb.from('profiles').delete().eq('user_id',user.id);await sb.from('rewards').delete().eq('user_id',user.id);await sb.from('saved_texts').delete().eq('user_id',user.id);await sb.auth.signOut();}updateNav(false);showPage('home');alert('Kontoen din er slettet.');}
+async function confirmDeleteAccount(){if(!confirm('Er du sikker? Dette sletter kontoen og alle data permanent.'))return;const {data:{user}}=await sb.auth.getUser();if(user){await sb.from('reading_sessions').delete().eq('user_id',user.id);await sb.from('profiles').delete().eq('user_id',user.id);await sb.from('rewards').delete().eq('user_id',user.id);await sb.from('saved_texts').delete().eq('user_id',user.id);await sb.auth.signOut();}updateNav(false);showPage('home');alert('Kontoen er slettet.');}
 async function handleLogout(){await sb.auth.signOut();updateNav(false);showPage('home');}
-function updateNav(loggedIn){document.getElementById('nav-login-btn').style.display=loggedIn?'none':'inline-block';document.getElementById('nav-app-btn').style.display=loggedIn?'inline-block':'none';}
+function updateNav(li){document.getElementById('nav-login-btn').style.display=li?'none':'inline-block';document.getElementById('nav-app-btn').style.display=li?'inline-block':'none';}
 
 // ── LOAD APP ───────────────────────────────────────────
 async function loadApp(){const {data:{user}}=await sb.auth.getUser();if(!user)return;updateNav(true);await loadProfiles(user.id);loadSavedTexts();}
 
 // ── PROFILES ───────────────────────────────────────────
-async function loadProfiles(userId){const {data}=await sb.from('profiles').select('*').eq('user_id',userId).order('created_at');appState.profiles=data||[];renderProfiles();}
-function renderProfiles(){const grid=document.getElementById('profiles-grid');let html=appState.profiles.map(p=>`<div class="profile-card ${appState.selectedProfile?.id===p.id?'selected':''}" onclick="selectProfile('${p.id}')"><div class="profile-avatar">${p.avatar}</div><div class="profile-name">${p.child_name}</div><div class="profile-level">Nivå ${p.level} · ${p.stars} ⭐</div></div>`).join('');html+=`<div class="add-profile" onclick="document.getElementById('add-profile-form').style.display='block'"><div style="font-size:32px">➕</div><div style="font-weight:700;margin-top:8px">Legg til barn</div></div>`;grid.innerHTML=html;}
+async function loadProfiles(uid){const {data}=await sb.from('profiles').select('*').eq('user_id',uid).order('created_at');appState.profiles=data||[];renderProfiles();}
+function renderProfiles(){const g=document.getElementById('profiles-grid');let h=appState.profiles.map(p=>`<div class="profile-card ${appState.selectedProfile?.id===p.id?'selected':''}" onclick="selectProfile('${p.id}')"><div class="profile-avatar">${p.avatar}</div><div class="profile-name">${p.child_name}</div><div class="profile-level">Nivå ${p.level} · ${p.stars} ⭐</div></div>`).join('');h+=`<div class="add-profile" onclick="document.getElementById('add-profile-form').style.display='block'"><div style="font-size:32px">➕</div><div style="font-weight:700;margin-top:8px">Legg til barn</div></div>`;g.innerHTML=h;}
 function selectProfile(id){appState.selectedProfile=appState.profiles.find(p=>p.id===id);renderProfiles();updateProfileBanner();showTab('tab-reading');}
 function updateProfileBanner(){const p=appState.selectedProfile;if(!p)return;document.getElementById('selected-profile-banner').style.display='flex';document.getElementById('banner-avatar').textContent=p.avatar;document.getElementById('banner-name').textContent=p.child_name;document.getElementById('banner-level').textContent=`Nivå ${p.level} · ${p.stars} ⭐`;}
 function selectAvatar(el){document.querySelectorAll('.avatar-opt').forEach(a=>a.style.border='2px solid transparent');el.style.border='2px solid #4f46e5';appState.selectedAvatar=el.textContent;}
@@ -871,121 +870,125 @@ async function saveProfile(){const {data:{user}}=await sb.auth.getUser();const n
 // ── TEKSTGENERATOR ─────────────────────────────────────
 function setLength(len,btn){appState.genLength=len;document.querySelectorAll('.length-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 
+function setTheme(theme,btn){
+  appState.genTheme=theme;
+  document.querySelectorAll('.theme-btn').forEach(b=>{b.style.borderColor='#e5e7eb';b.style.background='#fff';});
+  btn.style.borderColor='#4f46e5';btn.style.background='#eef2ff';
+  document.getElementById('gen-pet-field').style.display=theme==='pet'?'flex':'none';
+  document.getElementById('gen-activity-field').style.display=theme==='activity'?'flex':'none';
+  document.getElementById('gen-hero-field').style.display=theme==='hero'?'flex':'none';
+  document.getElementById('gen-family-field').style.display=theme==='family'?'flex':'none';
+}
+
 function generateText(){
   const child=document.getElementById('gen-child').value.trim();
   const pet=document.getElementById('gen-pet').value.trim();
   const friend=document.getElementById('gen-friend').value.trim();
-  const sibling=document.getElementById('gen-sibling').value.trim();
   const activity=document.getElementById('gen-activity').value.trim();
   const hero=document.getElementById('gen-hero').value.trim();
-
-  if(!child&&!pet&&!friend&&!sibling&&!activity&&!hero){
-    alert('Fyll inn minst ett felt for å lage en historie!');return;
-  }
-
+  const family=document.getElementById('gen-family').value.trim();
+  const theme=appState.genTheme||'nature';
   const name=child||'Barnet';
-  const age=appState.selectedProfile?.age||8;
   const pick=arr=>arr[Math.floor(Math.random()*arr.length)];
-
-  const steder=['skogen','stranden','parken','fjellet','hagen','nabolaget','lekeplassen','søen','engen'];
-  const vaer=['solen skinte varmt','det var en fin dag','skyene drev sakte forbi','vinden pustet lett','det var stille og fint'];
-  const funn=['et lite pinnsvin','en fargerik sommerfugl','en liten frosk','noe som glitret i gresset','et mystisk spor','en gammel boks','en søt kanin'];
-  const funn2=['en vakker blomst','en liten maur som bar på noe stort','et hull i bakken','noen fotspor','en liten fugl'];
-  const folelser=['spent','glad','nysgjerrig','overrasket','begeistret','ivrig'];
-  const avslutninger=[
-    `${name} smilte stort og tenkte at dette hadde vært den beste dagen på lenge.`,
-    `${name} kunne ikke vente med å fortelle om alt som hadde skjedd i dag.`,
-    `${name} visste at denne dagen aldri ville bli glemt.`,
-    `${name} lo høyt og tenkte at livet var fullt av fine overraskelser.`,
-    `${name} satte seg ned og pustet inn den friske luften. Det hadde vært en perfekt dag.`,
-    `– Dette vil jeg huske lenge, tenkte ${name} med et stort smil.`
-  ];
-
-  const sted=pick(steder);
-  const f1=pick(funn);
-  const f2=pick(funn2);
-  const folelse=pick(folelser);
-
+  const target={short:6,medium:10,long:15}[appState.genLength]||10;
   let sentences=[];
 
-  // Åpning
-  if(pet){
-    sentences.push(`${name} og ${pet} dro ut til ${sted} en dag da ${pick(vaer)}.`);
-    sentences.push(`${pet} sprang foran og snuste spent på alt rundt seg.`);
-  } else {
-    sentences.push(`En dag dro ${name} ut til ${sted}.`);
-    sentences.push(`${pick(vaer).charAt(0).toUpperCase()+pick(vaer).slice(1)}, og ${name} var i kjempegodt humør.`);
+  if(theme==='nature'){
+    const steder=['skogen','fjellet','stranden','engen','søen','parken'];
+    const vaer=['solen skinte varmt','det var en fin og stille dag','skyene drev sakte forbi','det var lunt og godt ute'];
+    const funn=['et lite pinnsvin','en fargerik sommerfugl','en liten frosk','et spor i sanden','en gammel hule mellom steinene','en bekk med blankt vann'];
+    const sted=pick(steder),f=pick(funn);
+    sentences=[
+      `${name} dro ut på eventyr til ${sted} en dag da ${pick(vaer)}.`,
+      `${name} hadde med seg sekk og vann, klar for å utforske.`,
+      friend?`${friend} ventet allerede der og vinket da ${name} kom.`:`Fuglene sang i trærne og alt var stille og fredfullt.`,
+      friend?`– Endelig! ropte ${friend}. – Jeg har funnet noe kult!`:`${name} gikk stille og forsiktig for å ikke skremme dyrene.`,
+      `Plutselig stoppet ${name} opp. Der, rett foran, var ${f}!`,
+      `${name} holdt pusten og tok et forsiktig steg nærmere.`,
+      friend?`${friend} hvisket: – Ikke beveg deg. Bare se!`:`Det var så stille at ${name} kunne høre hjertet banke.`,
+      `De sto lenge og bare så. Det var nesten magisk.`,
+      `På veien hjem snakket ${name} ${friend?'og '+friend:''} om alt de hadde sett.`,
+      `${name} bestemte seg for å komme tilbake snart. Naturen hadde så mye å by på.`,
+      `– Dette var den beste dagen på lenge, tenkte ${name} med et stort smil.`,
+    ];
+  } else if(theme==='pet'){
+    const petName=pet||'kjæledyret';
+    const steder=['parken','skogen','stranden','hagen','nabolaget'];
+    const sted=pick(steder);
+    sentences=[
+      `${name} og ${petName} skulle ha sin helt egne dag sammen.`,
+      `${name} tok på seg støvlene og festet båndet. ${petName} hoppet spent rundt.`,
+      `De gikk til ${sted}, og ${petName} snuste nysgjerrig på alt.`,
+      `Plutselig stoppet ${petName} opp og spidset ørene. Hva hadde ${petName} hørt?`,
+      `${name} så seg rundt, men oppdaget ingenting. ${petName} visste noe ${name} ikke visste.`,
+      `Så kom det – en liten fugl landet rett foran dem på stien.`,
+      `${petName} logret og hoppet, men fuglen var ikke redd og hoppet bare litt til siden.`,
+      `${name} lo høyt. – Du er ikke så skummel, du, sa ${name} til ${petName}.`,
+      `De lekte lenge ute før de satte seg ned i gresset og hvilte.`,
+      `${name} klapte ${petName} og kjente seg veldig glad og takknemlig.`,
+      `– Du er den beste vennen jeg har, ${petName}, sa ${name} stille.`,
+    ];
+  } else if(theme==='activity'){
+    const act=activity||'favorittaktiviteten sin';
+    const steder=['idrettsbanen','parken','gymsalen','hagen','lekeplassen'];
+    const sted=pick(steder);
+    sentences=[
+      `${name} hadde gledet seg til denne dagen hele uken. I dag skulle ${name} drive med ${act}!`,
+      `${name} pakket sekken og sprang ut døren. Det var ingen tid å miste.`,
+      `Da ${name} kom til ${sted}, var alt klart og klart til start.`,
+      friend?`${friend} sto allerede der og vinket. – Kom igjen, vi starter! ropte ${friend}.`:`${name} varmet opp og kjente spenningen boble i magen.`,
+      `${name} kastet seg inn i det og glemte alt annet rundt seg.`,
+      friend?`${friend} og ${name} jobbet godt sammen og oppmuntret hverandre hele veien.`:`${name} prøvde igjen og igjen, og ble bedre for hver gang.`,
+      `Det var ett øyeblikk som var ekstra bra. ${name} kjente det på kroppen.`,
+      friend?`– Wow, det var kjempebra! ropte ${friend} og ga ${name} en high five.`:`${name} stoppet opp og smilte. Det føltes veldig bra.`,
+      `Etter en stund tok ${name} en pause og drakk litt vann.`,
+      `${name} tenkte: neste gang skal jeg klare det enda bedre.`,
+      `På veien hjem sang ${name} for seg selv. Det hadde vært en perfekt dag med ${act}.`,
+    ];
+  } else if(theme==='hero'){
+    const heroName=hero||'superhelten';
+    sentences=[
+      `${name} hadde alltid drømt om å møte ${heroName}. En dag skjedde det noe merkelig.`,
+      `Det begynte med en lyd utenfor vinduet. ${name} kikket ut – og der var det et lys!`,
+      `${name} løp ut og fant et brev på trappen. Det var fra ${heroName}!`,
+      `– Kjære ${name}, jeg trenger din hjelp. Møt meg i parken klokken tre. – ${heroName}`,
+      `${name} hjertet banket fort. Dette var ikke en drøm!`,
+      friend?`${name} ringte ${friend} med en gang. – Du tror meg aldri, sa ${name}.`:`${name} tok på seg jakken og sprang av gårde.`,
+      `I parken sto ${heroName} og ventet bak et stort tre.`,
+      `– ${name}, du er modigere enn du tror, sa ${heroName} med et alvorlig blikk.`,
+      `Oppdraget var enkelt: finn den forsvunne skatten i skogen.`,
+      friend?`${name} og ${friend} satte i gang med ${heroName} ved sin side.`:`${name} visste nøyaktig hva som måtte gjøres.`,
+      `Da de fant skatten, jublet alle. ${name} hadde vært en ekte helt i dag.`,
+    ];
+  } else if(theme==='family'){
+    const fm=family||'familien';
+    const steder=['fjellet','stranden','hytten','byen','fornøyelsesparken'];
+    const sted=pick(steder);
+    sentences=[
+      `${name} og ${fm} dro på tur til ${sted}. Alle gledet seg veldig.`,
+      `Bilen var pakket og musikken var på. ${name} sang med fra baksetet.`,
+      `Da de kom frem, sto alle stille og så seg rundt. Det var vakkert.`,
+      `${fm} tok ${name} i hånden og sa: – Nå utforsker vi!`,
+      `De fant en sti og fulgte den inn mellom trærne.`,
+      `${name} oppdaget noe blinke mellom steinene. – Kom og se! ropte ${name}.`,
+      `${fm} bøyde seg ned og kikket. – Så flott! sa de.`,
+      `De spiste matpakke på en stor, flat stein og snakket om alt mulig.`,
+      `${name} tenkte at dette var noe av det beste – bare å være sammen med ${fm}.`,
+      `På veien hjem sovnet ${name} i bilen med et smil om munnen.`,
+      `Det var en dag ${name} og ${fm} aldri ville glemme.`,
+    ];
   }
 
-  // Aktivitet
-  if(activity){
-    sentences.push(`${name} hadde gledet seg veldig til å drive med ${activity}.`);
-    if(pet) sentences.push(`Men ${pet} ville heller utforske, så de bestemte seg for å se seg litt rundt først.`);
-  }
-
-  // Venn
-  if(friend){
-    sentences.push(`Plutselig hørte ${name} noen rope. Det var ${friend}!`);
-    sentences.push(`– Hei! Jeg visste jeg fant deg her, ropte ${friend} og løp bort.`);
-    sentences.push(`${name} ble veldig glad for å se ${friend}.`);
-  }
-
-  // Søsken
-  if(sibling){
-    sentences.push(`Litt senere kom også ${sibling} springende bort til dem.`);
-    sentences.push(`– Kan jeg være med? spurte ${sibling} med store, håpefulle øyne.`);
-    sentences.push(`– Selvfølgelig! svarte ${name} og tok ${sibling} i hånden.`);
-  }
-
-  // Funn
-  sentences.push(`Plutselig stoppet alle opp. Der, rett foran dem, lå ${f1}!`);
-  sentences.push(`${name} var ${folelse} og gikk forsiktig nærmere for å se bedre.`);
-
-  if(pet) sentences.push(`${pet} snuste nysgjerrig, men roet seg da ${name} sa stille.`);
-
-  // Heltfigur
-  if(hero){
-    sentences.push(`${name} husket hva ${hero} alltid sa: vær modig og nysgjerrig på verden!`);
-    sentences.push(`Med det i tankene tok ${name} et dypt pust og undersøkte nærmere.`);
-  }
-
-  // Andre funn
-  sentences.push(`Litt lenger borte oppdaget de også ${f2}. Det var nesten ikke til å tro!`);
-
-  if(friend) sentences.push(`– Se der! ropte ${friend} og pekte. De løp bort sammen, fulle av forventning.`);
-  if(activity) sentences.push(`Etterpå fikk de endelig tid til ${activity}, og det gikk kjempebra.`);
-
-  // Lengdejustering
-  const target={short:6,medium:10,long:15}[appState.genLength]||10;
-  if(sentences.length>target) sentences=sentences.slice(0,target);
-
-  // Avslutning
-  sentences.push(pick(avslutninger));
-
-  const text=sentences.join(' ');
+  let result=sentences.slice(0,target);
+  const text=result.join(' ');
   appState.lastGeneratedText=text;
   document.getElementById('gen-result-text').textContent=text;
   document.getElementById('gen-result-box').style.display='block';
   document.getElementById('gen-btn').textContent='🔄 Lag ny versjon';
 }
 
-function useGeneratedText(){
-  if(!appState.lastGeneratedText)return;
-  document.getElementById('textInput').value=appState.lastGeneratedText;
-  document.getElementById('start-btn').disabled=false;
-  showTab('tab-reading');
-}
-
-async function saveGeneratedText(){
-  if(!appState.lastGeneratedText)return;
-  const childName=document.getElementById('gen-child').value.trim()||'Barnet';
-  const title=`${childName}s historie – ${new Date().toLocaleDateString('nb-NO')}`;
-  const {data:{user}}=await sb.auth.getUser();
-  if(!user){alert('Logg inn for å lagre tekster.');return;}
-  await sb.from('saved_texts').insert({user_id:user.id,profile_id:appState.selectedProfile?.id||null,title,content:appState.lastGeneratedText});
-  alert(`✅ Lagret som "${title}"!`);
-  loadSavedTexts();
-}
+function useGeneratedText(){if(!appState.lastGeneratedText)return;document.getElementById('textInput').value=appState.lastGeneratedText;document.getElementById('start-btn').disabled=false;showTab('tab-reading');}
+async function saveGeneratedText(){if(!appState.lastGeneratedText)return;const childName=document.getElementById('gen-child').value.trim()||'Barnet';const title=`${childName}s historie – ${new Date().toLocaleDateString('nb-NO')}`;const {data:{user}}=await sb.auth.getUser();if(!user){alert('Logg inn for å lagre tekster.');return;}await sb.from('saved_texts').insert({user_id:user.id,profile_id:appState.selectedProfile?.id||null,title,content:appState.lastGeneratedText});alert(`✅ Lagret som "${title}"!`);loadSavedTexts();}
 
 // ── REWARDS ────────────────────────────────────────────
 function renderRewardsProfileSelect(){const el=document.getElementById('rewards-profile-select');if(!el||!appState.profiles.length)return;el.innerHTML=`<label class="form-label">Velg barneprofil</label><select id="reward-profile-id" onchange="loadRewards()" style="width:100%;padding:12px;border-radius:10px;border:2px solid #e5e7eb;font-family:inherit;font-size:14px;margin-bottom:12px">${appState.profiles.map(p=>`<option value="${p.id}">${p.avatar} ${p.child_name}</option>`).join('')}</select>`;loadRewards();}
@@ -1007,7 +1010,7 @@ function setInputMethod(method,btn){appState.inputMethod=method;document.getElem
 function setTime(val){appState.timeLimit=+val;document.getElementById('timelabel').textContent=val;}
 document.getElementById('textInput').addEventListener('input',function(e){document.getElementById('start-btn').disabled=!e.target.value.trim();});
 
-// ── SESSION START ──────────────────────────────────────
+// ── SESSION ────────────────────────────────────────────
 function startSession(){
   try{getAudio().resume();}catch(e){}
   const text=document.getElementById('textInput').value.trim();
@@ -1020,8 +1023,7 @@ function startSession(){
     document.getElementById('reading-active-practice').style.display='block';
     document.getElementById('manual-controls').style.display=appState.inputMethod==='manual'?'block':'none';
     document.getElementById('practice-info').textContent=appState.inputMethod==='voice'?'🎤 Les ordet høyt!':'👆 Les ordet – forelder trykker ✅ eller ❌';
-    renderWords();
-    if(appState.inputMethod==='voice')startWordRecognition();
+    renderWords();if(appState.inputMethod==='voice')startWordRecognition();
   } else {
     const sentences=splitSentences(text);
     appState.sentences=sentences;appState.sentenceStates=new Array(sentences.length).fill('pending');
@@ -1037,12 +1039,9 @@ function renderWords(){
   const idx=appState.currentWordIdx,words=appState.words;
   document.getElementById('big-current-word').textContent=idx<words.length?words[idx].replace(/[.,!?;:»«""'']/g,''):'🎉';
   const attempts=appState.wordAttempts[idx]||0;
-  const dots=document.getElementById('attempt-dots');
-  if(dots)dots.innerHTML=[0,1,2].map(i=>`<div class="attempt-dot ${i<attempts?'used':''}"></div>`).join('');
-  const flow=document.getElementById('word-flow');
-  if(flow)flow.innerHTML=words.map((w,i)=>{const s=appState.wordStates[i];const cls=i===idx?'current':s==='correct'?'correct':s==='skipped'?'skipped':'pending';return `<span class="word-chip ${cls}">${w}</span>`;}).join('');
-  const correct=appState.wordStates.filter(s=>s==='correct').length;
-  const skipped=appState.wordStates.filter(s=>s==='skipped').length;
+  const dots=document.getElementById('attempt-dots');if(dots)dots.innerHTML=[0,1,2].map(i=>`<div class="attempt-dot ${i<attempts?'used':''}"></div>`).join('');
+  const flow=document.getElementById('word-flow');if(flow)flow.innerHTML=words.map((w,i)=>{const s=appState.wordStates[i];const cls=i===idx?'current':s==='correct'?'correct':s==='skipped'?'skipped':'pending';return `<span class="word-chip ${cls}">${w}</span>`;}).join('');
+  const correct=appState.wordStates.filter(s=>s==='correct').length,skipped=appState.wordStates.filter(s=>s==='skipped').length;
   document.getElementById('stat-correct-words').textContent=`✅ Riktige: ${correct}`;
   document.getElementById('stat-wrong-words').textContent=`⚠️ Hoppet over: ${skipped}`;
   document.getElementById('stat-words-left').textContent=`Gjenstår: ${Math.max(0,words.length-idx)}`;
@@ -1096,8 +1095,7 @@ async function endSession(){
   const elapsedSec=Math.max(1,(Date.now()-appState.startTime)/1000);
   if(appState.exercise==='practice'){
     correctWords=appState.wordStates.filter(s=>s==='correct').length;
-    totalWords=appState.currentWordIdx;
-    wpm=Math.round((correctWords/elapsedSec)*60);
+    totalWords=appState.currentWordIdx;wpm=Math.round((correctWords/elapsedSec)*60);
     skippedWords=appState.words.filter((_,i)=>appState.wordStates[i]==='skipped').map(w=>w.replace(/[.,!?;:»«""'']/g,''));
   } else {
     totalWords=appState.sentences.slice(0,appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;
@@ -1113,16 +1111,16 @@ async function endSession(){
     const pct=Math.min(100,(wpm/150)*100);
     document.getElementById('progress-fill').style.width=pct+'%';
     document.getElementById('progress-fill').style.background=wpm>=100?'#059669':wpm>=70?'#f59e0b':'#ef4444';
-    const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet! Fantastisk!','🏆 Imponerende lesehastighet!']:wpm>=70?['🚀 Du blir bedre og bedre!','💪 Bra jobbet!']:['💪 Øving gjør mester!','🌱 Hver økt gjør deg bedre!'];
+    const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet!','🏆 Imponerende!']:wpm>=70?['🚀 Du blir bedre og bedre!','💪 Bra jobbet!']:['💪 Øving gjør mester!','🌱 Hver økt gjør deg bedre!'];
     document.getElementById('wpm-feedback').textContent=msgs[Math.floor(Math.random()*msgs.length)];
   } else document.getElementById('wpm-section').style.display='none';
   const skippedSection=document.getElementById('skipped-words-section'),drillBtn=document.getElementById('drill-btn');
   if(skippedWords.length>0){skippedSection.style.display='block';document.getElementById('skipped-words-list').innerHTML=skippedWords.map(w=>`<span style="background:#fee2e2;color:#991b1b;padding:6px 12px;border-radius:8px;font-weight:700;font-size:16px">${w}</span>`).join('');drillBtn.style.display='block';appState.drillWords=skippedWords;}
   else{skippedSection.style.display='none';drillBtn.style.display='none';}
   const avatar=appState.selectedProfile?.avatar||'📖',childName=appState.selectedProfile?.child_name||'';
-  const resultMsgs=['Fantastisk jobbet! 🌟','Du er en lesehelt! 🦁','Så flink du er! 🎉','Kjempebra! 🚀'];
+  const rMsgs=['Fantastisk jobbet! 🌟','Du er en lesehelt! 🦁','Så flink du er! 🎉','Kjempebra! 🚀'];
   document.getElementById('result-avatar').textContent=avatar;
-  document.getElementById('result-title').textContent=resultMsgs[Math.floor(Math.random()*resultMsgs.length)];
+  document.getElementById('result-title').textContent=rMsgs[Math.floor(Math.random()*rMsgs.length)];
   document.getElementById('result-subtitle').textContent=childName?childName+' – du bør være stolt av deg selv!':'Bra innsats!';
   playFinish();launchConfetti();
   if(appState.selectedProfile){
@@ -1154,7 +1152,7 @@ async function loadProgress(){
   const p=appState.selectedProfile;
   const {data}=await sb.from('reading_sessions').select('*').eq('profile_id',p.id).order('created_at',{ascending:false}).limit(20);
   const lastFive=(data||[]).slice(0,5);
-  const msgs=p.stars>=50?'🏆 Utrolig fremgang! Du er en ekte lesemester!':p.stars>=20?'🚀 Du blir bedre og bedre! Fortsett!':'🌱 Bra start! Hver økt teller!';
+  const msgs=p.stars>=50?'🏆 Utrolig fremgang!':p.stars>=20?'🚀 Du blir bedre og bedre!':'🌱 Bra start! Hver økt teller!';
   const starsChart=lastFive.length?lastFive.map(s=>{const earned=Math.min(5,s.correct_words>0?Math.floor(s.correct_words/20)+1:1);const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit'});return `<div style="text-align:center"><div class="star-dot"><span style="font-size:16px">⭐</span><span style="font-size:11px">${earned}</span></div><div style="font-size:10px;color:#9ca3af;margin-top:4px">${dateStr}</div></div>`;}).join(''):'<p style="color:#9ca3af;font-size:14px">Ingen økter ennå.</p>';
   const wpmRows=(data||[]).filter(s=>s.words_per_minute>0).slice(0,5).map(s=>{const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit'});const pct=Math.round((Math.min(s.words_per_minute,150)/150)*100);return `<div class="wpm-bar-row"><div class="date">${dateStr}</div><div class="wpm-bar" style="width:${pct}%">${s.words_per_minute} o/m</div></div>`;}).join('');
   const sessionList=(data||[]).slice(0,10).map(s=>{const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit',year:'numeric'});const timeStr=new Date(s.created_at).toLocaleTimeString('nb-NO',{hour:'2-digit',minute:'2-digit'});return `<div class="session-item"><div><div style="font-weight:700">${s.exercise_type==='practice'?'🌱 Øving':'⏱ Tidsbasert'}</div><div class="session-date">${dateStr} kl. ${timeStr}</div></div><div class="session-stats"><div class="session-stat"><div class="n">${s.correct_words}</div><div class="l">ord</div></div>${s.words_per_minute>0?`<div class="session-stat"><div class="n">${s.words_per_minute}</div><div class="l">o/min</div></div>`:''}</div></div>`;}).join('');
