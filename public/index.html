@@ -88,8 +88,6 @@
     .footer-links a { color: #a5b4fc; text-decoration: none; font-size: 14px; font-weight: 600; cursor: pointer; }
     .footer-links a:hover { color: #fff; }
     .footer-copy { font-size: 13px; color: #6b7280; }
-
-    /* Innholdssider */
     .content-page { max-width: 760px; margin: 0 auto; padding: 60px 24px; }
     .content-page h1 { font-size: 36px; font-weight: 900; color: #1e1b4b; margin-bottom: 8px; }
     .content-page .subtitle { font-size: 16px; color: #6b7280; margin-bottom: 40px; }
@@ -102,7 +100,7 @@
     .contact-form { background: #f8f7ff; border-radius: 20px; padding: 32px; margin-top: 32px; border: 1.5px solid #e0e7ff; }
     .contact-form .form-group { margin-bottom: 20px; }
     .contact-form label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; }
-    .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 14px 16px; border-radius: 12px; border: 2px solid #e5e7eb; font-size: 15px; font-family: inherit; transition: border-color 0.2s; background: #fff; }
+    .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 14px 16px; border-radius: 12px; border: 2px solid #e5e7eb; font-size: 15px; font-family: inherit; background: #fff; }
     .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #4f46e5; }
     .contact-form textarea { height: 140px; resize: vertical; }
     .about-hero { background: linear-gradient(135deg, #eef2ff, #fef3c7); border-radius: 24px; padding: 40px; text-align: center; margin-bottom: 40px; }
@@ -114,8 +112,6 @@
     .value-card .vi { font-size: 28px; margin-bottom: 10px; }
     .value-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
     .value-card p { font-size: 14px; color: #6b7280; line-height: 1.6; margin: 0; }
-
-    /* Auth */
     .auth-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f8f7ff, #eef2ff); padding: 40px; }
     .auth-card { background: #fff; border-radius: 28px; padding: 48px 40px; max-width: 440px; width: 100%; box-shadow: 0 12px 40px rgba(79,70,229,0.12); }
     .auth-card h2 { font-size: 28px; font-weight: 900; margin-bottom: 8px; color: #1e1b4b; }
@@ -131,8 +127,6 @@
     .auth-switch a { color: #4f46e5; font-weight: 700; cursor: pointer; text-decoration: none; }
     .auth-error { background: #fee2e2; color: #991b1b; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
     .auth-success { background: #d1fae5; color: #065f46; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 16px; display: none; }
-
-    /* Welcome */
     .welcome-container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
     .welcome-hero { text-align: center; margin-bottom: 48px; }
     .welcome-hero h1 { font-size: 40px; font-weight: 900; color: #1e1b4b; margin-bottom: 12px; }
@@ -155,8 +149,6 @@
     .welcome-cta { text-align: center; background: linear-gradient(135deg, #4f46e5, #7c3aed); border-radius: 24px; padding: 40px; color: #fff; }
     .welcome-cta h2 { font-size: 28px; font-weight: 900; margin-bottom: 12px; }
     .welcome-cta p { font-size: 16px; color: #c7d2fe; margin-bottom: 24px; }
-
-    /* App */
     .app-container { max-width: 760px; margin: 0 auto; padding: 32px 24px; }
     .app-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
     .app-header h2 { font-size: 22px; font-weight: 900; }
@@ -174,8 +166,8 @@
     .add-profile { background: #f9fafb; border: 2px dashed #d1d5db; border-radius: 20px; padding: 24px 16px; text-align: center; cursor: pointer; transition: border-color 0.2s; }
     .add-profile:hover { border-color: #4f46e5; }
     .card { background: #fff; border-radius: 16px; padding: 20px; margin-bottom: 16px; border: 1px solid #e5e7eb; }
-    .exercise-options { display: flex; gap: 12px; margin-bottom: 20px; }
-    .exercise-btn { flex: 1; padding: 14px; border-radius: 12px; border: 2px solid #e5e7eb; background: #fff; cursor: pointer; text-align: left; font-family: inherit; transition: all 0.2s; }
+    .exercise-options { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .exercise-btn { flex: 1; min-width: 140px; padding: 14px; border-radius: 12px; border: 2px solid #e5e7eb; background: #fff; cursor: pointer; text-align: left; font-family: inherit; transition: all 0.2s; }
     .exercise-btn.active { border-color: #4f46e5; background: #eef2ff; }
     .exercise-btn .etitle { font-weight: 700; font-size: 15px; }
     .exercise-btn .edesc { font-size: 13px; color: #6b7280; margin-top: 4px; }
@@ -189,12 +181,34 @@
     .btn-green { background: #059669; color: #fff; }
     .btn-gray { background: #6b7280; color: #fff; }
     .btn-red { background: #dc2626; color: #fff; }
+    .btn-yellow { background: #f59e0b; color: #fff; }
     .btn-large { width: 100%; padding: 16px; font-size: 18px; border-radius: 12px; margin-top: 8px; }
     .btn:disabled { background: #d1d5db; cursor: default; transform: none; }
     .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
     .range-labels { display: flex; justify-content: space-between; font-size: 12px; color: #9ca3af; margin-top: 4px; }
     input[type=range] { width: 100%; }
     .info-box { padding: 10px 14px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; background: #fef3c7; color: #92400e; }
+
+    /* Ord-for-ord display */
+    .word-display-area { padding: 32px 24px; border-radius: 20px; border: 2px solid #e5e7eb; margin-bottom: 20px; min-height: 160px; }
+    .word-flow { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .word-chip { display: inline-block; padding: 6px 12px; border-radius: 10px; font-size: 18px; font-weight: 700; transition: all 0.2s; }
+    .word-chip.pending { background: #f3f4f6; color: #9ca3af; }
+    .word-chip.current { background: #eef2ff; color: #4f46e5; border: 2px solid #4f46e5; font-size: 22px; transform: scale(1.1); }
+    .word-chip.correct { background: #d1fae5; color: #065f46; }
+    .word-chip.wrong { background: #fee2e2; color: #991b1b; }
+    .word-chip.skipped { background: #fef3c7; color: #92400e; }
+    .big-current-word { text-align: center; font-size: 52px; font-weight: 900; color: #4f46e5; margin: 16px 0; letter-spacing: 2px; }
+    .attempt-dots { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; }
+    .attempt-dot { width: 14px; height: 14px; border-radius: 50%; background: #e5e7eb; transition: background 0.2s; }
+    .attempt-dot.used { background: #ef4444; }
+    .manual-btns { display: flex; gap: 12px; justify-content: center; margin-top: 16px; }
+    .manual-btn { padding: 16px 32px; border-radius: 16px; border: none; font-size: 28px; cursor: pointer; font-family: inherit; transition: transform 0.2s; font-weight: 900; }
+    .manual-btn:hover { transform: scale(1.1); }
+    .manual-btn-correct { background: #d1fae5; color: #065f46; }
+    .manual-btn-wrong { background: #fee2e2; color: #991b1b; }
+
+    /* Setning-display (tidsbasert) */
     .sentence-display { padding: 24px; border-radius: 16px; border: 1px solid #e5e7eb; margin-bottom: 16px; min-height: 120px; }
     .sentence-done { font-size: 20px; line-height: 2.2; color: #9ca3af; margin-bottom: 12px; }
     .sentence-active { font-size: 26px; line-height: 2.4; font-weight: 700; background: #eef2ff; border-radius: 12px; padding: 16px; margin-bottom: 12px; border: 2px solid #4f46e5; }
@@ -205,6 +219,15 @@
     .sent-dot { width: 12px; height: 12px; border-radius: 50%; background: #e5e7eb; transition: background 0.3s; }
     .sent-dot.done { background: #059669; }
     .sent-dot.active { background: #4f46e5; transform: scale(1.3); }
+
+    /* Øvemodus for feilord */
+    .drill-overlay { background: linear-gradient(135deg, #fef3c7, #fff7ed); border-radius: 20px; padding: 32px; margin-bottom: 16px; border: 2px solid #f59e0b; }
+    .drill-word { text-align: center; font-size: 64px; font-weight: 900; color: #4f46e5; margin: 16px 0; letter-spacing: 3px; }
+    .drill-progress { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; flex-wrap: wrap; }
+    .drill-dot { width: 16px; height: 16px; border-radius: 50%; background: #e5e7eb; }
+    .drill-dot.done { background: #059669; }
+    .drill-dot.active { background: #f59e0b; transform: scale(1.3); }
+
     .confetti-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
     .confetti-piece { position: absolute; width: 10px; height: 10px; border-radius: 2px; animation: confetti-fall 3s ease-in forwards; }
     @keyframes confetti-fall { 0% { transform: translateY(-20px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
@@ -247,7 +270,8 @@
       nav { padding: 16px 20px; }
       .why-grid, .value-cards { grid-template-columns: 1fr; }
       .info-cards { grid-template-columns: 1fr; }
-      .sentence-active { font-size: 22px; }
+      .big-current-word { font-size: 40px; }
+      .drill-word { font-size: 48px; }
       .content-page { padding: 40px 20px; }
     }
   </style>
@@ -289,7 +313,7 @@
           </div>
           <div class="demo-stats">
             <div class="demo-stat"><div class="num" style="color:#059669">6</div><div class="lbl">✅ Riktige</div></div>
-            <div class="demo-stat"><div class="num" style="color:#4f46e5">3/8</div><div class="lbl">📖 Setninger</div></div>
+            <div class="demo-stat"><div class="num" style="color:#4f46e5">3/8</div><div class="lbl">📖 Ord lest</div></div>
             <div class="demo-stat"><div class="num" style="color:#f59e0b">3</div><div class="lbl">⭐ Stjerner</div></div>
           </div>
         </div>
@@ -301,8 +325,8 @@
     <div class="section-label">Slik fungerer det</div>
     <div class="section-title">Tre enkle steg</div>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-icon">📚</div><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av en bokside med telefonen – teksten leses ut automatisk.</p></div>
-      <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser setning for setning</h3><p>Appen lytter og markerer setningen grønt når den er lest. Prøv om igjen ved behov!</p></div>
+      <div class="step"><div class="step-num">1</div><div class="step-icon">📚</div><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller bruk vår tekstgenerator for en personlig historie.</p></div>
+      <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser høyt</h3><p>Appen lytter og markerer ord grønt. Prøv vanskelige ord om igjen!</p></div>
       <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg utvikling over tid med morsomme grafer og stjerner!</p></div>
     </div>
   </section>
@@ -312,7 +336,7 @@
     <div class="section-title">Laget av foreldre, for foreldre</div>
     <div class="why-grid">
       <div class="why-card"><div class="why-icon">📖</div><div><h3>Bruk barnets egne bøker</h3><p>Ikke generiske øvingstekster – bruk tekster barnet allerede er motivert for å lese.</p></div></div>
-      <div class="why-card"><div class="why-icon">⚡</div><div><h3>Naturlig lesing</h3><p>Barnet leser setning for setning – slik vi leser i virkeligheten. Pling når setningen er ferdig!</p></div></div>
+      <div class="why-card"><div class="why-icon">⚡</div><div><h3>Ord-for-ord med stemme</h3><p>Barnet leser hvert ord høyt. Riktige ord blir grønne med en pling!</p></div></div>
       <div class="why-card"><div class="why-icon">📊</div><div><h3>Følg utviklingen</h3><p>Se fremgangen med barnevennlige grafer og oppmuntrende meldinger.</p></div></div>
       <div class="why-card"><div class="why-icon">🌟</div><div><h3>Motiverende belønninger</h3><p>Barnet samler stjerner og klatrer i nivåer etter hvert som de leser.</p></div></div>
       <div class="why-card"><div class="why-icon">📱</div><div><h3>Fungerer på alle enheter</h3><p>Telefon, nettbrett eller PC – uten nedlasting.</p></div></div>
@@ -364,8 +388,8 @@
     <div class="section-title">Vanlige spørsmål</div>
     <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">Trenger vi mikrofon eller spesielt utstyr?<span class="faq-arrow">▼</span></div><div class="faq-a">Nei! Alle moderne telefoner, nettbrett og laptoper har innebygd mikrofon. AirPods og trådløse øreplugger fungerer også optimalt.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvilke nettlesere fungerer best?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer best i Chrome og Edge. Safari på iPhone og iPad fungerer også. Firefox støtter ikke talegjenkjenning.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvor nøyaktig er talegjenkjenningen?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer bra for vanlige norske ord, men kan slite med sjeldne ord eller dialekter. Barnet kan alltid prøve setningen om igjen så mange ganger det trengs. For best nøyaktighet anbefales Chrome på telefon eller nettbrett.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Fungerer Leselab for barn med dysleksi?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja! Setningsbasert lesing er særlig nyttig for barn med dysleksi siden det bryter teksten ned i håndterbare biter.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvor nøyaktig er talegjenkjenningen?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer bra for vanlige norske ord, men kan slite med sjeldne ord eller dialekter. Barnet kan alltid prøve ordet om igjen – etter 3 forsøk går man automatisk videre.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Fungerer Leselab for barn med dysleksi?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja! Ord-for-ord lesing er særlig nyttig for barn med dysleksi. Øvemodusen lar barnet trene spesifikt på ord de slet med.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg avbestille når som helst?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja, du kan avbestille når som helst uten bindingstid.</div></div>
   </section>
 
@@ -391,15 +415,10 @@
 <div id="page-about" class="page">
   <div class="content-page">
     <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
-    <h1>Om Leselab</h1>
-    <p class="subtitle">Laget av en forelder, for foreldre</p>
-    <div class="about-hero">
-      <div class="big-emoji">📖</div>
-      <h2>Historien bak Leselab</h2>
-      <p>Leselab ble til da jeg oppdaget at datteren min på 9 år leste rundt 50 ord i minuttet – halvparten av gjennomsnittet for alderen. Jeg lette etter enkle verktøy foreldre kunne bruke hjemme, men fant ikke noe som passet. Så lagde jeg det selv.</p>
-    </div>
+    <h1>Om Leselab</h1><p class="subtitle">Laget av en forelder, for foreldre</p>
+    <div class="about-hero"><div class="big-emoji">📖</div><h2>Historien bak Leselab</h2><p>Leselab ble til da jeg oppdaget at datteren min på 9 år leste rundt 50 ord i minuttet – halvparten av gjennomsnittet for alderen. Jeg lette etter enkle verktøy foreldre kunne bruke hjemme, men fant ikke noe som passet. Så lagde jeg det selv.</p></div>
     <h2>Hva vi tror på</h2>
-    <p>Lesetrening trenger ikke være kjedelig eller stressende. De beste resultatene kommer når barn leser tekster de selv er motiverte for – ikke generiske øvingstekster. Leselab lar foreldre bruke barnets egne bøker, slik at lesetreningen føles naturlig og morsom.</p>
+    <p>Lesetrening trenger ikke være kjedelig eller stressende. De beste resultatene kommer når barn leser tekster de selv er motiverte for. Leselab lar foreldre bruke barnets egne bøker slik at lesetreningen føles naturlig og morsom.</p>
     <div class="value-cards">
       <div class="value-card"><div class="vi">🏠</div><h3>Hjemme er best</h3><p>Daglig øving hjemme gir resultater. Vi gjør det enkelt nok til at det faktisk skjer.</p></div>
       <div class="value-card"><div class="vi">🌱</div><h3>Fremgang, ikke perfeksjon</h3><p>Vi feirer alle steg fremover. Hvert ord er en seier.</p></div>
@@ -407,277 +426,134 @@
       <div class="value-card"><div class="vi">💡</div><h3>Enkel teknologi</h3><p>Ingen nedlasting, ingen komplisert oppsett – bare åpne nettleseren og start.</p></div>
     </div>
     <h2>Kontakt oss</h2>
-    <p>Har du spørsmål, tilbakemeldinger eller ideer? Vi hører gjerne fra deg på <strong>hei@leselab.no</strong> eller via <a onclick="showPage('contact')" style="color:#4f46e5;cursor:pointer;font-weight:700">kontaktskjemaet</a>.</p>
+    <p>Spørsmål eller ideer? Send oss en melding på <strong>hei@leselab.no</strong> eller via <a onclick="showPage('contact')" style="color:#4f46e5;cursor:pointer;font-weight:700">kontaktskjemaet</a>.</p>
   </div>
-  <footer>
-    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
-    <div class="footer-links">
-      <a onclick="showPage('about')">Om oss</a>
-      <a onclick="showPage('privacy')">Personvernerklæring</a>
-      <a onclick="showPage('terms')">Vilkår for bruk</a>
-      <a onclick="showPage('contact')">Kontakt</a>
-    </div>
-    <div class="footer-copy">© 2026 Leselab · Norge</div>
-  </footer>
+  <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
 
 <!-- KONTAKT -->
 <div id="page-contact" class="page">
   <div class="content-page">
     <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
-    <h1>Kontakt oss</h1>
-    <p class="subtitle">Vi svarer normalt innen 1–2 virkedager.</p>
+    <h1>Kontakt oss</h1><p class="subtitle">Vi svarer normalt innen 1–2 virkedager.</p>
     <p>Du kan også nå oss direkte på <strong>hei@leselab.no</strong></p>
     <div class="contact-form">
       <div class="form-group"><label>Navn</label><input type="text" id="contact-name" placeholder="Ditt navn"></div>
       <div class="form-group"><label>E-post</label><input type="email" id="contact-email" placeholder="din@epost.no"></div>
-      <div class="form-group">
-        <label>Gjelder</label>
-        <select id="contact-subject" style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-size:15px;font-family:inherit;background:#fff">
-          <option>Teknisk støtte</option>
-          <option>Spørsmål om betaling</option>
-          <option>Tilbakemelding eller idé</option>
-          <option>Annet</option>
-        </select>
-      </div>
+      <div class="form-group"><label>Gjelder</label><select id="contact-subject" style="width:100%;padding:14px 16px;border-radius:12px;border:2px solid #e5e7eb;font-size:15px;font-family:inherit;background:#fff"><option>Teknisk støtte</option><option>Spørsmål om betaling</option><option>Tilbakemelding eller idé</option><option>Annet</option></select></div>
       <div class="form-group"><label>Melding</label><textarea id="contact-message" placeholder="Skriv din melding her..."></textarea></div>
       <div id="contact-success" style="display:none;background:#d1fae5;color:#065f46;padding:12px 16px;border-radius:10px;margin-bottom:16px;font-size:14px">✅ Meldingen er sendt! Vi svarer så snart vi kan.</div>
       <button class="btn btn-indigo" style="padding:14px 32px;font-size:16px;border-radius:50px" onclick="submitContact()">Send melding</button>
     </div>
   </div>
-  <footer>
-    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
-    <div class="footer-links">
-      <a onclick="showPage('about')">Om oss</a>
-      <a onclick="showPage('privacy')">Personvernerklæring</a>
-      <a onclick="showPage('terms')">Vilkår for bruk</a>
-      <a onclick="showPage('contact')">Kontakt</a>
-    </div>
-    <div class="footer-copy">© 2026 Leselab · Norge</div>
-  </footer>
+  <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
 
-<!-- PERSONVERNERKLÆRING -->
+<!-- PERSONVERN -->
 <div id="page-privacy" class="page">
   <div class="content-page">
     <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
-    <h1>Personvernerklæring</h1>
-    <p class="subtitle">Sist oppdatert: mars 2026</p>
+    <h1>Personvernerklæring</h1><p class="subtitle">Sist oppdatert: mars 2026</p>
     <p>Leselab tar personvern på alvor. Denne erklæringen forklarer hvilke opplysninger vi samler inn, hvordan de brukes, og hvilke rettigheter du har.</p>
-
-    <h2>1. Behandlingsansvarlig</h2>
-    <p>Leselab er ansvarlig for behandlingen av dine personopplysninger. Kontakt oss på hei@leselab.no ved spørsmål.</p>
-
-    <h2>2. Hvilke opplysninger samler vi inn?</h2>
-    <ul>
-      <li>E-postadresse (ved registrering)</li>
-      <li>Barnets navn, alder og valgt avatar</li>
-      <li>Leseresultater og fremgangsdata knyttet til barneprofilen</li>
-      <li>Tekster du lagrer i tjenesten</li>
-    </ul>
-    <p>Vi samler ikke inn navn, adresse eller betalingsinformasjon direkte – betaling håndteres av Stripe med egne vilkår.</p>
-
-    <h2>3. Hvorfor behandler vi disse opplysningene?</h2>
-    <ul>
-      <li>For å levere og drifte tjenesten</li>
-      <li>For å vise fremgangsdata og statistikk</li>
-      <li>For å sende viktige servicevarslinger (ikke reklame)</li>
-    </ul>
-
-    <h2>4. Deling med tredjeparter</h2>
-    <p>Vi deler ikke dine personopplysninger med tredjeparter for markedsføringsformål. Vi bruker følgende underleverandører:</p>
-    <ul>
-      <li><strong>Supabase</strong> – database og autentisering (EU-servere)</li>
-      <li><strong>Vercel</strong> – hosting (EU-servere tilgjengelig)</li>
-      <li><strong>Anthropic</strong> – tekstgjenkjenning ved bildeskanning (bildet sendes kun for tekstutvinning og lagres ikke)</li>
-    </ul>
-
-    <h2>5. Lagring og sikkerhet</h2>
-    <p>Data lagres på sikre servere. Passord lagres kryptert og er aldri lesbare for oss. Vi bruker HTTPS for all kommunikasjon.</p>
-
-    <h2>6. Dine rettigheter</h2>
-    <p>Du har rett til innsyn, retting og sletting av dine opplysninger. Du kan slette kontoen din direkte i appen under Innstillinger → Slett konto, eller kontakte oss på hei@leselab.no.</p>
-
-    <h2>7. Cookies</h2>
-    <p>Vi bruker kun nødvendige informasjonskapsler for innlogging og sesjonshåndtering. Vi bruker ingen sporings- eller reklamecookies.</p>
-
-    <h2>8. Kontakt</h2>
-    <p>Spørsmål om personvern kan rettes til hei@leselab.no. Du kan også klage til Datatilsynet (datatilsynet.no) dersom du mener vi behandler opplysninger i strid med regelverket.</p>
+    <h2>1. Behandlingsansvarlig</h2><p>Leselab er ansvarlig for behandlingen av dine personopplysninger. Kontakt oss på hei@leselab.no ved spørsmål.</p>
+    <h2>2. Hvilke opplysninger samler vi inn?</h2><ul><li>E-postadresse (ved registrering)</li><li>Barnets navn, alder og valgt avatar</li><li>Leseresultater og fremgangsdata knyttet til barneprofilen</li><li>Tekster du lagrer i tjenesten</li></ul>
+    <h2>3. Hvorfor behandler vi disse opplysningene?</h2><ul><li>For å levere og drifte tjenesten</li><li>For å vise fremgangsdata og statistikk</li><li>For å sende viktige servicevarslinger</li></ul>
+    <h2>4. Deling med tredjeparter</h2><p>Vi deler ikke dine personopplysninger med tredjeparter for markedsføringsformål. Vi bruker følgende underleverandører:</p><ul><li><strong>Supabase</strong> – database og autentisering (EU-servere)</li><li><strong>Vercel</strong> – hosting</li><li><strong>Anthropic</strong> – AI-tekstgenerering (ingen data lagres)</li></ul>
+    <h2>5. Dine rettigheter</h2><p>Du kan slette kontoen din under Innstillinger → Slett konto, eller kontakte oss på hei@leselab.no.</p>
+    <h2>6. Cookies</h2><p>Vi bruker kun nødvendige informasjonskapsler for innlogging. Ingen sporings- eller reklamecookies.</p>
+    <h2>7. Kontakt</h2><p>Spørsmål: hei@leselab.no. Du kan også klage til Datatilsynet (datatilsynet.no).</p>
   </div>
-  <footer>
-    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
-    <div class="footer-links">
-      <a onclick="showPage('about')">Om oss</a>
-      <a onclick="showPage('privacy')">Personvernerklæring</a>
-      <a onclick="showPage('terms')">Vilkår for bruk</a>
-      <a onclick="showPage('contact')">Kontakt</a>
-    </div>
-    <div class="footer-copy">© 2026 Leselab · Norge</div>
-  </footer>
+  <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
 
-<!-- VILKÅR FOR BRUK -->
+<!-- VILKÅR -->
 <div id="page-terms" class="page">
   <div class="content-page">
     <div class="content-back" onclick="showPage('home')">← Tilbake til forsiden</div>
-    <h1>Vilkår for bruk</h1>
-    <p class="subtitle">Sist oppdatert: mars 2026</p>
-    <p>Ved å bruke Leselab godtar du disse vilkårene. Les dem nøye.</p>
-
-    <h2>1. Om tjenesten</h2>
-    <p>Leselab er et nettbasert verktøy for lesetrening beregnet på barn. Tjenesten tilbys som en gratisversjon og en betalt familieversjon.</p>
-
-    <h2>2. Brukerkonto</h2>
-    <p>Du er ansvarlig for å holde innloggingsinformasjonen din konfidensiell. Du er ansvarlig for all aktivitet som skjer under din konto.</p>
-
-    <h2>3. Akseptabel bruk</h2>
-    <ul>
-      <li>Tjenesten er kun for lovlig og redelig bruk</li>
-      <li>Du må ikke forsøke å misbruke, hacke eller forstyrre tjenesten</li>
-      <li>Du er ansvarlig for innholdet du laster opp eller limer inn</li>
-    </ul>
-
-    <h2>4. Betaling og abonnement</h2>
-    <p>Betalt abonnement faktureres månedlig. Du kan avbestille når som helst uten bindingstid. Refusjon gis ikke for påbegynte perioder, med mindre det foreligger feil fra vår side.</p>
-
-    <h2>5. Tilgjengelighet</h2>
-    <p>Vi tilstreber høy oppetid, men kan ikke garantere at tjenesten alltid er tilgjengelig. Vi forbeholder oss retten til å gjøre vedlikehold som kan medføre kortere nedetid.</p>
-
-    <h2>6. Ansvarsbegrensning</h2>
-    <p>Leselab er et hjelpeverktøy og erstatter ikke pedagogisk vurdering eller profesjonell støtte. Vi er ikke ansvarlige for læringsutbytte.</p>
-
-    <h2>7. Endringer i vilkårene</h2>
-    <p>Vi kan oppdatere disse vilkårene. Vesentlige endringer varsles på e-post. Fortsatt bruk etter varsling anses som aksept.</p>
-
-    <h2>8. Kontakt</h2>
-    <p>Spørsmål om vilkårene kan rettes til hei@leselab.no.</p>
+    <h1>Vilkår for bruk</h1><p class="subtitle">Sist oppdatert: mars 2026</p>
+    <p>Ved å bruke Leselab godtar du disse vilkårene.</p>
+    <h2>1. Om tjenesten</h2><p>Leselab er et nettbasert verktøy for lesetrening beregnet på barn, tilbudt som gratisversjon og betalt familieversjon.</p>
+    <h2>2. Brukerkonto</h2><p>Du er ansvarlig for å holde innloggingsinformasjonen din konfidensiell og for all aktivitet under din konto.</p>
+    <h2>3. Akseptabel bruk</h2><ul><li>Tjenesten er kun for lovlig og redelig bruk</li><li>Du må ikke forsøke å misbruke eller forstyrre tjenesten</li><li>Du er ansvarlig for innholdet du laster opp eller limer inn</li></ul>
+    <h2>4. Betaling</h2><p>Betalt abonnement faktureres månedlig. Du kan avbestille når som helst uten bindingstid.</p>
+    <h2>5. Ansvarsbegrensning</h2><p>Leselab er et hjelpeverktøy og erstatter ikke pedagogisk vurdering eller profesjonell støtte.</p>
+    <h2>6. Kontakt</h2><p>Spørsmål: hei@leselab.no</p>
   </div>
-  <footer>
-    <div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div>
-    <div class="footer-links">
-      <a onclick="showPage('about')">Om oss</a>
-      <a onclick="showPage('privacy')">Personvernerklæring</a>
-      <a onclick="showPage('terms')">Vilkår for bruk</a>
-      <a onclick="showPage('contact')">Kontakt</a>
-    </div>
-    <div class="footer-copy">© 2026 Leselab · Norge</div>
-  </footer>
+  <footer><div class="logo" style="color:#fff;margin-bottom:20px;font-size:22px">Lese<span style="color:#f59e0b">lab</span></div><div class="footer-links"><a onclick="showPage('about')">Om oss</a><a onclick="showPage('privacy')">Personvernerklæring</a><a onclick="showPage('terms')">Vilkår for bruk</a><a onclick="showPage('contact')">Kontakt</a></div><div class="footer-copy">© 2026 Leselab · Norge</div></footer>
 </div>
 
 <!-- LOGIN -->
 <div id="page-login" class="page">
-  <div class="auth-container">
-    <div class="auth-card">
-      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-      <h2>Logg inn</h2><p>Velkommen tilbake!</p>
-      <div class="auth-error" id="login-error"></div>
-      <div class="auth-success" id="login-success"></div>
-      <div class="form-group"><label>E-post</label><input type="email" id="login-email" placeholder="din@epost.no"></div>
-      <div class="form-group"><label>Passord</label><input type="password" id="login-password" placeholder="••••••••"></div>
-      <button class="auth-btn" id="login-btn" onclick="handleLogin()">Logg inn</button>
-      <div class="auth-switch"><a onclick="showPage('forgot')" style="color:#9ca3af;font-weight:600">Glemt passord?</a></div>
-      <div class="auth-switch">Har du ikke konto? <a onclick="showPage('register')">Registrer deg gratis</a></div>
-    </div>
-  </div>
+  <div class="auth-container"><div class="auth-card">
+    <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+    <h2>Logg inn</h2><p>Velkommen tilbake!</p>
+    <div class="auth-error" id="login-error"></div>
+    <div class="auth-success" id="login-success"></div>
+    <div class="form-group"><label>E-post</label><input type="email" id="login-email" placeholder="din@epost.no"></div>
+    <div class="form-group"><label>Passord</label><input type="password" id="login-password" placeholder="••••••••"></div>
+    <button class="auth-btn" id="login-btn" onclick="handleLogin()">Logg inn</button>
+    <div class="auth-switch"><a onclick="showPage('forgot')" style="color:#9ca3af;font-weight:600">Glemt passord?</a></div>
+    <div class="auth-switch">Har du ikke konto? <a onclick="showPage('register')">Registrer deg gratis</a></div>
+  </div></div>
 </div>
 
 <!-- REGISTER -->
 <div id="page-register" class="page">
-  <div class="auth-container">
-    <div class="auth-card">
-      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-      <h2>Opprett konto</h2><p>Gratis – ingen kredittkort nødvendig</p>
-      <div class="auth-error" id="register-error"></div>
-      <div class="form-group"><label>E-post</label><input type="email" id="register-email" placeholder="din@epost.no"></div>
-      <div class="form-group"><label>Passord</label><input type="password" id="register-password" placeholder="Minst 6 tegn"></div>
-      <button class="auth-btn" id="register-btn" onclick="handleRegister()">Opprett konto og start 🚀</button>
-      <div class="auth-switch">Har du allerede konto? <a onclick="showPage('login')">Logg inn</a></div>
-    </div>
-  </div>
+  <div class="auth-container"><div class="auth-card">
+    <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+    <h2>Opprett konto</h2><p>Gratis – ingen kredittkort nødvendig</p>
+    <div class="auth-error" id="register-error"></div>
+    <div class="form-group"><label>E-post</label><input type="email" id="register-email" placeholder="din@epost.no"></div>
+    <div class="form-group"><label>Passord</label><input type="password" id="register-password" placeholder="Minst 6 tegn"></div>
+    <button class="auth-btn" id="register-btn" onclick="handleRegister()">Opprett konto og start 🚀</button>
+    <div class="auth-switch">Har du allerede konto? <a onclick="showPage('login')">Logg inn</a></div>
+  </div></div>
 </div>
 
 <!-- GLEMT PASSORD -->
 <div id="page-forgot" class="page">
-  <div class="auth-container">
-    <div class="auth-card">
-      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-      <h2>Glemt passord?</h2><p>Skriv inn e-postadressen din så sender vi deg en lenke.</p>
-      <div class="auth-error" id="forgot-error"></div>
-      <div class="auth-success" id="forgot-success"></div>
-      <div class="form-group"><label>E-post</label><input type="email" id="forgot-email" placeholder="din@epost.no"></div>
-      <button class="auth-btn" id="forgot-btn" onclick="handleForgot()">Send tilbakestillingslenke</button>
-      <div class="auth-switch"><a onclick="showPage('login')">← Tilbake til innlogging</a></div>
-    </div>
-  </div>
+  <div class="auth-container"><div class="auth-card">
+    <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+    <h2>Glemt passord?</h2><p>Skriv inn e-postadressen din så sender vi deg en lenke.</p>
+    <div class="auth-error" id="forgot-error"></div>
+    <div class="auth-success" id="forgot-success"></div>
+    <div class="form-group"><label>E-post</label><input type="email" id="forgot-email" placeholder="din@epost.no"></div>
+    <button class="auth-btn" id="forgot-btn" onclick="handleForgot()">Send tilbakestillingslenke</button>
+    <div class="auth-switch"><a onclick="showPage('login')">← Tilbake til innlogging</a></div>
+  </div></div>
 </div>
 
 <!-- TILBAKESTILL PASSORD -->
 <div id="page-reset" class="page">
-  <div class="auth-container">
-    <div class="auth-card">
-      <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
-      <h2>Nytt passord</h2><p>Skriv inn ditt nye passord.</p>
-      <div class="auth-error" id="reset-error"></div>
-      <div class="auth-success" id="reset-success"></div>
-      <div class="form-group"><label>Nytt passord</label><input type="password" id="reset-password" placeholder="Minst 6 tegn"></div>
-      <div class="form-group"><label>Bekreft passord</label><input type="password" id="reset-password2" placeholder="Gjenta passordet"></div>
-      <button class="auth-btn" id="reset-btn" onclick="handleReset()">Lagre nytt passord</button>
-    </div>
-  </div>
+  <div class="auth-container"><div class="auth-card">
+    <div class="logo" style="margin-bottom:24px;font-size:28px">Lese<span>lab</span></div>
+    <h2>Nytt passord</h2><p>Skriv inn ditt nye passord.</p>
+    <div class="auth-error" id="reset-error"></div>
+    <div class="auth-success" id="reset-success"></div>
+    <div class="form-group"><label>Nytt passord</label><input type="password" id="reset-password" placeholder="Minst 6 tegn"></div>
+    <div class="form-group"><label>Bekreft passord</label><input type="password" id="reset-password2" placeholder="Gjenta passordet"></div>
+    <button class="auth-btn" id="reset-btn" onclick="handleReset()">Lagre nytt passord</button>
+  </div></div>
 </div>
 
 <!-- VELKOMSTSIDE -->
 <div id="page-welcome" class="page">
   <div class="welcome-container">
-    <div class="welcome-hero">
-      <div style="font-size:64px;margin-bottom:16px">🎉</div>
-      <h1>Velkommen til Leselab!</h1>
-      <p>Vi er glade for at du er med. Her er alt du trenger å vite for å komme i gang.</p>
-    </div>
+    <div class="welcome-hero"><div style="font-size:64px;margin-bottom:16px">🎉</div><h1>Velkommen til Leselab!</h1><p>Vi er glade for at du er med. Her er alt du trenger å vite for å komme i gang.</p></div>
     <div class="info-cards">
-      <div class="info-card">
-        <div class="ic-icon">📱</div>
-        <h3>Fungerer på / med</h3>
-        <ul>
-          <li>Telefon og nettbrett</li>
-          <li>PC og Mac (med innebygd mikrofon)</li>
-          <li>AirPods og trådløse øreplugger</li>
-          <li class="no">PC med ekstern skjerm uten mikrofon – bruk øreplugger</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <div class="ic-icon">🌐</div>
-        <h3>Nettlesere</h3>
-        <ul>
-          <li>Chrome (anbefalt)</li>
-          <li>Edge</li>
-          <li>Safari (iPhone/iPad)</li>
-          <li class="no">Firefox (talegjenkjenning virker ikke)</li>
-        </ul>
-      </div>
-      <div class="info-card">
-        <div class="ic-icon">🌱</div>
-        <h3>Øvingsmodus</h3>
-        <p>Barnet leser setning for setning i sitt eget tempo. Riktige setninger markeres med en glad pling! Prøv om igjen ved behov.</p>
-      </div>
-      <div class="info-card">
-        <div class="ic-icon">⏱</div>
-        <h3>Tidsbasert</h3>
-        <p>Barnet leser så mange setninger som mulig på tid. Perfekt for å teste lesehastighet!</p>
-      </div>
+      <div class="info-card"><div class="ic-icon">📱</div><h3>Fungerer på / med</h3><ul><li>Telefon og nettbrett</li><li>PC og Mac (med innebygd mikrofon)</li><li>AirPods og trådløse øreplugger</li><li class="no">PC med ekstern skjerm uten mikrofon</li></ul></div>
+      <div class="info-card"><div class="ic-icon">🌐</div><h3>Nettlesere</h3><ul><li>Chrome (anbefalt)</li><li>Edge</li><li>Safari (iPhone/iPad)</li><li class="no">Firefox (talegjenkjenning virker ikke)</li></ul></div>
+      <div class="info-card"><div class="ic-icon">🌱</div><h3>Øvingsmodus</h3><p>Barnet leser hvert ord høyt. Riktig = grønt og pling! Etter 3 forsøk går man videre, og kan øve på vanskelige ord etterpå.</p></div>
+      <div class="info-card"><div class="ic-icon">⏱</div><h3>Tidsbasert</h3><p>Barnet leser så mange setninger som mulig på tid. Perfekt for å teste lesehastighet!</p></div>
     </div>
     <div class="welcome-steps">
       <h2 style="font-size:24px;font-weight:900;margin-bottom:24px">Kom i gang på 3 steg</h2>
       <div class="welcome-step"><div class="ws-num">1</div><div class="ws-content"><h3>Opprett barneprofil</h3><p>Legg til barnets navn, alder og velg en morsom avatar.</p></div></div>
-      <div class="welcome-step"><div class="ws-num">2</div><div class="ws-content"><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde med telefonen.</p></div></div>
-      <div class="welcome-step"><div class="ws-num">3</div><div class="ws-content"><h3>Start leseøkten</h3><p>Barnet leser setning for setning høyt. Riktige setninger lyser grønt med en pling!</p></div></div>
+      <div class="welcome-step"><div class="ws-num">2</div><div class="ws-content"><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller bruk eksempelteksten.</p></div></div>
+      <div class="welcome-step"><div class="ws-num">3</div><div class="ws-content"><h3>Start leseøkten</h3><p>Barnet leser hvert ord høyt. Riktige ord lyser grønt med en pling!</p></div></div>
       <div class="welcome-step"><div class="ws-num">⭐</div><div class="ws-content"><h3>Belønninger</h3><p>Barnet tjener stjerner og klatrer i nivåer. Legg inn egne belønninger under ⚙️ Innstillinger!</p></div></div>
     </div>
-    <div class="welcome-cta">
-      <h2>Klar til å starte? 🚀</h2>
-      <p>Opprett barnets profil og gjennomfør din første leseøkt på under 2 minutter.</p>
-      <button onclick="showPage('app')" style="background:#fff;color:#4f46e5;padding:16px 36px;border-radius:50px;font-size:18px;font-weight:900;border:none;cursor:pointer;">Opprett barneprofil →</button>
-    </div>
+    <div class="welcome-cta"><h2>Klar til å starte? 🚀</h2><p>Opprett barnets profil og gjennomfør din første leseøkt på under 2 minutter.</p><button onclick="showPage('app')" style="background:#fff;color:#4f46e5;padding:16px 36px;border-radius:50px;font-size:18px;font-weight:900;border:none;cursor:pointer;">Opprett barneprofil →</button></div>
   </div>
 </div>
 
@@ -695,14 +571,14 @@
       <button class="app-tab" onclick="showTab('tab-settings')">⚙️ Innstillinger</button>
     </div>
 
+    <!-- PROFILER -->
     <div id="tab-profiles" class="tab-content active">
       <div id="profiles-grid" class="profiles-grid"></div>
       <div id="add-profile-form" style="display:none;background:#f9fafb;border-radius:16px;padding:24px;margin-top:16px">
         <h3 style="margin-bottom:16px;font-size:18px">Legg til barneprofil</h3>
         <div class="form-group"><label>Barnets navn</label><input type="text" id="child-name" placeholder="F.eks. Emma"></div>
         <div class="form-group"><label>Alder</label><input type="number" id="child-age" placeholder="F.eks. 9" min="4" max="18"></div>
-        <div class="form-group">
-          <label>Velg avatar</label>
+        <div class="form-group"><label>Velg avatar</label>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
             <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid #4f46e5">🦁</span>
             <span class="avatar-opt" onclick="selectAvatar(this)" style="font-size:32px;cursor:pointer;padding:8px;border-radius:10px;border:2px solid transparent">🐼</span>
@@ -719,16 +595,29 @@
       </div>
     </div>
 
+    <!-- LES NÅ -->
     <div id="tab-reading" class="tab-content">
+
+      <!-- SETUP -->
       <div id="reading-setup">
         <div id="selected-profile-banner" style="display:none;background:#eef2ff;border-radius:14px;padding:14px 20px;margin-bottom:20px;align-items:center;gap:12px">
           <span id="banner-avatar" style="font-size:28px"></span>
           <div><div style="font-weight:800" id="banner-name"></div><div style="font-size:13px;color:#6b7280" id="banner-level"></div></div>
         </div>
         <div class="exercise-options">
-          <button class="exercise-btn active" onclick="setExercise('practice',this)"><div class="etitle">🌱 Øvingsmodus</div><div class="edesc">Les setning for setning i eget tempo</div></button>
+          <button class="exercise-btn active" onclick="setExercise('practice',this)"><div class="etitle">🌱 Øvingsmodus</div><div class="edesc">Ord for ord – med stemmestøtte</div></button>
           <button class="exercise-btn" onclick="setExercise('timed',this)"><div class="etitle">⏱ Tidsbasert</div><div class="edesc">Les mest mulig på tid</div></button>
         </div>
+
+        <!-- Valg av input-metode for øvingsmodus -->
+        <div id="practice-input-method" style="margin-bottom:20px">
+          <label class="form-label">Hvordan skal ord godkjennes?</label>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="exercise-btn active" id="method-voice-btn" onclick="setInputMethod('voice',this)" style="flex:1;min-width:120px"><div class="etitle">🎤 Stemme</div><div class="edesc">Automatisk talegjenkjenning</div></button>
+            <button class="exercise-btn" id="method-manual-btn" onclick="setInputMethod('manual',this)" style="flex:1;min-width:120px"><div class="etitle">👆 Manuell</div><div class="edesc">Forelder trykker ✅ / ❌</div></button>
+          </div>
+        </div>
+
         <div id="time-setting" style="display:none;margin-bottom:20px">
           <label class="form-label">Tid: <span id="timelabel">60</span> sekunder</label>
           <input type="range" min="15" max="120" step="15" value="60" oninput="setTime(this.value)">
@@ -747,28 +636,48 @@
           <label class="form-label">📚 Lagrede tekster</label>
           <div id="saved-texts-list"></div>
         </div>
-        <div class="upload-box">
-          <div style="font-weight:700;margin-bottom:8px">📷 Eller skann en side fra boken</div>
-          <div class="btn-row">
-            <button class="btn btn-indigo" onclick="document.getElementById('imgInput').click()">Velg bilde / Ta foto</button>
-            <button class="btn btn-green" id="ocrBtn" style="display:none" onclick="runOCR()">Trekk ut tekst</button>
-            <button class="btn btn-red" id="ocrAbortBtn" style="display:none" onclick="abortOCR()">Avbryt</button>
-          </div>
-          <input type="file" id="imgInput" accept="image/*" capture="environment" style="display:none" onchange="handleImage(this)">
-          <img id="img-preview" style="max-height:150px;border-radius:8px;margin-top:12px;display:none">
-        </div>
         <button class="btn btn-indigo btn-large" onclick="startSession()" id="start-btn" disabled>Start øvelse 🚀</button>
       </div>
 
-      <div id="reading-active" style="display:none">
+      <!-- AKTIV ØKT – ORD FOR ORD (øvingsmodus) -->
+      <div id="reading-active-practice" style="display:none">
         <div class="header-row">
-          <h2 style="font-size:20px;font-weight:900" id="reading-title">Les teksten</h2>
+          <h2 style="font-size:20px;font-weight:900">🌱 Øvingsmodus</h2>
+          <button class="btn btn-gray" onclick="endSession()">Avslutt</button>
+        </div>
+        <div class="info-box" id="practice-info">🎤 Les ordet høyt!</div>
+        <div class="word-display-area">
+          <div class="big-current-word" id="big-current-word">–</div>
+          <div class="attempt-dots" id="attempt-dots">
+            <div class="attempt-dot"></div>
+            <div class="attempt-dot"></div>
+            <div class="attempt-dot"></div>
+          </div>
+          <div id="manual-controls" style="display:none">
+            <div class="manual-btns">
+              <button class="manual-btn manual-btn-correct" onclick="manualCorrect()">✅</button>
+              <button class="manual-btn manual-btn-wrong" onclick="manualWrong()">❌</button>
+            </div>
+          </div>
+          <div class="word-flow" id="word-flow"></div>
+        </div>
+        <div class="stats-row">
+          <span style="color:#059669;font-weight:700" id="stat-correct-words">✅ Riktige: 0</span>
+          <span style="color:#ef4444;font-weight:700" id="stat-wrong-words">⚠️ Hoppet over: 0</span>
+          <span style="color:#6b7280" id="stat-words-left">Gjenstår: 0</span>
+        </div>
+      </div>
+
+      <!-- AKTIV ØKT – SETNINGSBASERT (tidsbasert) -->
+      <div id="reading-active-timed" style="display:none">
+        <div class="header-row">
+          <h2 style="font-size:20px;font-weight:900">⏱ Tidsbasert</h2>
           <div style="display:flex;gap:12px;align-items:center">
-            <div class="timer" id="timer-display" style="display:none"></div>
+            <div class="timer" id="timer-display"></div>
             <button class="btn btn-gray" onclick="endSession()">Avslutt</button>
           </div>
         </div>
-        <div class="info-box" id="reading-info"></div>
+        <div class="info-box">🎤 Les setningen høyt – appen lytter!</div>
         <div class="sentence-progress" id="sentence-progress"></div>
         <div class="sentence-display" id="sentence-display"></div>
         <div class="stats-row">
@@ -777,6 +686,32 @@
         </div>
       </div>
 
+      <!-- ØVEMODUS FOR FEILORD -->
+      <div id="reading-drill" style="display:none">
+        <div class="header-row">
+          <h2 style="font-size:20px;font-weight:900">🔁 Øv på vanskelige ord</h2>
+          <button class="btn btn-gray" onclick="skipDrill()">Hopp over</button>
+        </div>
+        <div class="info-box">Les hvert ord høyt – prøv så mange ganger du vil! 💪</div>
+        <div class="drill-overlay">
+          <div class="drill-progress" id="drill-progress"></div>
+          <div class="drill-word" id="drill-word">–</div>
+          <div class="attempt-dots" id="drill-attempt-dots">
+            <div class="attempt-dot"></div><div class="attempt-dot"></div><div class="attempt-dot"></div>
+          </div>
+          <div id="drill-manual-controls" style="display:none">
+            <div class="manual-btns">
+              <button class="manual-btn manual-btn-correct" onclick="drillManualCorrect()">✅</button>
+              <button class="manual-btn manual-btn-wrong" onclick="drillManualWrong()">❌</button>
+            </div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <span style="color:#059669;font-weight:700" id="drill-stat">Ord igjen: 0</span>
+        </div>
+      </div>
+
+      <!-- RESULTAT -->
       <div id="reading-result" style="display:none">
         <div id="confetti-container" class="confetti-container"></div>
         <div class="stars-earned" id="stars-earned"></div>
@@ -787,6 +722,12 @@
           <div class="range-labels"><span>0</span><span style="color:#4f46e5">Snitt (100 ord/min)</span><span>150+</span></div>
           <p id="wpm-feedback" style="margin-top:12px;font-weight:600"></p>
         </div>
+        <div id="skipped-words-section" style="display:none;margin-bottom:16px">
+          <div class="card" style="background:#fef3c7;border-color:#f59e0b">
+            <div style="font-weight:800;font-size:16px;margin-bottom:8px">⚠️ Ord som var vanskelige:</div>
+            <div id="skipped-words-list" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+          </div>
+        </div>
         <div style="text-align:center;padding:20px 0">
           <div id="result-avatar" style="font-size:72px;margin-bottom:8px"></div>
           <h2 style="font-size:28px;font-weight:900;color:#4f46e5;margin-bottom:8px" id="result-title"></h2>
@@ -795,17 +736,18 @@
         <div class="btn-row">
           <button class="btn btn-indigo btn-large" onclick="resetSession()">📚 Les ny tekst</button>
           <button class="btn btn-green btn-large" onclick="tryAgain()">🔁 Prøv igjen</button>
+          <button class="btn btn-yellow btn-large" id="drill-btn" onclick="startDrill()" style="display:none">💪 Øv på vanskelige ord</button>
           <button class="btn btn-gray btn-large" onclick="showTab('tab-progress')">📊 Se fremgang</button>
         </div>
       </div>
     </div>
 
+    <!-- FREMGANG -->
     <div id="tab-progress" class="tab-content">
-      <div id="progress-content">
-        <p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil for å se fremgang.</p>
-      </div>
+      <div id="progress-content"><p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil for å se fremgang.</p></div>
     </div>
 
+    <!-- INNSTILLINGER -->
     <div id="tab-settings" class="tab-content">
       <div class="settings-section">
         <h3>🏆 Egne belønninger</h3>
@@ -866,6 +808,18 @@ function playPling() {
     o.start(); o.stop(ctx.currentTime + 0.3);
   } catch(e) {}
 }
+function playWrong() {
+  try {
+    const ctx = getAudio(), o = ctx.createOscillator(), g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sawtooth';
+    o.frequency.setValueAtTime(300, ctx.currentTime);
+    o.frequency.exponentialRampToValueAtTime(150, ctx.currentTime + 0.2);
+    g.gain.setValueAtTime(0.25, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+    o.start(); o.stop(ctx.currentTime + 0.25);
+  } catch(e) {}
+}
 function playFinish() {
   try {
     const ctx = getAudio();
@@ -903,13 +857,24 @@ function launchConfetti() {
 
 // ── STATE ──────────────────────────────────────────────
 const appState = {
-  exercise: 'practice', sentences: [], sentenceStates: [], currentSentenceIdx: 0,
+  exercise: 'practice',
+  inputMethod: 'voice',
+  // Ord-for-ord (øvingsmodus)
+  words: [], wordStates: [], currentWordIdx: 0, wordAttempts: [],
+  // Setning (tidsbasert)
+  sentences: [], sentenceStates: [], currentSentenceIdx: 0,
+  // Felles
   timeLimit: 60, timeLeft: 60, running: false, timerInterval: null,
-  recognition: null, imageFile: null, selectedProfile: null,
-  selectedAvatar: '🦁', profiles: [], warningPlayed: false, startTime: null, lastText: ''
+  recognition: null, selectedProfile: null,
+  selectedAvatar: '🦁', profiles: [], warningPlayed: false, startTime: null, lastText: '',
+  // Øvemodus
+  drillWords: [], drillIdx: 0, drillAttempts: 0
 };
 
 // ── HELPERS ────────────────────────────────────────────
+function tokenize(text) {
+  return text.match(/\S+/g) || [];
+}
 function splitSentences(text) {
   const parts = text.match(/[^.!?]+[.!?]+/g);
   return parts ? parts.map(s => s.trim()).filter(s => s.length > 2) : [text.trim()];
@@ -920,13 +885,17 @@ function levenshtein(a, b) {
   for (let i=1;i<=m;i++) for (let j=1;j<=n;j++) dp[i][j]=a[i-1]===b[j-1]?dp[i-1][j-1]:1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
   return dp[m][n];
 }
+function wordMatch(spoken, expected) {
+  const s = spoken.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();
+  const e = expected.toLowerCase().replace(/[.,!?;:»«""'']/g,'').trim();
+  return s === e || s.includes(e) || e.includes(s) || levenshtein(s, e) <= Math.floor(e.length / 4);
+}
 function sentenceMatch(spoken, expected) {
-  const sp = spoken.toLowerCase().replace(/[.,!?;:]/g,'').trim();
-  const ex = expected.toLowerCase().replace(/[.,!?;:]/g,'').trim();
-  const spW = sp.split(/\s+/), exW = ex.split(/\s+/);
+  const sp = spoken.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);
+  const ex = expected.toLowerCase().replace(/[.,!?;:]/g,'').trim().split(/\s+/);
   let matched = 0;
-  for (const sw of spW) for (const ew of exW) if (sw===ew||levenshtein(sw,ew)<=Math.floor(ew.length/4)){matched++;break;}
-  return matched/exW.length >= 0.7;
+  for (const sw of sp) for (const ew of ex) if (sw===ew||levenshtein(sw,ew)<=Math.floor(ew.length/4)){matched++;break;}
+  return matched/ex.length >= 0.7;
 }
 
 // ── NAVIGATION ─────────────────────────────────────────
@@ -936,36 +905,33 @@ function showPage(page) {
   if (el) el.classList.add('active');
   window.scrollTo(0,0);
 }
-function goHome() {
-  showPage('home');
-}
+function goHome() { showPage('home'); }
 function scrollPricing() {
   showPage('home');
   setTimeout(()=>{ const el=document.getElementById('pricing-section'); if(el) el.scrollIntoView({behavior:'smooth'}); },100);
 }
 function homeCTA() {
-  sb.auth.getSession().then(({data:{session}}) => showPage(session?'app':'register')).catch(()=>showPage('register'));
+  sb.auth.getSession().then(({data:{session}})=>showPage(session?'app':'register')).catch(()=>showPage('register'));
 }
 function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
-
 function submitContact() {
-  const name = document.getElementById('contact-name').value.trim();
-  const email = document.getElementById('contact-email').value.trim();
-  const msg = document.getElementById('contact-message').value.trim();
-  if (!name || !email || !msg) { alert('Fyll inn alle felt.'); return; }
-  document.getElementById('contact-success').style.display = 'block';
-  document.getElementById('contact-name').value = '';
-  document.getElementById('contact-email').value = '';
-  document.getElementById('contact-message').value = '';
+  const name=document.getElementById('contact-name').value.trim();
+  const email=document.getElementById('contact-email').value.trim();
+  const msg=document.getElementById('contact-message').value.trim();
+  if(!name||!email||!msg){alert('Fyll inn alle felt.');return;}
+  document.getElementById('contact-success').style.display='block';
+  document.getElementById('contact-name').value='';
+  document.getElementById('contact-email').value='';
+  document.getElementById('contact-message').value='';
 }
 
 // ── AUTH ───────────────────────────────────────────────
 function showAuthMsg(id, msg, type) {
-  const el = document.getElementById(id); if (!el) return;
-  el.textContent = msg; el.style.display = 'block';
-  el.style.background = type==='success'?'#d1fae5':'#fee2e2';
-  el.style.color = type==='success'?'#065f46':'#991b1b';
-  setTimeout(()=>{ el.style.display='none'; },6000);
+  const el=document.getElementById(id); if(!el) return;
+  el.textContent=msg; el.style.display='block';
+  el.style.background=type==='success'?'#d1fae5':'#fee2e2';
+  el.style.color=type==='success'?'#065f46':'#991b1b';
+  setTimeout(()=>{el.style.display='none';},6000);
 }
 const norskFeil = {
   'Invalid login credentials':'Feil e-post eller passord. Prøv igjen.',
@@ -1148,7 +1114,7 @@ function loadExampleText(){
   document.getElementById('start-btn').disabled=false;
 }
 
-// ── TABS ───────────────────────────────────────────────
+// ── TABS & EXERCISE SETUP ──────────────────────────────
 function showTab(tabId){
   document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   document.querySelectorAll('.app-tab').forEach(t=>t.classList.remove('active'));
@@ -1158,85 +1124,169 @@ function showTab(tabId){
   if(tabId==='tab-progress') loadProgress();
   if(tabId==='tab-settings') renderRewardsProfileSelect();
 }
-
-// ── EXERCISE ───────────────────────────────────────────
-function setExercise(val,btn){
+function setExercise(val, btn){
   appState.exercise=val;
   document.querySelectorAll('.exercise-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById('time-setting').style.display=val==='timed'?'block':'none';
+  document.getElementById('practice-input-method').style.display=val==='practice'?'block':'none';
+}
+function setInputMethod(method, btn){
+  appState.inputMethod=method;
+  document.getElementById('method-voice-btn').classList.remove('active');
+  document.getElementById('method-manual-btn').classList.remove('active');
+  btn.classList.add('active');
 }
 function setTime(val){appState.timeLimit=+val;document.getElementById('timelabel').textContent=val;}
 document.getElementById('textInput').addEventListener('input',function(e){
   document.getElementById('start-btn').disabled=!e.target.value.trim();
 });
 
-// ── IMAGE / OCR ────────────────────────────────────────
-function handleImage(input){
-  const file=input.files[0]; if(!file) return;
-  appState.imageFile=file;
-  const prev=document.getElementById('img-preview');
-  prev.src=URL.createObjectURL(file); prev.style.display='block';
-  document.getElementById('ocrBtn').style.display='inline-block';
-}
-let ocrController=null;
-function abortOCR(){
-  if(ocrController) ocrController.abort();
-  document.getElementById('ocrBtn').textContent='Trekk ut tekst';
-  document.getElementById('ocrBtn').disabled=false;
-  document.getElementById('ocrAbortBtn').style.display='none';
-  ocrController=null;
-}
-async function runOCR(){
-  const btn=document.getElementById('ocrBtn'), abortBtn=document.getElementById('ocrAbortBtn');
-  btn.textContent='Leser tekst...'; btn.disabled=true; abortBtn.style.display='inline-block';
-  ocrController=new AbortController();
-  const timeout=setTimeout(()=>{ if(ocrController) ocrController.abort(); },15000);
-  try {
-    const base64=await new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result.split(',')[1]); r.onerror=rej; r.readAsDataURL(appState.imageFile); });
-    const resp=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST', headers:{'Content-Type':'application/json'}, signal:ocrController.signal,
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:[
-        {type:'image',source:{type:'base64',media_type:appState.imageFile.type,data:base64}},
-        {type:'text',text:'Trekk ut all tekst fra dette bildet. Returner kun teksten, ingen forklaringer.'}
-      ]}]})
-    });
-    clearTimeout(timeout);
-    const data=await resp.json();
-    const ta=document.getElementById('textInput');
-    ta.value=data.content?.find(b=>b.type==='text')?.text||'';
-    document.getElementById('start-btn').disabled=!ta.value.trim();
-  } catch(e) {
-    clearTimeout(timeout);
-    if(e.name!=='AbortError') alert('⚠️ Kunne ikke lese teksten. Prøv igjen eller lim inn tekst manuelt.');
-  }
-  btn.textContent='Trekk ut tekst'; btn.disabled=false; abortBtn.style.display='none'; ocrController=null;
-}
-
-// ── SESSION ────────────────────────────────────────────
+// ── SESSION START ──────────────────────────────────────
 function startSession(){
   try{getAudio().resume();}catch(e){}
   const text=document.getElementById('textInput').value.trim();
   appState.lastText=text;
-  const sentences=splitSentences(text); if(!sentences.length) return;
-  appState.sentences=sentences;
-  appState.sentenceStates=new Array(sentences.length).fill('pending');
-  appState.currentSentenceIdx=0;
-  appState.timeLeft=appState.timeLimit;
-  appState.running=true; appState.warningPlayed=false; appState.startTime=Date.now();
+  appState.running=true; appState.startTime=Date.now();
+
   document.getElementById('reading-setup').style.display='none';
-  document.getElementById('reading-active').style.display='block';
+  document.getElementById('reading-active-practice').style.display='none';
+  document.getElementById('reading-active-timed').style.display='none';
+  document.getElementById('reading-drill').style.display='none';
   document.getElementById('reading-result').style.display='none';
-  document.getElementById('reading-title').textContent=appState.exercise==='practice'?'🌱 Øvingsmodus':'⏱ Tidsbasert';
-  document.getElementById('reading-info').textContent='🎤 Les setningen høyt – appen lytter!';
-  renderSentences();
-  if(appState.exercise==='timed'){
-    const td=document.getElementById('timer-display'); td.style.display='block'; td.textContent='⏱ '+appState.timeLeft+'s';
-    startTimer();
+
+  if(appState.exercise==='practice'){
+    const words=tokenize(text);
+    appState.words=words;
+    appState.wordStates=new Array(words.length).fill('pending');
+    appState.wordAttempts=new Array(words.length).fill(0);
+    appState.currentWordIdx=0;
+    document.getElementById('reading-active-practice').style.display='block';
+    document.getElementById('manual-controls').style.display=appState.inputMethod==='manual'?'block':'none';
+    document.getElementById('practice-info').textContent=appState.inputMethod==='voice'?'🎤 Les ordet høyt!':'👆 Les ordet – forelder trykker ✅ eller ❌';
+    renderWords();
+    if(appState.inputMethod==='voice') startWordRecognition();
+  } else {
+    const sentences=splitSentences(text);
+    appState.sentences=sentences;
+    appState.sentenceStates=new Array(sentences.length).fill('pending');
+    appState.currentSentenceIdx=0;
+    appState.timeLeft=appState.timeLimit;
+    appState.warningPlayed=false;
+    document.getElementById('reading-active-timed').style.display='block';
+    const td=document.getElementById('timer-display'); td.textContent='⏱ '+appState.timeLeft+'s';
+    renderSentences(); startTimer(); startSentenceRecognition();
   }
-  startRecognition();
 }
 
+// ── ORD-FOR-ORD RENDERING ──────────────────────────────
+function renderWords(){
+  const idx=appState.currentWordIdx;
+  const words=appState.words;
+  if(idx<words.length){
+    document.getElementById('big-current-word').textContent=words[idx].replace(/[.,!?;:»«""'']/g,'');
+  } else {
+    document.getElementById('big-current-word').textContent='🎉';
+  }
+  // attempt dots
+  const attempts=appState.wordAttempts[idx]||0;
+  const dots=document.getElementById('attempt-dots');
+  if(dots) dots.innerHTML=[0,1,2].map(i=>`<div class="attempt-dot ${i<attempts?'used':''}"></div>`).join('');
+
+  // word flow
+  const flow=document.getElementById('word-flow');
+  if(flow) flow.innerHTML=words.map((w,i)=>{
+    const s=appState.wordStates[i];
+    const cls=i===idx?'current':s==='correct'?'correct':s==='wrong'?'wrong':s==='skipped'?'skipped':'pending';
+    return `<span class="word-chip ${cls}">${w}</span>`;
+  }).join('');
+
+  // stats
+  const correct=appState.wordStates.filter(s=>s==='correct').length;
+  const skipped=appState.wordStates.filter(s=>s==='skipped').length;
+  document.getElementById('stat-correct-words').textContent=`✅ Riktige: ${correct}`;
+  document.getElementById('stat-wrong-words').textContent=`⚠️ Hoppet over: ${skipped}`;
+  document.getElementById('stat-words-left').textContent=`Gjenstår: ${Math.max(0,words.length-idx)}`;
+}
+
+function advanceWord(state){
+  const idx=appState.currentWordIdx;
+  appState.wordStates[idx]=state;
+  appState.currentWordIdx++;
+  if(state==='correct') playPling();
+  renderWords();
+  if(appState.currentWordIdx>=appState.words.length){
+    setTimeout(endSession,600);
+  }
+}
+
+function manualCorrect(){ if(appState.running&&appState.exercise==='practice') advanceWord('correct'); }
+function manualWrong(){
+  if(!appState.running||appState.exercise!=='practice') return;
+  const idx=appState.currentWordIdx;
+  appState.wordAttempts[idx]=(appState.wordAttempts[idx]||0)+1;
+  playWrong();
+  if(appState.wordAttempts[idx]>=3){
+    advanceWord('skipped');
+  } else {
+    renderWords();
+  }
+}
+
+// ── WORD RECOGNITION ───────────────────────────────────
+function startWordRecognition(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){
+    alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til manuell modus eller bruk Chrome/Edge.');
+    document.getElementById('manual-controls').style.display='block';
+    appState.inputMethod='manual';
+    return;
+  }
+  const rec=new SR(); rec.lang='nb-NO'; rec.continuous=true; rec.interimResults=false;
+  appState.recognition=rec;
+  rec.onresult=function(e){
+    if(!appState.running||appState.exercise!=='practice') return;
+    const result=e.results[e.results.length-1]; if(!result.isFinal) return;
+    const spoken=result[0].transcript.trim();
+    const idx=appState.currentWordIdx; if(idx>=appState.words.length) return;
+    const expected=appState.words[idx];
+    if(wordMatch(spoken, expected)){
+      appState.wordAttempts[idx]=0;
+      advanceWord('correct');
+    } else {
+      appState.wordAttempts[idx]=(appState.wordAttempts[idx]||0)+1;
+      playWrong();
+      if(appState.wordAttempts[idx]>=3){
+        advanceWord('skipped');
+      } else {
+        renderWords();
+      }
+    }
+  };
+  rec.onerror=function(e){ if(e.error==='no-speech'){try{rec.stop();setTimeout(startWordRecognition,300);}catch(err){}} };
+  rec.onend=function(){ if(appState.running&&appState.exercise==='practice'){try{rec.start();}catch(e){}} };
+  try{rec.start();}catch(e){}
+}
+
+// ── SETNING RECOGNITION (tidsbasert) ──────────────────
+function startSentenceRecognition(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til Chrome eller Edge.');return;}
+  const rec=new SR(); rec.lang='nb-NO'; rec.continuous=true; rec.interimResults=false;
+  appState.recognition=rec;
+  rec.onresult=function(e){
+    if(!appState.running||appState.exercise!=='timed') return;
+    const result=e.results[e.results.length-1]; if(!result.isFinal) return;
+    const spoken=result[0].transcript.trim();
+    const idx=appState.currentSentenceIdx; if(idx>=appState.sentences.length) return;
+    if(sentenceMatch(spoken,appState.sentences[idx])) advanceSentence();
+  };
+  rec.onerror=function(e){ if(e.error==='no-speech'){try{rec.stop();setTimeout(startSentenceRecognition,300);}catch(err){}} };
+  rec.onend=function(){ if(appState.running&&appState.exercise==='timed'){try{rec.start();}catch(e){}} };
+  try{rec.start();}catch(e){}
+}
+
+// ── SETNING RENDERING (tidsbasert) ────────────────────
 function renderSentences(){
   const idx=appState.currentSentenceIdx, sentences=appState.sentences;
   document.getElementById('sentence-progress').innerHTML=sentences.map((_,i)=>`<div class="sent-dot ${i<idx?'done':i===idx?'active':''}"></div>`).join('');
@@ -1248,11 +1298,9 @@ function renderSentences(){
   document.getElementById('sentence-display').innerHTML=html;
   const active=document.querySelector('.sentence-active');
   if(active) active.scrollIntoView({behavior:'smooth',block:'center'});
-  const doneCount=appState.sentenceStates.filter(s=>s==='done').length;
-  document.getElementById('stat-sentences').textContent='✅ Setninger: '+doneCount;
+  document.getElementById('stat-sentences').textContent='✅ Setninger: '+appState.sentenceStates.filter(s=>s==='done').length;
   document.getElementById('stat-left').textContent='Gjenstår: '+(sentences.length-idx);
 }
-
 function advanceSentence(){
   appState.sentenceStates[appState.currentSentenceIdx]='done';
   appState.currentSentenceIdx++;
@@ -1273,29 +1321,60 @@ function startTimer(){
   },1000);
 }
 
+// ── END SESSION ────────────────────────────────────────
 async function endSession(){
   appState.running=false; clearInterval(appState.timerInterval);
   if(appState.recognition){try{appState.recognition.stop();}catch(e){} appState.recognition=null;}
-  const doneSentences=appState.sentenceStates.filter(s=>s==='done').length;
-  const totalWords=appState.sentences.slice(0,appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;
+
+  let correctWords=0, totalWords=0, wpm=0, skippedWords=[];
   const elapsedSec=Math.max(1,(Date.now()-appState.startTime)/1000);
-  const wpm=Math.round((totalWords/elapsedSec)*60);
-  const stars=Math.min(5,Math.floor(doneSentences/2)+1);
-  document.getElementById('reading-active').style.display='none';
+
+  if(appState.exercise==='practice'){
+    correctWords=appState.wordStates.filter(s=>s==='correct').length;
+    totalWords=appState.currentWordIdx;
+    wpm=Math.round((correctWords/elapsedSec)*60);
+    skippedWords=appState.words.filter((_,i)=>appState.wordStates[i]==='skipped').map(w=>w.replace(/[.,!?;:»«""'']/g,''));
+  } else {
+    const doneSentences=appState.sentenceStates.filter(s=>s==='done').length;
+    totalWords=appState.sentences.slice(0,appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;
+    correctWords=totalWords;
+    wpm=Math.round((totalWords/elapsedSec)*60);
+  }
+
+  const stars=Math.min(5,Math.max(1,Math.floor(correctWords/5)+1));
+
+  document.getElementById('reading-active-practice').style.display='none';
+  document.getElementById('reading-active-timed').style.display='none';
   document.getElementById('reading-result').style.display='block';
   window.scrollTo(0,0);
+
   document.getElementById('stars-earned').innerHTML=`<div style="font-size:40px">${'⭐'.repeat(stars)}</div><div style="font-size:16px;color:#6b7280;margin-top:4px">${stars} stjerner tjent!</div>`;
   document.getElementById('results-grid').innerHTML=`
-    <div class="result-card" style="background:#d1fae5"><div class="lbl" style="color:#065f46">✅ Setninger lest</div><div class="val" style="color:#065f46">${doneSentences}</div></div>
-    <div class="result-card" style="background:#eef2ff"><div class="lbl" style="color:#4f46e5">📖 Ord lest</div><div class="val" style="color:#4f46e5">${totalWords}</div></div>`;
+    <div class="result-card" style="background:#d1fae5"><div class="lbl" style="color:#065f46">✅ Riktige ord</div><div class="val" style="color:#065f46">${correctWords}</div></div>
+    <div class="result-card" style="background:#eef2ff"><div class="lbl" style="color:#4f46e5">📖 Totalt ord</div><div class="val" style="color:#4f46e5">${totalWords}</div></div>`;
+
   if(appState.exercise==='timed'&&totalWords>0){
     document.getElementById('wpm-section').style.display='block';
     const pct=Math.min(100,(wpm/150)*100);
     document.getElementById('progress-fill').style.width=pct+'%';
     document.getElementById('progress-fill').style.background=wpm>=100?'#059669':wpm>=70?'#f59e0b':'#ef4444';
-    const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet! Fantastisk!','🏆 Imponerende lesehastighet!','🚀 Du er en lesehelt!']:wpm>=70?['🚀 Du blir bedre og bedre! Fortsett!','💪 Bra jobbet – du er på rett vei!','⭐ Solid innsats, fortsett slik!']:['💪 Øving gjør mester! Du klarer det!','🌱 Hver økt gjør deg bedre!','❤️ Bra at du øver – det nytter!'];
+    const msgs=wpm>=100?['🌟 Du leser over gjennomsnittet! Fantastisk!','🏆 Imponerende lesehastighet!']:wpm>=70?['🚀 Du blir bedre og bedre!','💪 Bra jobbet – du er på rett vei!']:['💪 Øving gjør mester!','🌱 Hver økt gjør deg bedre!'];
     document.getElementById('wpm-feedback').textContent=msgs[Math.floor(Math.random()*msgs.length)];
   } else { document.getElementById('wpm-section').style.display='none'; }
+
+  // Vanskelige ord
+  const skippedSection=document.getElementById('skipped-words-section');
+  const drillBtn=document.getElementById('drill-btn');
+  if(skippedWords.length>0){
+    skippedSection.style.display='block';
+    document.getElementById('skipped-words-list').innerHTML=skippedWords.map(w=>`<span style="background:#fee2e2;color:#991b1b;padding:6px 12px;border-radius:8px;font-weight:700;font-size:16px">${w}</span>`).join('');
+    drillBtn.style.display='block';
+    appState.drillWords=skippedWords;
+  } else {
+    skippedSection.style.display='none';
+    drillBtn.style.display='none';
+  }
+
   const avatar=appState.selectedProfile?.avatar||'📖';
   const childName=appState.selectedProfile?.child_name||'';
   const resultMsgs=['Fantastisk jobbet! 🌟','Du er en lesehelt! 🦁','Så flink du er! 🎉','Kjempebra! 🚀'];
@@ -1303,10 +1382,11 @@ async function endSession(){
   document.getElementById('result-title').textContent=resultMsgs[Math.floor(Math.random()*resultMsgs.length)];
   document.getElementById('result-subtitle').textContent=childName?childName+' – du bør være stolt av deg selv!':'Bra innsats!';
   playFinish(); launchConfetti();
+
   if(appState.selectedProfile){
     const {data:{user}}=await sb.auth.getUser();
     if(user){
-      await sb.from('reading_sessions').insert({profile_id:appState.selectedProfile.id,user_id:user.id,exercise_type:appState.exercise,total_words:totalWords,correct_words:totalWords,wrong_words:0,words_per_minute:wpm,duration_seconds:Math.round(elapsedSec),text_used:appState.lastText.substring(0,500)});
+      await sb.from('reading_sessions').insert({profile_id:appState.selectedProfile.id,user_id:user.id,exercise_type:appState.exercise,total_words:totalWords,correct_words:correctWords,wrong_words:skippedWords.length,words_per_minute:wpm,duration_seconds:Math.round(elapsedSec),text_used:appState.lastText.substring(0,500)});
       const newStars=(appState.selectedProfile.stars||0)+stars;
       const newLevel=Math.floor(newStars/10)+1;
       await sb.from('profiles').update({stars:newStars,level:newLevel}).eq('id',appState.selectedProfile.id);
@@ -1318,33 +1398,75 @@ async function endSession(){
 
 function resetSession(){
   document.getElementById('reading-setup').style.display='block';
-  document.getElementById('reading-active').style.display='none';
   document.getElementById('reading-result').style.display='none';
   document.getElementById('textInput').value='';
   document.getElementById('start-btn').disabled=true;
 }
 function tryAgain(){
   document.getElementById('reading-setup').style.display='block';
-  document.getElementById('reading-active').style.display='none';
   document.getElementById('reading-result').style.display='none';
   document.getElementById('textInput').value=appState.lastText;
   document.getElementById('start-btn').disabled=false;
 }
 
-// ── SPEECH ─────────────────────────────────────────────
-function startRecognition(){
+// ── DRILL (øvemodus for feilord) ──────────────────────
+function startDrill(){
+  if(!appState.drillWords.length) return;
+  appState.drillIdx=0; appState.drillAttempts=0;
+  document.getElementById('reading-result').style.display='none';
+  document.getElementById('reading-drill').style.display='block';
+  document.getElementById('drill-manual-controls').style.display=appState.inputMethod==='manual'?'block':'none';
+  appState.running=true;
+  renderDrill();
+  if(appState.inputMethod==='voice') startDrillRecognition();
+}
+function renderDrill(){
+  const idx=appState.drillIdx, words=appState.drillWords;
+  if(idx>=words.length){ endDrill(); return; }
+  document.getElementById('drill-word').textContent=words[idx];
+  document.getElementById('drill-progress').innerHTML=words.map((_,i)=>`<div class="drill-dot ${i<idx?'done':i===idx?'active':''}"></div>`).join('');
+  document.getElementById('drill-stat').textContent=`Ord igjen: ${words.length-idx}`;
+  const dots=document.getElementById('drill-attempt-dots');
+  if(dots) dots.innerHTML=[0,1,2].map(i=>`<div class="attempt-dot ${i<appState.drillAttempts?'used':''}"></div>`).join('');
+}
+function advanceDrill(){
+  appState.drillIdx++; appState.drillAttempts=0;
+  playPling(); renderDrill();
+}
+function drillManualCorrect(){ advanceDrill(); }
+function drillManualWrong(){
+  appState.drillAttempts++; playWrong();
+  if(appState.drillAttempts>=3){ appState.drillIdx++; appState.drillAttempts=0; renderDrill(); }
+  else renderDrill();
+}
+function skipDrill(){ endDrill(); }
+function endDrill(){
+  appState.running=false;
+  if(appState.recognition){try{appState.recognition.stop();}catch(e){} appState.recognition=null;}
+  document.getElementById('reading-drill').style.display='none';
+  // Vis resultat igjen
+  document.getElementById('reading-result').style.display='block';
+  document.getElementById('drill-btn').style.display='none';
+  document.getElementById('skipped-words-section').style.display='none';
+}
+function startDrillRecognition(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til Chrome eller Edge for best opplevelse.');return;}
+  if(!SR){ document.getElementById('drill-manual-controls').style.display='block'; return; }
   const rec=new SR(); rec.lang='nb-NO'; rec.continuous=true; rec.interimResults=false;
   appState.recognition=rec;
   rec.onresult=function(e){
     if(!appState.running) return;
     const result=e.results[e.results.length-1]; if(!result.isFinal) return;
     const spoken=result[0].transcript.trim();
-    const idx=appState.currentSentenceIdx; if(idx>=appState.sentences.length) return;
-    if(sentenceMatch(spoken,appState.sentences[idx])) advanceSentence();
+    const idx=appState.drillIdx; if(idx>=appState.drillWords.length) return;
+    if(wordMatch(spoken,appState.drillWords[idx])){ advanceDrill(); }
+    else {
+      appState.drillAttempts++; playWrong();
+      if(appState.drillAttempts>=3){ appState.drillIdx++; appState.drillAttempts=0; renderDrill(); }
+      else renderDrill();
+    }
   };
-  rec.onerror=function(e){ if(e.error==='no-speech'){try{rec.stop();setTimeout(startRecognition,500);}catch(err){}} };
+  rec.onerror=function(e){ if(e.error==='no-speech'){try{rec.stop();setTimeout(startDrillRecognition,300);}catch(err){}} };
   rec.onend=function(){ if(appState.running){try{rec.start();}catch(e){}} };
   try{rec.start();}catch(e){}
 }
@@ -1358,8 +1480,8 @@ async function loadProgress(){
   const p=appState.selectedProfile;
   const {data}=await sb.from('reading_sessions').select('*').eq('profile_id',p.id).order('created_at',{ascending:false}).limit(20);
   const lastFive=(data||[]).slice(0,5);
-  const progressMsgs=p.stars>=50?['🏆 Utrolig fremgang! Du er en ekte lesemester!','🌟 Wow – du har virkelig jobbet hardt!']:p.stars>=20?['🚀 Du blir bedre og bedre! Fortsett!','⭐ Solid innsats – det synes på stjernene!']:['🌱 Bra start! Hver økt teller!','💪 Øving gjør mester – du er på vei!'];
-  const msg=progressMsgs[Math.floor(Math.random()*progressMsgs.length)];
+  const progressMsgs=p.stars>=50?['🏆 Utrolig fremgang! Du er en ekte lesemester!']:p.stars>=20?['🚀 Du blir bedre og bedre! Fortsett!']:['🌱 Bra start! Hver økt teller!'];
+  const msg=progressMsgs[0];
   const starsChart=lastFive.length?lastFive.map(s=>{
     const earned=Math.min(5,s.correct_words>0?Math.floor(s.correct_words/20)+1:1);
     const dateStr=new Date(s.created_at).toLocaleDateString('nb-NO',{day:'2-digit',month:'2-digit'});
