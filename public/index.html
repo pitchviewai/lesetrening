@@ -195,7 +195,7 @@
     .progress-hero h3 { font-size: 22px; font-weight: 900; color: #1e1b4b; }
     .progress-hero .tagline { font-size: 15px; color: #6b7280; margin-top: 4px; }
     .stars-chart { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; justify-content: center; }
-    .star-dot { width: 36px; height: 36px; border-radius: 50%; background: #fef3c7; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 2px solid #f59e0b; }
+    .star-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; font-size: 18px; border: 2px solid #f59e0b; background: #fef3c7; color: #d97706; font-weight: 900; }
     .wpm-meter { background: #f8f7ff; border-radius: 16px; padding: 20px; margin-bottom: 16px; }
     .wpm-meter h4 { font-size: 15px; font-weight: 800; margin-bottom: 12px; color: #4f46e5; }
     .wpm-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
@@ -273,9 +273,9 @@
     <div class="section-label">Slik fungerer det</div>
     <div class="section-title">Tre enkle steg</div>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-icon">📚</div><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av en bokside med telefonen.</p></div>
+      <div class="step"><div class="step-num">1</div><div class="step-icon">📚</div><h3>Velg en tekst</h3><p>Lim inn tekst fra barnets bok, eller ta et bilde av en bokside med telefonen – teksten leses ut automatisk.</p></div>
       <div class="step"><div class="step-num">2</div><div class="step-icon">🎤</div><h3>Barnet leser setning for setning</h3><p>Appen lytter og markerer setningen grønt når den er lest. Prøv om igjen ved behov!</p></div>
-      <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg utvikling over tid med morsome grafer og stjerner!</p></div>
+      <div class="step"><div class="step-num">3</div><div class="step-icon">🏆</div><h3>Se fremgangen</h3><p>Følg utvikling over tid med morsomme grafer og stjerner!</p></div>
     </div>
   </section>
 
@@ -336,7 +336,7 @@
     <div class="section-title">Vanlige spørsmål</div>
     <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)">Trenger vi mikrofon eller spesielt utstyr?<span class="faq-arrow">▼</span></div><div class="faq-a">Nei! Alle moderne telefoner, nettbrett og laptoper har innebygd mikrofon. AirPods og trådløse øreplugger fungerer også optimalt.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvilke nettlesere fungerer best?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer best i Chrome og Edge. Safari på iPhone og iPad fungerer også. Firefox støtter ikke talegjenkjenning.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvor nøyaktig er talegjenkjenningen?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer bra for vanlige norske ord, men kan slite med sjeldne ord eller dialekter. Barnet kan alltid prøve setningen om igjen.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Hvor nøyaktig er talegjenkjenningen?<span class="faq-arrow">▼</span></div><div class="faq-a">Talegjenkjenning fungerer bra for vanlige norske ord, men kan slite med sjeldne ord eller dialekter. Barnet kan alltid prøve setningen om igjen så mange ganger det trengs. For best nøyaktighet anbefales Chrome på telefon eller nettbrett.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Fungerer Leselab for barn med dysleksi?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja! Setningsbasert lesing er særlig nyttig for barn med dysleksi siden det bryter teksten ned i håndterbare biter.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Kan jeg avbestille når som helst?<span class="faq-arrow">▼</span></div><div class="faq-a">Ja, du kan avbestille når som helst uten bindingstid.</div></div>
   </section>
@@ -353,7 +353,7 @@
       <a href="#">Om oss</a><a href="#">Personvernerklæring</a>
       <a href="#">Vilkår for bruk</a><a href="#">Kontakt</a>
     </div>
-    <div class="footer-copy">© 2026 Leselab · Kristiansand, Norge</div>
+    <div class="footer-copy">© 2026 Leselab · Norge</div>
   </footer>
 </div>
 
@@ -582,7 +582,7 @@
         </div>
         <div style="text-align:center;padding:20px 0">
           <div id="result-avatar" style="font-size:72px;margin-bottom:8px"></div>
-          <h2 style="font-size:28px;font-weight:900;color:#4f46e5;margin-bottom:8px" id="result-title">🎉 Fantastisk jobbet!</h2>
+          <h2 style="font-size:28px;font-weight:900;color:#4f46e5;margin-bottom:8px" id="result-title"></h2>
           <p style="color:#6b7280;font-size:16px;margin-bottom:20px" id="result-subtitle"></p>
         </div>
         <div class="btn-row">
@@ -642,40 +642,47 @@ const sb = createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF2cGh3a2RrZ21pdWNlY2NrZXlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM0NjgyNjIsImV4cCI6MjA4OTA0NDI2Mn0.2caC2B9j_XlP8d-wQHmtvD2vv2jPx5tdzETAVRzcg9w'
 );
 
-// AUDIO
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+// ── AUDIO ──────────────────────────────────────────────
+let audioCtx;
+function getAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
 function playPling() {
   try {
-    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
-    o.connect(g); g.connect(audioCtx.destination);
-    o.frequency.setValueAtTime(880, audioCtx.currentTime);
-    o.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.1);
-    g.gain.setValueAtTime(0.3, audioCtx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
-    o.start(); o.stop(audioCtx.currentTime + 0.3);
+    const ctx = getAudio();
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.frequency.setValueAtTime(880, ctx.currentTime);
+    o.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
+    g.gain.setValueAtTime(0.3, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+    o.start(); o.stop(ctx.currentTime + 0.3);
   } catch(e) {}
 }
 function playFinish() {
   try {
+    const ctx = getAudio();
     [523, 659, 784, 1047].forEach((freq, i) => {
-      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
-      o.connect(g); g.connect(audioCtx.destination);
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
       o.frequency.value = freq;
-      g.gain.setValueAtTime(0.3, audioCtx.currentTime + i * 0.15);
-      g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.15 + 0.4);
-      o.start(audioCtx.currentTime + i * 0.15);
-      o.stop(audioCtx.currentTime + i * 0.15 + 0.4);
+      g.gain.setValueAtTime(0.3, ctx.currentTime + i * 0.15);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.15 + 0.4);
+      o.start(ctx.currentTime + i * 0.15);
+      o.stop(ctx.currentTime + i * 0.15 + 0.4);
     });
   } catch(e) {}
 }
 function playWarning() {
   try {
-    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
-    o.connect(g); g.connect(audioCtx.destination);
+    const ctx = getAudio();
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
     o.frequency.value = 440;
-    g.gain.setValueAtTime(0.2, audioCtx.currentTime);
-    g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
-    o.start(); o.stop(audioCtx.currentTime + 0.2);
+    g.gain.setValueAtTime(0.2, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+    o.start(); o.stop(ctx.currentTime + 0.2);
   } catch(e) {}
 }
 function launchConfetti() {
@@ -692,15 +699,20 @@ function launchConfetti() {
   setTimeout(() => { if (container) container.innerHTML = ''; }, 4000);
 }
 
+// ── APP STATE ──────────────────────────────────────────
 const appState = {
-  exercise: 'practice', sentences: [], sentenceStates: [], currentSentenceIdx: 0,
+  exercise: 'practice',
+  sentences: [], sentenceStates: [], currentSentenceIdx: 0,
   timeLimit: 60, timeLeft: 60, running: false, timerInterval: null,
   recognition: null, imageFile: null, selectedProfile: null,
-  selectedAvatar: '🦁', profiles: [], warningPlayed: false, startTime: null
+  selectedAvatar: '🦁', profiles: [], warningPlayed: false, startTime: null,
+  lastText: ''
 };
 
+// ── HELPERS ────────────────────────────────────────────
 function splitSentences(text) {
-  return text.match(/[^.!?]+[.!?]+/g)?.map(s => s.trim()).filter(s => s.length > 2) || [text.trim()];
+  const parts = text.match(/[^.!?]+[.!?]+/g);
+  return parts ? parts.map(s => s.trim()).filter(s => s.length > 2) : [text.trim()];
 }
 
 function levenshtein(a, b) {
@@ -726,34 +738,39 @@ function sentenceMatch(spoken, expected) {
   return matched / exWords.length >= 0.7;
 }
 
+// ── NAVIGATION ─────────────────────────────────────────
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
+  const el = document.getElementById('page-' + page);
+  if (el) el.classList.add('active');
   window.scrollTo(0, 0);
 }
 function goHome() {
   sb.auth.getSession().then(({ data: { session } }) => {
-    if (session) showPage('app'); else showPage('home');
+    showPage(session ? 'app' : 'home');
   }).catch(() => showPage('home'));
 }
 function scrollPricing() {
   showPage('home');
-  setTimeout(() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' }), 100);
+  setTimeout(() => { const el = document.getElementById('pricing-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100);
 }
 function homeCTA() {
   sb.auth.getSession().then(({ data: { session } }) => {
-    if (session) showPage('app'); else showPage('register');
+    showPage(session ? 'app' : 'register');
   }).catch(() => showPage('register'));
 }
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
 
+// ── AUTH HELPERS ───────────────────────────────────────
 function showAuthMsg(id, msg, type) {
   const el = document.getElementById(id); if (!el) return;
   el.textContent = msg; el.style.display = 'block';
   el.style.background = type === 'success' ? '#d1fae5' : '#fee2e2';
   el.style.color = type === 'success' ? '#065f46' : '#991b1b';
-  setTimeout(() => el.style.display = 'none', 6000);
+  setTimeout(() => { el.style.display = 'none'; }, 6000);
 }
-
 const norskFeil = {
   'Invalid login credentials': 'Feil e-post eller passord. Prøv igjen.',
   'Email not confirmed': 'Du må bekrefte e-postadressen din først. Sjekk innboksen.',
@@ -763,6 +780,7 @@ const norskFeil = {
 };
 function oversett(msg) { return norskFeil[msg] || 'Noe gikk galt. Prøv igjen.'; }
 
+// ── AUTH ───────────────────────────────────────────────
 async function handleLogin() {
   const btn = document.getElementById('login-btn');
   btn.disabled = true; btn.textContent = 'Logger inn...';
@@ -832,6 +850,7 @@ function updateNav(loggedIn) {
   document.getElementById('nav-app-btn').style.display = loggedIn ? 'inline-block' : 'none';
 }
 
+// ── LOAD APP ───────────────────────────────────────────
 async function loadApp() {
   const { data: { user } } = await sb.auth.getUser();
   if (!user) return;
@@ -839,6 +858,8 @@ async function loadApp() {
   await loadProfiles(user.id);
   loadSavedTexts();
 }
+
+// ── PROFILES ───────────────────────────────────────────
 async function loadProfiles(userId) {
   const { data } = await sb.from('profiles').select('*').eq('user_id', userId).order('created_at');
   appState.profiles = data || [];
@@ -862,7 +883,8 @@ function selectProfile(id) {
 }
 function updateProfileBanner() {
   const p = appState.selectedProfile; if (!p) return;
-  document.getElementById('selected-profile-banner').style.display = 'flex';
+  const banner = document.getElementById('selected-profile-banner');
+  banner.style.display = 'flex';
   document.getElementById('banner-avatar').textContent = p.avatar;
   document.getElementById('banner-name').textContent = p.child_name;
   document.getElementById('banner-level').textContent = `Nivå ${p.level} · ${p.stars} ⭐`;
@@ -882,6 +904,8 @@ async function saveProfile() {
   document.getElementById('child-name').value = ''; document.getElementById('child-age').value = '';
   await loadProfiles(user.id); renderRewardsProfileSelect();
 }
+
+// ── REWARDS ────────────────────────────────────────────
 function renderRewardsProfileSelect() {
   const el = document.getElementById('rewards-profile-select');
   if (!el || !appState.profiles.length) return;
@@ -918,6 +942,7 @@ async function addReward() {
 }
 async function deleteReward(id) { await sb.from('rewards').delete().eq('id', id); loadRewards(); }
 
+// ── SAVED TEXTS ────────────────────────────────────────
 async function saveText() {
   const title = document.getElementById('save-text-title').value.trim();
   const content = document.getElementById('textInput').value.trim();
@@ -957,16 +982,20 @@ function loadExampleText() {
   document.getElementById('start-btn').disabled = false;
 }
 
+// ── TABS ───────────────────────────────────────────────
 function showTab(tabId) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.app-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById(tabId).classList.add('active');
+  const tab = document.getElementById(tabId);
+  if (tab) tab.classList.add('active');
   const idx = ['tab-profiles','tab-reading','tab-progress','tab-settings'].indexOf(tabId);
-  document.querySelectorAll('.app-tab')[idx].classList.add('active');
+  const tabs = document.querySelectorAll('.app-tab');
+  if (tabs[idx]) tabs[idx].classList.add('active');
   if (tabId === 'tab-progress') loadProgress();
   if (tabId === 'tab-settings') renderRewardsProfileSelect();
 }
 
+// ── EXERCISE SETUP ─────────────────────────────────────
 function setExercise(val, btn) {
   appState.exercise = val;
   document.querySelectorAll('.exercise-btn').forEach(b => b.classList.remove('active'));
@@ -975,10 +1004,11 @@ function setExercise(val, btn) {
 }
 function setTime(val) { appState.timeLimit = +val; document.getElementById('timelabel').textContent = val; }
 
-document.getElementById('textInput').addEventListener('input', e => {
+document.getElementById('textInput').addEventListener('input', function(e) {
   document.getElementById('start-btn').disabled = !e.target.value.trim();
 });
 
+// ── IMAGE / OCR ────────────────────────────────────────
 function handleImage(input) {
   const file = input.files[0]; if (!file) return;
   appState.imageFile = file;
@@ -988,32 +1018,35 @@ function handleImage(input) {
 }
 
 let ocrController = null;
-
 function abortOCR() {
   if (ocrController) ocrController.abort();
   document.getElementById('ocrBtn').textContent = 'Trekk ut tekst';
   document.getElementById('ocrBtn').disabled = false;
   document.getElementById('ocrAbortBtn').style.display = 'none';
+  ocrController = null;
 }
-
 async function runOCR() {
   const btn = document.getElementById('ocrBtn');
   const abortBtn = document.getElementById('ocrAbortBtn');
   btn.textContent = 'Leser tekst...'; btn.disabled = true;
   abortBtn.style.display = 'inline-block';
   ocrController = new AbortController();
-  const timeout = setTimeout(() => ocrController.abort(), 15000);
+  const timeout = setTimeout(() => { if (ocrController) ocrController.abort(); }, 15000);
   try {
     const base64 = await new Promise((res, rej) => {
       const r = new FileReader(); r.onload = () => res(r.result.split(',')[1]); r.onerror = rej; r.readAsDataURL(appState.imageFile);
     });
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       signal: ocrController.signal,
-      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, messages: [{ role: 'user', content: [
-        { type: 'image', source: { type: 'base64', media_type: appState.imageFile.type, data: base64 } },
-        { type: 'text', text: 'Trekk ut all tekst fra dette bildet. Returner kun teksten.' }
-      ]}]})
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514', max_tokens: 1000,
+        messages: [{ role: 'user', content: [
+          { type: 'image', source: { type: 'base64', media_type: appState.imageFile.type, data: base64 } },
+          { type: 'text', text: 'Trekk ut all tekst fra dette bildet. Returner kun teksten, ingen forklaringer.' }
+        ]}]
+      })
     });
     clearTimeout(timeout);
     const data = await resp.json();
@@ -1021,17 +1054,19 @@ async function runOCR() {
     ta.value = data.content?.find(b => b.type === 'text')?.text || '';
     document.getElementById('start-btn').disabled = !ta.value.trim();
   } catch(e) {
+    clearTimeout(timeout);
     if (e.name !== 'AbortError') alert('⚠️ Kunne ikke lese teksten. Prøv igjen eller lim inn tekst manuelt.');
   }
-  clearTimeout(timeout);
   btn.textContent = 'Trekk ut tekst'; btn.disabled = false;
   abortBtn.style.display = 'none';
   ocrController = null;
 }
 
+// ── SESSION ────────────────────────────────────────────
 function startSession() {
-  if (audioCtx.state === 'suspended') audioCtx.resume();
+  try { getAudio().resume(); } catch(e) {}
   const text = document.getElementById('textInput').value.trim();
+  appState.lastText = text;
   const sentences = splitSentences(text);
   if (!sentences.length) return;
   appState.sentences = sentences;
@@ -1063,11 +1098,13 @@ function renderSentences() {
     return `<div class="sent-dot ${cls}"></div>`;
   }).join('');
   document.getElementById('sentence-progress').innerHTML = dots;
+
   let html = '';
   const doneHTML = sentences.slice(0, idx).map(s =>
     `<div class="sentence-done">${s.split(/\s+/).map(w => `<span class="word-done">${w}</span>`).join(' ')}</div>`
   ).join('');
   if (doneHTML) html += doneHTML;
+
   if (idx < sentences.length) {
     html += `<div class="sentence-active">${sentences[idx].split(/\s+/).map(w => `<span class="word-active">${w}</span>`).join(' ')}</div>`;
   }
@@ -1075,5 +1112,262 @@ function renderSentences() {
     html += `<div class="sentence-upcoming">${sentences[idx + 1]}</div>`;
   }
   document.getElementById('sentence-display').innerHTML = html;
+
   const active = document.querySelector('.sentence-active');
   if (active) active.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  const done = appState.sentenceStates.filter(s => s === 'done').length;
+  const left = sentences.length - idx;
+  document.getElementById('stat-sentences').textContent = '✅ Setninger: ' + done;
+  document.getElementById('stat-left').textContent = 'Gjenstår: ' + left;
+}
+
+function advanceSentence() {
+  const idx = appState.currentSentenceIdx;
+  appState.sentenceStates[idx] = 'done';
+  appState.currentSentenceIdx++;
+  playPling();
+  renderSentences();
+  if (appState.currentSentenceIdx >= appState.sentences.length) {
+    setTimeout(endSession, 500);
+  }
+}
+
+function startTimer() {
+  clearInterval(appState.timerInterval);
+  appState.timerInterval = setInterval(() => {
+    if (!appState.running) { clearInterval(appState.timerInterval); return; }
+    appState.timeLeft--;
+    const td = document.getElementById('timer-display');
+    td.textContent = '⏱ ' + appState.timeLeft + 's';
+    td.className = 'timer' + (appState.timeLeft <= 10 ? ' urgent' : '');
+    if (appState.timeLeft === 10 && !appState.warningPlayed) { playWarning(); appState.warningPlayed = true; }
+    if (appState.timeLeft <= 0) { clearInterval(appState.timerInterval); endSession(); }
+  }, 1000);
+}
+
+async function endSession() {
+  appState.running = false;
+  clearInterval(appState.timerInterval);
+  if (appState.recognition) { try { appState.recognition.stop(); } catch(e) {} appState.recognition = null; }
+
+  const doneSentences = appState.sentenceStates.filter(s => s === 'done').length;
+  const totalWords = appState.sentences.slice(0, appState.currentSentenceIdx).join(' ').split(/\s+/).filter(Boolean).length;
+  const elapsedSec = Math.max(1, (Date.now() - appState.startTime) / 1000);
+  const wpm = Math.round((totalWords / elapsedSec) * 60);
+  const stars = Math.min(5, Math.floor(doneSentences / 2) + 1);
+
+  document.getElementById('reading-active').style.display = 'none';
+  document.getElementById('reading-result').style.display = 'block';
+  window.scrollTo(0, 0);
+
+  const starsHTML = '⭐'.repeat(stars);
+  document.getElementById('stars-earned').innerHTML = `<div style="font-size:40px">${starsHTML}</div><div style="font-size:16px;color:#6b7280;margin-top:4px">${stars} stjerner tjent!</div>`;
+
+  document.getElementById('results-grid').innerHTML = `
+    <div class="result-card" style="background:#d1fae5">
+      <div class="lbl" style="color:#065f46">✅ Setninger lest</div>
+      <div class="val" style="color:#065f46">${doneSentences}</div>
+    </div>
+    <div class="result-card" style="background:#eef2ff">
+      <div class="lbl" style="color:#4f46e5">📖 Ord lest</div>
+      <div class="val" style="color:#4f46e5">${totalWords}</div>
+    </div>
+  `;
+
+  if (appState.exercise === 'timed' && totalWords > 0) {
+    document.getElementById('wpm-section').style.display = 'block';
+    const pct = Math.min(100, (wpm / 150) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-fill').style.background = wpm >= 100 ? '#059669' : wpm >= 70 ? '#f59e0b' : '#ef4444';
+    const msgs = wpm >= 100
+      ? ['🌟 Du leser over gjennomsnittet! Fantastisk!', '🏆 Imponerende lesehastighet!', '🚀 Du er en lesehelt!']
+      : wpm >= 70
+        ? ['🚀 Du blir bedre og bedre! Fortsett!', '💪 Bra jobbet – du er på rett vei!', '⭐ Solid innsats, fortsett slik!']
+        : ['💪 Øving gjør mester! Du klarer det!', '🌱 Hver økt gjør deg bedre!', '❤️ Bra at du øver – det nytter!'];
+    document.getElementById('wpm-feedback').textContent = msgs[Math.floor(Math.random() * msgs.length)];
+  } else {
+    document.getElementById('wpm-section').style.display = 'none';
+  }
+
+  const avatar = appState.selectedProfile?.avatar || '📖';
+  const childName = appState.selectedProfile?.child_name || '';
+  const resultMsgs = ['Fantastisk jobbet! 🌟', 'Du er en lesehelt! 🦁', 'Så flink du er! 🎉', 'Kjempebra! 🚀'];
+  document.getElementById('result-avatar').textContent = avatar;
+  document.getElementById('result-title').textContent = resultMsgs[Math.floor(Math.random() * resultMsgs.length)];
+  document.getElementById('result-subtitle').textContent = childName ? childName + ' – du bør være stolt av deg selv!' : 'Bra innsats!';
+
+  playFinish();
+  launchConfetti();
+
+  if (appState.selectedProfile) {
+    const { data: { user } } = await sb.auth.getUser();
+    if (user) {
+      await sb.from('reading_sessions').insert({
+        profile_id: appState.selectedProfile.id,
+        user_id: user.id,
+        exercise_type: appState.exercise,
+        total_words: totalWords,
+        correct_words: totalWords,
+        wrong_words: 0,
+        words_per_minute: wpm,
+        duration_seconds: Math.round(elapsedSec),
+        text_used: appState.lastText.substring(0, 500)
+      });
+      const newStars = (appState.selectedProfile.stars || 0) + stars;
+      const newLevel = Math.floor(newStars / 10) + 1;
+      await sb.from('profiles').update({ stars: newStars, level: newLevel }).eq('id', appState.selectedProfile.id);
+      appState.selectedProfile.stars = newStars;
+      appState.selectedProfile.level = newLevel;
+      updateProfileBanner();
+    }
+  }
+}
+
+function resetSession() {
+  document.getElementById('reading-setup').style.display = 'block';
+  document.getElementById('reading-active').style.display = 'none';
+  document.getElementById('reading-result').style.display = 'none';
+  document.getElementById('textInput').value = '';
+  document.getElementById('start-btn').disabled = true;
+}
+function tryAgain() {
+  document.getElementById('reading-setup').style.display = 'block';
+  document.getElementById('reading-active').style.display = 'none';
+  document.getElementById('reading-result').style.display = 'none';
+  document.getElementById('textInput').value = appState.lastText;
+  document.getElementById('start-btn').disabled = false;
+}
+
+// ── SPEECH RECOGNITION ─────────────────────────────────
+function startRecognition() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) {
+    alert('⚠️ Din nettleser støtter ikke talegjenkjenning. Bytt til Chrome eller Edge for best opplevelse.');
+    return;
+  }
+  const rec = new SR();
+  rec.lang = 'nb-NO';
+  rec.continuous = true;
+  rec.interimResults = false;
+  appState.recognition = rec;
+
+  rec.onresult = function(e) {
+    if (!appState.running) return;
+    const result = e.results[e.results.length - 1];
+    if (!result.isFinal) return;
+    const spoken = result[0].transcript.trim();
+    const idx = appState.currentSentenceIdx;
+    if (idx >= appState.sentences.length) return;
+    if (sentenceMatch(spoken, appState.sentences[idx])) {
+      advanceSentence();
+    }
+  };
+
+  rec.onerror = function(e) {
+    if (e.error === 'no-speech') { try { rec.stop(); setTimeout(startRecognition, 500); } catch(err) {} }
+  };
+
+  rec.onend = function() {
+    if (appState.running) { try { rec.start(); } catch(e) {} }
+  };
+
+  try { rec.start(); } catch(e) {}
+}
+
+// ── PROGRESS ───────────────────────────────────────────
+async function loadProgress() {
+  if (!appState.selectedProfile) {
+    document.getElementById('progress-content').innerHTML = '<p style="color:#6b7280;text-align:center;padding:40px">Velg en barneprofil under 👶 Profiler for å se fremgang.</p>';
+    return;
+  }
+  const p = appState.selectedProfile;
+  const { data } = await sb.from('reading_sessions').select('*').eq('profile_id', p.id).order('created_at', { ascending: false }).limit(20);
+
+  const totalSessions = data?.length || 0;
+  const lastFive = (data || []).slice(0, 5);
+
+  const progressMsgs = p.stars >= 50
+    ? ['🏆 Utrolig fremgang! Du er en ekte lesemester!', '🌟 Wow – du har virkelig jobbet hardt!']
+    : p.stars >= 20
+      ? ['🚀 Du blir bedre og bedre! Fortsett!', '⭐ Solid innsats – det synes på stjernene!']
+      : ['🌱 Bra start! Hver økt teller!', '💪 Øving gjør mester – du er på vei!'];
+  const msg = progressMsgs[Math.floor(Math.random() * progressMsgs.length)];
+
+  const starsChart = lastFive.length
+    ? lastFive.map(s => {
+        const earned = Math.min(5, s.correct_words > 0 ? Math.floor(s.correct_words / 20) + 1 : 1);
+        const dateStr = new Date(s.created_at).toLocaleDateString('nb-NO', { day: '2-digit', month: '2-digit' });
+        return `<div style="text-align:center">
+          <div class="star-dot"><span style="font-size:16px">⭐</span><span style="font-size:11px">${earned}</span></div>
+          <div style="font-size:10px;color:#9ca3af;margin-top:4px">${dateStr}</div>
+        </div>`;
+      }).join('')
+    : '<p style="color:#9ca3af;font-size:14px">Ingen økter ennå.</p>';
+
+  const wpmRows = (data || []).filter(s => s.words_per_minute > 0).slice(0, 5).map(s => {
+    const dateStr = new Date(s.created_at).toLocaleDateString('nb-NO', { day: '2-digit', month: '2-digit' });
+    const w = Math.min(s.words_per_minute, 150);
+    const pct = Math.round((w / 150) * 100);
+    return `<div class="wpm-bar-row">
+      <div class="date">${dateStr}</div>
+      <div class="wpm-bar" style="width:${pct}%">${s.words_per_minute} o/m</div>
+    </div>`;
+  }).join('');
+
+  const sessionList = (data || []).slice(0, 10).map(s => {
+    const dateStr = new Date(s.created_at).toLocaleDateString('nb-NO', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const timeStr = new Date(s.created_at).toLocaleTimeString('nb-NO', { hour: '2-digit', minute: '2-digit' });
+    return `<div class="session-item">
+      <div>
+        <div style="font-weight:700">${s.exercise_type === 'practice' ? '🌱 Øving' : '⏱ Tidsbasert'}</div>
+        <div class="session-date">${dateStr} kl. ${timeStr}</div>
+      </div>
+      <div class="session-stats">
+        <div class="session-stat"><div class="n">${s.correct_words}</div><div class="l">ord</div></div>
+        ${s.words_per_minute > 0 ? `<div class="session-stat"><div class="n">${s.words_per_minute}</div><div class="l">o/min</div></div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('progress-content').innerHTML = `
+    <div class="progress-hero">
+      <div class="avatar">${p.avatar}</div>
+      <h3>${p.child_name}</h3>
+      <div class="tagline">${msg}</div>
+      <div style="margin-top:12px;font-size:18px;font-weight:800;color:#4f46e5">${p.stars} ⭐ · Nivå ${p.level}</div>
+    </div>
+    <div class="card">
+      <div style="font-weight:800;font-size:16px;margin-bottom:12px">⭐ Siste 5 økter</div>
+      <div class="stars-chart">${starsChart}</div>
+    </div>
+    ${wpmRows ? `<div class="wpm-meter"><h4>📈 Lesehastighet (ord per minutt)</h4>${wpmRows}</div>` : ''}
+    ${sessionList ? `<div><div style="font-weight:800;font-size:16px;margin-bottom:12px">📋 Alle økter (${totalSessions})</div><div class="progress-list">${sessionList}</div></div>` : ''}
+  `;
+}
+
+// ── INIT ───────────────────────────────────────────────
+(async () => {
+  const hash = window.location.hash;
+  if (hash.includes('type=recovery')) {
+    showPage('reset');
+    return;
+  }
+  if (hash.includes('type=signup') || hash.includes('access_token')) {
+    await sb.auth.getSession();
+    await loadApp();
+    showPage('welcome');
+    window.history.replaceState(null, '', window.location.pathname);
+    return;
+  }
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) {
+    await loadApp();
+    showPage('app');
+  } else {
+    showPage('home');
+  }
+})();
+</script>
+</body>
+</html>
